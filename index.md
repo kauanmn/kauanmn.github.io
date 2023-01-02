@@ -101,12 +101,69 @@ Those solutions **optimized the internal operations efficiency** and **allowed c
 
 ## 🛠 Skills
 
+- Software Engineering
+  - Requirements
+  - Design
+  - Construction
+  - Testing
+  - Patching
+  - Documentation
 - Operating Systems (Windows, Linux, Kali Linux, Parrot OS)
-- Cryptography (John the ripper, hashcat)
 - Networks (protocols, infrastructure, configuration, enumeration, exploitation etc.)
 - Git (GitHub, GitLab)
 - Digital forensics
 - Firewall
 - SQL Databases
 - Vulnerability analysis (Metasploit, nikto)
-- Malware analysis (
+- Malware analysis
+- Reverse engineering (snowman, cutter)
+- Cryptography (John the ripper, hashcat)
+
+<br>
+
+### 👨🏼‍💻 Programming Languages
+
+- Python
+- C/C++
+- Java
+- SQL
+- C#
+- Bash
+- Powershell
+- HTML/CSS
+- Haskell
+
+<br>
+
+### ⚖️ Standards, Laws, Frameworks and Methodologies
+
+- LGPD
+- Project Management (scope, schedule, communication)
+- Agile methodologies (scrum, backlog, sprint, etc.)
+
+<br>
+
+## 🌎 Languages
+
+- Portuguese 🇧🇷 - Native language
+- English 🇬🇧 - Fluent
+- Spanish 🇪🇸 - Intermediate
+- German 🇩🇪, Russian 🇷🇺 - Basic
+
+<br>
+
+## 💡 Projects
+
+### Green Team Hacker Club (GTHC)
+
+***Universidade Federal do ABC**,<br>
+Brasil, São Paulo<br>
+2019 - hoje (3 anos)*<br>
+
+Green Team Hacker Club is a college group of cybersecurity and computer science at Federal University of ABC. My participation in the organization included: attending events, development of classes, contributed with projects and ideas, and shared cybersecurity content with the group members.
+
+<BR>
+
+### Capture The Flags (CTFs)
+
+CTFs are cybersecurity competitions. I started practicing at the end of 2021 with HackTheBox and TryHackMe, and started participating at the beginning of 2022.
