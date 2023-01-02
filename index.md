@@ -5,6 +5,19 @@
 - Focused on **Cybersecurity** 🔒
 - Competing in **Capture The Flag** 🚩 events since 2021.
 
+---
+
+<br>
+
+## List of Contents
+
+1. ☎️ [Contact](#%EF%B8%8F-contact)
+2. 📚 [Education](#-education)
+3. 💼 [Employment](#-employment)
+4. 🛠 [Skills](#-skills)
+5. 🌎 Languages
+6. 💡 Projects
+
 <br>
 
 ## ☎️ Contact
@@ -87,3 +100,13 @@ Those solutions **optimized the internal operations efficiency** and **allowed c
 <br>
 
 ## 🛠 Skills
+
+- Operating Systems (Windows, Linux, Kali Linux, Parrot OS)
+- Cryptography (John the ripper, hashcat)
+- Networks (protocols, infrastructure, configuration, enumeration, exploitation etc.)
+- Git (GitHub, GitLab)
+- Digital forensics
+- Firewall
+- SQL Databases
+- Vulnerability analysis (Metasploit, nikto)
+- Malware analysis (
