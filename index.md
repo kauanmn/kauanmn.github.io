@@ -15,8 +15,8 @@
 2. 📚 [Education](#-education)
 3. 💼 [Employment](#-employment)
 4. 🛠 [Skills](#-skills)
-5. 🌎 Languages
-6. 💡 Projects
+5. 🌎 [Languages](#-languages)
+6. 💡 [Projects](#-projects)
 
 <br>
 
