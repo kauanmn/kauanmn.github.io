@@ -3,7 +3,7 @@
 - **Software developer** at Radix 🖥️
 - **BSc Computer Science** 🖥️ from Federal University of ABC, Brazil
 - Focused on **Cybersecurity** 🔒
-- Competing in **Capture The Flag** 🚩 events since 2021.
+- Competing in **Capture The Flag** 🚩 events since 2021 ([results](ctf.md)).
 
 ---
 
@@ -166,4 +166,4 @@ Green Team Hacker Club is a college group of cybersecurity and computer science 
 
 ### Capture The Flags (CTFs)
 
-CTFs are cybersecurity competitions. I started practicing at the end of 2021 with HackTheBox and TryHackMe, and started participating at the beginning of 2022.
+CTFs are cybersecurity competitions. I started practicing at the end of 2021 with HackTheBox and TryHackMe, and started participating at the beginning of 2022. You can see my results at [this page](ctf.md).
