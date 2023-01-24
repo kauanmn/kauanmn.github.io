@@ -2,10 +2,9 @@
 
 - **Software developer** at Radix 🖥️
 - **BSc Computer Science** 🖥️ from Federal University of ABC, Brazil
-- Focused on **Cybersecurity** 🔒
+- Focused on **Cybersecurity** and **Application Security** 🔒
 - Competing in **Capture The Flag** 🚩 events since 2021 ([results](ctf.md)).
 
----
 
 <br>
 
@@ -58,15 +57,16 @@ Federal University of ABC, Brazil
 
 ***Radix (IT and Engineering)**, <br>
 São Paulo, Brazil <br>
-08/2022 - now (4 months)* <br>
+08/2022 - now (5 months)* <br>
 
 Working with my team and employing agile methodologies, I was responsible to deliver solutions that add value to the client, of which:
 
-- Development of applications and automations with Microsoft cloud ecosystem (Sharepoint, Forms, Power Platform etc.)
-- Development of reports with Microsoft Power BI: dashboards, data analysis
-- Development of PDF data extractor with Python, Tesseract and OpenCV
-- Version control with Git
-- Activities control and sprint planning/backlog with Microsoft DevOps
+- Development of applications and automations with **Microsoft cloud ecosystem** (Sharepoint, Forms, Power Platform etc.)
+- Data Analysis with **Microsoft Power BI**
+- Development of PDF data extractor with **Python, Tesseract and OpenCV**
+- Version control with **Git**
+- Activities control and sprint planning/backlog with **Microsoft DevOps and Agile Methodologies**
+- Development of Microsoft Teams chatbot with **TypeScript + Node.js**
 
 <br>
 
