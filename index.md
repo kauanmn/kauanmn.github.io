@@ -35,17 +35,16 @@
 
 ### Bachelor of Computer Science
 
+Federal University of ABC, Brazil<br>
 *2017 - 2022*
 
-Federal University of ABC, Brazil
 
 <br>
 
 ### Bachelor of Science and Technology
 
+Federal University of ABC, Brazil<br>
 *2017 - 2022*
-
-Federal University of ABC, Brazil
 
 ---
 
