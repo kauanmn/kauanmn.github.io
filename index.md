@@ -57,7 +57,7 @@ Federal University of ABC, Brazil
 
 ***Radix (IT and Engineering)**, <br>
 São Paulo, Brazil <br>
-08/2022 - now (5 months)* <br>
+08/2022 - now (6 months)* <br>
 
 Working with my team and employing agile methodologies, I was responsible to deliver solutions that add value to the client, of which:
 
@@ -157,8 +157,8 @@ Those solutions **optimized the internal operations efficiency** and **allowed c
 ### Green Team Hacker Club (GTHC)
 
 ***Universidade Federal do ABC**,<br>
-Brasil, São Paulo<br>
-2019 - hoje (3 anos)*<br>
+São Paulo, Brazil<br>
+2019 - 2022 (3 years)*<br>
 
 Green Team Hacker Club is a college group of cybersecurity and computer science at Federal University of ABC. My participation in the organization included: attending events, development of classes, contributed with projects and ideas, and shared cybersecurity content with the group members.
 
