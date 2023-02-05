@@ -162,7 +162,7 @@ São Paulo, Brazil<br>
 
 Green Team Hacker Club is a college group of cybersecurity and computer science at Federal University of ABC. My participation in the organization included: attending events, development of classes, contributed with projects and ideas, and shared cybersecurity content with the group members.
 
-<BR>
+<br>
 
 ### Capture The Flags (CTFs)
 
