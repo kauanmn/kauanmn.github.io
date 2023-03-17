@@ -58,7 +58,7 @@ Federal University of ABC, Brazil<br>
 São Paulo, Brazil <br>
 08/2022 - now (7 months)* <br>
 
-- Developed several modern applications and automations with **Microsoft cloud ecosystem** (Sharepoint, Forms, Power Platform, etc.);
+- Developed applications and automations with **Microsoft cloud ecosystem** (Sharepoint, Forms, Power Platform, etc.);
 - Conducted data analysis with **Microsoft Power BI** as part of business decision making process;
 - Built a PDF data extractor with **Python, Tesseract, and OpenCV**, along with software development best practices, such as **SOLID** and **design patterns**;
 - Executed **DevOps** tasks, such as version control with **Git**, backlogging with **Microsoft DevOps**, and **documentation** writing;
@@ -73,9 +73,9 @@ São Paulo, Brazil <br>
 São Paulo, Brazil <br>
 10/2021 - 08/2022 (10 months)* <br>
 
-- Developed several modern applications and automations with **Microsoft cloud ecosystem** (Sharepoint, Forms, Power Platform, etc.) that **created value** and **reduced costs** for clients;
+- Developed applications and automations with **Microsoft cloud ecosystem** (Sharepoint, Forms, Power Platform, etc.) that **created value** and **reduced costs** for clients;
 - Carried out some **project management** tasks, such as the development of schedule and scope, and communication;
-- Specified **software requirements** of projects, including **documentation**
+- Specified **software requirements** of projects, including **documentation**;
 - Structured and designed databases, their relationships, and entity-relationship diagrams;
 
 <br>
@@ -97,11 +97,11 @@ São Paulo, Brazil <br>
 
 ## 🛠 Skills
 
-- Software Engineering: requirements, design, development, testing, patching, documentation, deployment
-- Operating Systems: Windows, Linux, Kali Linux, Parrot OS
-- Networks (protocols, infrastructure, configuration, enumeration, exploitation etc.)
-- Git (GitHub, GitLab)
-- Databases: SQL, Microsoft Azure, PostgreSQL, database and relationships design, entity diagrams
+- **Software Engineering**: requirements, design, development, testing, patching, documentation, deployment
+- **Operating Systems**: Windows, Linux, Kali Linux, Parrot OS
+- **Networks** (protocols, infrastructure, configuration, enumeration, exploitation etc.)
+- **Git** (GitHub, GitLab)
+- **Databases**: SQL, Microsoft Azure, PostgreSQL, database and relationships design, entity diagrams
 - Vulnerability analysis (Metasploit, nikto)
 - Malware analysis
 - Reverse engineering (snowman, cutter)
