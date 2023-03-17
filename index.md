@@ -97,19 +97,11 @@ São Paulo, Brazil <br>
 
 ## 🛠 Skills
 
-- Software Engineering
-  - Requirements
-  - Design
-  - Construction
-  - Testing
-  - Patching
-  - Documentation
-- Operating Systems (Windows, Linux, Kali Linux, Parrot OS)
+- Software Engineering: requirements, design, development, testing, patching, documentation, deployment
+- Operating Systems: Windows, Linux, Kali Linux, Parrot OS
 - Networks (protocols, infrastructure, configuration, enumeration, exploitation etc.)
 - Git (GitHub, GitLab)
-- Digital forensics
-- Firewall
-- SQL Databases
+- Databases: SQL, Microsoft Azure, PostgreSQL, database and relationships design, entity diagrams
 - Vulnerability analysis (Metasploit, nikto)
 - Malware analysis
 - Reverse engineering (snowman, cutter)
