@@ -52,20 +52,18 @@ Federal University of ABC, Brazil<br>
 
 ## 💼 Employment
 
-### Software developer
+### Software Developer
 
 ***Radix (IT and Engineering)**, <br>
 São Paulo, Brazil <br>
-08/2022 - now (6 months)* <br>
+08/2022 - now (7 months)* <br>
 
-Working with my team and employing agile methodologies, I was responsible to deliver solutions that add value to the client, of which:
-
-- Development of applications and automations with **Microsoft cloud ecosystem** (Sharepoint, Forms, Power Platform etc.)
-- Data Analysis with **Microsoft Power BI**
-- Development of PDF data extractor with **Python, Tesseract and OpenCV**
-- Version control with **Git**
-- Activities control and sprint planning/backlog with **Microsoft DevOps and Agile Methodologies**
-- Development of Microsoft Teams chatbot with **TypeScript + Node.js**
+- Developed several modern applications and automations with **Microsoft cloud ecosystem** (Sharepoint, Forms, Power Platform, etc.);
+- Conducted data analysis with **Microsoft Power BI** as part of business decision making process;
+- Built a PDF data extractor with **Python, Tesseract, and OpenCV**, along with software development best practices, such as **SOLID** and **design patterns**;
+- Executed **DevOps** tasks, such as version control with **Git**, backlogging with **Microsoft DevOps**, and **documentation** writing;
+- Supported the development of a Microsoft Teams chatbot using **TypeScript, Node.js, Dockers, PostgreSQL, and Microsoft Azure**;
+- Structured and designed **databases**, their relationships, and entity-relationship diagrams.
 
 <br>
 
@@ -75,9 +73,10 @@ Working with my team and employing agile methodologies, I was responsible to del
 São Paulo, Brazil <br>
 10/2021 - 08/2022 (10 months)* <br>
 
-Through the use of **agile methodologies** and concepts of **project management**, including schedule, scope and communication, I was responsible for **application development, documentation, software engineering** (requiements, tests, deployment, patching etc.) and **database** creation.
-
-I developed and delivered solutions that **create value for clients** through the **modernization and automation of internal processes**, from which results are **costs reduction**.
+- Developed several modern applications and automations with **Microsoft cloud ecosystem** (Sharepoint, Forms, Power Platform, etc.) that **created value** and **reduced costs** for clients;
+- Carried out some **project management** tasks, such as the development of schedule and scope, and communication;
+- Specified **software requirements** of projects, including **documentation**
+- Structured and designed databases, their relationships, and entity-relationship diagrams;
 
 <br>
 
@@ -87,14 +86,12 @@ I developed and delivered solutions that **create value for clients** through th
 São Paulo, Brazil <br>
 02/2020 - 10/2021 (1 year and 8 months)* <br>
 
-**Application development** and **data analysis** (business intelligence) for logistics internal operations at Braskem using Microsoft Power Platform. Delivered solutions include:
-
-- Data analysis and reports of logistics incidents and accidents
-- Development of road route risk analysis app
-- Development of vetting remote checklist app
-- Development of HES (health, environment and safety) inspections app
-
-Those solutions **optimized the internal operations efficiency** and **allowed contributors to work safely during the Covid-19 pandemics**.
+- Conducted data analysis of logistics incidents and accidents with **Microsoft Power BI** and **Excel**, leading to events reduction;
+- Developed applications and automations with **Microsoft Power Platform**:
+  - Road route risk analysis app;
+  - Vetting remote checklist app;
+  - HES (health, environment and safety) inspections app;
+- **Optimized internal operations efficiency** and **allowed contributors to work safely during Covid-19 pandemics**.
 
 <br>
 
@@ -123,6 +120,7 @@ Those solutions **optimized the internal operations efficiency** and **allowed c
 ### 👨🏼‍💻 Programming Languages
 
 - Python
+- TypeScript
 - C/C++
 - Java
 - SQL
@@ -157,7 +155,7 @@ Those solutions **optimized the internal operations efficiency** and **allowed c
 
 ***Universidade Federal do ABC**,<br>
 São Paulo, Brazil<br>
-2019 - 2022 (3 years)*<br>
+2019 - 2023 (4 years)*<br>
 
 Green Team Hacker Club is a college group of cybersecurity and computer science at Federal University of ABC. My participation in the organization included: attending events, development of classes, contributed with projects and ideas, and shared cybersecurity content with the group members.
 
