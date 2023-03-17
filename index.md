@@ -1,7 +1,7 @@
 # Kauan Manzato do Nascimento
 
 - **Software developer** at Radix 🖥️
-- **BSc Computer Science** 🖥️ from Federal University of ABC, Brazil
+- **BSc Computer Science** 🎓 at Federal University of ABC, Brazil
 - Focused on **Cybersecurity** and **Application Security** 🔒
 - Competing in **Capture The Flag** 🚩 events since 2021 ([results](ctf.md)).
 
