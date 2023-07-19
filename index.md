@@ -56,14 +56,16 @@ Federal University of ABC, Brazil<br>
 
 ***Radix (IT and Engineering)**, <br>
 São Paulo, Brazil <br>
-08/2022 - now (7 months)* <br>
+08/2022 - now (11 months)* <br>
 
-- Developed applications and automations with **Microsoft cloud ecosystem** (Sharepoint, Forms, Power Platform, etc.);
-- Conducted data analysis with **Microsoft Power BI** as part of business decision making process;
+Worked in an automation and digitalization project created by Acelen, a petrochemical industry firm focused on energy transition:
+
+- Developed several applications and automations with **Microsoft cloud ecosystem** (Sharepoint, Forms, Power Platform, etc.);
 - Built a PDF data extractor with **Python, Tesseract, and OpenCV**, along with software development best practices, such as **SOLID** and **design patterns**;
 - Executed **DevOps** tasks, such as version control with **Git**, backlogging with **Microsoft DevOps**, and **documentation** writing;
-- Supported the development of a Microsoft Teams chatbot using **TypeScript, Node.js, Dockers, PostgreSQL, and Microsoft Azure**;
-- Structured and designed **databases**, their relationships, and entity-relationship diagrams.
+- Supported the development a Microsoft Teams chatbot using **TypeScript, Node.js, Dockers, PostgreSQL, and Microsoft Azure**;
+- Worked in the development of a web application using **TypeScript, Angular and Bootstrap**;
+- Taughted various team members in a weekly Microsoft Power Apps **mentorship**.
 
 <br>
 
@@ -102,10 +104,6 @@ São Paulo, Brazil <br>
 - **Networks** (protocols, infrastructure, configuration, enumeration, exploitation etc.)
 - **Git** (GitHub, GitLab)
 - **Databases**: SQL, Microsoft Azure, PostgreSQL, database and relationships design, entity diagrams
-- Vulnerability analysis (Metasploit, nikto)
-- Malware analysis
-- Reverse engineering (snowman, cutter)
-- Cryptography (John the ripper, hashcat)
 
 <br>
 
@@ -114,13 +112,19 @@ São Paulo, Brazil <br>
 - Python
 - TypeScript
 - C/C++
-- Java
 - SQL
-- C#
 - Bash
 - Powershell
 - HTML/CSS
-- Haskell
+
+<br>
+
+### 💻 Other technologies
+
+- Dockers
+- Node.JS
+- Angular
+- Bootstrap
 
 <br>
 
