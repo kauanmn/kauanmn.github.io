@@ -1,10 +1,9 @@
 # Kauan Manzato do Nascimento
 
-- **Software developer** at Radix 🖥️
-- **BSc Computer Science** 🎓 at Federal University of ABC, Brazil
+- **Software Developer** at Radix 🖥️
+- **BSc in Computer Science** 🎓 at Federal University of ABC, Brazil
 - Focused on **Cybersecurity** and **Application Security** 🔒
 - Competing in **Capture The Flag** 🚩 events since 2021 ([results](ctf.md)).
-
 
 <br>
 
@@ -33,18 +32,24 @@
 
 ## 📚 Education
 
-### Bachelor of Computer Science
+### MBA in IT Management
 
-Federal University of ABC, Brazil<br>
-*2017 - 2022*
-
+**Fundação Getúlio Vargas**,<br>
+Rio de Janeiro, Brazil (expected 2024)
 
 <br>
 
-### Bachelor of Science and Technology
+### BSc in Computer Science
 
-Federal University of ABC, Brazil<br>
-*2017 - 2022*
+**Federal University of ABC**,<br>
+São Paulo, Brazil (2022)
+
+<br>
+
+### BSc in Science and Technology
+
+**Federal University of ABC**,<br>
+São Paulo, Brazil (2022)
 
 ---
 
@@ -56,7 +61,7 @@ Federal University of ABC, Brazil<br>
 
 ***Radix (IT and Engineering)**, <br>
 São Paulo, Brazil <br>
-08/2022 - now (11 months)* <br>
+08/2022 - now (1 year)* <br>
 
 Worked in an automation and digitalization project created by Acelen, a petrochemical industry firm focused on energy transition:
 
