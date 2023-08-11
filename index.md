@@ -68,7 +68,7 @@ Worked in an automation and digitalization project created by Acelen, a petroche
 - Developed several applications and automations with **Microsoft cloud ecosystem** (Sharepoint, Forms, Power Platform, etc.);
 - Built a PDF data extractor with **Python, Tesseract, and OpenCV**, along with software development best practices, such as **SOLID** and **design patterns**;
 - Executed **DevOps** tasks, such as version control with **Git**, backlogging with **Microsoft DevOps**, and **documentation** writing;
-- Supported the development a Microsoft Teams chatbot using **TypeScript, Node.js, Dockers, PostgreSQL, and Microsoft Azure**;
+- Supported the development of a Microsoft Teams chatbot using **TypeScript, Node.js, Dockers, PostgreSQL, and Microsoft Azure**;
 - Worked in the development of a web application using **TypeScript, Angular and Bootstrap**;
 - Taughted various team members in a weekly Microsoft Power Apps **mentorship**.
 
