@@ -1,6 +1,6 @@
 # Kauan Manzato do Nascimento
 
-- **Software Developer** at Radix 🖥️
+- **Software Engineer** at Radix 🖥️
 - **BSc in Computer Science** 🎓 at Federal University of ABC, Brazil
 - Focused on **Cybersecurity** and **Application Security** 🔒
 - Competing in **Capture The Flag** 🚩 events since 2021 ([results](ctf.md)).
@@ -57,7 +57,7 @@ São Paulo, Brazil (2022)
 
 ## 💼 Employment
 
-### Software Developer
+### Software Engineer
 
 ***Radix (IT and Engineering)**, <br>
 São Paulo, Brazil <br>
@@ -65,11 +65,11 @@ São Paulo, Brazil <br>
 
 Worked in an automation and digitalization project created by Acelen, a petrochemical industry firm focused on energy transition:
 
-- Developed several applications and automations with **Microsoft cloud ecosystem** (Sharepoint, Forms, Power Platform, etc.);
+- Created several applications and automations with **Microsoft cloud ecosystem** (Sharepoint, Forms, Power Platform, etc.);
 - Built a PDF data extractor with **Python, Tesseract, and OpenCV**, along with software development best practices, such as **SOLID** and **design patterns**;
 - Executed **DevOps** tasks, such as version control with **Git**, backlogging with **Microsoft DevOps**, and **documentation** writing;
 - Supported the development of a Microsoft Teams chatbot using **TypeScript, Node.js, Dockers, PostgreSQL, and Microsoft Azure**;
-- Worked in the development of a web application using **TypeScript, Angular and Bootstrap**;
+- Developed a interactive projects and programs roadmap using **TypeScript, Angular and Bootstrap**;
 - Taughted various team members in a weekly Microsoft Power Apps **mentorship**.
 
 <br>
@@ -98,7 +98,7 @@ São Paulo, Brazil <br>
   - Road route risk analysis app;
   - Vetting remote checklist app;
   - HES (health, environment and safety) inspections app;
-- **Optimized internal operations efficiency** and **allowed contributors to work safely during Covid-19 pandemics**.
+- **Optimized internal operations efficiency**, allowing contributors to **work safely during Covid-19 pandemics**.
 
 <br>
 
