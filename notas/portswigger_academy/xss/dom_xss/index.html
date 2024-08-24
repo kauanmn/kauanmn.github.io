@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>DOM-based XSS</title>
+    <meta name="description" content="Software Development | AppSec | Bug Bounty">
+    <meta name="keywords" content=''>
+
+    <meta property="og:url" content="http://192.168.0.19:1313/notas/portswigger_academy/xss/dom_xss/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="DOM-based XSS">
+    <meta property="og:description" content="Software Development | AppSec | Bug Bounty">
+    <meta property="og:image" content="http://192.168.0.19:1313/img/me.jpg">
+    <meta property="og:image:secure_url" content="http://192.168.0.19:1313/img/me.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="DOM-based XSS">
+    <meta name="twitter:description" content="Software Development | AppSec | Bug Bounty">
+    <meta property="twitter:domain" content="http://192.168.0.19:1313/notas/portswigger_academy/xss/dom_xss/">
+    <meta property="twitter:url" content="http://192.168.0.19:1313/notas/portswigger_academy/xss/dom_xss/">
+    <meta name="twitter:image" content="http://192.168.0.19:1313/img/me.jpg">
+
+    
+    <link rel="canonical" href="http://192.168.0.19:1313/notas/portswigger_academy/xss/dom_xss/">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.893af8dd3b65bd0ffe90e7af33847bd6dc9180b8fa6d6659a212a6f4b62d3e01.js" integrity="sha256-iTr43TtlvQ/&#43;kOevM4R71tyRgLj6bWZZohKm9LYtPgE="></script>
+
+    
+    
+        <!-- KaTeX -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js" integrity="sha384-X/XCfMm41VSsqRNQgDerQczD69XqmjOOOwYQvr/uuC+j4OPoNhVgjdGFwhvN02Ja" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          // customised options
+          // • auto-render specific keys, e.g.:
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false},
+          ],
+          // • rendering keys, e.g.:
+          throwOnError : false
+        });
+      });
+    </script>
+  
+    
+</head>
+<body>
+        <script>
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+        <div class="avatar">
+            <a href="http://192.168.0.19:1313/">
+                <img src='/img/me.jpg' alt="avatar">
+            </a>
+        </div>
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="http://192.168.0.19:1313/">kauan.m</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="http://192.168.0.19:1313/notas/"> ~/notas </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="http://192.168.0.19:1313/artigos/"> ~/artigos </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="http://192.168.0.19:1313/writeups/"> ~/writeups </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <span class="sr-only dark-theme-toggle-screen-reader-target"></span>
+                <a>
+                    <span class="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span class="sr-only hamburger-menu-toggle-screen-reader-target">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="http://192.168.0.19:1313/notas/"> ~/notas </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="http://192.168.0.19:1313/artigos/"> ~/artigos </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="http://192.168.0.19:1313/writeups/"> ~/writeups </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <span class="sr-only dark-theme-toggle-screen-reader-target">theme</span>
+                    <a>
+                        <span class="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    
+
+    <div class="post container">
+
+    <div class="post-header-section">
+        <h1>DOM-based XSS</h1>
+    </div>
+
+    <div class="post-content">
+        <p>In this section, we&rsquo;ll describe DOM-based XSS, explain how to find DOM XSS vulnerabilities, and talk about how to exploit DOM XSS with different sources and sinks.</p>
+<p>　</p>
+<h2 id="what-is-dom-based-xss">What is DOM-based XSS?</h2>
+<p>DOM-based XSS vulnerabilities usually arise when JavaScript takes data from attacker-controllable source, such as the URL, and passes it to a sink that supports dynamic code execution, such as <code>eval()</code> or <code>innerHTML</code>. This enables attackers to execute malicious JavaScript, which typically allows them to hijack other users&rsquo; accounts.</p>
+<p>To deliver a DOM-based XSS attack, you need to place data into a source so that it is propagated to a sink and causes execution of arbitrary JavaScript.</p>
+<p>The most common source for DOM XSS is the URL, which is typically accessed with the <code>window.location</code> object. An attacker can construct a link to send a victim to a vulnerable page with a payload in the query string and fragment portions of the URL. In certain circumstances, such as when targeting a 404 page or a website running PHP, the payload can also be placed in the path.</p>
+<p>For a detailed explanation of the taint flow between sources and sinks, please refer to the DOM-based vulnerabilities page.</p>
+<p>　</p>
+<h2 id="how-to-test-for-dom-based-xss">How to test for DOM-based XSS?</h2>
+<p>To test for DOM-based XSS manually, you generally need to use a browser with developer tools, such as Chrome. You need to work through each available source in turn, and test each one individually.</p>
+<h3 id="testing-html-sinks">Testing HTML sinks</h3>
+<p>To test for DOM XSS in an HTML sink, place a random alphanumeric string into the source (such as <code>location.string</code>), then use developer tools to inspect the HTML and find where your string appears (don&rsquo;t use &ldquo;View source&rdquo;).</p>
+<p>For each location where your string appears within the DOM, you need to identify the context. Based on this context, you need to refine your input to see how it is processed. For example, if your string appears within a double-quoted attribute then try to inject double quotes in your string to see if you can break out of the attribute.</p>
+<p>Note that browsers behave differently with regards to URL-encoding. Chrome, Firefox and Safari will URL-encode <code>location.search</code> and <code>location.hash</code>, while IE11 and Edge (pre-Chromium) will not URL-encode these sources. If your data gets URL-encoded before being processed, then an XSS attack is unlikely to work.</p>
+<h3 id="testing-javascript-execution-sinks">Testing JavaScript execution sinks</h3>
+<p>Testing JavaScript execution sinks for DOM-based XSS is a little harder. With these sinks, your input doesn&rsquo;t necessarily appear anywhere within the DOM, so you can&rsquo;t search for it. Instead, you&rsquo;ll need to use the JavaScript debugger to determine whether and how your input is sent to a sink.</p>
+<p>For each potential source, such as <code>location</code>, you first need to find cases within the page&rsquo;s JavaScript code where the source is being referenced. In Chrome&rsquo;s developer tools, you can use <code>Ctrl+Shift+F</code> to search all the page&rsquo;s JavaScript code for the source.</p>
+<p>Once you&rsquo;ve found where the source is being read, you can use the JavaScript debugger to add a break point and follow how the source&rsquo;s value is used. You might find that the source gets assigned to other variables. If this is the case, you&rsquo;ll need to use the search function again to track these variables and see if they&rsquo;re passed to a sink. When you find a sink that is being assigned data that originated from the source, you can use the debugger to inspect the value by hovering over the variable to show its value before it is sent to the sink. Then, as with HTML sinks, you need to refine your input to see if you can deliver a successful XSS attack.</p>
+<h3 id="testing-for-dom-xss-using-dom-invader">Testing for DOM XSS using DOM Invader</h3>
+<p>Identifying and exploiting DOM XSS in the wild can be a tedious process, often requiring you to manually trawl through complex, minified JavaScript. If you use Burp&rsquo;s browser, however, you can take advantage of its built-in DOM Invader extension, which does a lot of the hard work for you.</p>
+<p>　</p>
+<h2 id="exploiting-dom-xss-with-different-sources-and-sinks">Exploiting DOM XSS with different sources and sinks</h2>
+<p>In principle, a website is vulnerable to DOM-based XSS if there is an executable path via which data can propagate from source to sink. In practice, different sources and sinks have differing properties ad behavior that can affect exploitability, and determine what techniques are necessary. Additionally, the website&rsquo;s scripts might perform validation or other processing of data that must be accomodated when attempting to exploit a vulnerability. There are a variety of sinks that are relevant to DOM-based vulnerabilities.</p>
+<p>The <code>document.write</code> sink works with <code>script</code> elements, so you can use a simple payload, such as the one below:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>document.write(&#39;... &lt;<span style="color:#f92672">script</span>&gt;<span style="color:#a6e22e">alert</span>(document.<span style="color:#a6e22e">domain</span>)&lt;/<span style="color:#f92672">script</span>&gt; ...&#39;);
+</span></span></code></pre></div><p>Note, however, that in some situations the content that is written to <code>document.write</code> includes some surrounding context that you need to take account of it in your exploit. For example, you might need to close some existing elements before using your JavaScript payload.</p>
+<p>The <code>innerHTML</code> sink doesn&rsquo;t accespt <code>script</code> elements on any modern browser, nor will <code>svg onload</code> events fire. This means you will need to use alternative elements like <code>img</code> or <code>iframe</code>. Event handlers such as <code>onload</code> and <code>onerror</code> can be used in conjunction with these elements. For example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>element.innerHTML=&#39;... &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">1</span> <span style="color:#a6e22e">onerror</span><span style="color:#f92672">=</span><span style="color:#e6db74">alert(document.domain)</span>&gt; ...&#39;
+</span></span></code></pre></div><p>　</p>
+<h2 id="sources-and-sinks-in-third-party-dependencies">Sources and sinks in third-party dependencies</h2>
+<p>Modern web applications are typically built using a number of third-party libraries and frameworks, which often provide additional functions and capabilities for developers. It&rsquo;s important to remember that some of these are also potential sources and sinks for DOM XSS.</p>
+<h3 id="dom-xss-in-jquery">DOM XSS in jQuery</h3>
+<p>If a JavaScript library such as jQuery is being used, look out for sinks that can alter DOM elements on the page. For instance, jQuery&rsquo;s <code>attr()</code> function can change the attributes of DOM elements. If data is read from a user-controlled source like the URL, then passed to the <code>attr()</code> function, then it may be possible to manipulate the value sent to cause XSS.</p>
+<p>For example, here we have some JavaScript that changes an anchor element&rsquo;s <code>href</code> attribute using data from the URL:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">$</span>(<span style="color:#66d9ef">function</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;#backLink&#39;</span>).<span style="color:#a6e22e">attr</span>(<span style="color:#e6db74">&#34;href&#34;</span>,(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">URLSearchParams</span>(window.<span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">search</span>)).<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;returnUrl&#39;</span>));
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><p>You can exploit this by modifying the URL so that the <code>location.search</code> source contains a malicious JavaScript URL. After the page&rsquo;s JavaScript applies this malicious URL to the back link&rsquo;s <code>href</code>, clicking on the back link will execute it:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#f92672">?</span><span style="color:#a6e22e">returnUrl</span><span style="color:#f92672">=</span><span style="color:#a6e22e">javascript</span><span style="color:#f92672">:</span><span style="color:#a6e22e">alert</span>(document.<span style="color:#a6e22e">domain</span>)
+</span></span></code></pre></div><p>Another potential sink to look out for is jQuery&rsquo;s <code>$()</code> selector function, which can be used to inject malicious objects into the DOM.</p>
+<p>jQuery used to be extremely popular, and a classic DOM XSS vulnerability was caused by websites using this selector in conjunction with the <code>location.hash</code> source for animations or auto-scrolling to a particular element on the page. This behavior was often implemented using a vulnerable <code>hashchange</code> event handler, similar to the following:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">$</span>(window).<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#39;hashchange&#39;</span>, <span style="color:#66d9ef">function</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">element</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$</span>(<span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">hash</span>);
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">element</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">scrollIntoView</span>();
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><p>As the <code>hash</code> is user controllable, an attacker could use this to inject an XSS vector into the <code>$()</code> selector sink. More recent versions of jQuery have patched this particular vulnerability by preventing you from injecting HTML into a selector when the input begins with a hash character (<code>#</code>). However, you may still find vulnerable code in the wild.</p>
+<p>To actually exploit this classic vulnerability, you&rsquo;ll need to find a way to trigger a <code>hashchange</code> event without user interaction. One of the simplest ways of doing this is to deliver your exploit via an <code>iframe</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">iframe</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://vulnerable-website.com#&#34;</span> <span style="color:#a6e22e">onload</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;this.src+=&#39;&lt;img src=1 onerror=alert(1)&gt;&#39;&#34;</span>&gt;
+</span></span></code></pre></div><p>In this example, the <code>src</code> attribute points to the vulnerable page with an empty hash value. When the <code>iframe</code> is loaded, an XSS vector is appended to the hash, causing the <code>hashchange</code> event to fire.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">iframe</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://vulnerable-website.com#&#34;</span> <span style="color:#a6e22e">onload</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;this.src+=&#39;&lt;img src=1 onerror=alert(1)&gt;&#39;&#34;</span>&gt;
+</span></span></code></pre></div><p>In this example, the <code>src</code> attribute points to the vulnerable page with an empty hash value. When the <code>iframe</code> is loaded, an XSS vector is appended to the hash, causing the <code>hashchange</code> event to fire.</p>
+<h3 id="dom-xss-in-angularjs">DOM XSS in AngularJS</h3>
+<p>If a framework like AngularJS is used, it may be possible to execute JavaScript without angle brackets or events. When a site uses the <code>ng-app</code> attribute on an HTML element, it will be processed by AngularJS. In this case, AngularJS will execute JavaScript inside double curly braces that can occur directly in HTML or inside attributes.</p>
+<p>　</p>
+<h2 id="dom-xss-combined-with-reflected-and-stored-data">DOM XSS combined with reflected and stored data</h2>
+<p>Some pure DOM-based vulnerabilities are self-contained within a single page. If a script reads some data from the URL and writes it to a dangerous sink, then the vulnerability is entirely client-side.</p>
+<p>However, sources aren&rsquo;t limited to data that is directly exposed by browsers - they can also originate from the website. For example, websites often reflect URL parameters in the HTML response from the server. This is commmonly associated with normal XSS, but it can also lead to reflected DOM XSS vulnerabilities.</p>
+<p>In a reflected DOM XSS vulnerability, the server processes data from the request, and echoes the data into the response. The reflected data might be placed into a JavaScript string literal, or a data item within the DOM, such as a form field. A script on the page then processes the reflected data in an unsafe way, ultimately writing it to a dangerous sink.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>eval(<span style="color:#e6db74">&#39;var data = &#34;reflected string&#34;&#39;</span>);
+</span></span></code></pre></div><p>Websites may also store data on the server and reflect it elsewhere. In a stored DOM XSS vulnerability, the server receives data from one request, stores it, and then includes the data in a later response. A script within the later response contains a sink which then processes the data in an unsafe way.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">element</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">comment</span>.<span style="color:#a6e22e">author</span>
+</span></span></code></pre></div><p>　</p>
+<h2 id="which-sinks-can-lead-to-dom-xss-vulnerabilities">Which sinks can lead to DOM XSS vulnerabilities?</h2>
+<p>The following are some of the main sinks that can lead to DOM XSS vulnerabilities:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>document.<span style="color:#a6e22e">write</span>()
+</span></span><span style="display:flex;"><span>document.<span style="color:#a6e22e">writeln</span>()
+</span></span><span style="display:flex;"><span>document.<span style="color:#a6e22e">domain</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">element</span>.<span style="color:#a6e22e">innerHTML</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">element</span>.<span style="color:#a6e22e">outerHTML</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">element</span>.<span style="color:#a6e22e">insertAdjacentHTML</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">element</span>.<span style="color:#a6e22e">onevent</span>
+</span></span></code></pre></div><p>The following jQuery functions are also sinks that can lead to DOM XSS vulnerabilities:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">add</span>()
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">after</span>()
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">append</span>()
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">animate</span>()
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">insertAfter</span>()
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">insertBefore</span>()
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">before</span>()
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">html</span>()
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">prepend</span>()
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">replaceAll</span>()
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">replaceWith</span>()
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">wrap</span>()
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">wrapInner</span>()
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">wrapAll</span>()
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">has</span>()
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">constructor</span>()
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">init</span>()
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">index</span>()
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">jQuery</span>.<span style="color:#a6e22e">parseHTML</span>()
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">$</span>.<span style="color:#a6e22e">parseHTML</span>()
+</span></span></code></pre></div><p>　</p>
+<h2 id="how-to-prevent-dom-xss-vulnerabilities">How to prevent DOM XSS vulnerabilities</h2>
+<p>In addition to the general measures described on the DOM-based vulnerabilities page, you should avoid allowing data from any untrusted source to be dynamically written to the HTML document.</p>
+
+    </div>
+</div>
+
+
+
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>&copy; 2024 Kauan Manzato</span>
+    
+    <span>
+        Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
+    </span>
+</footer>
+</body>
+</html>

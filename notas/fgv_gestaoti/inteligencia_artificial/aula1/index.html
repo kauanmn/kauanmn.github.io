@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Aula 1</title>
+    <meta name="description" content="Software Development | AppSec | Bug Bounty">
+    <meta name="keywords" content=''>
+
+    <meta property="og:url" content="http://192.168.0.19:1313/notas/fgv_gestaoti/inteligencia_artificial/aula1/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Aula 1">
+    <meta property="og:description" content="Software Development | AppSec | Bug Bounty">
+    <meta property="og:image" content="http://192.168.0.19:1313/img/me.jpg">
+    <meta property="og:image:secure_url" content="http://192.168.0.19:1313/img/me.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Aula 1">
+    <meta name="twitter:description" content="Software Development | AppSec | Bug Bounty">
+    <meta property="twitter:domain" content="http://192.168.0.19:1313/notas/fgv_gestaoti/inteligencia_artificial/aula1/">
+    <meta property="twitter:url" content="http://192.168.0.19:1313/notas/fgv_gestaoti/inteligencia_artificial/aula1/">
+    <meta name="twitter:image" content="http://192.168.0.19:1313/img/me.jpg">
+
+    
+    <link rel="canonical" href="http://192.168.0.19:1313/notas/fgv_gestaoti/inteligencia_artificial/aula1/">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.893af8dd3b65bd0ffe90e7af33847bd6dc9180b8fa6d6659a212a6f4b62d3e01.js" integrity="sha256-iTr43TtlvQ/&#43;kOevM4R71tyRgLj6bWZZohKm9LYtPgE="></script>
+
+    
+    
+        <!-- KaTeX -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js" integrity="sha384-X/XCfMm41VSsqRNQgDerQczD69XqmjOOOwYQvr/uuC+j4OPoNhVgjdGFwhvN02Ja" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          // customised options
+          // • auto-render specific keys, e.g.:
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false},
+          ],
+          // • rendering keys, e.g.:
+          throwOnError : false
+        });
+      });
+    </script>
+  
+    
+</head>
+<body>
+        <script>
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+        <div class="avatar">
+            <a href="http://192.168.0.19:1313/">
+                <img src='/img/me.jpg' alt="avatar">
+            </a>
+        </div>
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="http://192.168.0.19:1313/">kauan.m</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="http://192.168.0.19:1313/notas/"> ~/notas </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="http://192.168.0.19:1313/artigos/"> ~/artigos </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="http://192.168.0.19:1313/writeups/"> ~/writeups </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <span class="sr-only dark-theme-toggle-screen-reader-target"></span>
+                <a>
+                    <span class="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span class="sr-only hamburger-menu-toggle-screen-reader-target">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="http://192.168.0.19:1313/notas/"> ~/notas </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="http://192.168.0.19:1313/artigos/"> ~/artigos </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="http://192.168.0.19:1313/writeups/"> ~/writeups </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <span class="sr-only dark-theme-toggle-screen-reader-target">theme</span>
+                    <a>
+                        <span class="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Aula 1</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">July 16, 2024
+        
+        </p>
+
+        <ul class="post-tags">
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <h2 id="bibliografia">Bibliografia</h2>
+<ol>
+<li>Tom Taulli - Introdução à Inteligência Artificial</li>
+<li>Adriano Mussa - Inteligência Artificial</li>
+<li>André Carlos et al. - Inteligência Artificial</li>
+<li>Dora Kaufman - Desmistificando a Inteligência Artificial</li>
+<li>Kai-Fu Lee - Inteligência Artificial</li>
+<li>Norvig &amp; Russell - Inteligência Artificial <strong>(principal)</strong></li>
+</ol>
+<hr>
+<h2 id="conceitos-essenciais-de-big-data">Conceitos Essenciais de Big Data</h2>
+<ul>
+<li><strong>Dado</strong>: registro solto, aleatório, sem qualquer análise.
+<ul>
+<li>Um dado sozinho não diz nada, não tem muito valor</li>
+</ul>
+</li>
+<li><strong>Informação</strong>: dado após o processo de interpretação</li>
+<li><strong>Conhecimento</strong>: informação que passa por processo de análise e trabalho</li>
+</ul>
+<h4 id="dados--informação--conhecimento--tomada-de-decisão--ação--benefícios">Dados → Informação → Conhecimento → Tomada de Decisão → Ação → Benefícios</h4>
+<p><strong>Importante</strong>:</p>
+<blockquote>
+<p><strong>O principal objetivo é extrair informações dos dados e transformá-las em conhecimento que possa ser usado para a tomada de decisões.</strong></p>
+</blockquote>
+<hr>
+<h2 id="dados-estruturados-x-não-estruturados">Dados Estruturados x Não Estruturados</h2>
+<ul>
+<li><strong>Dados Estruturados</strong>: dados que contêm uma organização para serem recuperados
+<ul>
+<li>como se fossem etiquetas, linhas e colunas que identificam diversos pontos sobre aquela informação e tornam o trabalho da tecnologia bem simplificado</li>
+<li>imagine sua lista de compras no excel, onde existem colunas <code>&quot;Nome&quot;</code>, <code>&quot;Qtd&quot;</code> e <code>&quot;Preço&quot;</code>. Você sabe previamente qual informação estará em cada coluna de cada linha subsequente</li>
+</ul>
+</li>
+<li><strong>Dados Não Estruturados</strong>: significa que eles não têm relação entre si e nenhuma estrutura definida
+<ul>
+<li>são, por exemplo, posts no facebook, vídeos, fotos, tweets, geolocalização, comportamento do usuário etc.</li>
+</ul>
+</li>
+<li><strong>Dados Semiestruturados</strong>: forma de dados estruturados que não está em conformidade com a estrutura formal de modelos de dados associados a bancos de dados relacionais ou outras formas de tabelas de dados, mas mesmo assim contém tags ou outros marcadores para separar elementos semânticos e impor hierarquias de registros e campos nos dados
+<ul>
+<li>também conhecida como estrutura autodescritiva, ex.: JSON e XML</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="metadados">Metadados</h2>
+<ul>
+<li>do ponto de vista técnico, não é uma estrutura de dados separada, mas é um dos elementos mais importantes para a análise de big data e soluções de big data</li>
+<li>fornece informações adicionais sobre um conjunto específico de dados
+<ul>
+<li>por exemplo, em um conjunto de fotografias, os metadados podem descrever quando e onde as fotos foram tiradas. Os metadados fornecem campos apara datas e locais que, por si só, podem ser considerados estruturados</li>
+<li>por esse motivo, os metadados são usados por soluções de big data para análise inicial</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="data-science">Data Science</h2>
+<ul>
+<li>matemática e estatística</li>
+<li>ciência da computação</li>
+<li>conhecimento das áreas de negócio</li>
+</ul>
+<hr>
+<h2 id="data-driven-culture">Data-Driven Culture</h2>
+<ul>
+<li>empresa com cultura orientada a dados</li>
+<li>reconhece a importância do big data e como a análise desses dados pode levar a empresa a criar produtos e serviços personalizados e totalmente aderentes às necessidades do público</li>
+</ul>
+<hr>
+<h2 id="análise-de-dados">Análise de Dados</h2>
+<p>Tipos de análises:</p>
+<ol>
+<li><strong>Descritiva</strong>: o que aconteceu?</li>
+<li><strong>Diagnóstica</strong>: por que isso aconteceu?</li>
+<li><strong>Preditiva</strong>: o que acontecerá?</li>
+<li><strong>Prescritiva</strong>: o que deve ser feito?</li>
+</ol>
+<p>Ordem das análises: descritiva → diagnóstica → preditiva → prescritiva</p>
+<h3 id="análise-descritiva">Análise Descritiva</h3>
+<ul>
+<li>usa dados históricos e atuais de várias fontes para descrever o estado atual, identificando tendências e padrões</li>
+<li>como a análise descritiva não emite julgamento de valor, ela é indicada para visualizar os dados e entender o impacto no presente, mas sem fazer relação com o passado ou o futuro</li>
+<li>ajuda a tomar decisões imediatas com tranquilidade e segurança</li>
+<li>pode incluir cálculos de média, mediana, moda, desvio padrão, gráficos de barras, histogramas, etc.</li>
+</ul>
+<h3 id="análise-diagnóstica">Análise Diagnóstica</h3>
+<ul>
+<li>usa dados (muitas vezes gerados por análises descritivas) para descobrir os fatores ou motivos do desempenho passado</li>
+<li>particularmente útil quando há problemas ou fenômenos indesejados que precisam ser compreendidos em termos de suas causas</li>
+</ul>
+<h3 id="análise-preditiva">Análise Preditiva</h3>
+<ul>
+<li>aplica técnicas como modelagem estatística, previsão e aprendizado de máquina à saída de análises descritivas e de diagnóstico para fazer previsões sobre resultados futuros</li>
+<li>inclui técnicas como regressão linear, regressão logística, árvores de decisão, redes neurais, etc.</li>
+</ul>
+<h3 id="análise-prescritiva">Análise Prescritiva</h3>
+<ul>
+<li>análise avançada que envolve a aplicação de testes e outras técnicas para recomendar soluções específicas que fornecerão os resultados desejados</li>
+<li>vai além da análise preditiva, fornecendo recomendações ou sugestões de ação com base em insights extraídos dos dados</li>
+<li>pode incluir otimização, simulação e modelagem de cenários</li>
+</ul>
+
+        
+    </div>
+
+    <div class="prev-next">
+        
+    </div>
+
+    
+    
+    
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>&copy; 2024 Kauan Manzato</span>
+    
+    <span>
+        Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
+    </span>
+</footer>
+</body>
+</html>

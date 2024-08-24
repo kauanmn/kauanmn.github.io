@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>XSS (Cross-site scripting)</title>
+    <meta name="description" content="Software Development | AppSec | Bug Bounty">
+    <meta name="keywords" content=''>
+
+    <meta property="og:url" content="http://192.168.0.19:1313/notas/portswigger_academy/xss/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="XSS (Cross-site scripting)">
+    <meta property="og:description" content="Software Development | AppSec | Bug Bounty">
+    <meta property="og:image" content="http://192.168.0.19:1313/img/me.jpg">
+    <meta property="og:image:secure_url" content="http://192.168.0.19:1313/img/me.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="XSS (Cross-site scripting)">
+    <meta name="twitter:description" content="Software Development | AppSec | Bug Bounty">
+    <meta property="twitter:domain" content="http://192.168.0.19:1313/notas/portswigger_academy/xss/">
+    <meta property="twitter:url" content="http://192.168.0.19:1313/notas/portswigger_academy/xss/">
+    <meta name="twitter:image" content="http://192.168.0.19:1313/img/me.jpg">
+
+    
+    <link rel="canonical" href="http://192.168.0.19:1313/notas/portswigger_academy/xss/">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.893af8dd3b65bd0ffe90e7af33847bd6dc9180b8fa6d6659a212a6f4b62d3e01.js" integrity="sha256-iTr43TtlvQ/&#43;kOevM4R71tyRgLj6bWZZohKm9LYtPgE="></script>
+
+    
+    
+        <!-- KaTeX -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js" integrity="sha384-X/XCfMm41VSsqRNQgDerQczD69XqmjOOOwYQvr/uuC+j4OPoNhVgjdGFwhvN02Ja" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          // customised options
+          // • auto-render specific keys, e.g.:
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false},
+          ],
+          // • rendering keys, e.g.:
+          throwOnError : false
+        });
+      });
+    </script>
+  
+    
+</head>
+<body>
+        <script>
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+        <div class="avatar">
+            <a href="http://192.168.0.19:1313/">
+                <img src='/img/me.jpg' alt="avatar">
+            </a>
+        </div>
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="http://192.168.0.19:1313/">kauan.m</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="http://192.168.0.19:1313/notas/"> ~/notas </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="http://192.168.0.19:1313/artigos/"> ~/artigos </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="http://192.168.0.19:1313/writeups/"> ~/writeups </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <span class="sr-only dark-theme-toggle-screen-reader-target"></span>
+                <a>
+                    <span class="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span class="sr-only hamburger-menu-toggle-screen-reader-target">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="http://192.168.0.19:1313/notas/"> ~/notas </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="http://192.168.0.19:1313/artigos/"> ~/artigos </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="http://192.168.0.19:1313/writeups/"> ~/writeups </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <span class="sr-only dark-theme-toggle-screen-reader-target">theme</span>
+                    <a>
+                        <span class="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    
+
+    <div class="post container">
+
+    <div class="post-header-section">
+        <h1>XSS (Cross-site scripting)</h1>
+    </div>
+
+    <div class="post-content">
+        <p>In this section, we&rsquo;ll explain what cross-site scripting is, describe the different varieties of cross-site scripting vulnerabilities, and spell out how to find and prevent cross-site scripting.</p>
+<p>　</p>
+<h3 id="what-is-xss-cross-site-scripting">What is XSS (cross-site scripting)?</h3>
+<p>Cross-site scripting (also known as XSS) is a <strong>web security vulnerability</strong> that <strong>allows an attacker to compromise the interactions that users have with a vulnerable application</strong>.</p>
+<p>It allows an attacker to circumvent the same origin policy, which is designed to segregate different websites from each other. Cross-site scripting vulnerabilities normally allow an attacker to masquerade as a victim user, to carry out any actions that the user is able to perform, and to access any of the user&rsquo;s data. If the victim user has a privileged access within the application, then the attacker might be able to gain full control over all of the application&rsquo;s functionality and data.</p>
+<p>　</p>
+<h3 id="how-does-xss-work">How does XSS work?</h3>
+<p>Cross-site scripting works by manipulating a vulnerable web site so that it returns malicious JavaScript to users. When the malicious code executes inside a victim&rsquo;s browser, the attacker can fully compromise their interaction with the application.</p>
+<p>　</p>
+<h3 id="xss-proof-of-concept">XSS proof of concept</h3>
+<p>You can confirm most kinds of XSS vulnerability by injecting a payload that causes your own browser to execute some arbitrary JavaScript. It&rsquo;s long been common practice to use the <code>alert()</code> function for this purpose because it&rsquo;s short, harmless, and pretty hard to miss when it&rsquo;s successfully called. In fact, you solve the majority of our XSS labs by invoking <code>alert()</code> in a simulated victim&rsquo;s browser.</p>
+<p>Unfortunately, there&rsquo;s a slight hitch if you use Chrome. From version 92 onward (July, 2021), cross-origin iframes are prevented from calling <code>alert()</code>. As these are used to construct some of the more advanced XSS attacks, you&rsquo;ll sometimes need to use an alternative PoC payload. In this scenario, we recommend the <code>print()</code> function.</p>
+<p>　</p>
+<h3 id="what-are-the-types-of-xss-attacks">What are the types of XSS attacks?</h3>
+<p>There are three main types of XSS attacks. These are:</p>
+<ul>
+<li><strong>Reflected XSS</strong>: the malicious script comes from the current HTTP request</li>
+<li><strong>Stored XSS</strong>: the malicious script comes from the website&rsquo;s database</li>
+<li><strong>DOM-based XSS</strong>: the vulnerability exists in client-side code rather than server-side code</li>
+</ul>
+<h4 id="reflected-xss">Reflected XSS</h4>
+<p><strong>Reflected XSS</strong> is the simplest variety of XSS. It arises when an application receives data in an HTTP request and includes that data within the immediate response in an unsafe way.</p>
+<p>Here is a simple exemple of a reflected XSS vulnerability:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>https://insecure-website.com/status?message=All+is+well.
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">p</span>&gt;Status: All is well.&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span></code></pre></div><p>The application doesn&rsquo;t perform any other processing of the data, so an attacker can easily construct an attack like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>https://insecure-website.com/status?message=&lt;<span style="color:#f92672">script</span>&gt;<span style="color:#75715e">/*+Bad+stuff+here...+*/</span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">p</span>&gt;Status: &lt;<span style="color:#f92672">script</span>&gt;<span style="color:#75715e">/* Bad stuff here... */</span>&lt;/<span style="color:#f92672">script</span>&gt;&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span></code></pre></div><p>If the user visits the URL constructed by the attacker, then the attacker&rsquo;s script executes in the user&rsquo;s browser, in the context of that user&rsquo;s session with the application. At that point, the script can carry out any action, and retrieve any data, to which the user has access.</p>
+<h4 id="stored-xss">Stored XSS</h4>
+<p>Stored XSS (also known as persistent XSS) arises when an application receives data from an untrusted source and includes that data within its later HTTP responses in an unsafe way.</p>
+<p>The data in question might be submitted to the application via HTTP requests; for example, comments on a blog post, user nicknames in a chat room, or contact details on a customer order. In other cases, the data might arrive from other untrusted sources; for example, a webmail application displaying messages received over SMTP, a marketing application displaying social media posts, or a network monitoring application displaying packet data from network traffic.</p>
+<p>Here is a simple example of a stored XSS vulnerability. A message board application lets users submit messages, which are displayed to other users:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">p</span>&gt;Hello, this is my message!&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span></code></pre></div><p>The application doesn&rsquo;t perform any other processing of the data, so an attacker can easily send a message that attacks other users:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">p</span>&gt;&lt;<span style="color:#f92672">script</span>&gt;<span style="color:#75715e">/* Bad stuff here... */</span>&lt;/<span style="color:#f92672">script</span>&gt;&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span></code></pre></div><h4 id="dom-based-xss">DOM-based XSS</h4>
+<p><strong>DOM-based XSS</strong> arises when an application contains some client-side JavaScript that processes data from an untrusted source in an unsafe way, usually by writing the data back to the DOM.</p>
+<p>In the following example, an application uses some Javascript to read the value from an input field and write that value to an element within the HTML:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">search</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;search&#39;</span>).<span style="color:#a6e22e">value</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">results</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;results&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">results</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;You searched for: &#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">search</span>;
+</span></span></code></pre></div><p>If the attacker can control the value of the input field, they can easily construct a malicious value that causes their own script to execute:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>You searched for: &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">1</span> <span style="color:#a6e22e">onerror</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;/* Bad stuff here... */&#39;</span>&gt;
+</span></span></code></pre></div><p>In a typical case, the input field would be populated from part of the HTTP request, such as a URL query string parameter, allowing the attacker to deliver an attack using a malicious URL, in the same manner as reflected XSS.</p>
+<p>　</p>
+<h3 id="what-can-xss-be-used-for">What can XSS be used for?</h3>
+<p>An attacker who exploits a cross-site scripting vulnerability is typically able to:</p>
+<ul>
+<li>Impersonate or masquerade as the victim user</li>
+<li>Carry out any action that the user is able to perform</li>
+<li>Read any data that the user is able to access</li>
+<li>Capture the user&rsquo;s login credentials</li>
+<li>Perform virtual defacement of the web site</li>
+<li>Inject trojan functionality into the web site</li>
+</ul>
+<p>　</p>
+<h3 id="impact-of-xss-vulnerabilities">Impact of XSS vulnerabilities</h3>
+<p>The actual impact of an XSS attack generally depends on the nature of the application, its functionality and data, and the status of the compromised user. For example:</p>
+<ul>
+<li>
+<p>In a brochureware application, where all users are anonymous and all information is public, the impact will often be minimal</p>
+</li>
+<li>
+<p>In an application holding sensitive data, such as banking transactions, emails, or healthcare records, the impact will usually be serious</p>
+</li>
+<li>
+<p>If the compromised user has elevated privileges within the application, then the impact will generally be critical, allowing the attacker to take full control of the vulnerable application and compromise all users and their data</p>
+</li>
+</ul>
+<p>　</p>
+<h3 id="how-to-find-and-test-for-xss-vulnerabilities">How to find and test for XSS vulnerabilities</h3>
+<p>The vast majority of XSS vulnerabilities can be found quickly and realibly using Burp Suite&rsquo;s web vulnerability scanner.</p>
+<p>Manually testing for reflected and stored XSS normally involves submitting some simple unique input (such as short alphanumeric string) into every entry point in the application, identifying every location where the submitted input is returned in HTTP responses, and testing each location individually to determine whether suitably crafted input can be used to execute arbitrary Javascript. In this way, you can determine the context in which the XSS occurs and select a suitable payload to exploit it.</p>
+<p>Manually testing for DOM-based XSS arising from URL paramters involves a similar process: placing some simple unique input in the parameter, using the browser&rsquo;s developer tools to search the DOM for this input, and testing each location to determine whether it is exploitable. However, other types of DOM XSS are harder to detect. To find DOM-based vulnerabilities in non-URL-based input (such as <code>document.cookie</code>) or non-HTML-based sinks (like <code>setTimeout</code>), there is no substitute for reviewing Javascript code, which can be extremely time-consuming. Burp Suite&rsquo;s web vulnerability scannre combines static and dynamic analysis of Javascript to reliably automate the detection of DOM-based vulnerabilities.</p>
+<p>　</p>
+<h3 id="content-security-policy">Content Security Policy</h3>
+<p><strong>CSP (Content Security Policy)</strong> is a browser mechanism that aims to mitigate the impact of XSS and some other vulnerabilities. If an application that employs CSP contains XSS-like behavior, then the CSP might hinder or prevent exploitation of the vulnerability. Often, the CSP can be circumvented to enable exploitation of the underlying vulnerability.</p>
+<p>　</p>
+<h3 id="dangling-markup-injection">Dangling markup injection</h3>
+<p>Dangling markup injection is a technique that can be used to capture data cross-domain in situations where a full XSS exploit is not possible, due to input filters or other defenses. It can often be exploited to capture sensitive information that is visible to other users, including CSRF tokens that can be used to perform unauthorized actions on behalf of the user</p>
+<p>　</p>
+<h3 id="how-to-prevent-xss-attacks">How to prevent XSS attacks</h3>
+<p>Preventing XSS is trivial in some cases but can be much harder depending on the complexity of the application and the ways it handles user-controllable data</p>
+<p>In general, effectively preventing XSS vulnerabilities is likely to involve a combination of the following measures:</p>
+<ul>
+<li>
+<p><strong>Filter input on arrival</strong>: at the point where user input is received, filter as strictly as possible based on what is expected or valid input</p>
+</li>
+<li>
+<p><strong>Encode data on output</strong>: at the point where user-controllable data is output in HTTP responses, encode the output to prevent it from being interpreted as active content</p>
+</li>
+<li>
+<p><strong>Use appropriate response headers</strong>: to prevent XSS in HTTP responses that aren&rsquo;t intended to contain any HTML or JavaScript, you can use the <code>Content-Type</code> and <code>X-Content-Type-Options</code> headers to ensure that browsers interpret the responses in the way you intend</p>
+</li>
+<li>
+<p><strong>CSP (Content Security Policy)</strong>: as a last line of defense, you can use CSP to reduce the severity of any XSS vulnerabilities that still occur</p>
+</li>
+</ul>
+<p>　</p>
+<h3 id="common-questions-about-xss">Common questions about XSS</h3>
+<ul>
+<li>
+<p><strong>How common are XSS vulnerabilities</strong>? XSS vulnerabilities are very common, and XSS is probably the most frequently occurring web security vulnerability</p>
+</li>
+<li>
+<p><strong>How common are XSS attacks?</strong> It is difficult to get reliable data about real-world XSS attacks, but it is probably less frequently exploited than other vulnerabilities</p>
+</li>
+<li>
+<p><strong>What is the difference between XSS and CSRF?</strong> XSS involves causing a web site to return malicious Javascript, while CSRF involves inducing a victim user to perform actions they do not intend to do.</p>
+</li>
+<li>
+<p><strong>What is the difference between XSS and SQL Injection?</strong> XSS is a client-side vulnerability that targets other application users, while SQL injection is a server-side vulnerability that targets the application&rsquo;s database.</p>
+</li>
+<li>
+<p><strong>How do I prevent XSS in PHP?</strong> Filter your inputs with a whitelist of allowed characters and use type hints or type casting. Escape your outputs with <code>htmlentities</code> and <code>ENT_QUOTES</code> for HTML contexts, or JavaScripts Unicode escapes for JavaScripts contexts.</p>
+</li>
+<li>
+<p><strong>How do I prevent XSS in Java?</strong> Filter your inputs with a whitelist of allowed characters and use a library such as <em>Google Guava</em> to HTML-encode your output for HTML contexts, or use JavaScript Unicode escapes for JavaScript contexts.</p>
+</li>
+</ul>
+<hr>
+<h3 id="more-info">More info</h3>
+<ul>
+<li><a href="/notas/portswigger_academy/xss/reflected_xss">Reflected XSS</a></li>
+<li><a href="/notas/portswigger_academy/xss/stored_xss">Stored XSS</a></li>
+<li><a href="/notas/portswigger_academy/xss/dom_xss">DOM-based XSS</a></li>
+<li><a href="/notas/portswigger_academy/xss/xss_contexts">XSS Contexts</a></li>
+<li><a href="/notas/portswigger_academy/xss/exploiting_xss">Exploiting XSS vulnerabilities</a></li>
+</ul>
+
+    </div>
+</div>
+
+
+
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>&copy; 2024 Kauan Manzato</span>
+    
+    <span>
+        Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
+    </span>
+</footer>
+</body>
+</html>

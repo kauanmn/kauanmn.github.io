@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Aula 5</title>
+    <meta name="description" content="Software Development | AppSec | Bug Bounty">
+    <meta name="keywords" content=''>
+
+    <meta property="og:url" content="http://localhost:1313/notas/fgv_gestaoti/blockchain/aula5/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Aula 5">
+    <meta property="og:description" content="Software Development | AppSec | Bug Bounty">
+    <meta property="og:image" content="http://localhost:1313/img/me.jpg">
+    <meta property="og:image:secure_url" content="http://localhost:1313/img/me.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Aula 5">
+    <meta name="twitter:description" content="Software Development | AppSec | Bug Bounty">
+    <meta property="twitter:domain" content="http://localhost:1313/notas/fgv_gestaoti/blockchain/aula5/">
+    <meta property="twitter:url" content="http://localhost:1313/notas/fgv_gestaoti/blockchain/aula5/">
+    <meta name="twitter:image" content="http://localhost:1313/img/me.jpg">
+
+    
+    <link rel="canonical" href="http://localhost:1313/notas/fgv_gestaoti/blockchain/aula5/">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.893af8dd3b65bd0ffe90e7af33847bd6dc9180b8fa6d6659a212a6f4b62d3e01.js" integrity="sha256-iTr43TtlvQ/&#43;kOevM4R71tyRgLj6bWZZohKm9LYtPgE="></script>
+
+    
+    
+        <!-- KaTeX -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js" integrity="sha384-X/XCfMm41VSsqRNQgDerQczD69XqmjOOOwYQvr/uuC+j4OPoNhVgjdGFwhvN02Ja" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          // customised options
+          // • auto-render specific keys, e.g.:
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false},
+          ],
+          // • rendering keys, e.g.:
+          throwOnError : false
+        });
+      });
+    </script>
+  
+    
+</head>
+<body>
+        <script>
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+        <div class="avatar">
+            <a href="http://localhost:1313/">
+                <img src='/img/me.jpg' alt="avatar">
+            </a>
+        </div>
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="http://localhost:1313/">kauan.m</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="http://localhost:1313/notas/"> ~/notas </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="http://localhost:1313/artigos/"> ~/artigos </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <span class="sr-only dark-theme-toggle-screen-reader-target"></span>
+                <a>
+                    <span class="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span class="sr-only hamburger-menu-toggle-screen-reader-target">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="http://localhost:1313/notas/"> ~/notas </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="http://localhost:1313/artigos/"> ~/artigos </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <span class="sr-only dark-theme-toggle-screen-reader-target">theme</span>
+                    <a>
+                        <span class="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Aula 5</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">July 19, 2024
+        
+        </p>
+
+        <ul class="post-tags">
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <h2 id="recursos">Recursos</h2>
+<p><strong>Recurso</strong> é tudo que <strong>serve para a execução das atividades</strong> (recursos de trabalho) <strong>ou que é consumido por elas</strong> (recursos consumidos). Enquadram em três grandes grupos:</p>
+<ul>
+<li>recursos humanos</li>
+<li>equipamentos</li>
+<li>materiais</li>
+</ul>
+<hr>
+<h2 id="prazos-e-custos">Prazos e Custos</h2>
+<ul>
+<li><strong>Prazos</strong>: estimativa do tempo do projeto em termos de duração e data das atividades</li>
+<li><strong>Custos</strong>: estimativa dos custos unitários e totais dos recursos necessários para realizar as atividades do projeto</li>
+</ul>
+<hr>
+<h2 id="requisitos">Requisitos</h2>
+<p><strong>Condição ou capacidade que precisa ser alcançada ou possuída</strong> por um produto, serviço, sistema ou resultado, a fim de satisfazer um contrato, padrão, especificação ou qualquer outro documento formal</p>
+<ul>
+<li>
+<p>representam necessidades, desejos ou expectativas de um patrocinador, cliente ou um outro stakeholder</p>
+</li>
+<li>
+<p>precisam ser levantados, analisados e registrados de tal forma que possam ser quantificados e medidos ao longo do projeto</p>
+</li>
+</ul>
+<hr>
+<h2 id="dados">Dados</h2>
+<ul>
+<li><strong>coleta</strong>: localização e extração dos dados (datasets) para atender as razões</li>
+<li><strong>descrição</strong>: identificação do formato, quantidade e outras características dos dados</li>
+<li><strong>exploração</strong>: navegação pelos dados em termos de pesquisa, visualização e reporte</li>
+<li><strong>verificação</strong>: avaliação da qualidade dos dados</li>
+<li><strong>seleção</strong>: definição de quais dados serão incluídos e excluídos e porque</li>
+<li><strong>limpeza</strong>: ações para resolver os problemas de qualidade dos dados</li>
+<li><strong>construção</strong>: criação de novos atributos e registros</li>
+<li><strong>integração</strong>: ações como merge e agregação para trabalhar os dados</li>
+<li><strong>formatação</strong>: acertos na ordem e sintaxe dos dados</li>
+</ul>
+<hr>
+<h2 id="usos-de-big-data--ia">Usos de Big Data + IA</h2>
+<ul>
+<li>otimização de rotas</li>
+<li>cadeia de distribuição inteligente</li>
+<li>previsão de demandas de saúde de pacientes</li>
+<li>detecção de fraudes</li>
+<li>previsão de demanda</li>
+</ul>
+<hr>
+<h2 id="limitações-da-ia">Limitações da IA</h2>
+<ul>
+<li>ausência de inteligência cognitiva; escopo amplo</li>
+<li>ausência de inteligência social, sem empatia</li>
+<li>problemas e manipulação de alta precisão
+<ul>
+<li>ex.: mãos são altamente versáteis</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="obstáculos-à-ia">Obstáculos à IA</h2>
+<ul>
+<li>restrições regulatórias (governos)</li>
+<li>inércia dos mercados (ex.: empresas)</li>
+<li>fricções sociais (ex.: ONGs e sindicatos)</li>
+</ul>
+<hr>
+<h2 id="desafios">Desafios</h2>
+<ul>
+<li>dinâmica de equilíbrio da economia</li>
+<li>deskilling x upskilling</li>
+<li>impacto de IA nos empregos</li>
+<li>ameaça de desempenho
+<ul>
+<li>deep learning são caixas-pretas e necessidam de muitos dados</li>
+<li>como confiar em algo que não é completamente entendido?</li>
+<li>5% de vítimas fatais seria aceitável em carros autônomos?</li>
+<li>algoritmos de IA funcionam em ambientes com regras limitadas e conhecidas</li>
+</ul>
+</li>
+</ul>
+
+        
+    </div>
+
+    <div class="prev-next">
+        
+    </div>
+
+    
+    
+    
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>&copy; 2024 Kauan Manzato</span>
+    
+    <span>
+        Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
+    </span>
+</footer>
+</body>
+</html>

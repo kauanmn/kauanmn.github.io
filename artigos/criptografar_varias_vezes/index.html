@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Por que criptografar várias vezes pode ser ruim?</title>
+    <meta name="description" content="Software Development | AppSec | Bug Bounty">
+    <meta name="keywords" content=''>
+
+    <meta property="og:url" content="http://192.168.0.19:1313/artigos/criptografar_varias_vezes/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Por que criptografar várias vezes pode ser ruim?">
+    <meta property="og:description" content="Software Development | AppSec | Bug Bounty">
+    <meta property="og:image" content="http://192.168.0.19:1313/img/me.jpg">
+    <meta property="og:image:secure_url" content="http://192.168.0.19:1313/img/me.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Por que criptografar várias vezes pode ser ruim?">
+    <meta name="twitter:description" content="Software Development | AppSec | Bug Bounty">
+    <meta property="twitter:domain" content="http://192.168.0.19:1313/artigos/criptografar_varias_vezes/">
+    <meta property="twitter:url" content="http://192.168.0.19:1313/artigos/criptografar_varias_vezes/">
+    <meta name="twitter:image" content="http://192.168.0.19:1313/img/me.jpg">
+
+    
+    <link rel="canonical" href="http://192.168.0.19:1313/artigos/criptografar_varias_vezes/">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.893af8dd3b65bd0ffe90e7af33847bd6dc9180b8fa6d6659a212a6f4b62d3e01.js" integrity="sha256-iTr43TtlvQ/&#43;kOevM4R71tyRgLj6bWZZohKm9LYtPgE="></script>
+
+    
+    
+        <!-- KaTeX -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js" integrity="sha384-X/XCfMm41VSsqRNQgDerQczD69XqmjOOOwYQvr/uuC+j4OPoNhVgjdGFwhvN02Ja" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          // customised options
+          // • auto-render specific keys, e.g.:
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false},
+          ],
+          // • rendering keys, e.g.:
+          throwOnError : false
+        });
+      });
+    </script>
+  
+    
+</head>
+<body>
+        <script>
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+        <div class="avatar">
+            <a href="http://192.168.0.19:1313/">
+                <img src='/img/me.jpg' alt="avatar">
+            </a>
+        </div>
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="http://192.168.0.19:1313/">kauan.m</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="http://192.168.0.19:1313/notas/"> ~/notas </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="http://192.168.0.19:1313/artigos/"> ~/artigos </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="http://192.168.0.19:1313/writeups/"> ~/writeups </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <span class="sr-only dark-theme-toggle-screen-reader-target"></span>
+                <a>
+                    <span class="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span class="sr-only hamburger-menu-toggle-screen-reader-target">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="http://192.168.0.19:1313/notas/"> ~/notas </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="http://192.168.0.19:1313/artigos/"> ~/artigos </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="http://192.168.0.19:1313/writeups/"> ~/writeups </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <span class="sr-only dark-theme-toggle-screen-reader-target">theme</span>
+                    <a>
+                        <span class="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Por que criptografar várias vezes pode ser ruim?</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">January 3, 2023
+        
+        </p>
+
+        <ul class="post-tags">
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>TODO: trocar imagens por arquivos locais</p>
+<p>A criptografia permeia nossas vidas digitais porque permite que as informações que recebemos e enviamos sejam confidenciais, ou seja, inacessíveis para pessoas não autorizadas. E isto é importante para nos proteger de golpes e ataques de pessoas má intencionadas e para garantir nosso direito à privacidade.</p>
+<p>O processo de <strong>criptografar envolve a realização de várias operações matemáticas</strong> em uma mensagem não criptografada. O resultado é uma mensagem cifrada que só consegue ler quem tem a chave para decifrar (como uma senha).</p>
+<p>É intuitivo pensar que, se quando ciframos a mensagem uma vez traz segurança, então cifrar duas ou mais vezes aumentará ainda mais a segurança, certo? Na verdade, não é bem assim. Esse artigo vai mostrar porque cifrar várias vezes não necessariamente traz mais segurança.</p>
+<p>　</p>
+<p><img src="https://miro.medium.com/v2/resize:fit:440/format:webp/0*2owM9MLehR7CiNNE.jpg" alt="matrioscas"></p>
+<blockquote>
+<p><em>As matrioscas são bonecas russas constituídas de várias camadas de bonecas, uma dentro da outra.</em></p>
+</blockquote>
+<p>　</p>
+<h2 id="1-o-ataque-meet-in-the-middle-mitm">1. O ataque Meet-in-the-Middle (MitM)</h2>
+<p>O <strong>DES (Data Encryption Standard)</strong> é uma cifra de bloco de chave simétrica, publicada em 1977 [<a href="https://csrc.nist.gov/CSRC/media/Publications/fips/46/archive/1977-01-15/documents/NBS.FIPS.46.pdf">1</a>]. Em outras palavras, é um algoritmo que cifra uma mensagem em blocos de 64 bits (por isso é uma <strong>cifra de bloco</strong>) e utiliza uma única chave para criptografar e descriptografar (por isso é uma cifra de <strong>chave simétrica</strong>).</p>
+<h3 id="11-ataque-ao-des">1.1 Ataque ao DES</h3>
+<p>O DES foi desenvolvido na IBM no começo da década de 1970 e publicado pela primeira vez em 1975. Em 1976, se tornou um padrão do governo dos EUA para criptografia de dados, porém sendo bastante criticado pelo fato da chave ser pequena (56 bits) [<a href="https://ee.stanford.edu/~hellman/publications/27.pdf">2</a>] e pelo envolvimento da NSA (agência de segurança dos EUA) no desenvolvimento do algoritmo.</p>
+<p>A chave pequena permitia que o ataque por força bruta fosse possível na prática, como argumentado por Diffie e Hellman em 1977 [<a href="https://ee.stanford.edu/~hellman/publications/27.pdf">3</a>]. Além disso, outros fatos levaram ao fim do DES:</p>
+<ul>
+<li>
+<p>Em 1991, Biham e Shamir mostraram um ataque teórico ao DES chamado de criptoanálise diferencial [<a href="https://link.springer.com/article/10.1007/BF00630563">4</a>].</p>
+</li>
+<li>
+<p>Em 1994, Matsui implementou um ataque com a criptoanálise linear [<a href="https://www.scirp.org/(S(czeh2tfqw2orz553k1w0r45))/reference/referencespapers.aspx?referenceid=3156276">5</a>].</p>
+</li>
+<li>
+<p>Em 1997, o projeto DESCHALL quebrou, pela primeira vez em público, uma mensagem cifrada com DES.</p>
+</li>
+</ul>
+<p>Depois disso, o DES começou a ser quebrado em cada vez menos tempo, mostrando sua insegurança.</p>
+<p>　</p>
+<p><img src="https://miro.medium.com/v2/resize:fit:1100/format:webp/0*lkmGNgG5DgubN_Mw.jpg" alt="nsa"></p>
+<blockquote>
+<p><em>NSA (Agência Nacional de Segurança dos EUA)</em></p>
+</blockquote>
+<p>　</p>
+<h3 id="12-3des">1.2 3DES</h3>
+<p>Em face da insegurança de uma chave tão pequena, em 1999, o governo dos EUA atualizou seu padrão de criptografia: o DES foi substituído pelo <strong>3DES (ou DES Triplo)</strong>, um esquema de criptografia que usa o DES três vezes (por isso o nome).</p>
+<p>　</p>
+<h3 id="13-como-o-3des-funciona">1.3 Como o 3DES funciona?</h3>
+<blockquote>
+<p>⚠ <strong>Atenção</strong>: esta seção contém conceitos teóricos e matemáticos. Caso queira uma leitura mais tranquila, sinta-se à vontade para pular esta seção.</p>
+</blockquote>
+<ol>
+<li>Criptografa a mensagem $M$ com a chave $K_1$</li>
+<li>Descriptografa o resultado de (1) com a chave $K_2$</li>
+<li>Criptografa o resultado de (2)</li>
+</ol>
+<p>$$
+\text{texto cifrado} = E_{K_3} ( D_{K_2} ( E_{K_1}(M) ) )
+$$</p>
+<p>　</p>
+<p>Para decifrar a mensagem, fazemos o inverso:</p>
+<ol>
+<li>Descriptografa o texto cifrado $C$ com a chave $K_3$</li>
+<li>Criptografa o resultado de (1) com a chave $K_2$</li>
+<li>Descriptografa o resultado de (2) com a chave $K_1$</li>
+</ol>
+<p>$$
+\text{texto em claro} = D_{K_1} ( E_{K_2} ( D_{K_3}(M) ) )
+$$</p>
+<p>　</p>
+<h3 id="14-mas-e-o-2des">1.4 Mas e o 2DES?</h3>
+<p>As operações de criptografar e descriptografar do 3DES são, na verdade, <strong>três operações do DES simples</strong>. Em outras palavras, o 3DES significa usar o DES três vezes.</p>
+<p>Assim, é intuitivo levantar a seguinte questão: <strong>se existe o DES e o 3DES, por que não existe o 2DES ou algo similar</strong>? A resposta é o <strong>ataque Meet-In-The-Middle</strong>.</p>
+<p>　</p>
+<h3 id="15-meet-in-the-middle">1.5 Meet-in-the-Middle</h3>
+<p>O <strong>Meet-In-The-Middle (MITM)</strong> é um ataque que <strong>se aproveita de cifras que realizam mais de uma operação de criptografia em sequência</strong> (como o suposto 2DES e o 3DES) por meio do armazenamento dos resultados das operações intermediárias.</p>
+<p>　</p>
+<h3 id="16-como-funciona-o-mitm">1.6 Como funciona o MITM?</h3>
+<blockquote>
+<p>⚠ <strong>Atenção</strong>: esta seção contém conceitos teóricos e matemáticos. Caso queira uma leitura mais tranquila, sinta-se à vontade para pular esta seção.</p>
+</blockquote>
+<p>Primeiro, vamos definir o 2DES como sendo uma cifra que tem duas chaves DES ($K_1$ e $K_2$) e criptografa a mensagem duas vezes usando o DES. Em resumo, um DES duplo.</p>
+<p>O MITM funciona da seguinte forma:</p>
+<ol>
+<li>
+<p>Você é o atacante e seu alvo usa o 2DES, ou seja, para criptografar algo, o seu alvo criptografa com a chave $K_1$ e depois criptografa de novo, mas com a chave $K_2$.</p>
+</li>
+<li>
+<p>Você conhece um texto em claro $M$ e um texto cifrado $C$ e quer descobrir a chave $K = (K_1, K_2)$ que seu alvo usa, a fim de poder bisbilhotar as mensagens dele</p>
+</li>
+<li>
+<p>Para todas as possíveis chaves $K_1$, você calcula $X = \text{Enc}(M)$ com $K_1$ (criptografa $M$ com a chave $K_1$)</p>
+</li>
+<li>
+<p>Para todas as possíveis chaves $K_2$, você calcula $Y = \text{Dec}(C)$ com $K_2$ (descriptografa $C$ com a chave $K_2$)</p>
+</li>
+<li>
+<p>O resultado são vários valores para $X$ e $Y$. Daí você compara todas as possibilidades de $X$ com $Y$. Se tiver algum $X = Y$, então você chegou na sua resposta.</p>
+</li>
+</ol>
+<p>　</p>
+<h3 id="17-2des-e-o-mitm">1.7 2DES e o MITM</h3>
+<p>Como o 2DES e o 3DES usam o esquema de criptografar várias vezes em sequência, são suscetíveis ao ataque MITM [<a href="https://stephanemoore.com/pdf/meetinthemiddle.pdf">6</a>]. A tabela abaixo mostra quantas operações são necessárias para quebrar a cifra usando os métodos de força bruta e o MITM.</p>
+<table>
+<thead>
+<tr>
+<th>Cifra</th>
+<th>Tamanho da Chave</th>
+<th>Força Bruta</th>
+<th>MITM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DES</td>
+<td>56 bits</td>
+<td>$2^{56}$</td>
+<td>-</td>
+</tr>
+<tr>
+<td>2DES</td>
+<td>112 bits</td>
+<td>$2^{112}$</td>
+<td>$2^{57}$</td>
+</tr>
+<tr>
+<td>3DES</td>
+<td>168 bits</td>
+<td>$2^{168}$</td>
+<td>$2^{112}$</td>
+</tr>
+</tbody>
+</table>
+<p>O que se pode notar é que, apesar de ter uma chave maior e criptografar mais vezes, <strong>o 2DES não é muito mais seguro que o DES</strong> ($2^{56}$ operações de DES contra $2^{57}$ operações do 2DES).</p>
+<p>Outro fato interessante é que o MITM reduz o número de operações para quebrar do 3DES (de $2^{168}$ para $2^{112}$), o que também torna o 3DES inseguro para os dias atuais.</p>
+<p>Em suma, <strong>um esquema de criptografia usado várias vezes em sequência não torna o sistema muito mais seguro</strong> do que se fosse usado uma única vez graças ao ataque MITM.</p>
+<p>　</p>
+<h2 id="2-complexidade">2. Complexidade</h2>
+<p>Os sistemas criptográficos modernos, usados em lugares como bancos e infraestruturas críticas de vários países, são extremamente seguros quando implementados corretamente. Por exemplo, <strong>o AES-256 não possui nenhum ataque que permita a quebra da criptografia de forma prática</strong>.</p>
+<p>Então, não há problemas, certo? Errado. A criptografia não consiste só em misturar os bits. O algoritmo precisa ser <strong>implementado</strong> via código, as chaves precisam ser <strong>geradas aleatoriamente e administradas</strong> etc. Se essas atividades auxiliares falharem, a segurança acaba.</p>
+<p>De acordo com o OWASP Top 10, o segundo maior risco de aplicações web são falhas na criptografia [<a href="https://owasp.org/www-project-top-ten/">7</a>], justamente por falhas nas atividades auxiliares e na implementação da criptografia.</p>
+<p>　</p>
+<p><img src="https://miro.medium.com/v2/resize:fit:1100/format:webp/0*s3fY5oMSk0U6qFG3.png" alt="owasp top 10"></p>
+<blockquote>
+<p><em>OWASP Top 10</em></p>
+</blockquote>
+<p>　</p>
+<p><strong>Criptografar mais de uma vez traz mais complexidade</strong> ao sistema, aumentando as chances de falhas na implementação da criptografia e na gestão das chaves, podendo <strong>comprometer dados sensíveis</strong>.</p>
+<p>　</p>
+<h2 id="3-aplicações-da-criptografia-em-cascata">3. Aplicações da criptografia em cascata</h2>
+<p><img src="https://miro.medium.com/v2/resize:fit:1100/format:webp/0*AdN-xh19bWunnibe.jpeg" alt="cebolas têm camadas, fala do Shrek"></p>
+<blockquote>
+<p><em>&ldquo;Cebolas têm camadas&rdquo;</em></p>
+</blockquote>
+<p>　</p>
+<p>A ideia de criptografar várias vezes não é nova e é chamada de <strong>criptografia em cascata</strong>. Um exemplo da sua aplicação é o Azure da Microsoft que usa o TLS (criptografia na camada de transporte de redes) e outra criptografia na camada de enlace de dados [<a href="https://learn.microsoft.com/en-us/azure/security/fundamentals/double-encryption">8</a>].</p>
+<p>A criptografia em cascata, apesar das já citadas desvantagens (como o ataque MITM e a complexidade), permite mitigar ameaças relacionadas com o comprometimento de uma das chaves usadas e caso um dos algoritmos venha a se tornar inseguro algum dia.</p>
+<p>　</p>
+<h2 id="4-conclusão">4. Conclusão</h2>
+<p>Usar a criptografia em cascata é uma decisão que depende das necessidades de segurança e nas restrições da situação. Em alguns casos, como já vimos, <strong>este método pode trazer riscos que não são compensados pelos seus benefícios</strong>.</p>
+<p>Ao construir um sistema, <strong>é importante ponderar quais são os riscos e benefícios de cada decisão</strong>. E isto não se aplica somente à criptografia, mas a todos os requisitos de uma solução ou projeto.</p>
+<p>　</p>
+<p><img src="https://miro.medium.com/v2/resize:fit:512/format:webp/1*J-j1Mz3lWPzOVtQP6o8u5Q.png" alt="emoji pensando"></p>
+<blockquote>
+<p><em>Pondere suas decisões</em></p>
+</blockquote>
+
+        
+    </div>
+
+    <div class="prev-next">
+        
+    </div>
+
+    
+    
+    
+</div>
+
+<aside class="post-toc">
+    <nav id="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-o-ataque-meet-in-the-middle-mitm">1. O ataque Meet-in-the-Middle (MitM)</a>
+      <ul>
+        <li><a href="#11-ataque-ao-des">1.1 Ataque ao DES</a></li>
+        <li><a href="#12-3des">1.2 3DES</a></li>
+        <li><a href="#13-como-o-3des-funciona">1.3 Como o 3DES funciona?</a></li>
+        <li><a href="#14-mas-e-o-2des">1.4 Mas e o 2DES?</a></li>
+        <li><a href="#15-meet-in-the-middle">1.5 Meet-in-the-Middle</a></li>
+        <li><a href="#16-como-funciona-o-mitm">1.6 Como funciona o MITM?</a></li>
+        <li><a href="#17-2des-e-o-mitm">1.7 2DES e o MITM</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-complexidade">2. Complexidade</a></li>
+    <li><a href="#3-aplicações-da-criptografia-em-cascata">3. Aplicações da criptografia em cascata</a></li>
+    <li><a href="#4-conclusão">4. Conclusão</a></li>
+  </ul>
+</nav>
+    </nav>
+</aside>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>&copy; 2024 Kauan Manzato</span>
+    
+    <span>
+        Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
+    </span>
+</footer>
+</body>
+</html>

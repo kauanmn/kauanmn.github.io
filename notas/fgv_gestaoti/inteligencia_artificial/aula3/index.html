@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Aula 3</title>
+    <meta name="description" content="Software Development | AppSec | Bug Bounty">
+    <meta name="keywords" content=''>
+
+    <meta property="og:url" content="http://192.168.0.19:1313/notas/fgv_gestaoti/inteligencia_artificial/aula3/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Aula 3">
+    <meta property="og:description" content="Software Development | AppSec | Bug Bounty">
+    <meta property="og:image" content="http://192.168.0.19:1313/img/me.jpg">
+    <meta property="og:image:secure_url" content="http://192.168.0.19:1313/img/me.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Aula 3">
+    <meta name="twitter:description" content="Software Development | AppSec | Bug Bounty">
+    <meta property="twitter:domain" content="http://192.168.0.19:1313/notas/fgv_gestaoti/inteligencia_artificial/aula3/">
+    <meta property="twitter:url" content="http://192.168.0.19:1313/notas/fgv_gestaoti/inteligencia_artificial/aula3/">
+    <meta name="twitter:image" content="http://192.168.0.19:1313/img/me.jpg">
+
+    
+    <link rel="canonical" href="http://192.168.0.19:1313/notas/fgv_gestaoti/inteligencia_artificial/aula3/">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.893af8dd3b65bd0ffe90e7af33847bd6dc9180b8fa6d6659a212a6f4b62d3e01.js" integrity="sha256-iTr43TtlvQ/&#43;kOevM4R71tyRgLj6bWZZohKm9LYtPgE="></script>
+
+    
+    
+        <!-- KaTeX -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js" integrity="sha384-X/XCfMm41VSsqRNQgDerQczD69XqmjOOOwYQvr/uuC+j4OPoNhVgjdGFwhvN02Ja" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          // customised options
+          // • auto-render specific keys, e.g.:
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false},
+          ],
+          // • rendering keys, e.g.:
+          throwOnError : false
+        });
+      });
+    </script>
+  
+    
+</head>
+<body>
+        <script>
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+        <div class="avatar">
+            <a href="http://192.168.0.19:1313/">
+                <img src='/img/me.jpg' alt="avatar">
+            </a>
+        </div>
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="http://192.168.0.19:1313/">kauan.m</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="http://192.168.0.19:1313/notas/"> ~/notas </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="http://192.168.0.19:1313/artigos/"> ~/artigos </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="http://192.168.0.19:1313/writeups/"> ~/writeups </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <span class="sr-only dark-theme-toggle-screen-reader-target"></span>
+                <a>
+                    <span class="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span class="sr-only hamburger-menu-toggle-screen-reader-target">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="http://192.168.0.19:1313/notas/"> ~/notas </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="http://192.168.0.19:1313/artigos/"> ~/artigos </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="http://192.168.0.19:1313/writeups/"> ~/writeups </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <span class="sr-only dark-theme-toggle-screen-reader-target">theme</span>
+                    <a>
+                        <span class="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Aula 3</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">July 18, 2024
+        
+        </p>
+
+        <ul class="post-tags">
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <h2 id="o-que-é-aprendizado">O que é aprendizado?</h2>
+<p>Aprendizado é a capacidade de se adaptar, modificar e melhorar seu comportamento e suas respostas, sendo, portanto, uma das propriedades mais importantes dos seres humanos inteligentes, sejam eles humanos ou não</p>
+<hr>
+<h2 id="raciocínio-indutivo">Raciocínio indutivo</h2>
+<p>Dada uma linguagem de descrição usada para expressar possíveis hipóteses, um conhecimento preliminar, um conjunto de exemplos positivos, e um conjunto de exemplos negativos, o <strong>Aprendizado Indutivo</strong> pode ser entendido como o <strong>problema de se encontrar uma hipótese que cubra todos os exemplos positivos e não cubra nenhum dos exemplos negativos</strong>.</p>
+<hr>
+<h2 id="conceito-de-machine-learning-ml">Conceito de Machine Learning (ML)</h2>
+<p><strong>Machine Learning (ML)</strong> é um subcampo da inteligência artificial (IA) que se concentra no <strong>desenvolvimento de algoritmos e modelos que permitem que sistemas computacionais aprendam e melhorem com a experiência</strong>.</p>
+<p>O objetivo do ML é permitir que um sistema <strong>aprenda</strong> a partir de dados em vez de ser programado explicitamente para realizar uma tarefa.</p>
+<p>Isso é feito por meio do uso de algoritmos que analisam dados, identificam padrões e usam esses padrões para fazer previsões ou tomar decisões.</p>
+<hr>
+<h2 id="algoritmo">Algoritmo</h2>
+<p>Um <strong>algoritmo</strong> é um <strong>conjunto de atividades que podem ser executadas passo a passo para resolver problemas</strong>.</p>
+<ul>
+<li>Um programa de computador é uma das formas de representar um algoritmo</li>
+<li>exemplo: crie um algoritmo para exibir o resultado da multiplicação de dois números. Passo a passo (atividades):
+<ul>
+<li>passo 1: receber os dois números que são multiplicados</li>
+<li>passo 2: multiplicar os números</li>
+<li>passo 3: mostrar o resultado obtido da multiplicação</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="programação-tradicional-x-machine-learning">Programação Tradicional x Machine Learning</h2>
+<h4 id="programação-tradicional">Programação Tradicional</h4>
+<p>Regras + Dados → Algoritmo → Saída</p>
+<p>Exemplo: algoritmo em Python para exibir o resultado da multiplicação de dois números:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>num1 <span style="color:#f92672">=</span> float(input(<span style="color:#e6db74">&#39;Insira o primeiro número: &#39;</span>))
+</span></span><span style="display:flex;"><span>num2 <span style="color:#f92672">=</span> float(input(<span style="color:#e6db74">&#39;Insira o segundo número: &#39;</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;O resultado da multiplicação é </span><span style="color:#e6db74">{</span>num1 <span style="color:#f92672">*</span> num2<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span></code></pre></div><p>　</p>
+<h4 id="machine-learning">Machine Learning</h4>
+<p>Dados → Algoritmo de ML (pré-existente) → Modelo (Regras)
+Mais dados → Modelo → Saídas</p>
+<p>　</p>
+<p>Passo a passo do ML:</p>
+<ol>
+<li>Coleta de dados</li>
+<li>Exploração e Preparação</li>
+<li>Treinamento do Modelo</li>
+<li>Avaliação do Modelo</li>
+<li>Otimização do Modelo (volta para o passo 1)</li>
+</ol>
+<hr>
+<h2 id="problemas-para-algoritmos-de-ia">Problemas para algoritmos de IA</h2>
+<p>Os principais tipos de problemas são:</p>
+<ul>
+<li>previsão de valores</li>
+<li>classificação em categorias</li>
+<li>associação entre itens</li>
+<li>agrupamentos automáticos</li>
+<li>detecção de anormalidades</li>
+<li>busca de solução otimizada</li>
+</ul>
+<p>　</p>
+<p>Exemplos:</p>
+<ul>
+<li>
+<p>dadas certas características de um filme/série, qual é a previsão de arrecadação do filme? (previsão de valor)</p>
+</li>
+<li>
+<p>o roteiro X é considerado bom roteiro de acordo com os padrões da produtora? (classificação)</p>
+</li>
+<li>
+<p>dado o histórico de compras de um usuário em uma plataforma de streaming, quais filmes ou séries são mais propensos a serem recomendados para ele? (associação entre itens)</p>
+</li>
+</ul>
+<hr>
+<h2 id="tipos-de-machine-learning">Tipos de Machine Learning</h2>
+<ul>
+<li>Aprendizagem Supervisionada</li>
+<li>Aprendizagem Não-Supervisionada</li>
+<li>Aprendizagem Semi-Supervisionada</li>
+<li>Aprendizagem por Reforço</li>
+</ul>
+<hr>
+<h2 id="aprendizagem-supervisionada-classificação">Aprendizagem supervisionada: classificação</h2>
+<p>A classificação preocupa-se com a construção de modelos que separam os dados em classes distintas.</p>
+<p><img src="/img/fgv_gestaoti/classificacao.png" alt="Classificação"></p>
+<hr>
+<h2 id="aprendizagem-supervisionada-regressão">Aprendizagem supervisionada: regressão</h2>
+<ul>
+<li>
+<p>Uma variável independente <code>x</code>, explica a variação em outra variável, chamada de variável dependente <code>y</code>. Este relacionamento existe em apenas uma direção: variáveis independentes → variáveis dependentes</p>
+</li>
+<li>
+<p><strong>Análise de regressão</strong>: metodologia estatística que usa a relação entre duas ou mais variáveis quantitativas de tal forma que uma variável possa ser predita a partir de outra</p>
+</li>
+<li>
+<p>A regressão preocupa-se com a construção de modelos que possam prever valores</p>
+</li>
+</ul>
+<hr>
+<h2 id="algoritmos">Algoritmos</h2>
+<h4 id="árvore-de-decisão">Árvore de Decisão</h4>
+<p><img src="/img/fgv_gestaoti/arvoredecisao.png" alt="Árvore de Decisão"></p>
+<ul>
+<li>pode ser usado para problemas de <em>classificação</em> e <em>regressão</em></li>
+<li>exemplo:</li>
+</ul>
+<p><img src="/img/fgv_gestaoti/arvoredecisao_exemplo.png" alt="Exemplo de Árvore de Decisão"></p>
+<p>　</p>
+<h4 id="svm-support-vector-machine">SVM (Support Vector Machine)</h4>
+<ul>
+<li>pode ser usado para classificação ou regressão</li>
+<li>o SVM padrão toma como entrada um conjunto de dados e prediz, para cada entrada dada, qual de duas possíveis classes a entrada faz parte
+<ul>
+<li>isso faz do SVM um classificador linear binário não probabilístico</li>
+</ul>
+</li>
+<li>em caso de outlier, a SVM busca a melhor forma possível de classificação e, se necessário, desconsidera o outlier</li>
+<li>funciona bem em domínios complicados em que existe uma clara margem de separação</li>
+<li>não funciona bem com conjuntos de dados muito grandes, pois exige inversão de matriz (alta complexidade computacional) -&gt; O(n³)</li>
+<li>não funciona bem em conjuntos de dados com muito ruído</li>
+<li>se as classes estiverem muito sobrepostas, deve-se usar apenas evidências independentes (devido ao fato de não ser muito bom com dados com muitos ruídos)</li>
+</ul>
+
+        
+    </div>
+
+    <div class="prev-next">
+        
+    </div>
+
+    
+    
+    
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>&copy; 2024 Kauan Manzato</span>
+    
+    <span>
+        Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
+    </span>
+</footer>
+</body>
+</html>

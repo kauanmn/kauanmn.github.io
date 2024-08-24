@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Aula 1</title>
+    <meta name="description" content="Software Development | AppSec | Bug Bounty">
+    <meta name="keywords" content=''>
+
+    <meta property="og:url" content="http://192.168.0.19:1313/notas/fgv_gestaoti/negociacao/aula1/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Aula 1">
+    <meta property="og:description" content="Software Development | AppSec | Bug Bounty">
+    <meta property="og:image" content="http://192.168.0.19:1313/img/me.jpg">
+    <meta property="og:image:secure_url" content="http://192.168.0.19:1313/img/me.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Aula 1">
+    <meta name="twitter:description" content="Software Development | AppSec | Bug Bounty">
+    <meta property="twitter:domain" content="http://192.168.0.19:1313/notas/fgv_gestaoti/negociacao/aula1/">
+    <meta property="twitter:url" content="http://192.168.0.19:1313/notas/fgv_gestaoti/negociacao/aula1/">
+    <meta name="twitter:image" content="http://192.168.0.19:1313/img/me.jpg">
+
+    
+    <link rel="canonical" href="http://192.168.0.19:1313/notas/fgv_gestaoti/negociacao/aula1/">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.893af8dd3b65bd0ffe90e7af33847bd6dc9180b8fa6d6659a212a6f4b62d3e01.js" integrity="sha256-iTr43TtlvQ/&#43;kOevM4R71tyRgLj6bWZZohKm9LYtPgE="></script>
+
+    
+    
+        <!-- KaTeX -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js" integrity="sha384-X/XCfMm41VSsqRNQgDerQczD69XqmjOOOwYQvr/uuC+j4OPoNhVgjdGFwhvN02Ja" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          // customised options
+          // • auto-render specific keys, e.g.:
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false},
+          ],
+          // • rendering keys, e.g.:
+          throwOnError : false
+        });
+      });
+    </script>
+  
+    
+</head>
+<body>
+        <script>
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+        <div class="avatar">
+            <a href="http://192.168.0.19:1313/">
+                <img src='/img/me.jpg' alt="avatar">
+            </a>
+        </div>
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="http://192.168.0.19:1313/">kauan.m</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="http://192.168.0.19:1313/notas/"> ~/notas </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="http://192.168.0.19:1313/artigos/"> ~/artigos </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="http://192.168.0.19:1313/writeups/"> ~/writeups </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <span class="sr-only dark-theme-toggle-screen-reader-target"></span>
+                <a>
+                    <span class="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span class="sr-only hamburger-menu-toggle-screen-reader-target">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="http://192.168.0.19:1313/notas/"> ~/notas </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="http://192.168.0.19:1313/artigos/"> ~/artigos </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="http://192.168.0.19:1313/writeups/"> ~/writeups </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <span class="sr-only dark-theme-toggle-screen-reader-target">theme</span>
+                    <a>
+                        <span class="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Aula 1</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">August 23, 2024
+        
+        </p>
+
+        <ul class="post-tags">
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>Instrutor: Tagli Mallman
+<a href="mailto:tagli.dmm@gmail.com">tagli.dmm@gmail.com</a></p>
+<h2 id="objetivo-da-disciplina">Objetivo da disciplina</h2>
+<p><strong>Desenvolver competências para melhor</strong></p>
+<ul>
+<li>Articular uma visão consistente dos processos de
+<ul>
+<li>negociação</li>
+<li>gestão de conflitos</li>
+</ul>
+</li>
+<li>Realizar negociações efetivas e sustentáveis que
+<ul>
+<li>gerem valor</li>
+<li>melhorem ou preservem o relacionamento entre as partes</li>
+<li>considerem:
+<ul>
+<li>comportamentos e estilos dos negociadores</li>
+<li>fatores objetivos e subjetivos envolvidos</li>
+<li>abordagens adotadas pela(s) outra(s) parte(s)</li>
+<li>assimetrias entre as partes, incluindo tempo, informações, poder, recursos e alternativas</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="avaliação">Avaliação</h2>
+<ul>
+<li>70% - prova</li>
+<li>30% - trabalho</li>
+</ul>
+<hr>
+<h2 id="interações">Interações</h2>
+<ul>
+<li>família</li>
+<li>comunidade</li>
+<li>trabalho</li>
+<li>mercado (nacional e internacional)</li>
+</ul>
+<p>As aspirações podem gerar:</p>
+<ul>
+<li>coincidências</li>
+<li>diferenças
+<ul>
+<li>pequenas / significativas → geram conflitos</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="diferenças-culturais">Diferenças Culturais</h2>
+<ul>
+<li>idioma, expressões e gestos</li>
+<li>tradições ligadas à arte, música, dança e literatura</li>
+<li>educação - conhecimento sobre o sistema educacional</li>
+<li>crenças, incluindo religião</li>
+<li>organização social (ex.: família, sindicato)</li>
+<li>vida política (ex.: governo, partidos)</li>
+</ul>
+<hr>
+<h2 id="conflito">Conflito</h2>
+<p><strong>Perceptível divergência de interesses e crença que aspirações das partes não podem ser atingidas de forma simultânea.</strong></p>
+<hr>
+<h2 id="principais-causas-de-conflitos">Principais causas de conflitos</h2>
+<table>
+<thead>
+<tr>
+<th>Causa</th>
+<th>Definição</th>
+<th>Recomendação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Prioridades</strong></td>
+<td>Visões diferentes sobre atividades e tarefas</td>
+<td>Desenvolver plano compatível com estratégias</td>
+</tr>
+<tr>
+<td><strong>Organizacional</strong></td>
+<td>Como o projeto será organizado e gerenciado</td>
+<td>Clareza de papéis e responsabilidades no início do projeto</td>
+</tr>
+<tr>
+<td><strong>Interfaces</strong></td>
+<td>Como são passadas as informações entre níveis</td>
+<td>Atenção na comunicação e na gestão de partes interessadas</td>
+</tr>
+<tr>
+<td><strong>Questões técnicas / performance</strong></td>
+<td>Requisitos, especificações de performance, funcionalidades</td>
+<td>Utilizar avaliação por pares e decisão em comitês</td>
+</tr>
+<tr>
+<td><strong>Recursos humanos</strong></td>
+<td>Mobilização de pessoas, como contratá-las e quando</td>
+<td>Desenvolver EAP e matriz de responsabilidades</td>
+</tr>
+<tr>
+<td><strong>Custos e orçamento</strong></td>
+<td>Estimativas de custos e alocação orçamentária</td>
+<td>Desenvolver orçamento detalhado por tarefas e atividades</td>
+</tr>
+<tr>
+<td><strong>Prazos</strong></td>
+<td>Prazos, sequenciamento</td>
+<td>Cronograma integrando os subprojetos</td>
+</tr>
+<tr>
+<td><strong>Interpessoal</strong></td>
+<td>Estilos, motivações, valores, poder</td>
+<td>Foco no desenvolvimento da equipe</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="principais-causas-de-conflitos-1">Principais causas de conflitos</h2>
+<ul>
+<li>intrapessoais</li>
+<li>interpessoais</li>
+<li>intergrupais</li>
+<li>interorganizacionais</li>
+</ul>
+<hr>
+<h2 id="modelo-de-conflito-intergrupal">Modelo de conflito intergrupal</h2>
+<p><img src="/img/fgv_gestaoti/conflitointergrupal.png" alt="modelo de conflito intergrupal"></p>
+<hr>
+<h2 id="formas-de-intervir-no-conflito">Formas de intervir no conflito</h2>
+<ul>
+<li>intervenção estrutural
+<ul>
+<li>encontrar objetivos comuns</li>
+<li>reagrupar</li>
+<li>estimular a rotação</li>
+<li>separar</li>
+</ul>
+</li>
+<li>intervenção no processo
+<ul>
+<li>desativar</li>
+<li>confrontar</li>
+<li>colaborar</li>
+<li>mediar</li>
+</ul>
+</li>
+<li>intervenção mista
+<ul>
+<li>estabelecer regras</li>
+<li>organizar grupos de trabalho</li>
+<li>criar papéis de ligação</li>
+<li>atribuir papéis integradores</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="formas-de-solução-de-problemas">Formas de solução de problemas</h2>
+<p><img src="/img/fgv_gestaoti/solucaoproblemas.png" alt="formas de solução de problemas"></p>
+<hr>
+<h2 id="negociação">Negociação</h2>
+<ol>
+<li>
+<p><em>&quot;&hellip;um processo bilateral de comunicação com o objetivo de alcançar uma decisão compartilhada.&quot;</em></p>
+</li>
+<li>
+<p><em>&quot;&hellip; a utilização da informação e do poder, buscando influenciar o comportamento em uma rede de tensão.&quot;</em></p>
+</li>
+<li>
+<p><em>&ldquo;Campo de conhecimento e empenho que visa a conquista de pessoas e de quem se deseja alguma coisa.&rdquo;</em></p>
+</li>
+<li>
+<p><em>&ldquo;Atividade que envolve um elemento de negócio ou barganha &hellip; para possibilitar que ambas as partes atinjam um resultado satisfatório.&rdquo;</em></p>
+</li>
+</ol>
+<hr>
+<h2 id="necessidades-e-interesses">Necessidades e Interesses</h2>
+<p><img src="/img/fgv_gestaoti/piramide_necessidades.png" alt="pirâmide de necessidades e interesses"></p>
+<hr>
+<h2 id="visão-geral-sobre-negociação">Visão Geral sobre Negociação</h2>
+<p><img src="/img/fgv_gestaoti/negociacao.png" alt="visão geral sobre negociação"></p>
+<hr>
+<h2 id="interesses-e-posições">Interesses e Posições</h2>
+<p>Interesses:</p>
+<ul>
+<li>necessidades</li>
+<li>aspirações</li>
+<li>preocupações</li>
+<li>esperanças</li>
+<li>desejos</li>
+<li>receios</li>
+<li>temores</li>
+</ul>
+<p>Posições:</p>
+<ul>
+<li>dinheiro</li>
+<li>números</li>
+<li>cotas</li>
+<li>produtos</li>
+<li>pessoas</li>
+<li>descontos</li>
+</ul>
+<hr>
+<h2 id="posicionamento-na-negociação">Posicionamento na negociação</h2>
+<ul>
+<li><strong>Posição MÁXIMA</strong>: o que você aspira obter se puder ter tudo o que deseja</li>
+<li><strong>Posição ALVO</strong>: o que você pode considerar como um acordo razoável, levando em conta a posição da outra parte</li>
+<li><strong>Posição MÍNIMA</strong>: o mínimo de suas aspirações atendidas que você está disposto a aceitar para chegar a um acordo</li>
+</ul>
+<hr>
+<h2 id="zopa-zona-de-possível-acordo">ZOPA (Zona de Possível Acordo)</h2>
+<p>O <strong>ZOPA</strong> é um espaço em que as concessões que as partes A e B estão dispostas a fazer em uma negociação convergem para um denominador comum.</p>
+<p><img src="/img/fgv_gestaoti/zopa.png" alt="ZOPA"></p>
+<hr>
+<h2 id="macna-melhor-alternativa-em-caso-de-não-acordo">MACNA (Melhor Alternativa em Caso de Não Acordo)</h2>
+<ul>
+<li>O que fazer se não conseguir o acordo?</li>
+<li>Qual é o meu plano B?</li>
+<li><strong>PRINCIPAL FONTE DE PODER</strong> na negociação</li>
+</ul>
+
+        
+    </div>
+
+    <div class="prev-next">
+        
+    </div>
+
+    
+    
+    
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>&copy; 2024 Kauan Manzato</span>
+    
+    <span>
+        Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
+    </span>
+</footer>
+</body>
+</html>

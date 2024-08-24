@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Aula 2</title>
+    <meta name="description" content="Software Development | AppSec | Bug Bounty">
+    <meta name="keywords" content=''>
+
+    <meta property="og:url" content="http://192.168.0.19:1313/notas/fgv_gestaoti/inteligencia_artificial/aula2/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Aula 2">
+    <meta property="og:description" content="Software Development | AppSec | Bug Bounty">
+    <meta property="og:image" content="http://192.168.0.19:1313/img/me.jpg">
+    <meta property="og:image:secure_url" content="http://192.168.0.19:1313/img/me.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Aula 2">
+    <meta name="twitter:description" content="Software Development | AppSec | Bug Bounty">
+    <meta property="twitter:domain" content="http://192.168.0.19:1313/notas/fgv_gestaoti/inteligencia_artificial/aula2/">
+    <meta property="twitter:url" content="http://192.168.0.19:1313/notas/fgv_gestaoti/inteligencia_artificial/aula2/">
+    <meta name="twitter:image" content="http://192.168.0.19:1313/img/me.jpg">
+
+    
+    <link rel="canonical" href="http://192.168.0.19:1313/notas/fgv_gestaoti/inteligencia_artificial/aula2/">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.893af8dd3b65bd0ffe90e7af33847bd6dc9180b8fa6d6659a212a6f4b62d3e01.js" integrity="sha256-iTr43TtlvQ/&#43;kOevM4R71tyRgLj6bWZZohKm9LYtPgE="></script>
+
+    
+    
+        <!-- KaTeX -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js" integrity="sha384-X/XCfMm41VSsqRNQgDerQczD69XqmjOOOwYQvr/uuC+j4OPoNhVgjdGFwhvN02Ja" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          // customised options
+          // • auto-render specific keys, e.g.:
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false},
+          ],
+          // • rendering keys, e.g.:
+          throwOnError : false
+        });
+      });
+    </script>
+  
+    
+</head>
+<body>
+        <script>
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+        <div class="avatar">
+            <a href="http://192.168.0.19:1313/">
+                <img src='/img/me.jpg' alt="avatar">
+            </a>
+        </div>
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="http://192.168.0.19:1313/">kauan.m</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="http://192.168.0.19:1313/notas/"> ~/notas </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="http://192.168.0.19:1313/artigos/"> ~/artigos </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="http://192.168.0.19:1313/writeups/"> ~/writeups </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <span class="sr-only dark-theme-toggle-screen-reader-target"></span>
+                <a>
+                    <span class="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span class="sr-only hamburger-menu-toggle-screen-reader-target">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="http://192.168.0.19:1313/notas/"> ~/notas </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="http://192.168.0.19:1313/artigos/"> ~/artigos </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="http://192.168.0.19:1313/writeups/"> ~/writeups </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <span class="sr-only dark-theme-toggle-screen-reader-target">theme</span>
+                    <a>
+                        <span class="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Aula 2</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">July 17, 2024
+        
+        </p>
+
+        <ul class="post-tags">
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <h2 id="tipos-de-gráficos">Tipos de Gráficos</h2>
+<ul>
+<li><strong>Comparação</strong>: gráfico de barras</li>
+<li><strong>Tempo / Tendência</strong>: gráfico de linha</li>
+<li><strong>Composição</strong>: gráfico de pizza e gráfico de pareto</li>
+<li><strong>Relacionamento</strong>: diagrama de Venn, gráfico de Gantt</li>
+<li><strong>Distribuição</strong>: gráfico do sino (frequência), histograma, boxplot</li>
+<li><strong>Correlação</strong>: gráfico de dispersão (scatterplot) e gráfico de bolha</li>
+<li><strong>Outros</strong>: mapas, matriz de risco</li>
+</ul>
+<hr>
+<h2 id="o-que-é-big-data">O que é Big Data?</h2>
+<p>Análise de grandes quantidades de dados para a geração de resultados importantes que, em volumes menores, dificilmente seriam alcançados.</p>
+<h4 id="características-do-big-data">Características do Big Data</h4>
+<p>As 4 características do Big Data começam com &lsquo;V&rsquo; e, portanto, são conhecidas como &ldquo;Os 4 V&rsquo;s do Big Data&rdquo;:</p>
+<ol>
+<li><strong>Volume</strong>: é necessário um grande volume de dados (relativo para cada organização)</li>
+<li><strong>Velocidade</strong>: os dados são gerados com velocidade acelerada (aumentando com o tempo) e, geralmente, perdem relevância com o decorrer do tempo</li>
+<li><strong>Variedade</strong>: diversos tipos de dados são gerados (estruturados, não estruturados)</li>
+<li><strong>Veracidade</strong>: os dados precisam ser confiáveis</li>
+</ol>
+<hr>
+<h2 id="introdução-à-ia-e-ml-machine-learning">Introdução à IA e ML (Machine Learning)</h2>
+<ul>
+<li>
+<p>Inteligência Artificial é a <em>&ldquo;nova energia elétrica&rdquo;</em>: a energia elétrica era cara e inacessível, porém, atualmente, é acessível a todos (quase todos)</p>
+<ul>
+<li>a maior parte das pessoas não explora o potencial da inteligência artificial</li>
+<li>até 2030, o mundo produzirá US$ 15,7 trilhões em riquezas advindas da IA</li>
+</ul>
+</li>
+<li>
+<p>&ldquo;Ciência e engenharia de criar máquinas inteligentes&rdquo; - Alan Turing</p>
+</li>
+</ul>
+<hr>
+<h2 id="tipos-de-inteligência-artificial">Tipos de Inteligência Artificial</h2>
+<ul>
+<li><strong>ASI (Artificial Super Intelligence)</strong>: capaz de resolver problemas de qualquer tipo, incluindo problemas que desconhecemos</li>
+<li><strong>AGI (Artificial General Intelligence)</strong>: IA que se equipara com nossa capacidade cognitiva, podendo resolver problemas generalizadamente</li>
+<li><strong>ANI (Artificial Narrow Intelligence)</strong>: IA limitada, resolve um problema de cada vez</li>
+</ul>
+<hr>
+<h2 id="macro-áreas-da-ia-limitada-ani">Macro áreas da IA limitada (ANI)</h2>
+<ul>
+<li>machine learning</li>
+<li>PLN (Processamento de Linguagem Natural)</li>
+<li>visão computacional</li>
+<li>robótica</li>
+<li>captura de conhecimento</li>
+<li>planejamento e otimização</li>
+<li>reconhecimento de voz</li>
+</ul>
+<hr>
+<h2 id="machine-learning">Machine Learning</h2>
+<ul>
+<li><strong>inteligência artificial</strong>: programa que pode sentir, raciocinar, agir e adaptar-se</li>
+<li><strong>aprendizado de máquinas</strong>: subconjunto de IA; algoritmos cujo desempenho melhora à medida que são expostos a mais dados, no decorrer do tempo</li>
+<li><strong>aprendizado profundo</strong>: subconjunto de aprendizado de máquinas, no qual redes de múltiplas camadas neurais aprendem a partir de vastas quantidades de dados</li>
+</ul>
+<hr>
+<h2 id="ia-generativa">IA Generativa</h2>
+<p>Tipo de inteligência artificial que usa algoritmos de aprendizado de máquina (machine learning) para criar conteúdos novos e originais, como textos, imagens, áudios e vídeos</p>
+<ul>
+<li>existe uma discussão a respeito da real originalidade dessa criação, dado que ela remodela dados existentes</li>
+<li>outro fruto de dabate são os elementos de propriedade intelectual nesse novo contexto</li>
+</ul>
+<hr>
+<h2 id="token">Token</h2>
+<p>O token é a unidade básica de texto que é processada pelos modelos de linguagem.</p>
+<ul>
+<li>pode ser uma palavra, parte de uma palavra ou mesmo um caractere, dependendo de como o modelo é treinado</li>
+<li>exemplo: a frase &ldquo;eu gosto de maçãs&rdquo; pode ser tokenizada em <code>[&quot;eu&quot;, &quot;gosto&quot;, &quot;de&quot;, &quot;maçãs&quot;]</code></li>
+<li>mais tokens permitem ao modelo manter uma compreensão melhor e mais detalhada do texto</li>
+</ul>
+<p>tokens nas versões do ChatGPT:</p>
+<ul>
+<li>3.5 - 4096 tokens</li>
+<li>4 - 8192 tokens</li>
+<li>4o - 128000 tokens</li>
+</ul>
+<hr>
+<h2 id="parâmetros">Parâmetros</h2>
+<p><strong>Parâmetro do modelo de LLM</strong>: componentes principais que determinam sua capacidade de aprender e gerar linguagem. Eles são essencialmente os &ldquo;pesos&rdquo; de uma rede neural, que são ajustados durante o treinamento para minimizar o erro na tarefa de previsão</p>
+<p><strong>Quantidade de parâmetros</strong>: quanto mais parâmetros um modelo de LLM possui, maior é sua capacidade de capturar nuances complexas da linguagem, resultando em um desempenho potencialmente superior em tarefas de processamento de linguagem natural</p>
+<p>Parâetros nas versões do ChatGPT:</p>
+<ul>
+<li>3.0 - 175 bi</li>
+<li>&gt; 3.5: X tri (estimativa)</li>
+</ul>
+<hr>
+<h2 id="engenharia-de-prompt">Engenharia de Prompt</h2>
+<ul>
+<li>não adianta termos bons algoritmos se não soubermos perguntar</li>
+<li><strong>Engenharia de prompt</strong> é o processo de criação e otimização de prompts
+<ul>
+<li>prática essencial para obter o maior proveito de modelos de linguagem avançados</li>
+</ul>
+</li>
+<li><strong>Prompt</strong>: instrução ou entrada fornecida a um modelo de linguagem ou a uma inteligência artificial para gerar uma resposta ou realizar uma tarefa específica
+<ul>
+<li>prompts são fundamentais para guiar o comportamento dos modelos de linguagem e obter respostas precisas e úteis</li>
+<li>a maneira como um prompt é formulado pode influenciar significativamente a qualidade e a relevância das respostas geradas pela IA</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="características-de-bons-prompts">Características de bons prompts</h2>
+<ul>
+<li>
+<p><strong>Seja conciso</strong>: um bom prompt deve ser conciso, fornecendo ao modelo todas e apenas as informações necessárias para realizar a tarefa desejada</p>
+</li>
+<li>
+<p><strong>Use linguagem natural</strong>: um bom prompt deve ser escrito em linguagem natural, de modo que o modelo possa entender facilmente o que está sendo solicitado</p>
+</li>
+<li>
+<p><strong>Forneça contexto e exemplos</strong>: fornecer contexto (e, às vezes, exemplos) suficientes para que o modelo possa entender a tarefa em questão</p>
+</li>
+<li>
+<p><strong>Evite ambiguidade</strong>: fornecer informações claras e precisas ao modelo</p>
+</li>
+<li>
+<p><strong>Estrutura do prompt</strong>:</p>
+<ul>
+<li><strong>papel</strong>: persona ou perspectiva de quem solicita (quem?)</li>
+<li><strong>razões</strong>: motivação para a ação (por quê?)</li>
+<li><strong>objetivo</strong>: comando principal que guia a ação (o quê?)</li>
+<li><strong>contexto</strong>: exemplos, fluxo de trabalho, passos e detalhes sobre a ação (como?)</li>
+<li><strong>restrições</strong>: qualquer limitação ou requisito específico (como?)</li>
+<li><strong>formato</strong>: produto final e formato que a IA deve gerar (como?)</li>
+</ul>
+</li>
+</ul>
+
+        
+    </div>
+
+    <div class="prev-next">
+        
+    </div>
+
+    
+    
+    
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>&copy; 2024 Kauan Manzato</span>
+    
+    <span>
+        Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
+    </span>
+</footer>
+</body>
+</html>

@@ -17,26 +17,26 @@
     
 
     
-    <title>Writeups</title>
+    <title>EventID: 14 [Malware Detected]</title>
     <meta name="description" content="Software Development | AppSec | Bug Bounty">
     <meta name="keywords" content=''>
 
-    <meta property="og:url" content="http://192.168.0.19:1313/writeups/">
+    <meta property="og:url" content="http://192.168.0.19:1313/writeups/letsdefend/eventid_14/">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Writeups">
+    <meta property="og:title" content="EventID: 14 [Malware Detected]">
     <meta property="og:description" content="Software Development | AppSec | Bug Bounty">
     <meta property="og:image" content="http://192.168.0.19:1313/img/me.jpg">
     <meta property="og:image:secure_url" content="http://192.168.0.19:1313/img/me.jpg">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Writeups">
+    <meta name="twitter:title" content="EventID: 14 [Malware Detected]">
     <meta name="twitter:description" content="Software Development | AppSec | Bug Bounty">
-    <meta property="twitter:domain" content="http://192.168.0.19:1313/writeups/">
-    <meta property="twitter:url" content="http://192.168.0.19:1313/writeups/">
+    <meta property="twitter:domain" content="http://192.168.0.19:1313/writeups/letsdefend/eventid_14/">
+    <meta property="twitter:url" content="http://192.168.0.19:1313/writeups/letsdefend/eventid_14/">
     <meta name="twitter:image" content="http://192.168.0.19:1313/img/me.jpg">
 
     
-    <link rel="canonical" href="http://192.168.0.19:1313/writeups/">
+    <link rel="canonical" href="http://192.168.0.19:1313/writeups/letsdefend/eventid_14/">
 
     
     <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
@@ -149,20 +149,168 @@
     </nav>
 </header>
 <main id="content">
+    
+
     <div class="post container">
 
     <div class="post-header-section">
-        <h1>Writeups</h1>
+        <h1>EventID: 14 [Malware Detected]</h1>
     </div>
 
     <div class="post-content">
-        <p>Aqui estão os writeups que escrevi durante os meus estudos em segurança da informação, CTFs e outros:</p>
+        <table>
+<thead>
+<tr>
+<th>Severity</th>
+<th>High</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Date</td>
+<td>Dec. 15, 2020, 09:02 PM</td>
+</tr>
+<tr>
+<td>Rule Name</td>
+<td>SOC104 - Malware Detected</td>
+</tr>
+<tr>
+<td>Event ID</td>
+<td>14</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Malware</td>
+</tr>
+</tbody>
+</table>
+<p>　</p>
+<h2 id="initial-information">Initial Information</h2>
+<table>
+<thead>
+<tr>
+<th>Event ID</th>
+<th>14</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Event Time</td>
+<td>Sep, 15, 2020, 09:02 PM</td>
+</tr>
+<tr>
+<td>Rule</td>
+<td>SOC104 - Malware Detected</td>
+</tr>
+<tr>
+<td>Level</td>
+<td>Security Analyst</td>
+</tr>
+<tr>
+<td>Source Address</td>
+<td><code>172.16.17.82</code></td>
+</tr>
+<tr>
+<td>Source Hostname</td>
+<td><code>JohnComputer</code></td>
+</tr>
+<tr>
+<td>File Name</td>
+<td><code>googleupdate.exe</code></td>
+</tr>
+<tr>
+<td>File Hash</td>
+<td><code>0bca3f16dd527b4150648ec1e36cb22a</code></td>
+</tr>
+<tr>
+<td>File Size</td>
+<td><code>152.45 KB</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="log-management">Log Management</h2>
+<p>There are no logs with <code>172.16.17.82</code> as source/destination address with a date close to the incident.</p>
+<hr>
+<h2 id="endpoint-security">Endpoint Security</h2>
+<h3 id="processes">Processes</h3>
+<ul>
+<li>One of the processes is from <code>c:/program files (x86)/google/update/googleupdate.exe</code>, which is the suspicious file (same hash)</li>
+<li>However, there is another suspicious process with the following path: <code>c:/Users/John/Downloads/Purchase-Order_NO.231101.exe</code> (hash: <code>cdde99520664ac313d43964620019c61</code>)</li>
+</ul>
+<h3 id="other">Other</h3>
+<p>There are no other suspicious activity in <code>Network Action</code>, <code>Terminal History</code> or <code>Browser History</code></p>
+<hr>
+<h2 id="file-analysis">File Analysis</h2>
+<h3 id="googleupdateexe"><code>googleupdate.exe</code></h3>
+<ul>
+<li>Hash: <code>0bca3f16dd527b4150648ec1e36cb22a</code></li>
+<li>According to VirusTotal, no security vendors flagged this file as malicious</li>
+<li>According to majority of Hybrid Analysis reports, it is a benign file</li>
+</ul>
+<p><img src="/img/letsdefend/eventid_14_vt_1.png" alt="EventID 14 VirusTotal analysis of googleupdate.exe"></p>
+<h4 id="however-there-is-another-suspicious-file-in-johns-computer-that-needs-to-be-reviewed">However, there is another suspicious file in John&rsquo;s computer that needs to be reviewed:</h4>
+<p><code>c:/Users/John/Downloads/Purchase-Order_NO.231101.exe</code></p>
+<p>　</p>
+<h3 id="purchase-order_no231101exe"><code>Purchase-Order_NO.231101.exe</code></h3>
+<ul>
+<li>Hash: <code>cdde99520664ac313d43964620019c61</code></li>
+<li>According to VirusTotal, 64/74 security vendors flagged this file as malicious</li>
+</ul>
+<p><img src="/img/letsdefend/eventid_14_vt_2.png" alt="EventID 14 VirusTotal analysis of PurchaseOrder"></p>
+<hr>
+<h2 id="conclusion">Conclusion</h2>
+<p>Even though <code>googleupdate.exe</code> is not malicious, there is a process associated with a malicious file in John&rsquo;s computer.</p>
+<hr>
+<h2 id="playbook">Playbook</h2>
 <ol>
-<li><a href="/writeups/letsdefend/">LetsDefend</a></li>
+<li>Contain John&rsquo;s computer in <code>Endpoint Security</code> tab</li>
+<li>Open <code>Playbook</code> in <code>Case Management</code></li>
+<li>Define Threat Indicator: <code>Other</code></li>
+<li>Malware quarantined/cleaned? <code>Quarantined</code></li>
+<li>Analyze Malware: <code>Not Malicious</code></li>
+<li>Check if Someone Requested the C2: <code>Not Accessed</code>
+<ul>
+<li>there are no indications that C2 was requested</li>
+</ul>
+</li>
+<li>Confirm Playbook</li>
+<li>Go to <code>Monitoring</code> tab and <code>Close Alert</code></li>
+<li>Check <code>False Negative</code> and close the alert
+<ul>
+<li>Even though there is a malicious file, <code>googleupdate.exe</code> is not malicious, thus a false negative</li>
+</ul>
+</li>
 </ol>
 
     </div>
 </div>
+
+
+<aside class="post-toc">
+    <nav id="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#initial-information">Initial Information</a></li>
+    <li><a href="#log-management">Log Management</a></li>
+    <li><a href="#endpoint-security">Endpoint Security</a>
+      <ul>
+        <li><a href="#processes">Processes</a></li>
+        <li><a href="#other">Other</a></li>
+      </ul>
+    </li>
+    <li><a href="#file-analysis">File Analysis</a>
+      <ul>
+        <li><a href="#googleupdateexe"><code>googleupdate.exe</code></a></li>
+        <li><a href="#purchase-order_no231101exe"><code>Purchase-Order_NO.231101.exe</code></a></li>
+      </ul>
+    </li>
+    <li><a href="#conclusion">Conclusion</a></li>
+    <li><a href="#playbook">Playbook</a></li>
+  </ul>
+</nav>
+    </nav>
+</aside>
 
 
 

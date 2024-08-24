@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Learn Next.js</title>
+    <meta name="description" content="Software Development | AppSec | Bug Bounty">
+    <meta name="keywords" content=''>
+
+    <meta property="og:url" content="http://192.168.0.19:1313/notas/nextjs/learn_nextjs/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Learn Next.js">
+    <meta property="og:description" content="Software Development | AppSec | Bug Bounty">
+    <meta property="og:image" content="http://192.168.0.19:1313/img/me.jpg">
+    <meta property="og:image:secure_url" content="http://192.168.0.19:1313/img/me.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Learn Next.js">
+    <meta name="twitter:description" content="Software Development | AppSec | Bug Bounty">
+    <meta property="twitter:domain" content="http://192.168.0.19:1313/notas/nextjs/learn_nextjs/">
+    <meta property="twitter:url" content="http://192.168.0.19:1313/notas/nextjs/learn_nextjs/">
+    <meta name="twitter:image" content="http://192.168.0.19:1313/img/me.jpg">
+
+    
+    <link rel="canonical" href="http://192.168.0.19:1313/notas/nextjs/learn_nextjs/">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.893af8dd3b65bd0ffe90e7af33847bd6dc9180b8fa6d6659a212a6f4b62d3e01.js" integrity="sha256-iTr43TtlvQ/&#43;kOevM4R71tyRgLj6bWZZohKm9LYtPgE="></script>
+
+    
+    
+        <!-- KaTeX -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js" integrity="sha384-X/XCfMm41VSsqRNQgDerQczD69XqmjOOOwYQvr/uuC+j4OPoNhVgjdGFwhvN02Ja" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          // customised options
+          // • auto-render specific keys, e.g.:
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false},
+          ],
+          // • rendering keys, e.g.:
+          throwOnError : false
+        });
+      });
+    </script>
+  
+    
+</head>
+<body>
+        <script>
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+        <div class="avatar">
+            <a href="http://192.168.0.19:1313/">
+                <img src='/img/me.jpg' alt="avatar">
+            </a>
+        </div>
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="http://192.168.0.19:1313/">kauan.m</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="http://192.168.0.19:1313/notas/"> ~/notas </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="http://192.168.0.19:1313/artigos/"> ~/artigos </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="http://192.168.0.19:1313/writeups/"> ~/writeups </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <span class="sr-only dark-theme-toggle-screen-reader-target"></span>
+                <a>
+                    <span class="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span class="sr-only hamburger-menu-toggle-screen-reader-target">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="http://192.168.0.19:1313/notas/"> ~/notas </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="http://192.168.0.19:1313/artigos/"> ~/artigos </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="http://192.168.0.19:1313/writeups/"> ~/writeups </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <span class="sr-only dark-theme-toggle-screen-reader-target">theme</span>
+                    <a>
+                        <span class="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    
+
+    <div class="post container">
+
+    <div class="post-header-section">
+        <h1>Learn Next.js</h1>
+    </div>
+
+    <div class="post-content">
+        <h2 id="0-introduction">0. Introduction</h2>
+<p>For this course. we&rsquo;ll be building a simplified version of the financial board that has:</p>
+<ul>
+<li>Public home page</li>
+<li>Login page</li>
+<li>Dashboard pages that are protected by authentication</li>
+<li>The ability for users to add, edit, and delete invoices</li>
+</ul>
+<p>The dashboard will also have an accompanying database, which you&rsquo;ll set up in a later chapter. By the end of the course, you&rsquo;ll have the essential skills needed to start building full-stack Next.js applications.</p>
+<p><img src="https://nextjs.org/_next/image?url=%2Flearn%2Fdark%2Fdashboard.png&amp;w=3840&amp;q=75" alt="Screenshots of the dashboard project showing desktop and mobile versions."></p>
+<h3 id="overview">Overview</h3>
+<p>Here&rsquo;s an overview of features you&rsquo;ll learn about in this course:</p>
+<ul>
+<li><strong>Styling</strong>: the different ways to style your application in Next.js</li>
+<li><strong>Optimizations</strong>: how to optimize images, links, and fonts</li>
+<li><strong>Routing</strong>: how to create nested layouts and pages using file-system routing</li>
+<li><strong>Data Fetching</strong>: how to set up a database on Vercel, and best practices for fetching and streaming</li>
+<li><strong>Search and Pagination</strong>: how to implement search and pagination using URL search params</li>
+<li><strong>Mutating Data</strong>: how to mutate data using React Server Actions, and revalidate the Next.js cache</li>
+<li><strong>Error Handling</strong>: how to handle general and <code>404</code> not found errors</li>
+<li><strong>Form Validation and Accessibility</strong>: how to do server-side form validation and tips for improving accessibility</li>
+<li><strong>Authentication</strong>: how to add authentication to your application using <code>NextAuth.js</code> and Middleware</li>
+<li><strong>Metadata</strong>: how to add metadata and prepare your application for social sharing</li>
+</ul>
+<h3 id="prerequisite-knowledge">Prerequisite Knowledge</h3>
+<p>This course assumes you have a basic understanding of React and JavaScript. If you&rsquo;re new to React, we recommend going through our <strong>React Foundations</strong> course first to learn the fundamentals of React, such as components, props, state, and hooks, and newer features like Server Components and Suspense.</p>
+<hr>
+<h2 id="1-getting-started">1. Getting Started</h2>
+<h3 id="creating-a-new-project">Creating a new project</h3>
+<p>We recommend using <code>pnpm</code> as your package manager, as it&rsquo;s faster and more efficient than <code>npm</code> or <code>yarn</code>. If you don&rsquo;t have it installed, you can install it globally by running <code>npm install -g pnpm</code></p>
+<p>To create a Next.js app, open your terminal, <code>cd</code> into the folder you&rsquo;d like to keep your project, and run the following command:</p>
+<pre tabindex="0"><code>npx create-next-app@latest nextjs-dashboard --example &#34;https://github.com/vercel/next-learn/tree/main/dashboard/starter-example&#34; --use-pnpm
+</code></pre><p>This command uses <code>create-next-app</code>, a CLI tool that sets up a Next.js application for you. In the command above, you&rsquo;re also using the <code>--example</code> flag with the starter example for this course.</p>
+<h3 id="exploring-the-project">Exploring the project</h3>
+<p>Unlike tutorials that have you write code from scratch, much of the code for this course is already written for you. This better reflects real-world development, where you&rsquo;ll likely by working with existing codebases. Our goal is to help you focus on learning the main features of Next.js, without having to write all the application code.</p>
+<p>After installation, open the project in your code editor and navigate to <code>nextjs-dashboard</code>. Let&rsquo;s spend some time exploring the project.</p>
+<h3 id="folder-structure">Folder structure</h3>
+<p>You&rsquo;ll notice that the project has the following folder structure:</p>
+<ul>
+<li><code>/app</code>: contains all the routes, components, and logic for your application, this is where you&rsquo;ll be mostly working from</li>
+<li><code>/app/lib</code>: contains functions used in your application, such as reusable utility functions and data fetching functions</li>
+<li><code>/app/ui</code>: contains all the UI components for your application, such as cards, tables, and forms. To save time, we&rsquo;ve pre-styled these components for you</li>
+<li><code>/public</code>: contains all the statis assets for your application, such as images</li>
+<li><strong>config</strong> files: such as <code>next.config.js</code>. most of these files are created and pre-configured when you start a new project using <code>create-next-app</code></li>
+</ul>
+<h3 id="placeholder-data">Placeholder data</h3>
+<p>When you&rsquo;re building UIs, it helps to have some placeholder data. If a database or API is not yet available, you can:</p>
+<ul>
+<li>Use placeholder data in JSON format or as JavaScript objects</li>
+<li>Use a 3rd party service like <code>mockAPI</code></li>
+</ul>
+<p>For this project, we&rsquo;ve provided some placeholder data in <code>app/lib/placeholder-data.ts</code>. Each JavaScript object in the file represents a table in your database. For example, the invoices table:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">invoices</span> <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">customer_id</span>: <span style="color:#66d9ef">customers</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">id</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">amount</span>: <span style="color:#66d9ef">15795</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">status</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;pending&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">date</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2022-12-06&#39;</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// ...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>];
+</span></span></code></pre></div><p>In the chapter on setting up your database, you&rsquo;ll use this data to seed your database (populate it with some initial data).</p>
+<h3 id="typescript">TypeScript</h3>
+<p>You may also notice most files have a <code>.ts</code> or <code>.tsx</code> suffix. This is because the project is written in TypeScript. We wanted to create a course that reflects the modern web landscape.</p>
+<p>For now, take a look at the <code>/app/lib/definitions.ts</code> file. Here, we manually define the types that will be returned from the database. For example, the invoices table has the following types:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Invoice</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">id</span>: <span style="color:#66d9ef">string</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">customer_id</span>: <span style="color:#66d9ef">string</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">amount</span>: <span style="color:#66d9ef">number</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">date</span>: <span style="color:#66d9ef">string</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">status</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;pending&#39;</span> <span style="color:#f92672">|</span> <span style="color:#e6db74">&#39;paid&#39;</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>By using TypeScript, you can ensure you don&rsquo;t accidentally pass the wrong data format to your components or database, like passing a <code>string</code> instead of a <code>number</code> to invoice <code>amount</code>.</p>
+<p>If you&rsquo;re a TypeScript developer:</p>
+<ul>
+<li>We&rsquo;re manually declaring the data types, but for better type-safety, we recommend Prisma or Drizzle, which automatically generates types based on your database schema</li>
+<li>Next.js detects if your project uses TypeScript and automatically installs the necessary packages and configuration. Next.js also comes with a TypeScript plugin for your code editor, to help with auto-completion and type-safety.</li>
+</ul>
+<h3 id="running-the-development-server">Running the development server</h3>
+<p>Run <code>pnpm i</code> to install the project&rsquo;s packages. Followed by <code>pnpm dev</code> to start the development server. <code>pnpm dev</code> starts your Next.js dev server on port <code>3000</code>. Let&rsquo;s check to see if it&rsquo;s working: open <code>http://localhost:3000</code> on your browser.</p>
+
+    </div>
+</div>
+
+
+<aside class="post-toc">
+    <nav id="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#0-introduction">0. Introduction</a>
+      <ul>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#prerequisite-knowledge">Prerequisite Knowledge</a></li>
+      </ul>
+    </li>
+    <li><a href="#1-getting-started">1. Getting Started</a>
+      <ul>
+        <li><a href="#creating-a-new-project">Creating a new project</a></li>
+        <li><a href="#exploring-the-project">Exploring the project</a></li>
+        <li><a href="#folder-structure">Folder structure</a></li>
+        <li><a href="#placeholder-data">Placeholder data</a></li>
+        <li><a href="#typescript">TypeScript</a></li>
+        <li><a href="#running-the-development-server">Running the development server</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </nav>
+</aside>
+
+
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>&copy; 2024 Kauan Manzato</span>
+    
+    <span>
+        Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
+    </span>
+</footer>
+</body>
+</html>

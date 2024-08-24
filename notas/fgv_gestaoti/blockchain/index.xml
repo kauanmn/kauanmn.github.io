@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blockchain e IoT on kauan.m</title>
+    <link>http://192.168.0.19:1313/notas/fgv_gestaoti/blockchain/</link>
+    <description>Recent content in Blockchain e IoT on kauan.m</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 30 Jul 2024 19:00:00 -0300</lastBuildDate>
+    <atom:link href="http://192.168.0.19:1313/notas/fgv_gestaoti/blockchain/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Aula 2</title>
+      <link>http://192.168.0.19:1313/notas/fgv_gestaoti/blockchain/aula2/</link>
+      <pubDate>Tue, 30 Jul 2024 19:00:00 -0300</pubDate>
+      <guid>http://192.168.0.19:1313/notas/fgv_gestaoti/blockchain/aula2/</guid>
+      <description>Módulo 2 - IoT Para pensar&#xA;O que significa IoT e como é definido? Como IoT poder ser usado em uma empresa? Existe uma forma de desenvolver IoT? Quais as partes de IoT? Por que os projetos de IoT falham? Por que existem tantas propostas de rede sem fio para IoT? Objetivo Identificar como o termo IoT é apresentado na mídia Verificar a deficiência na clara definição do que é IoT Constatar que foi criada uma imagem pela mídia que muitas vezes não corresponde à realidade Definição Definição pelo ITU: &amp;ldquo;A Internet das Coisas (IoT) foi definida como uma infraestrutura global para a sociedade da informação, permitindo serviços avançados por meio da interconexão (física e virtual) de coisas baseadas em tecnologias da informação e comunicação existentes e que estão evoluindo&amp;rdquo;</description>
+    </item>
+    <item>
+      <title>Aula 1</title>
+      <link>http://192.168.0.19:1313/notas/fgv_gestaoti/blockchain/aula1/</link>
+      <pubDate>Mon, 29 Jul 2024 19:00:00 -0300</pubDate>
+      <guid>http://192.168.0.19:1313/notas/fgv_gestaoti/blockchain/aula1/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

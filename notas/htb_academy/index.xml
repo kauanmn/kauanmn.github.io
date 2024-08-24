@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>HackTheBox Academy on kauan.m</title>
+    <link>http://192.168.0.19:1313/notas/htb_academy/</link>
+    <description>Recent content in HackTheBox Academy on kauan.m</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="http://192.168.0.19:1313/notas/htb_academy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SQL Injection Fundamentals</title>
+      <link>http://192.168.0.19:1313/notas/htb_academy/sqli_fundamentals/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://192.168.0.19:1313/notas/htb_academy/sqli_fundamentals/</guid>
+      <description>Introduction Most modern web applications use a database structure on the backend. Such databases are used to stored and retrieve data related to the web application, from actual web content to user information and content, and so on. To make the web application dynamic, the web application has to interact with the database in real-time. As HTTP(S) requests arrive from the user, the web application&amp;rsquo;s backend will issue queries to the database to build the response.</description>
+    </item>
+    <item>
+      <title>Using Web Proxies</title>
+      <link>http://192.168.0.19:1313/notas/htb_academy/web_proxies/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://192.168.0.19:1313/notas/htb_academy/web_proxies/</guid>
+      <description>Intro to Web Proxies Testing web requests to backend servers make up the bulk of Web Application pentesting, which includes concepts that apply to both web and mobile applications. To capture the requests and traffic passing between applications and backend servers and manipulate these types of requests for testing purposes, we need to use Web Proxies.&#xA;What are web proxies? Web proxies are specialized tools that can be set up between a browser/mobile application and a backend server to capture and view all the web requests being sent between both ends, essentially acting as MITM tools.</description>
+    </item>
+    <item>
+      <title>XSS (Cross-Site Scripting)</title>
+      <link>http://192.168.0.19:1313/notas/htb_academy/xss/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://192.168.0.19:1313/notas/htb_academy/xss/</guid>
+      <description>Introduction As web applications become more advanced and more common, so do web application vulnerabilities. Among the most common types of web application vulnerabilities are XSS (Cross-Site Scripting) vulnerabilities. XSS vulnerabilities take advantage of a flaw in user input sanitization to &amp;ldquo;write&amp;rdquo; JavaScript code to the page and execute it on the client side, leading to several types of attacks.&#xA;What is XSS? A typical web application works by receiving the HTML code from the backend server and rendering it on the client-side internet browser.</description>
+    </item>
+  </channel>
+</rss>

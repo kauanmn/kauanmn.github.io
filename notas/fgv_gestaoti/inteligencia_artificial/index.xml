@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Inteligência Artificial e Machine Learning on kauan.m</title>
+    <link>http://192.168.0.19:1313/notas/fgv_gestaoti/inteligencia_artificial/</link>
+    <description>Recent content in Inteligência Artificial e Machine Learning on kauan.m</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 19 Jul 2024 00:00:10 -0300</lastBuildDate>
+    <atom:link href="http://192.168.0.19:1313/notas/fgv_gestaoti/inteligencia_artificial/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Preparação para a prova</title>
+      <link>http://192.168.0.19:1313/notas/fgv_gestaoti/inteligencia_artificial/preparacao/</link>
+      <pubDate>Fri, 19 Jul 2024 00:00:10 -0300</pubDate>
+      <guid>http://192.168.0.19:1313/notas/fgv_gestaoti/inteligencia_artificial/preparacao/</guid>
+      <description>1. Faça uma pergunta e a responda. A pergunta deve ser relacionada a IA. Você será avaliado pela clareza, objetividade e criatividade da pergunta e da resposta R: A Inteligência Artificial substituirá o desenvolvedor de software? A resposta é &amp;ldquo;depende&amp;rdquo;. Mesmo com a evolução dos modelos de IA, existem alguns desafios na área de desenvolvimento de software, como a necessidade de ser criativo e inovador, que impedem que a IA subsititua os desenvolvedores por completo, principalmente pelo fato de que os modelos atuais possuem um escopo limitado.</description>
+    </item>
+    <item>
+      <title>Aula 5</title>
+      <link>http://192.168.0.19:1313/notas/fgv_gestaoti/inteligencia_artificial/aula5/</link>
+      <pubDate>Fri, 19 Jul 2024 00:00:00 -0300</pubDate>
+      <guid>http://192.168.0.19:1313/notas/fgv_gestaoti/inteligencia_artificial/aula5/</guid>
+      <description>Recursos Recurso é tudo que serve para a execução das atividades (recursos de trabalho) ou que é consumido por elas (recursos consumidos). Enquadram em três grandes grupos:&#xA;recursos humanos equipamentos materiais Prazos e Custos Prazos: estimativa do tempo do projeto em termos de duração e data das atividades Custos: estimativa dos custos unitários e totais dos recursos necessários para realizar as atividades do projeto Requisitos Condição ou capacidade que precisa ser alcançada ou possuída por um produto, serviço, sistema ou resultado, a fim de satisfazer um contrato, padrão, especificação ou qualquer outro documento formal</description>
+    </item>
+    <item>
+      <title>Aula 3</title>
+      <link>http://192.168.0.19:1313/notas/fgv_gestaoti/inteligencia_artificial/aula3/</link>
+      <pubDate>Thu, 18 Jul 2024 00:00:00 -0300</pubDate>
+      <guid>http://192.168.0.19:1313/notas/fgv_gestaoti/inteligencia_artificial/aula3/</guid>
+      <description>O que é aprendizado? Aprendizado é a capacidade de se adaptar, modificar e melhorar seu comportamento e suas respostas, sendo, portanto, uma das propriedades mais importantes dos seres humanos inteligentes, sejam eles humanos ou não&#xA;Raciocínio indutivo Dada uma linguagem de descrição usada para expressar possíveis hipóteses, um conhecimento preliminar, um conjunto de exemplos positivos, e um conjunto de exemplos negativos, o Aprendizado Indutivo pode ser entendido como o problema de se encontrar uma hipótese que cubra todos os exemplos positivos e não cubra nenhum dos exemplos negativos.</description>
+    </item>
+    <item>
+      <title>Aula 4</title>
+      <link>http://192.168.0.19:1313/notas/fgv_gestaoti/inteligencia_artificial/aula4/</link>
+      <pubDate>Thu, 18 Jul 2024 00:00:00 -0300</pubDate>
+      <guid>http://192.168.0.19:1313/notas/fgv_gestaoti/inteligencia_artificial/aula4/</guid>
+      <description>Aprendizado por reforço Ambiente CÉU → observação → Agente HELICÓPTERO&#xD;| ^&#xD;| recompensa, punição |&#xD;| | &amp;#39;------------- ação -------------&amp;#39; O aprendizado por reforço não é definido por algoritmos de aprendizado, mas pelo problema a ser aprendido.&#xA;É comum em robótica em que o conjunto de leituras do sensor, em um ponto no tempo, é um ponto de dados e o algoritmo deve escolher a próxima ação do robô</description>
+    </item>
+    <item>
+      <title>Aula 2</title>
+      <link>http://192.168.0.19:1313/notas/fgv_gestaoti/inteligencia_artificial/aula2/</link>
+      <pubDate>Wed, 17 Jul 2024 00:00:00 -0300</pubDate>
+      <guid>http://192.168.0.19:1313/notas/fgv_gestaoti/inteligencia_artificial/aula2/</guid>
+      <description>Tipos de Gráficos Comparação: gráfico de barras Tempo / Tendência: gráfico de linha Composição: gráfico de pizza e gráfico de pareto Relacionamento: diagrama de Venn, gráfico de Gantt Distribuição: gráfico do sino (frequência), histograma, boxplot Correlação: gráfico de dispersão (scatterplot) e gráfico de bolha Outros: mapas, matriz de risco O que é Big Data? Análise de grandes quantidades de dados para a geração de resultados importantes que, em volumes menores, dificilmente seriam alcançados.</description>
+    </item>
+    <item>
+      <title>Aula 1</title>
+      <link>http://192.168.0.19:1313/notas/fgv_gestaoti/inteligencia_artificial/aula1/</link>
+      <pubDate>Tue, 16 Jul 2024 00:00:00 -0300</pubDate>
+      <guid>http://192.168.0.19:1313/notas/fgv_gestaoti/inteligencia_artificial/aula1/</guid>
+      <description>Bibliografia Tom Taulli - Introdução à Inteligência Artificial Adriano Mussa - Inteligência Artificial André Carlos et al. - Inteligência Artificial Dora Kaufman - Desmistificando a Inteligência Artificial Kai-Fu Lee - Inteligência Artificial Norvig &amp;amp; Russell - Inteligência Artificial (principal) Conceitos Essenciais de Big Data Dado: registro solto, aleatório, sem qualquer análise. Um dado sozinho não diz nada, não tem muito valor Informação: dado após o processo de interpretação Conhecimento: informação que passa por processo de análise e trabalho Dados → Informação → Conhecimento → Tomada de Decisão → Ação → Benefícios Importante:</description>
+    </item>
+  </channel>
+</rss>

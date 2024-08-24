@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Aula 4</title>
+    <meta name="description" content="Software Development | AppSec | Bug Bounty">
+    <meta name="keywords" content=''>
+
+    <meta property="og:url" content="http://localhost:1313/notas/fgv_gestaoti/blockchain/aula4/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Aula 4">
+    <meta property="og:description" content="Software Development | AppSec | Bug Bounty">
+    <meta property="og:image" content="http://localhost:1313/img/me.jpg">
+    <meta property="og:image:secure_url" content="http://localhost:1313/img/me.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Aula 4">
+    <meta name="twitter:description" content="Software Development | AppSec | Bug Bounty">
+    <meta property="twitter:domain" content="http://localhost:1313/notas/fgv_gestaoti/blockchain/aula4/">
+    <meta property="twitter:url" content="http://localhost:1313/notas/fgv_gestaoti/blockchain/aula4/">
+    <meta name="twitter:image" content="http://localhost:1313/img/me.jpg">
+
+    
+    <link rel="canonical" href="http://localhost:1313/notas/fgv_gestaoti/blockchain/aula4/">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.893af8dd3b65bd0ffe90e7af33847bd6dc9180b8fa6d6659a212a6f4b62d3e01.js" integrity="sha256-iTr43TtlvQ/&#43;kOevM4R71tyRgLj6bWZZohKm9LYtPgE="></script>
+
+    
+    
+        <!-- KaTeX -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js" integrity="sha384-X/XCfMm41VSsqRNQgDerQczD69XqmjOOOwYQvr/uuC+j4OPoNhVgjdGFwhvN02Ja" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          // customised options
+          // • auto-render specific keys, e.g.:
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false},
+          ],
+          // • rendering keys, e.g.:
+          throwOnError : false
+        });
+      });
+    </script>
+  
+    
+</head>
+<body>
+        <script>
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+        <div class="avatar">
+            <a href="http://localhost:1313/">
+                <img src='/img/me.jpg' alt="avatar">
+            </a>
+        </div>
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="http://localhost:1313/">kauan.m</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="http://localhost:1313/notas/"> ~/notas </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="http://localhost:1313/artigos/"> ~/artigos </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <span class="sr-only dark-theme-toggle-screen-reader-target"></span>
+                <a>
+                    <span class="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span class="sr-only hamburger-menu-toggle-screen-reader-target">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="http://localhost:1313/notas/"> ~/notas </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="http://localhost:1313/artigos/"> ~/artigos </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <span class="sr-only dark-theme-toggle-screen-reader-target">theme</span>
+                    <a>
+                        <span class="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Aula 4</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">July 18, 2024
+        
+        </p>
+
+        <ul class="post-tags">
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <h2 id="aprendizado-por-reforço">Aprendizado por reforço</h2>
+<pre tabindex="0"><code>Ambiente CÉU → observação → Agente HELICÓPTERO
+   |                                ^
+   |      recompensa, punição       |
+   |                                |                                
+   &#39;------------- ação -------------&#39;
+</code></pre><ul>
+<li>
+<p>O aprendizado por reforço não é definido por algoritmos de aprendizado, mas pelo problema a ser aprendido.</p>
+</li>
+<li>
+<p>É comum em robótica em que o conjunto de leituras do sensor, em um ponto no tempo, é um ponto de dados e o algoritmo deve escolher a próxima ação do robô</p>
+</li>
+</ul>
+<hr>
+<h2 id="abordagens-para-o-gerenciamento-de-projetos">Abordagens para o gerenciamento de projetos</h2>
+<ul>
+<li>Preditiva (tradicional): maior previsibilidade do escopo</li>
+<li>Adaptativa (ágil): menor previsibilidade do escopo</li>
+<li>Híbrida: maior parte do escopo previsível e uma parte imprevisível ou vice-versa</li>
+</ul>
+<hr>
+<h2 id="prince2---projects-in-a-controlled-environment">PRINCE2 - Projects in a Controlled Environment</h2>
+<ul>
+<li>método para gerenciamento de projetos</li>
+<li>foco nos aspectos do negócio e de gerenciamento do projeto</li>
+<li>aplica-se a qualquer tipo de projeto</li>
+<li>não contêm orientações específicas para análise de dados</li>
+<li>abordagem híbrida e flexível: aplica-se tanto para abordagens tradicionais quanto ágeis</li>
+</ul>
+<hr>
+<h2 id="pmbok">PMBOK</h2>
+<ul>
+<li>PMBOK (Project Management Body of Knowledge)</li>
+<li>guia para as melhores práticas para gerenciamento de projetos</li>
+<li>aplica-se a qualquer tipo de projeto</li>
+<li>não contêm orientações específicas</li>
+<li>complementa o PRINCE2</li>
+</ul>
+<hr>
+<h2 id="crisp-dm">CRISP-DM</h2>
+<ul>
+<li>CRISP-DM (Cross-Industry Standard Process for Data Mining)</li>
+<li>ciclo de vida típico de um projeto de IA</li>
+<li>foco nos aspectos do negócio e no modelo</li>
+<li>não é um método para gerenciamento de projetos</li>
+</ul>
+<hr>
+<h2 id="razões">Razões</h2>
+<ul>
+<li>as razões são as justificativas do projeto</li>
+<li>problemas e/ou oportunidades para mudar</li>
+<li>argumento de venda do programa diante das partes interessadas</li>
+</ul>
+<p>　</p>
+<h4 id="dicas-para-identificar-problemas-para-ia">Dicas para identificar problemas para IA</h4>
+<ol>
+<li>
+<p>Procure tarefas com alto nível de repetição e com baixa necessidade de interação social, sejam elas manuais ou cognitivas</p>
+</li>
+<li>
+<p>foque em tarefas específicas e não em cargos ou ocupações</p>
+</li>
+<li>
+<p>procure, inicialmente, relações em que a lógica de associação entre as entradas e saídas sejam claras, típicas de aprendizagem supervisionada e de escopo estreito</p>
+</li>
+<li>
+<p>concentre-se em situações, produtos ou serviços que você tenha os dados necessários</p>
+</li>
+<li>
+<p>qualquer coisa que um ser humano pode fazer, que requeira poucos segundos de pensamento, provavelmente agora ou em breve será automatizada pela IA</p>
+</li>
+<li>
+<p>concentre-se em atividades que hoje já são realizadas por seres humanos e, portanto, exequíveis</p>
+</li>
+<li>
+<p>concentre-se, inicialmente, em projetos voltados à otimização dos negócios ou ligados à internet</p>
+</li>
+<li>
+<p>verifique se há algoritmos existentes para a sua necessidade. Desenvolver algoritmos é mais complexo do que adaptá-los</p>
+</li>
+<li>
+<p>tenha sempre em mente que a verdadeira inteligência artificial é silenciosa e está &ldquo;abaixo da superfície&rdquo;</p>
+</li>
+<li>
+<p>comece com projetos pequenos e validadores de conceitos. Moonshots (gigantes e ousadíssimas iniciativas) não combinam com IA</p>
+</li>
+</ol>
+<hr>
+<h2 id="benefícios">Benefícios</h2>
+<p>melhoria mensurada para o negócio</p>
+<ul>
+<li>melhoria: mudança vista como positiva pelas partes interessadas</li>
+<li>mensurada: benefício que possui indicadores para permitir medição</li>
+<li>negócio: contexto onde o programa está inserido</li>
+</ul>
+<hr>
+<h2 id="objetivos">Objetivos</h2>
+<p><strong>Objetivo</strong> é a <strong>direção a ser seguida, posição a ser alcançada, resultado a ser obtido ou algo a ser produzido</strong>.</p>
+<hr>
+<h2 id="mvp-minimum-viable-product">MVP (Minimum Viable Product)</h2>
+<ul>
+<li>relatórios</li>
+<li>narrativas</li>
+<li>apresentações</li>
+<li>web sites</li>
+<li>aplicativos</li>
+</ul>
+<hr>
+<h2 id="stakeholders">Stakeholders</h2>
+<p>Indivíduo, grupo ou organização que pode impactar, ser impactado, ou ter a percepção de ser impactado pelo projeto.</p>
+<p>Pode estar ativamente envolvido no projeto ou ter interesses que podem ser positiva ou negativamente afetados pela execução ou conclusão do projeto</p>
+<hr>
+<h2 id="premissas-e-restrições">Premissas e Restrições</h2>
+<ul>
+<li>
+<p>Premissa: evento, fato ou condição incerta assumida como verdade para efeito de planejamento</p>
+</li>
+<li>
+<p>Restrição: fator limitador que afeta o planejamento ou a execução de um projeto</p>
+</li>
+</ul>
+
+        
+    </div>
+
+    <div class="prev-next">
+        
+    </div>
+
+    
+    
+    
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>&copy; 2024 Kauan Manzato</span>
+    
+    <span>
+        Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
+    </span>
+</footer>
+</body>
+</html>

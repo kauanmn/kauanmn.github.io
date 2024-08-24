@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>React Foundations</title>
+    <meta name="description" content="Software Development | AppSec | Bug Bounty">
+    <meta name="keywords" content=''>
+
+    <meta property="og:url" content="http://192.168.0.19:1313/notas/nextjs/react_foundations/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="React Foundations">
+    <meta property="og:description" content="Software Development | AppSec | Bug Bounty">
+    <meta property="og:image" content="http://192.168.0.19:1313/img/me.jpg">
+    <meta property="og:image:secure_url" content="http://192.168.0.19:1313/img/me.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="React Foundations">
+    <meta name="twitter:description" content="Software Development | AppSec | Bug Bounty">
+    <meta property="twitter:domain" content="http://192.168.0.19:1313/notas/nextjs/react_foundations/">
+    <meta property="twitter:url" content="http://192.168.0.19:1313/notas/nextjs/react_foundations/">
+    <meta name="twitter:image" content="http://192.168.0.19:1313/img/me.jpg">
+
+    
+    <link rel="canonical" href="http://192.168.0.19:1313/notas/nextjs/react_foundations/">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.893af8dd3b65bd0ffe90e7af33847bd6dc9180b8fa6d6659a212a6f4b62d3e01.js" integrity="sha256-iTr43TtlvQ/&#43;kOevM4R71tyRgLj6bWZZohKm9LYtPgE="></script>
+
+    
+    
+        <!-- KaTeX -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js" integrity="sha384-X/XCfMm41VSsqRNQgDerQczD69XqmjOOOwYQvr/uuC+j4OPoNhVgjdGFwhvN02Ja" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          // customised options
+          // • auto-render specific keys, e.g.:
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false},
+          ],
+          // • rendering keys, e.g.:
+          throwOnError : false
+        });
+      });
+    </script>
+  
+    
+</head>
+<body>
+        <script>
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+        <div class="avatar">
+            <a href="http://192.168.0.19:1313/">
+                <img src='/img/me.jpg' alt="avatar">
+            </a>
+        </div>
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="http://192.168.0.19:1313/">kauan.m</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="http://192.168.0.19:1313/notas/"> ~/notas </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="http://192.168.0.19:1313/artigos/"> ~/artigos </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="http://192.168.0.19:1313/writeups/"> ~/writeups </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <span class="sr-only dark-theme-toggle-screen-reader-target"></span>
+                <a>
+                    <span class="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span class="sr-only hamburger-menu-toggle-screen-reader-target">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="http://192.168.0.19:1313/notas/"> ~/notas </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="http://192.168.0.19:1313/artigos/"> ~/artigos </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="http://192.168.0.19:1313/writeups/"> ~/writeups </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <span class="sr-only dark-theme-toggle-screen-reader-target">theme</span>
+                    <a>
+                        <span class="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    
+
+    <div class="post container">
+
+    <div class="post-header-section">
+        <h1>React Foundations</h1>
+    </div>
+
+    <div class="post-content">
+        <h2 id="1-introduction">1. Introduction</h2>
+<p>To effectively learn Next.js, it helps to be familiar with JavaScript, React, and related web development concepts. But JavaScript and React are vast topics. How do you know when you&rsquo;re ready to start using Next.js?</p>
+<p>Welcome to the React Foundations course! This beginner-friendly, example-led course will guide you through the prerequisite knowledge for Next.js. You will build a simple project step-by-step; starting with a JavaScript application, then migrating it to React and Next.js.</p>
+<p>Each section builds on the previous one, so you can choose where to start depending on what you already know.</p>
+<h3 id="prerequisite-knowledge">Prerequisite knowledge</h3>
+<p>This tutorial assumes knowledge of HTML, CSS, JavaScript, and no knowledge of React. If you&rsquo;re already familiar with React, you can skip to the From React to Next.js chapter or take Dashboard App course.</p>
+<h3 id="system-requirements">System requirements</h3>
+<p>Before you start this course, make sure you have the following installed:</p>
+<ul>
+<li>Node.js 20.12.0 or later installed.</li>
+<li>Operating systems: macOS, Windows (including WSL), or Linux.</li>
+<li>VSCode or another text editor of your choice.</li>
+</ul>
+<hr>
+<h2 id="2-about-react-and-nextjs">2. About React and Next.js</h2>
+<p>Next.js is a flexible <strong>React framework</strong> that gives you building blocks to create fast, full-stack web applications.</p>
+<p>But what exactly do we mean by this? Let&rsquo;s spend some time expanding on what React and Next.js are and how they can help you build web applications.</p>
+<h3 id="building-blocks-of-a-web-application">Building blocks of a web application</h3>
+<p>There are a few things you need to consider when building modern applications. Such as:</p>
+<ul>
+<li><strong>User interface</strong>: how users will consume and interact with your application</li>
+<li><strong>Routing</strong>: how users navigate between different parts of your application</li>
+<li><strong>Data fetching</strong>: where your data lives and how to get it</li>
+<li><strong>Rendering</strong>: when and where you render static or dynamic content</li>
+<li><strong>Integrations</strong>: what third-party services you use (for CMS, auth, payments, etc.) and how you connect them</li>
+<li><strong>Infrastructure</strong>: where you deploy, store, and run your application code (serverless, CDN, edge, etc.)</li>
+<li><strong>Performance</strong>: how to optimize your application for end-users</li>
+<li><strong>Scalability</strong>: how your application adapts as your team, data, and traffic grow</li>
+<li><strong>Developer experience</strong>: your team&rsquo;s experience building and maintaining your application</li>
+</ul>
+<p>For each part of your application, you will need to decide whether you will build a solution yourself or use other tools, such as packages, libraries, and frameworks.</p>
+<h3 id="what-is-react">What is React?</h3>
+<p><strong>React</strong> is a <strong>JavaScript library for building interactive UI</strong>. By UI, we mean the elements that users see and interact with on-screen.</p>
+<p><img src="https://nextjs.org/_next/image?url=%2Flearn%2Fdark%2Flearn-react-components.png&amp;w=3840&amp;q=75" alt="User Interface example showing a browser window with a navigation, a sidebar, and a list of posts"></p>
+<p>By library, we mean React provides helpful functions (APIs) to build UI, but leaves it up to the developer where to use those functions in their application. Part of React&rsquo;s success is that it is relatively unopinionated about other aspects of building applications. This has resulted in a flourishing ecosystem of third-party tools and solutions, including Next.js.</p>
+<p>It also means, however, that building a complete React application from the ground up requires some effort. Developers need to spend time configuring tools and reinventing solutions for common application requirements.</p>
+<h3 id="what-is-nextjs">What is Next.js?</h3>
+<p>Next.js is a <strong>React framework</strong> that gives you building blocks to create web applications. By framework, we mean Next.js handles the tooling and configuration needed for React, and provides additional structure, features, and optimizations for your application.</p>
+<p>You can use React to build your UI, then incrementally adopt Next.js features to solve common application requirements such as routing, data fetching, and caching - all while improving the developer and end-user experience.</p>
+<p>Whether you&rsquo;re an individual developer or part of a larger team, you can use React and Next.js to build fully interactive, highly dynamic, and performant web applications.</p>
+<p><img src="https://nextjs.org/_next/image?url=%2Flearn%2Fdark%2Flearn-ecosystem.png&amp;w=3840&amp;q=75" alt="Diagram showing how Next.js spans the server and client, and provides additional features such as routing, data fetching, and rendering."></p>
+<hr>
+<h3 id="rendering-ui">Rendering UI</h3>
+<p>To understand how React works, we first need a basic understanding of how browsers interpret your code to create (or render) user interfaces (UI)</p>
+<p>When a user visits a web page, the server returns an HTML file to the browser that may look like this:</p>
+<p><img src="https://nextjs.org/_next/image?url=%2Flearn%2Fdark%2Flearn-html-and-dom.png&amp;w=3840&amp;q=75" alt="Two side-by-side diagrams, left showing the HTML code, and right showing the DOM tree."></p>
+<p>The browser then reads the HTML and constructs the <strong>DOM (Document Object Model)</strong>.</p>
+<h3 id="what-is-the-dom">What is the DOM?</h3>
+<p>The <strong>DOM</strong> is an <strong>object representation of the HTML elements</strong>. It acts as a bridge between your code and the user interface, and has a tree-like structure with parent and child relationships.</p>
+<p><img src="https://nextjs.org/_next/image?url=%2Flearn%2Fdark%2Flearn-dom-and-ui.png&amp;w=3840&amp;q=75" alt="Two side-by-side diagrams, left showing the DOM tree, and right showing the rendered UI."></p>
+<p>You can use DOM methods and JavaScript, to listen to user events and manipulate the DOM by selecting, adding, updating, and deleting specific elements in the user interface. DOM manipulation allows you to not only target specific elements, but also change their style and content.</p>
+<hr>
+<h2 id="3-updating-ui-with-javascript">3. Updating UI with JavaScript</h2>
+<p>In this chapter, we&rsquo;ll start building out our project by using JavaScript and DOM methods to add an h1 tag to your project.</p>
+<p>Open your code editor and create a new index.html file. Inside the HTML file, add the following code:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;app&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// Select the div element with &#39;app&#39; id
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">app</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;app&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// Create a new H1 element
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">header</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;h1&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// Create a new text node for the H1 element
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">text</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Develop. Preview. Ship&#39;</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">headerContent</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createTextNode</span>(<span style="color:#a6e22e">text</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// Append the text node for the H1 element
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#a6e22e">header</span>.<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">headerContent</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// Place the H1 element inside the div
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">header</span>);
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;
+</span></span></code></pre></div><p>To make sure everything is working, open your HTML file inside your browser of choice. You should see an <code>h1</code> tag that says <code>&quot;Develop. Preview. Ship.&quot;</code>.</p>
+<h3 id="html-vs-the-dom">HTML vs. the DOM</h3>
+<p>If you look at the DOM elements inside your browser <code>developer tools</code>, you will notice the DOM includes the <code>&lt;h1&gt;</code> element. The DOM of the page is different from the source code - or in other words, the original HTML file you created.</p>
+<p><img src="https://nextjs.org/_next/image?url=%2Flearn%2Fdark%2Flearn-dom-and-source.png&amp;w=3840&amp;q=75" alt="Two side-by-side diagrams showing the differences between the rendered DOM elements and Source Code (HTML)"></p>
+<p>This is because the <strong>HTML represents the initial page content</strong>, whereas the <strong>DOM represents the updated page content</strong> which was changed by the JavaScript code you wrote.</p>
+<p>Updating the DOM with plain JavaScript is very powerful but verbose. You&rsquo;ve written all this code to add an <code>&lt;h1&gt;</code> element with some text:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">app</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;app&#39;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">header</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;h1&#39;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">text</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Develop. Preview. Ship.&#39;</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">headerContent</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createTextNode</span>(<span style="color:#a6e22e">text</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">header</span>.<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">headerContent</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">header</span>);
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p>As the size of an app or team grows, it can become increasingly challenging to build applications this way. With this approach, developers spend a lot of time writing instructions to tell the computer how it should do things. But wouldn&rsquo;t it be nice to describe what you want to show and let the computer figure out how to update the DOM?</p>
+<h3 id="imperative-vs-declarative-programming">Imperative vs. Declarative Programming</h3>
+<p>The code above is a good example of <strong>imperative programming</strong>. You&rsquo;re writing the steps for <strong>how</strong> the user interface should be updated. But when it comes to building UIs, a declarative approach is often preferred because it can speed up the development process. Instead of having to write DOM methods, it would be helpful if developers were able to declare <strong>what</strong> they want to show (in this case, an <code>h1</code> tag with some text).</p>
+<p>In other words, <strong>imperative programming</strong> is like giving a chef step-by-step instructions on how to make a pizza. <strong>Declarative programming</strong> is like ordering a pizza without being concerned about the steps it takes to make the pizza</p>
+<p><strong>React</strong> is a popular <strong>declarative library</strong> that you can use to build UIs. As a developer, you can tell React what you want to happen to the UI, and React will figure out the steps of how to update the DOM on your behalf.</p>
+<hr>
+<h2 id="4-getting-started-with-react">4. Getting Started with React</h2>
+<p>To use React in your newly created project, load two React scripts from an external website called <code>unpkg.com</code>:</p>
+<ul>
+<li><code>react</code> is the core React library</li>
+<li><code>react-dom</code> provides DOM-specific methods that enable you to use React with the DOM</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;app&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://unpkg.com/react@18/umd/react.development.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://unpkg.com/react-dom@18/umd/react-dom.development.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">app</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;app&#39;</span>);
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">header</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;h1&#39;</span>);
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">text</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Develop. Preview. Ship.&#39;</span>;
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">headerContent</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createTextNode</span>(<span style="color:#a6e22e">text</span>);
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">header</span>.<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">headerContent</span>);
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">header</span>);
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;
+</span></span></code></pre></div><p>Instead of directly manipulating the DOM with plain JavaScript, remove the DOM methods that you had added previously, and add the <code>ReactDOM.createRoot()</code> method to target a specific DOM element and create a root to display your React Components in. Then, add the <code>root.render()</code> method to render your React code to the DOM.</p>
+<p>This will tell React to render our <code>&lt;h1&gt;</code> title inside our <code>#app</code> element.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;app&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://unpkg.com/react@18/umd/react.development.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://unpkg.com/react-dom@18/umd/react-dom.development.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">app</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;app&#39;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">root</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ReactDOM</span>.<span style="color:#a6e22e">createRoot</span>(<span style="color:#a6e22e">app</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">root</span>.<span style="color:#a6e22e">render</span>(<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h1</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Develop</span>. <span style="color:#a6e22e">Preview</span>. <span style="color:#a6e22e">Ship</span>.<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/h1&gt;);</span>
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;
+</span></span></code></pre></div><p>If you try to run this code in the browser, you will get a syntax error: <code>Uncaught SyntaxError: expected expression, got '&lt;'</code>. This is because <code>&lt;h1&gt;...&lt;/h1&gt;</code> is not valid JavaScript. This piece of code is JSX.</p>
+<h3 id="what-is-jsx">What is JSX?</h3>
+<p>JSX is a syntax extension for JavaScript that allows you to describe your UI in a familiar HTML-like syntax. The nice thing about JSX is that apart from following three JSX rules, you don&rsquo;t need to learn any new symbols or syntax outside of HTML and JavaScript.</p>
+<p>But browsers don&rsquo;t understand JSX out of the box, so you&rsquo;ll need a JavaScript compiler, such as Babel, to transform your JSX code into regular JavaScript.</p>
+<h3 id="adding-babel-to-your-project">Adding Babel to your project</h3>
+<p>To add Babel to your project, copy and paste the following script in your <code>index.html</code> file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://unpkg.com/@babel/standalone/babel.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p>In addition, you will need to inform Babel what code to transform by changing the script type to <code>type=text/jsx</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;app&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://unpkg.com/react@18/umd/react.development.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://unpkg.com/react-dom@18/umd/react-dom.development.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!-- Babel Script --&gt;</span>
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://unpkg.com/@babel/standalone/babel.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/jsx&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">domNode</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;app&#39;</span>);
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">root</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ReactDOM</span>.<span style="color:#a6e22e">createRoot</span>(<span style="color:#a6e22e">domNode</span>);
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">root</span>.<span style="color:#a6e22e">render</span>(<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h1</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Develop</span>. <span style="color:#a6e22e">Preview</span>. <span style="color:#a6e22e">Ship</span>.<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/h1&gt;);</span>
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;
+</span></span></code></pre></div><p>To confirm it&rsquo;s working correctly, open your HTML file in the browser. Comparing the <strong>declarative</strong> React code you just wrote:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/jsx&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">domNode</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;app&#34;</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">root</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ReactDOM</span>.<span style="color:#a6e22e">createRoot</span>(<span style="color:#a6e22e">domNode</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">root</span>.<span style="color:#a6e22e">render</span>(<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h1</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Develop</span>. <span style="color:#a6e22e">Preview</span>. <span style="color:#a6e22e">Ship</span>.<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/h1&gt;);</span>
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p>to the <strong>imperative</strong> JavaScript code you wrote in the previous section:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">app</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;app&#39;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">header</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;h1&#39;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">text</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Develop. Preview. Ship.&#39;</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">headerContent</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createTextNode</span>(<span style="color:#a6e22e">text</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">header</span>.<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">headerContent</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">header</span>);
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p>You can start to see how using React enables you to cut down a lot of repetitive code. And this is exactly what React does, it&rsquo;s a library that contains reusable snippets of code that perform tasks on your behalf - in this case, updating the UI.</p>
+<h3 id="essential-javascript-for-react">Essential JavaScript for React</h3>
+<p>While you can learn JavaScript and React at the same time, being familiar with JavaScript can make the process of learning React easier. In the next sessions, you will be introduced to some core concepts of React from a JavaScript perspective. Here&rsquo;s a summary of the JavaScript topics that will be mentioned:</p>
+<ul>
+<li>Functions and Arrow Functions</li>
+<li>Objects</li>
+<li>Arrays and array methods</li>
+<li>Destructuring</li>
+<li>Template literals</li>
+<li>Ternary operators</li>
+<li>ES Modules and import / export syntax</li>
+</ul>
+<h3 id="rules-of-jsx">Rules of JSX</h3>
+<p>JSX is a syntax extension for JavaScript that lets you write HTML-like markup inside a JavaScript file. Although there are other ways to write components, most React developers prefer the conciseness of JSX, and most codebases use it.</p>
+<h4 id="1-return-a-single-root-element">1. Return a single root element</h4>
+<p>To return multiple elements from a component, <strong>wrap them with a single parent tag</strong>. For example, you can use a <code>&lt;div&gt;</code> or wrap with <code>&lt;&gt;</code> and <code>&lt;/&gt;</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">h1</span>&gt;Hedy Lamarr&#39;s Todos&lt;/<span style="color:#f92672">h1</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">img</span> 
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://i.imgur.com/yXOvdOSs.jpg&#34;</span> 
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Hedy Lamarr&#34;</span> 
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;photo&#34;</span>
+</span></span><span style="display:flex;"><span>  &gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">ul</span>&gt;
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">ul</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span></code></pre></div><p>This empty tag is called a <strong>fragment</strong>. They let you group things without leaving any trace in the browser HTML tree.</p>
+<h4 id="2-close-all-the-tags">2. Close all the tags</h4>
+<p>JSX requires tags to be explicitly closed: self-closing tags like <code>&lt;img&gt;</code> must become <code>&lt;img /&gt;</code>, and wrapping tags like <code>&lt;li&gt;blabla</code> must be written as <code>&lt;li&gt;blabla&lt;/li&gt;</code>.</p>
+<h4 id="3-camelcase-all-most-of-the-things">3. camelCase <del>all</del> most of the things</h4>
+<p>JSX turns into JavaScript and attributes written in JSX becomes keys of JavaScript objects. In your own components, you will often want to read those attributes into variables. But JavaScript has limitations on variable names. For example, thei names can&rsquo;t contain dashes or be reserved words like <code>class</code>.</p>
+<p>This is why, in React, many HTML and SVG attributes are written in <code>camelCase</code>. For example, instead of <code>stroke-width</code>, you use <code>strokeWidth</code>. Since <code>class</code> is a reserved word, in React you write <code>className</code> instead, named after the corresponding DOM property:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>&lt;<span style="color:#f92672">img</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://example.org/image.jpg&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;logo&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;logo&#34;</span>
+</span></span><span style="display:flex;"><span>/&gt;
+</span></span></code></pre></div><p>You can find all these attributes in the list of DOM component props. If you get one wrong, don’t worry - React will print a message with a possible correction to the browser console.</p>
+<hr>
+<h2 id="5-building-ui-with-components">5. Building UI with Components</h2>
+<p>There are three core concepts of React that you&rsquo;ll need to be familiar with to start building React applications. These are:</p>
+<ul>
+<li>Components</li>
+<li>Props</li>
+<li>State</li>
+</ul>
+<h3 id="components">Components</h3>
+<p>UIs can be broken down into smaller building blocks called <strong>components</strong>. Components <strong>allow you to build self-contained, reusable snippets of code</strong>. If you think of components as LEGO bricks, you can take these individual bricks and combine them together to form larger structures. If you need to update a piece of the UI, you can update the specific component or brick.</p>
+<p><img src="https://nextjs.org/_next/image?url=%2Flearn%2Fdark%2Flearn-components.png&amp;w=3840&amp;q=75" alt="Example of a Media Component made up of 3 smaller components: image, text, and button"></p>
+<p>This modularity allows your code to be more maintainable as it grows because you can add, update, and delete components without touching the rest of our application.</p>
+<p>The nice thing about React components is that they are just JavaScript. Let&rsquo;s see how you can write a React component, from a JavaScript perspective.</p>
+<p>In React, components are <strong>functions</strong> that <strong>returns UI elements</strong>: inside the return statement of the function, you can write JSX.</p>
+<p>To render this component to the DOM, pass it as the first argument in the <code>root.render()</code> method.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/jsx&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">app</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;app&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">header</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> (
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h1</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Develop</span>. <span style="color:#a6e22e">Preview</span>. <span style="color:#a6e22e">Ship</span>.<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/h1&gt;</span>
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">root</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ReactDOM</span>.<span style="color:#a6e22e">createRoot</span>(<span style="color:#a6e22e">app</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">root</span>.<span style="color:#a6e22e">render</span>(<span style="color:#a6e22e">header</span>);
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p>But, wait a second. If you try to run the code above in your browser, you&rsquo;ll get an error. To get this to work, there are two things you have to do:</p>
+<ul>
+<li>React components should be capitalized to distinguish them from plain HTML and JavaScript</li>
+<li>You use React components the same way you&rsquo;d use regular HTML tags, with angle brackets <code>&lt;&gt;</code>:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/jsx&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">app</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;app&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Header</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> (
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h1</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Develop</span>. <span style="color:#a6e22e">Preview</span>. <span style="color:#a6e22e">Ship</span>.<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/h1&gt;</span>
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">root</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ReactDOM</span>.<span style="color:#a6e22e">createRoot</span>(<span style="color:#a6e22e">app</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">root</span>.<span style="color:#a6e22e">render</span>(<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Header</span> <span style="color:#f92672">/&gt;</span>);
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p>If you try to run the code in your browser again, you&rsquo;ll see your changes.</p>
+<h3 id="nesting-components">Nesting Components</h3>
+<p>Applications usually include more content than a single component. You can <strong>nest</strong> React components inside each other like you would regular HTML elements.</p>
+<p>In your example, create a new component called <code>HomePage</code> and then nest the <code>&lt;Header&gt;</code> component inside the new <code>&lt;HomePage&gt;</code> component.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Header</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> &lt;<span style="color:#f92672">h1</span>&gt;<span style="color:#a6e22e">Develop</span>. <span style="color:#a6e22e">Preview</span>. <span style="color:#a6e22e">Ship</span>.&lt;/<span style="color:#f92672">h1</span>&gt;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">HomePage</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> (
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>      {<span style="color:#75715e">/* nesting the Header component */</span>}
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">Header</span> /&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">root</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ReactDOM</span>.<span style="color:#a6e22e">createRoot</span>(<span style="color:#a6e22e">app</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">root</span>.<span style="color:#a6e22e">render</span>(&lt;<span style="color:#f92672">Header</span> /&gt;);
+</span></span></code></pre></div><h3 id="component-trees">Component trees</h3>
+<p>You can keep nesting React components this way to form component trees.</p>
+<p><img src="https://nextjs.org/_next/image?url=%2Flearn%2Fdark%2Flearn-component-tree.png&amp;w=3840&amp;q=75" alt="Component tree showing how components can be nested inside each other"></p>
+<p>For example, your top-level <code>HomePage</code> component could hold a <code>Header</code>, an <code>Article</code>, and a <code>Footer</code> component. And each of those components could in turn have their own child components and so on. For example, the <code>Header</code> component could contain a <code>Logo</code>, <code>Title</code> and <code>Navigation</code> component.</p>
+<p>This modular format allows you to reuse components in different places inside your app. In your project, since <code>&lt;HomePage&gt;</code> is now your top-level component, you can pass it to the <code>root.render()</code> method:</p>
+<hr>
+<h2 id="6-displaying-data-with-props">6. Displaying Data with Props</h2>
+<p>So far, if you were reuse your <code>&lt;Header /&gt;</code> component, it would display the same content both times. But what if you want to pass different text or you don&rsquo;t know the information ahead of time because you&rsquo;re fetching data from an external source?</p>
+<p>Regular HTML elements have attributes that you can use to pass pieces of information that change the behavior of those elements. For example, changing the <code>src</code> attribute of an <code>&lt;img&gt;</code> element changes the image that is shown. Changing the <code>href</code> attribute of an <code>&lt;a&gt;</code> tag changes the destination of the link.</p>
+<p>In the same way, you can pass pieces of information as properties to React components. These are called <code>props</code>. Take for instance, the possible variations of a button:</p>
+<p><img src="https://nextjs.org/_next/image?url=%2Flearn%2Fdark%2Flearn-props.png&amp;w=3840&amp;q=75" alt="Diagram showing 3 variations of a button component: Primary, Secondary, and Disabled"></p>
+<p>Similar to a JavaScript function, you can design components that accept custom arguments (or props) that change the component&rsquo;s behavior or what is visibly shown when it&rsquo;s rendered to the screen. Then, you can pass down these props from parent components to child components.</p>
+<blockquote>
+<p><em>Note: in React, data flows down the component tree. This is referred to as <strong>one-way data flow</strong>. State, which will be discussed in the next chapter, can be passed from parent to child components as props.</em></p>
+</blockquote>
+<h3 id="using-props">Using props</h3>
+<p>In your <code>HomePage</code> component, you can pass a custom <code>title</code> prop to the <code>Header</code> component, just like you&rsquo;d pass HTML attributes. And <code>Header</code>, the child component, can accept those props as its first <strong>function parameter</strong> (if you <code>console.log()</code> props, you can see that it&rsquo;s an <strong>object</strong> with a <code>title</code> property).</p>
+<p>And since <code>props</code> is an object, you can use object destructuring to explicitly name the values of props inside your function parameters: <code>function Header({ title })</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Header</span>({<span style="color:#a6e22e">title</span>}) {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">//{ title: &#34;React&#34; }
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">return</span> &lt;<span style="color:#f92672">h1</span>&gt;<span style="color:#a6e22e">title</span>&lt;/<span style="color:#f92672">h1</span>&gt;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">HomePage</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> (
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">Header</span> <span style="color:#a6e22e">title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;React&#34;</span>/&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>  )
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>If you open your file in the browser, you will see that it is displaying the actual word <code>&quot;title&quot;</code>. This is because React thinks you&rsquo;re intending to render a plain text string to the DOM.</p>
+<p>You need a way to tell React that this is a JavaScript variable.</p>
+<h3 id="using-variables-in-jsx">Using variables in JSX</h3>
+<p>To use the <code>title</code> prop, add <strong>curly braces</strong> <code>{}</code>. These are a special JSX syntax that allows you to write regular JavaScript directly inside your JSX markup:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Header</span>({ <span style="color:#a6e22e">title</span> }) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> &lt;<span style="color:#f92672">h1</span>&gt;{<span style="color:#a6e22e">title</span>}&lt;/<span style="color:#f92672">h1</span>&gt;;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>You can think of curly braces as a way to enter &ldquo;JavaScript land&rdquo; while you are in &ldquo;JSX land&rdquo;. You can add any <strong>JavaScript expression</strong> (something that evaluates to a single value) inside curly braces. For example:</p>
+<ol>
+<li>An <strong>object property</strong> with dot notation:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">header</span>(<span style="color:#a6e22e">props</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> &lt;<span style="color:#f92672">h1</span>&gt;{<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">title</span>}&lt;/<span style="color:#f92672">h1</span>&gt;;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ol start="2">
+<li>A <strong>template literal</strong>:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Header</span>({ <span style="color:#a6e22e">title</span> }) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> &lt;<span style="color:#f92672">h1</span>&gt;{<span style="color:#e6db74">`Cool </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">title</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>}&lt;/<span style="color:#f92672">h1</span>&gt;;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ol start="3">
+<li>The <strong>returned value of a function</strong>:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">createTitle</span>(<span style="color:#a6e22e">title</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">title</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">title</span>;
+</span></span><span style="display:flex;"><span>  } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;Default title&#39;</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ol start="4">
+<li>or <strong>ternary operators</strong>:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Header</span>({ <span style="color:#a6e22e">title</span> }) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> &lt;<span style="color:#f92672">h1</span>&gt;{<span style="color:#a6e22e">title</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">title</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Default Title&#39;</span>}&lt;/<span style="color:#f92672">h1</span>&gt;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>You can now pass any string to your <code>title</code> prop, or, if you used the ternary operator, you could even not pass a <code>title</code> prop at all, since you&rsquo;ve accounted for the default case in your component. And your component now accepts a generic title which you can reuse in different parts of your application, all you need to do is change the <code>title</code> string:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Header</span>({ <span style="color:#a6e22e">title</span> }) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> &lt;<span style="color:#f92672">h1</span>&gt;{<span style="color:#a6e22e">title</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">title</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Default title&#39;</span>}&lt;/<span style="color:#f92672">h1</span>&gt;;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">HomePage</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> (
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">Header</span> <span style="color:#a6e22e">title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;React&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">Header</span> <span style="color:#a6e22e">title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;A new title&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>  )
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="iterating-through-lists">Iterating through lists</h3>
+<p>It&rsquo;s common to have data that you need to show as a list. You can use array methods to manipulate your data and generate UI elements that are identical in style but hold different pieces of information.</p>
+<p>Add the following array of names to your <code>HomePage</code> component. You can then use the <code>array.map()</code> method to iterate over the array and use an <strong>arrow function</strong> to map a name to a list them:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">HomePage</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">names</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;Ada Lovelace&#39;</span>, <span style="color:#e6db74">&#39;Grace Hopper&#39;</span>, <span style="color:#e6db74">&#39;Margaret Hamilton&#39;</span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> (
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">Header</span> <span style="color:#a6e22e">title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Develop. Preview. Ship.&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">ul</span>&gt;
+</span></span><span style="display:flex;"><span>        {<span style="color:#a6e22e">names</span>.<span style="color:#a6e22e">map</span>((<span style="color:#a6e22e">name</span>) =&gt; (
+</span></span><span style="display:flex;"><span>          &lt;<span style="color:#f92672">li</span>&gt;{<span style="color:#a6e22e">name</span>}&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>        ))}
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#f92672">ul</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Notice how you&rsquo;ve used curly braces to weave in and out of &ldquo;JavaScript&rdquo; and &ldquo;JSX&rdquo; land.</p>
+<p>If you run this code, React will give us a warning about a missing <code>key</code> prop. This is because React needs something to uniquely identify items in an array so it knows which elements to update in the DOM. You can use the names for now since they are currently unique, but it&rsquo;s recommended to use something guaranteed to be uniqeu, like an item ID.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">HomePage</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">names</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;Ada Lovelace&#39;</span>, <span style="color:#e6db74">&#39;Grace Hopper&#39;</span>, <span style="color:#e6db74">&#39;Margaret Hamilton&#39;</span>];
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> (
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">Header</span> <span style="color:#a6e22e">title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Develop. Preview. Ship.&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">ul</span>&gt;
+</span></span><span style="display:flex;"><span>        {<span style="color:#a6e22e">names</span>.<span style="color:#a6e22e">map</span>((<span style="color:#a6e22e">name</span>) =&gt; (
+</span></span><span style="display:flex;"><span>          &lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">key</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">name</span>}&gt;{<span style="color:#a6e22e">name</span>}&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>        ))}
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#f92672">ul</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><hr>
+<h2 id="7-adding-interactivity-with-state">7. Adding Interactivity with State</h2>
+<p>Let&rsquo;s explore how React helps us add interactivity with <strong>state</strong> and <strong>event handlers</strong>. As an example, let&rsquo;s create a <code>Like</code> button inside your <code>HomePage</code> component. First, add a button element inside the <code>return()</code> statement:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">HomePage</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">names</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;Ada Lovelace&#39;</span>, <span style="color:#e6db74">&#39;Grace Hopper&#39;</span>, <span style="color:#e6db74">&#39;Margaret Hamilton&#39;</span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> (
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">Header</span> <span style="color:#a6e22e">title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Develop. Preview. Ship.&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">ul</span>&gt;
+</span></span><span style="display:flex;"><span>        {<span style="color:#a6e22e">names</span>.<span style="color:#a6e22e">map</span>((<span style="color:#a6e22e">name</span>) =&gt; {
+</span></span><span style="display:flex;"><span>          &lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">key</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">name</span>}&gt;{<span style="color:#a6e22e">name</span>}&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>        })}
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#f92672">ul</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">button</span>&gt;<span style="color:#a6e22e">Like</span>&lt;/<span style="color:#f92672">button</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>  )
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="listening-to-events">Listening to events</h3>
+<p>To make the button do something when clicked, you can use the <code>onClick</code> event:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">HomePage</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// ...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">return</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/* ... */</span>
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span>{}&gt;<span style="color:#a6e22e">Like</span>&lt;/<span style="color:#f92672">button</span>&gt;
+</span></span><span style="display:flex;"><span>  )
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>In React, event names are <code>camelCased</code>. The <code>onClick</code> event is one of many possible events you can use to respond to user interaction. For example, you can use <code>onChange</code> for input fields or <code>onSubmit</code> for forms.</p>
+<h3 id="handling-events">Handling events</h3>
+<p>You can define a function to &ldquo;handle&rdquo; events whenever they are triggered. Create a function before the return statement called <code>handleClick()</code>. Then, you can call the <code>handleClick</code> function when the <code>onClick</code> event is triggered. Try running this in your browser. Notice in your developer tools how the log output increases.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">HomePage</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// ...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">handleClick</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;increment like count&#34;</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// ...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">handleClick</span>}&gt;<span style="color:#a6e22e">Like</span>&lt;/<span style="color:#f92672">button</span>&gt;
+</span></span><span style="display:flex;"><span>  )
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="state-and-hooks">State and hooks</h3>
+<p>React has a set of functions called <strong>hooks</strong>. Hooks allow you to add additional logic such as <strong>state</strong> to your components. You can think of state as any information in your UI that changes over time, usually triggered by user interaction.</p>
+<p><img src="https://nextjs.org/_next/image?url=%2Flearn%2Fdark%2Flearn-state.png&amp;w=3840&amp;q=75" alt="Two different examples of state: 1. A toggle button that can be selected or unselected. 2. A like button that can be clicked multiple times."></p>
+<p>You can use state to store and increment the number of times a user has clicked the <code>Like</code> button. In fact, the React hook used to manage state is called <code>useState()</code>. Add <code>useState()</code> to your project. It returns an array, and you can access and use those array values inside your component using <strong>array destructuring</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">HomePage</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// ...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> [] <span style="color:#f92672">=</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">useState</span>();
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// ...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><p>The first item in the array is the state <code>value</code>, which you can name anything. It&rsquo;s recommended to name it something descriptive. The second item in the array is a function to <code>update</code> the value. You can name the update function anything, but it&rsquo;s common to prefix it with <code>set</code> followed by the name of the state variable you&rsquo;re updating</p>
+<p>Then, you can check the initial state is working by using the state variable inside your component. Finally, you can call your state updater function, <code>setLikes</code> in your <code>HomePage</code> component, let&rsquo;s add it inside the <code>handleClick()</code> function you previously defined:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">HomePage</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// ...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">likes</span>, <span style="color:#a6e22e">setLikes</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">useState</span>();
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">handleClick</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">setLikes</span>(<span style="color:#a6e22e">likes</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> (
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">handleClick</span>}&gt;<span style="color:#a6e22e">Like</span>({<span style="color:#a6e22e">likes</span>})&lt;/<span style="color:#f92672">button</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Clicking the button will now call the <code>handleClick</code> function, which calls the <code>setLikes</code> state updater function with a single argument of the current number of <code>likes + 1</code></p>
+<blockquote>
+<p>Note: unlike props which are passed to components as the first function parameter, the state is initiated and stored within a component. You can pass the state information to children components as props, but the logic for updating the state should be kept within the component where state was initially created.</p>
+</blockquote>
+<hr>
+<h2 id="8-from-react-to-nextjs">8. From React to Next.js</h2>
+<p>So far, we explored how you can get started with React. This is what the final code looked like. If you&rsquo;re starting from here, paste this code into an <code>index.html</code> file in your code editor.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;app&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://unpkg.com/react@18/umd/react.development.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://unpkg.com/react-dom@18/umd/react-dom.development.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://unpkg.com/@babel/standalone/babel.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/jsx&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">app</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;app&#34;</span>)
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Header</span>({ <span style="color:#a6e22e">title</span> }) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h1</span><span style="color:#f92672">&gt;</span>{<span style="color:#a6e22e">title</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">title</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Default title&#34;</span>}<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/h1&gt;</span>
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">HomePage</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">names</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;Ada Lovelace&#34;</span>, <span style="color:#e6db74">&#34;Grace Hopper&#34;</span>, <span style="color:#e6db74">&#34;Margaret Hamilton&#34;</span>]
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">likes</span>, <span style="color:#a6e22e">setLikes</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">useState</span>(<span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">handleClick</span>() {
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">setLikes</span>(<span style="color:#a6e22e">likes</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> (
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Header</span> <span style="color:#a6e22e">title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Develop. Preview. Ship.&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">ul</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>              {<span style="color:#a6e22e">names</span>.<span style="color:#a6e22e">map</span>((<span style="color:#a6e22e">name</span>) =&gt; (
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">li</span> <span style="color:#a6e22e">key</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">name</span>}<span style="color:#f92672">&gt;</span>{<span style="color:#a6e22e">name</span>}<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/li&gt;</span>
+</span></span><span style="display:flex;"><span>              ))}
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/ul&gt;</span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">button</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">handleClick</span>}<span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Like</span> ({<span style="color:#a6e22e">likes</span>})<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/button&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">root</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ReactDOM</span>.<span style="color:#a6e22e">createRoot</span>(<span style="color:#a6e22e">app</span>);
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">root</span>.<span style="color:#a6e22e">render</span>(<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">HomePage</span> <span style="color:#f92672">/&gt;</span>);
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;
+</span></span></code></pre></div><p>In the last few chapters, you were introduced to three essential React concepts: <strong>components</strong>, <strong>props</strong>, and <strong>state</strong>. Having a strong foundation in these will help you get started building React applications.</p>
+<p>When it comes to learning React, the <strong>best way to learn is to build</strong>. You can gradually adopt React by using <code>&lt;script&gt;</code> and what you&rsquo;ve learned so far to add small components to an existing website. However, many developers have found the user and developer experience React enables enough to dive right in and write their whole frontend application in React.</p>
+<h3 id="from-react-and-nextjs">From React and Next.js</h3>
+<p>While React excels at building UI, it does take some work to independently build that UI into a fully functionning scalable application. There are also newer React features, like Server and Client components, that require a framework. The good news is that Next.js handles much of the setup and configuration and has additional features to help you build React applications.</p>
+<hr>
+<h2 id="9-installing-nextjs">9. Installing Next.js</h2>
+<p>When you use Next.js in your project, you do not need to load the <code>react</code> and <code>react-dom</code> scripts from unpkg.com anymore. Instead, you can install these packages locally using <code>npm</code> or your preferred package manager.</p>
+<blockquote>
+<p>Note: to use Next.js, you will need to have Node.js version 18.17.0 or above installed on your machine.</p>
+</blockquote>
+<p>To do so, create a new file in the same directory as your <code>index.html</code> fil called <code>package.json</code> with an empty object <code>{}</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{}
+</span></span></code></pre></div><p>In your terminal, run the following command in the root of your project:</p>
+<pre tabindex="0"><code>npm install react@latest react-dom@latest next@latest
+</code></pre><p>Once the installation is complete, you should be able to see your project dependencies listed inside your <code>package.json</code> file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;dependencies&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;next&#34;</span>: <span style="color:#e6db74">&#34;^14.0.3&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;react&#34;</span>: <span style="color:#e6db74">&#34;^18.3.1&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;react-dom&#34;</span>: <span style="color:#e6db74">&#34;^18.3.1&#34;</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Don&rsquo;t worry if you&rsquo;re on later versions than the ones shown above, as long as you have the <code>next</code>, <code>react</code>, and <code>react-dom</code> packages installed, you&rsquo;re good to go. You will also notice a new file called <code>package-lock.json</code> file that contains detailed information about the exact versions of each package.</p>
+<p>After deleting some lines, add the following import to the top of your file: <code>import { useState } from 'react';</code></p>
+<p>Your code shuold look like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>import { useState } from &#39;react&#39;;
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>function Header({ title }) {
+</span></span><span style="display:flex;"><span>  return &lt;<span style="color:#f92672">h1</span>&gt;{title ? title : &#39;Default title&#39;}&lt;/<span style="color:#f92672">h1</span>&gt;;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>function HomePage() {
+</span></span><span style="display:flex;"><span>  const names = [&#39;Ada Lovelace&#39;, &#39;Grace Hopper&#39;, &#39;Margaret Hamilton&#39;];
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>  const [likes, setLikes] = useState(0);
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>  function handleClick() {
+</span></span><span style="display:flex;"><span>    setLikes(likes + 1);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>  return (
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">Header</span> <span style="color:#a6e22e">title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Develop. Preview. Ship.&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">ul</span>&gt;
+</span></span><span style="display:flex;"><span>        {names.map((name) =&gt; (
+</span></span><span style="display:flex;"><span>          &lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">key</span><span style="color:#f92672">=</span><span style="color:#e6db74">{name}</span>&gt;{name}&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>        ))}
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#f92672">ul</span>&gt;
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span><span style="color:#e6db74">{handleClick}</span>&gt;Like ({likes})&lt;/<span style="color:#f92672">button</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The only code left in the HTML file is JSX, so you can change the file type from <code>.html</code> to <code>.js</code> or <code>.jsx</code>.</p>
+<h3 id="creating-your-first-page">Creating your first page</h3>
+<p>Next.js uses file-system routing. This means that instead of using code to define the routes of your application, you can use folders and files.</p>
+<p>Here&rsquo;s how you can create your first in Next.js:</p>
+<ol>
+<li>Create a new folder called <code>app</code> and move the <code>index.js</code> file inside it</li>
+<li>Rename your <code>index.js</code> file to <code>page.js</code> - this will be the main page of your application</li>
+<li>Add <code>export default</code> to your <code>&lt;HomePage&gt;</code> component to help Next.js distinguish which component to render as the main component of the page</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">useState</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Header</span>({ <span style="color:#a6e22e">title</span> }) {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// ...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">HomePage</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// ...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><h3 id="running-the-development-server">Running the development server</h3>
+<p>Next, let&rsquo;s run your development server so you can see the changes in your new page while developing. Add a <code>&quot;next dev&quot;</code> script to your <code>package.json</code> file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;scripts&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;dev&#34;</span>: <span style="color:#e6db74">&#34;next dev&#34;</span>
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;dependencies&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;next&#34;</span>: <span style="color:#e6db74">&#34;^14.0.3&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;react&#34;</span>: <span style="color:#e6db74">&#34;^18.3.1&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;react-dom&#34;</span>: <span style="color:#e6db74">&#34;^18.3.1&#34;</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Check what happens by running <code>npm run dev</code> in your terminal. You&rsquo;ll notice two things:</p>
+<ol>
+<li>When you navigate to <code>localhost:3000</code>, you should see the error below. This is because Next.js uses React Server components, a new feature that allows React to render on the server. Server components don&rsquo;t support <code>useState</code>, so you&rsquo;ll need to use a client component instead.</li>
+</ol>
+<p><img src="https://nextjs.org/_next/image?url=%2Flearn%2Fdark%2Flearn-usestate-rsc-error.png&amp;w=3840&amp;q=75" alt="Next.js Error Message: You&rsquo;re importing a component that needs useState. It only works in a Client component&hellip;"></p>
+<p>In the next chapter, we&rsquo;ll discuss the main differences between server and client components and fix this error</p>
+<ol start="2">
+<li>A new file called <code>layout.js</code> was automatically created inside the <code>app</code> folder. This is the main layout of your application. You can use it to add UI elements that are shared across all pages (e.g. navigation, footer, etc.)</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">metadata</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">title</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Next.js&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">description</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Generated by Next.js&#39;</span>,
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">RootLayout</span>({ <span style="color:#a6e22e">children</span> }) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> (
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">body</span>&gt;{ <span style="color:#a6e22e">children</span> }&lt;/<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">html</span>&gt;
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><hr>
+<h2 id="10-server-and-client-components">10. Server and Client Components</h2>
+<p>To understand how Server and Client Components work, it&rsquo;s helpful to be familiar with two foundational web concepts:</p>
+<ul>
+<li>The <strong>environments</strong> your application code can be executed in: the server and the client</li>
+<li>The <strong>network boundary</strong> that separates server and client code</li>
+</ul>
+<h3 id="server-and-client-environments">Server and Client Environments</h3>
+<p>In the context of web applications:</p>
+<ul>
+<li>
+<p>The <strong>client</strong> refers to the browser on a user&rsquo;s device that sends a request to a server for your application code. It then turns the response it receives from the server into an interface the user can interact with</p>
+</li>
+<li>
+<p>The <strong>server</strong> refers to the computer in a data center that stores your application code, receive requests from a client, does some computation, and sends back an appropriate response</p>
+</li>
+</ul>
+<p><img src="https://nextjs.org/_next/image?url=%2Flearn%2Fdark%2Flearn-client-and-server-environments.png&amp;w=3840&amp;q=75" alt="Diagram showing a browser on the left and a server on the right, separated by a network boundary."></p>
+<p>Each environment has its own set of capabilities and constraints. For example, by moving rendering and data fetching to the server, you can reduce the amount of code sent to the client, which can improve your application&rsquo;s performance. But, as you learned earlier, to make your UI interactive, you need to update the DOM on the client.</p>
+<p>Therefore, the code you write for the server and the client is not always the same. Certain operations (e.g. data fetching or managing user state) are better suited for one environment over the other.</p>
+<h3 id="network-boundary">Network Boundary</h3>
+<p>The <strong>Network Boundary</strong> is a conceptual line that separates the different environments.</p>
+<p>In React, you choose where to place the network boundary in your component tree. For example, you can fetch data and render a user&rsquo;s posts on the server (using Server Components), then render the interactive <code>LikeButton</code> for each post on the client (using Client Components)</p>
+<p>Similarly, you can create a <code>Nav</code> component that is rendered on the server and shared across pages, but if you want to show an active state for links, you can render the list of <code>Links</code> on the client.</p>
+<p><img src="https://nextjs.org/_next/image?url=%2Flearn%2Fdark%2Flearn-client-server-modules.png&amp;w=3840&amp;q=75" alt="A component tree showing a layout that has 3 components as its children: Nav, Page, and Footer. The page component has 2 children: Posts and LikeButton. The Posts component is rendered on the server, and the LikeButton component is rendered on the client."></p>
+<p>Behind the scenes, the components are split into two module graphs. The <strong>server module graph (or tree)</strong> contains all the Server Components that are rendered on the server, and the <strong>client module graph (or tree)</strong> contains all Client Components.</p>
+<p>After Server Components are rendered, a special data format called <strong>RSC (React Server Component) Payload</strong> is sent to the client. The RSC payload contains:</p>
+<ol>
+<li>The rendered result of Server Components</li>
+<li>Placeholders (or holes) for there Client Components should be rendered and references to their JavaScript files</li>
+</ol>
+<p>React uses this information to consolidate the Server and Client components and update the DOM on the client.</p>
+<h3 id="using-client-components">Using Client Components</h3>
+<p>As you learned in the last chapter, Next.js uses Server Components by default - this is to improve your application&rsquo;s performance and means you don&rsquo;t have to take additional steps to adopt them.</p>
+<p>Looking back at the error in your browser, Next.js is warning you that you&rsquo;re trying to <code>useState</code> inside a Server Component. You can fix this by moving the interactive &ldquo;Like&rdquo; button to a Client Component.</p>
+<p>Create a new file called <code>like-button.js</code> inside the <code>app</code> folder that exports a <code>LikeButton</code> component. To make the <code>LikeButton</code> a Client Component, add the React <code>'use client'</code> directive at the top of the file. This tells React to render the component on the client.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#e6db74">&#39;use client&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">useState</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">LikeButton</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">likes</span>, <span style="color:#a6e22e">setLikes</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">useState</span>(<span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">handleClick</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">setLikes</span>(<span style="color:#a6e22e">likes</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">handleClick</span>}&gt;<span style="color:#a6e22e">Likes</span> ({<span style="color:#a6e22e">likes</span>})&lt;/<span style="color:#f92672">button</span>&gt;;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Back in your <code>page.js</code> file, import the <code>LikeButton</code> component into your page:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">LikeButton</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./like-button&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// ...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">HomePage</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// ...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">return</span> (
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">Header</span> <span style="color:#a6e22e">title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Develop. Preview. Ship.&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">ul</span>&gt;
+</span></span><span style="display:flex;"><span>        {<span style="color:#a6e22e">names</span>.<span style="color:#a6e22e">map</span>((<span style="color:#a6e22e">name</span>) =&gt; (
+</span></span><span style="display:flex;"><span>          &lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">key</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">name</span>}&gt;{<span style="color:#a6e22e">name</span>}&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>        ))}
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#f92672">ul</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">LikeButton</span> /&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Save both files and view your app in the browser. Now that there are no errors, once you make changes and save, you should notice the browser automatically updates to reflect the change. This feature is called <strong>fast refresh</strong>, and it gives you instantaneous feedback on any edits you make and comes pre-configured with Next.js.</p>
+
+    </div>
+</div>
+
+
+
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>&copy; 2024 Kauan Manzato</span>
+    
+    <span>
+        Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
+    </span>
+</footer>
+</body>
+</html>

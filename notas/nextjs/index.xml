@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Next.js Learn on kauan.m</title>
+    <link>http://192.168.0.19:1313/notas/nextjs/</link>
+    <description>Recent content in Next.js Learn on kauan.m</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="http://192.168.0.19:1313/notas/nextjs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Learn Next.js</title>
+      <link>http://192.168.0.19:1313/notas/nextjs/learn_nextjs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://192.168.0.19:1313/notas/nextjs/learn_nextjs/</guid>
+      <description>0. Introduction For this course. we&amp;rsquo;ll be building a simplified version of the financial board that has:&#xA;Public home page Login page Dashboard pages that are protected by authentication The ability for users to add, edit, and delete invoices The dashboard will also have an accompanying database, which you&amp;rsquo;ll set up in a later chapter. By the end of the course, you&amp;rsquo;ll have the essential skills needed to start building full-stack Next.</description>
+    </item>
+    <item>
+      <title>React Foundations</title>
+      <link>http://192.168.0.19:1313/notas/nextjs/react_foundations/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://192.168.0.19:1313/notas/nextjs/react_foundations/</guid>
+      <description>1. Introduction To effectively learn Next.js, it helps to be familiar with JavaScript, React, and related web development concepts. But JavaScript and React are vast topics. How do you know when you&amp;rsquo;re ready to start using Next.js?&#xA;Welcome to the React Foundations course! This beginner-friendly, example-led course will guide you through the prerequisite knowledge for Next.js. You will build a simple project step-by-step; starting with a JavaScript application, then migrating it to React and Next.</description>
+    </item>
+  </channel>
+</rss>

