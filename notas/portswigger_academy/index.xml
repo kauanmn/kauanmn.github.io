@@ -2,51 +2,51 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Portswigger Academy on kauan.m</title>
-    <link>http://192.168.0.19:1313/notas/portswigger_academy/</link>
+    <link>https://kauanmn.github.io/notas/portswigger_academy/</link>
     <description>Recent content in Portswigger Academy on kauan.m</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="http://192.168.0.19:1313/notas/portswigger_academy/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://kauanmn.github.io/notas/portswigger_academy/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>DOM-based XSS</title>
-      <link>http://192.168.0.19:1313/notas/portswigger_academy/xss/dom_xss/</link>
+      <link>https://kauanmn.github.io/notas/portswigger_academy/xss/dom_xss/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://192.168.0.19:1313/notas/portswigger_academy/xss/dom_xss/</guid>
+      <guid>https://kauanmn.github.io/notas/portswigger_academy/xss/dom_xss/</guid>
       <description>In this section, we&amp;rsquo;ll describe DOM-based XSS, explain how to find DOM XSS vulnerabilities, and talk about how to exploit DOM XSS with different sources and sinks.&#xA;What is DOM-based XSS? DOM-based XSS vulnerabilities usually arise when JavaScript takes data from attacker-controllable source, such as the URL, and passes it to a sink that supports dynamic code execution, such as eval() or innerHTML. This enables attackers to execute malicious JavaScript, which typically allows them to hijack other users&amp;rsquo; accounts.</description>
     </item>
     <item>
       <title>Exploiting XSS vulnerabilities</title>
-      <link>http://192.168.0.19:1313/notas/portswigger_academy/xss/exploiting_xss/</link>
+      <link>https://kauanmn.github.io/notas/portswigger_academy/xss/exploiting_xss/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://192.168.0.19:1313/notas/portswigger_academy/xss/exploiting_xss/</guid>
+      <guid>https://kauanmn.github.io/notas/portswigger_academy/xss/exploiting_xss/</guid>
       <description>The traditional way to prove that you&amp;rsquo;ve found a XSS vulnerability is to create a popup using the alert() function. This isn&amp;rsquo;t because XSS has anything to do with popups; it&amp;rsquo;s simply a way to prove that you can execute arbritrary JavaScript on a given domain. You might notice some people using alert(document.domain). This is a way of making it explicitly which domain the JavaScript is executing on.&#xA;Sometimes, you&amp;rsquo;ll want to go further and prove that an XSS vulnerability is a real threat by providing a full exploit.</description>
     </item>
     <item>
       <title>Reflected XSS</title>
-      <link>http://192.168.0.19:1313/notas/portswigger_academy/xss/reflected_xss/</link>
+      <link>https://kauanmn.github.io/notas/portswigger_academy/xss/reflected_xss/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://192.168.0.19:1313/notas/portswigger_academy/xss/reflected_xss/</guid>
+      <guid>https://kauanmn.github.io/notas/portswigger_academy/xss/reflected_xss/</guid>
       <description>In this section, we&amp;rsquo;ll explain reflected XSS, describe the impact of reflected XSS attacks, and spell out how to find reflected XSS vulnerabilties.&#xA;What is reflected XSS? Reflected XSS arises when an application receives data in an HTTP request and includes that data within the immediate response in an unsafe way.&#xA;Suppose a website has a search function which receives the user-supplied search term in a URL parameter: https://insecure-website.com/search?term=gift&#xA;The application echoes the supplied search term in the response to this URL: &amp;lt;p&amp;gt;You searched for: gift&amp;lt;/p&amp;gt;</description>
     </item>
     <item>
       <title>Stored XSS</title>
-      <link>http://192.168.0.19:1313/notas/portswigger_academy/xss/stored_xss/</link>
+      <link>https://kauanmn.github.io/notas/portswigger_academy/xss/stored_xss/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://192.168.0.19:1313/notas/portswigger_academy/xss/stored_xss/</guid>
+      <guid>https://kauanmn.github.io/notas/portswigger_academy/xss/stored_xss/</guid>
       <description>In this section, we&amp;rsquo;ll explain stored XSS, describe the impact of stored XSS attacks, and spell out how to find stored XSS vulnerabilities.&#xA;What is stored XSS? Stored XSS arises when an application receives data from an untrusted source and includes that data within its later HTTP responses in an unsafe way.&#xA;Suppose a website allows users to submit commands on blog posts, which are displayed to other users. Users submit comments using an HTTP request like the following:</description>
     </item>
     <item>
       <title>XSS (Cross-site scripting)</title>
-      <link>http://192.168.0.19:1313/notas/portswigger_academy/xss/</link>
+      <link>https://kauanmn.github.io/notas/portswigger_academy/xss/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://192.168.0.19:1313/notas/portswigger_academy/xss/</guid>
+      <guid>https://kauanmn.github.io/notas/portswigger_academy/xss/</guid>
       <description>In this section, we&amp;rsquo;ll explain what cross-site scripting is, describe the different varieties of cross-site scripting vulnerabilities, and spell out how to find and prevent cross-site scripting.&#xA;What is XSS (cross-site scripting)? Cross-site scripting (also known as XSS) is a web security vulnerability that allows an attacker to compromise the interactions that users have with a vulnerable application.&#xA;It allows an attacker to circumvent the same origin policy, which is designed to segregate different websites from each other.</description>
     </item>
     <item>
       <title>XSS Contexts</title>
-      <link>http://192.168.0.19:1313/notas/portswigger_academy/xss/xss_contexts/</link>
+      <link>https://kauanmn.github.io/notas/portswigger_academy/xss/xss_contexts/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://192.168.0.19:1313/notas/portswigger_academy/xss/xss_contexts/</guid>
+      <guid>https://kauanmn.github.io/notas/portswigger_academy/xss/xss_contexts/</guid>
       <description>When testing for reflected and stored XSS, a key task is to identify the XSS context:&#xA;The location within the response where attacker-controllable data appears Any input validation or other processing that is being performed on that data by the application Based on these details, you can select one or more candidate XSS payloads, and test whether they are effective.&#xA;XSS between HTML tags When the XSS context is text between HTML tags, you need to introduce some new HTML tags designed to trigger execution of JavaScript.</description>
     </item>
   </channel>

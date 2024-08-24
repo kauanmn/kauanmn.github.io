@@ -2,45 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Gestão da Segurança da Informação on kauan.m</title>
-    <link>http://192.168.0.19:1313/notas/fgv_gestaoti/gestao_seguranca/</link>
+    <link>https://kauanmn.github.io/notas/fgv_gestaoti/gestao_seguranca/</link>
     <description>Recent content in Gestão da Segurança da Informação on kauan.m</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Mon, 22 Jul 2024 19:00:00 -0300</lastBuildDate>
-    <atom:link href="http://192.168.0.19:1313/notas/fgv_gestaoti/gestao_seguranca/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://kauanmn.github.io/notas/fgv_gestaoti/gestao_seguranca/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Aula 4</title>
-      <link>http://192.168.0.19:1313/notas/fgv_gestaoti/gestao_seguranca/aula4/</link>
+      <link>https://kauanmn.github.io/notas/fgv_gestaoti/gestao_seguranca/aula4/</link>
       <pubDate>Mon, 22 Jul 2024 19:00:00 -0300</pubDate>
-      <guid>http://192.168.0.19:1313/notas/fgv_gestaoti/gestao_seguranca/aula4/</guid>
+      <guid>https://kauanmn.github.io/notas/fgv_gestaoti/gestao_seguranca/aula4/</guid>
       <description>Proteção de ativos Por que proteger?&#xA;relevância para o negócio valor do ativo impacto da ausência impacto de uso por terceiros Quando proteger?&#xA;ciclo de vida da informação manuseio armazenamento transporte descarte Onde proteger?&#xA;ativos custodiantes de informação físicos técnológicos humanos O que proteger?&#xA;atributos da segurança da informação confidencialidade integridade disponibilidade Do que proteger?&#xA;ameaças físicas tecnológicas humanas Segurança da Informação Adotar CONTROLES físicos, tecnológicos e humanos customizados, que viabilizem a redução e administração dos RISCOS dos ATIVOS levando o NEGÓCIO a atingir o nível de segurança adequada ao seu apetite.</description>
     </item>
     <item>
       <title>Aula 3</title>
-      <link>http://192.168.0.19:1313/notas/fgv_gestaoti/gestao_seguranca/aula3/</link>
+      <link>https://kauanmn.github.io/notas/fgv_gestaoti/gestao_seguranca/aula3/</link>
       <pubDate>Tue, 16 Jul 2024 19:00:00 -0300</pubDate>
-      <guid>http://192.168.0.19:1313/notas/fgv_gestaoti/gestao_seguranca/aula3/</guid>
+      <guid>https://kauanmn.github.io/notas/fgv_gestaoti/gestao_seguranca/aula3/</guid>
       <description>Proteção de ativos Por que proteger?&#xA;relevância para o negócio valor do ativo impacto da ausência impacto de uso por terceiros Quando proteger?&#xA;ciclo de vida da informação manuseio armazenamento transporte descarte Onde proteger?&#xA;ativos custodiantes de informação físicos técnológicos humanos O que proteger?&#xA;atributos da segurança da informação confidencialidade integridade disponibilidade Do que proteger?&#xA;ameaças físicas tecnológicas humanas Segurança da Informação Adotar CONTROLES físicos, tecnológicos e humanos customizados, que viabilizem a redução e administração dos RISCOS dos ATIVOS levando o NEGÓCIO a atingir o nível de segurança adequada ao seu apetite.</description>
     </item>
     <item>
       <title>Preparação</title>
-      <link>http://192.168.0.19:1313/notas/fgv_gestaoti/gestao_seguranca/preparacao/</link>
+      <link>https://kauanmn.github.io/notas/fgv_gestaoti/gestao_seguranca/preparacao/</link>
       <pubDate>Tue, 16 Jul 2024 01:00:00 -0300</pubDate>
-      <guid>http://192.168.0.19:1313/notas/fgv_gestaoti/gestao_seguranca/preparacao/</guid>
+      <guid>https://kauanmn.github.io/notas/fgv_gestaoti/gestao_seguranca/preparacao/</guid>
       <description>Suponha que você seja o CISO de uma empresa de mineração e precisa montar um plano de trabalho para os próximos 100 dias.&#xA;Forneça um contexto global e brasileiro em relação à segurança da informação das empresas No mundo todo, as empresas vêm enfrentando uma série de ameaças, incluindo ataques de ransomware, espionagem, tentativas de comprometimento de sistemas críticos, vazamentos de dados etc. Além disso, como a crescente dependência de tecnologias como IoT, ICS/SCADA e computação em nuvem aumentam a superfície de ataque das empresas e devido à existência de regulamentações como a GDPR e a LGPD, a segurança da informação está ganhando notoriedade e importância no meio corporativo.</description>
     </item>
     <item>
       <title>Aula 2</title>
-      <link>http://192.168.0.19:1313/notas/fgv_gestaoti/gestao_seguranca/aula2/</link>
+      <link>https://kauanmn.github.io/notas/fgv_gestaoti/gestao_seguranca/aula2/</link>
       <pubDate>Mon, 15 Jul 2024 19:00:00 -0300</pubDate>
-      <guid>http://192.168.0.19:1313/notas/fgv_gestaoti/gestao_seguranca/aula2/</guid>
+      <guid>https://kauanmn.github.io/notas/fgv_gestaoti/gestao_seguranca/aula2/</guid>
       <description>Vulnerabilidade Fragilidade que eleva o grau de exposição dos ativos, aumentando a probabilidade de sucesso pela investida de uma ameaça.&#xA;Ameaça Atitude ou dispositivo com potencialidade para explorar uma vulnerabilidade e provocar danos à segurança da informação, atingindo ao menos um de seus atributos: confidencialidade, integridade ou disponibilidade&#xA;Tipos de ameaças cibernéticas spear phishing MitM attack malware phishing DoS attack SQL injection 0-day exploit APTs ransomware DNS attack Ameaças para 2030 Supply chain compromise of software dependencies Advanced disinformation campaigns Rise of digital surveillance authoritarianism / loss of privacy Human error and exploited legacy systems within cyber physical ecosystems Targeted attacks enhanced by smart device data Lack of analysis and control of space-based infrastructure and objects Rise of advanced hybrid threats Skill shortage Cross border ICT service providers as a single point of failure Artificial Intelligence abuse Impacto Resultado da ação bem-sucedida de uma ameaça ao explorar vulnerabilidades de um ativo, atingindo assim ao menos um dos atributos da segurança da informação</description>
     </item>
     <item>
       <title>Aula 1</title>
-      <link>http://192.168.0.19:1313/notas/fgv_gestaoti/gestao_seguranca/aula1/</link>
+      <link>https://kauanmn.github.io/notas/fgv_gestaoti/gestao_seguranca/aula1/</link>
       <pubDate>Mon, 08 Jul 2024 19:00:00 -0300</pubDate>
-      <guid>http://192.168.0.19:1313/notas/fgv_gestaoti/gestao_seguranca/aula1/</guid>
+      <guid>https://kauanmn.github.io/notas/fgv_gestaoti/gestao_seguranca/aula1/</guid>
       <description>Sociedade Digital crescimento linear vs crescimento exponencial (causada por inovações disruptivas) computação quântico: salto computacional Definições Informação: notícia, conhecimento Segurança: ação ou efeito de tornar(-se) seguro; estabilidade; firmeza; estado, qualidade ou condição de quem ou do que está livre de perigos, incertezas, assegurado de danos e riscos eventuais, situação em nada há a temer Risco: probabilidade de insucesso de determinado empreendimento, em função de acontecimento eventual, cuja ocorrência não depende exclusivamente da vontade dos interessados RISCO = AMEAÇA explora uma VULNERABILIDADE presente em um ATIVO causando um IMPACTO no NEGÓCIO $$\text{RISCO} = \text{PROBABILIDADE} \times \text{IMPACTO}$$</description>
     </item>
   </channel>

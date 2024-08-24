@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Artigos on kauan.m</title>
-    <link>http://192.168.0.19:1313/artigos/</link>
+    <link>https://kauanmn.github.io/artigos/</link>
     <description>Recent content in Artigos on kauan.m</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Wed, 15 Feb 2023 12:00:00 -0300</lastBuildDate>
-    <atom:link href="http://192.168.0.19:1313/artigos/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://kauanmn.github.io/artigos/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Por que o Stuxnet foi o vírus mais avançado já criado?</title>
-      <link>http://192.168.0.19:1313/artigos/stuxnet/</link>
+      <link>https://kauanmn.github.io/artigos/stuxnet/</link>
       <pubDate>Wed, 15 Feb 2023 12:00:00 -0300</pubDate>
-      <guid>http://192.168.0.19:1313/artigos/stuxnet/</guid>
+      <guid>https://kauanmn.github.io/artigos/stuxnet/</guid>
       <description>TODO: finalizar artigo TODO: trocar imagens por arquivos locais&#xA;Centrífugas iranianas para enriquecimento de urânio&#xA;O Stuxnet foi um malware (programa de computador malicioso) que, diferente de outros vírus, seu objetivo era único: sabotar o programa nuclear iraniano, a fim de impedir ou atrapalhar os iranianos de obterem armas nucleares.&#xA;Seu alvo eram as centrífugas iranianas para enriquecimento de urânio, o combustível das bombas atômicas. O vírus diminuía a produção do urânio enriquecido e até quebrava as centrífugas.</description>
     </item>
     <item>
       <title>Por que criptografar várias vezes pode ser ruim?</title>
-      <link>http://192.168.0.19:1313/artigos/criptografar_varias_vezes/</link>
+      <link>https://kauanmn.github.io/artigos/criptografar_varias_vezes/</link>
       <pubDate>Tue, 03 Jan 2023 12:00:00 -0300</pubDate>
-      <guid>http://192.168.0.19:1313/artigos/criptografar_varias_vezes/</guid>
+      <guid>https://kauanmn.github.io/artigos/criptografar_varias_vezes/</guid>
       <description>TODO: trocar imagens por arquivos locais&#xA;A criptografia permeia nossas vidas digitais porque permite que as informações que recebemos e enviamos sejam confidenciais, ou seja, inacessíveis para pessoas não autorizadas. E isto é importante para nos proteger de golpes e ataques de pessoas má intencionadas e para garantir nosso direito à privacidade.&#xA;O processo de criptografar envolve a realização de várias operações matemáticas em uma mensagem não criptografada. O resultado é uma mensagem cifrada que só consegue ler quem tem a chave para decifrar (como uma senha).</description>
     </item>
   </channel>
