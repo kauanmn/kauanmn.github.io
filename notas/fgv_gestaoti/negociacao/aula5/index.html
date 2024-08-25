@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Aula 5</title>
+    <meta name="description" content="Software Development | AppSec | Bug Bounty">
+    <meta name="keywords" content=''>
+
+    <meta property="og:url" content="https://kauanmn.github.io/notas/fgv_gestaoti/negociacao/aula5/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Aula 5">
+    <meta property="og:description" content="Software Development | AppSec | Bug Bounty">
+    <meta property="og:image" content="https://kauanmn.github.io/img/me.jpg">
+    <meta property="og:image:secure_url" content="https://kauanmn.github.io/img/me.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Aula 5">
+    <meta name="twitter:description" content="Software Development | AppSec | Bug Bounty">
+    <meta property="twitter:domain" content="https://kauanmn.github.io/notas/fgv_gestaoti/negociacao/aula5/">
+    <meta property="twitter:url" content="https://kauanmn.github.io/notas/fgv_gestaoti/negociacao/aula5/">
+    <meta name="twitter:image" content="https://kauanmn.github.io/img/me.jpg">
+
+    
+    <link rel="canonical" href="https://kauanmn.github.io/notas/fgv_gestaoti/negociacao/aula5/">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.893af8dd3b65bd0ffe90e7af33847bd6dc9180b8fa6d6659a212a6f4b62d3e01.js"></script>
+    
+
+
+    
+    
+        <!-- KaTeX -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js" integrity="sha384-X/XCfMm41VSsqRNQgDerQczD69XqmjOOOwYQvr/uuC+j4OPoNhVgjdGFwhvN02Ja" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          // customised options
+          // • auto-render specific keys, e.g.:
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false},
+          ],
+          // • rendering keys, e.g.:
+          throwOnError : false
+        });
+      });
+    </script>
+  
+    
+</head>
+<body>
+        <script>
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+        <div class="avatar">
+            <a href="https://kauanmn.github.io/">
+                <img src='/img/me.jpg' alt="avatar">
+            </a>
+        </div>
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="https://kauanmn.github.io/">kauan.m</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="https://kauanmn.github.io/notas/"> ~/notas </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://kauanmn.github.io/artigos/"> ~/artigos </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://kauanmn.github.io/writeups/"> ~/writeups </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <span class="sr-only dark-theme-toggle-screen-reader-target"></span>
+                <a>
+                    <span class="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span class="sr-only hamburger-menu-toggle-screen-reader-target">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="https://kauanmn.github.io/notas/"> ~/notas </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://kauanmn.github.io/artigos/"> ~/artigos </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://kauanmn.github.io/writeups/"> ~/writeups </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <span class="sr-only dark-theme-toggle-screen-reader-target">theme</span>
+                    <a>
+                        <span class="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Aula 5</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">August 24, 2024
+        
+        </p>
+
+        <ul class="post-tags">
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <h2 id="estágio-da-fase-execução">Estágio da Fase Execução</h2>
+<ul>
+<li><strong>Estágio preliminar</strong>: crie um clima positivo para a negociação, firme valores de como vai tratar os demais e como quer ser tratado;</li>
+<li><strong>Abertura</strong>: defina a natureza, parâmetros e escopo do negócio;</li>
+<li><strong>Exploração</strong>: identifique as necessidades subjacentes, encontre e teste os valores alternativos;</li>
+<li><strong>Encerramento</strong>: estruture o acordo, formalize e planeje as ações necessárias para garantir que o compromisso seja cumprido.</li>
+</ul>
+<hr>
+<h2 id="tempo-de-coleta-de-informações">Tempo de coleta de informações</h2>
+<p>Os negociadores habilidosos:</p>
+<ul>
+<li>Perguntam</li>
+<li>Testam o entendimento</li>
+<li>Parafraseiam e perguntam</li>
+<li>Fazer silêncio para que o outro fale</li>
+<li>Ouvem ativamente</li>
+</ul>
+<p>Ampliando a capacidade de identificar necessidades e objetivos dos envolvidos</p>
+<hr>
+<h2 id="táticas-de-negociação">Táticas de Negociação</h2>
+<table>
+<thead>
+<tr>
+<th>Tática</th>
+<th>Descrição</th>
+<th>Contramedida</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Blefes (ou informação plantada)</strong></td>
+<td>Omitir, mentir, plantar notícias falsas ou espalhar boatos</td>
+<td>Faça pesquisa prévia e cheque novas informações. Se algum fato novo surgir, pergunte e confirme</td>
+</tr>
+<tr>
+<td><strong>Composição de forças</strong></td>
+<td>Conjugar-se com outros, quando há mais de duas partes envolvidas</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>Negociação com limites</strong></td>
+<td>Limite de tempo, dinheiro, capacidade, pessoal etc.</td>
+<td>Busque uma concessão equivalente a cada uma que o outro lado fizer. Exemplo: &ldquo;se reduzirmos o preço, teremos que reduzir o escopo do projeto ou excluir X coisa&rdquo;</td>
+</tr>
+<tr>
+<td><strong>Recusa a primeira oferta</strong></td>
+<td>Autoexplicativo: recusar a primeira oferta</td>
+<td>Afirmar o valor de sua proposta e destacar como a protelação pode levar a perdas. Além disso, essa tática perde o sentido quando uma das partes tiver reputação de ser justa</td>
+</tr>
+<tr>
+<td><strong>Insultos pessoais (ataques)</strong></td>
+<td>Objetivam desestabilizar o outro</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>Autoridade limitada / ausente</strong></td>
+<td>Uso de um superior (real ou não) para adiar decisões ou para arrancar novas concessões</td>
+<td>Determine de antemão o real poder do outro. Em negociações com grupos, identifique o decisor e busque negociar com ele</td>
+</tr>
+<tr>
+<td><strong>Retirada</strong></td>
+<td>Levantar-se para sair, na intenção de indicar um limite</td>
+<td>Se a tática for usual, retire-se antes disso</td>
+</tr>
+<tr>
+<td><strong>Justo e razoável</strong></td>
+<td>O outro analisa o seu negócio para definir o que julga justo ou apropriado</td>
+<td>Delicadamente, ignore essas análises e traga a atenção de volta para o valor da sua proposta</td>
+</tr>
+<tr>
+<td><strong>Fora de propósito</strong></td>
+<td>Um faz uma proposta absurda e começa a negociá-la</td>
+<td>Afirme delicadamente que a proposta está fora de questão e depois ignore-a; avalie prós e contras de continuar negociando</td>
+</tr>
+<tr>
+<td><strong>Tira bom e Tira mau</strong></td>
+<td>Um é mais flexível e o outro é mais intransigente</td>
+<td>Denuncie o uso da tática</td>
+</tr>
+<tr>
+<td><strong>Atraso estratégico</strong></td>
+<td>Recesso para dispersar a atenção sobre algum tema</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>Cone de silêncio</strong></td>
+<td>Aumentar a ansiedade do outro, levando-o a fazer propostas diferentes da original</td>
+<td>Faça perguntas objetivas que demandem respostas sobre os interesses das outras partes</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="fase-do-processo---controle">Fase do processo - Controle</h2>
+<p>Controle das condições e avaliação: analise sistematicamente os resultados.</p>
+<ul>
+<li>Ajuda a construir os alicerces da credibilidade por meio da implementação dos acordos. Defina quem faz o quê, por quê, quando e em que prazo, onde, quantas vezes e o custo.</li>
+<li>Após cada interação e ao final, oriente o autodesenvolvimento e a melhoria dos resultados</li>
+</ul>
+<hr>
+<h2 id="táticas-de-negociação-1">Táticas de negociação</h2>
+<ol>
+<li>Manter <strong>comunicação</strong> eficaz</li>
+<li>Cuidar do bom <strong>relacionamento</strong></li>
+<li>Descobrir os <strong>interesses</strong> da outra parte</li>
+<li><strong>Elaborar opções</strong> coerentes</li>
+<li>Comprovar a <strong>legitimidade</strong> das opções</li>
+<li>Definir alternativas caso não haja acordo (<strong>MACNA</strong>)</li>
+<li><strong>Assumir o compromisso</strong> com ações definidas</li>
+</ol>
+<hr>
+<h2 id="perfil-do-negociador">Perfil do negociador</h2>
+<p><strong>Padrão característico de pensar, sentir e agir</strong></p>
+<p>Quatro grandes perspectivas sobre a personalidade:</p>
+<ol>
+<li><strong>Psicanalítica</strong>: motivações inconscientes</li>
+<li><strong>Humanística</strong>: capacidade interna de crescimento</li>
+<li><strong>Social-cognitiva</strong>: influência do ambiente</li>
+<li><strong>Traços</strong>: dimensões da personalidade (estudaremos este)</li>
+</ol>
+<hr>
+<h2 id="janela-de-johari">Janela de Johari</h2>
+<p><img src="/img/fgv_gestaoti/johari.png" alt="Janela de Johari"></p>
+<p>Essa ferramenta é usada para entender e melhorar a comunicação interpessoal, a autoconsciência e as relações interpessoais.</p>
+<p>A janela de Johari divide a autoconsciência e a percepção dos outros em quatro quadrantes, representando diferentes áreas de conhecimento sobre uma pessoa:</p>
+<ul>
+<li><strong>Área aberta (arena)</strong>: esta é a área em que tanto a pessoa quanto os outros têm conhecimento. Ela inclui informações, sentimentos, comportamentos e outros aspectos que são conhecidos e visíveis a todos os envolvidos;</li>
+<li><strong>Área cega</strong>: esta é a área em que os outros têm conhecimento sobre você, mas você não tem conhecimento sobre si mesmo. Pode incluir aspectos de sua personalidade ou comportamento que os outros percebem, mas que você não está ciente;</li>
+<li><strong>Área oculta (fachada)</strong>: aqui estão os aspectos de si mesmo que você conhece, mas optou por não compartilhar com os outros. São sentimentos, experiências ou informações que você mantém ocultos;</li>
+<li><strong>Área desconhecida</strong>: esta é a parte não conhecida tanto por você quanto pelos outros. Pode conter potencialidades não exploradas ou aspectos que ainda não emergiram em suas interações.</li>
+</ul>
+<hr>
+<h2 id="como-lidamos-em-situações-de-conflito">Como lidamos em situações de conflito</h2>
+<p><img src="/img/fgv_gestaoti/negociacao_lidar.png" alt="como lidamos em situações de conflito"></p>
+<h3 id="uso-do-poder-competir">Uso do poder (competir)</h3>
+<p>Gosta de estar no controle; gosta de ganhar; se sente responsável pelo resultado; disposto a liderar. Quando forçado, pode ser impaciente e ansioso; competitivo, gosta de ser um partidário.</p>
+<h3 id="integração-colaborar">Integração (colaborar)</h3>
+<p>Quando confrontado com o conflito, gosta de ser criativo e inventar novas opções, gosta de trabalhar com o lado oposto de forma colaborativa e “raciocínio juntos”, procura uma solução que satisfaça plenamente as preocupações de ambos os lados.</p>
+<h3 id="barganha-compromisso">Barganha (compromisso)</h3>
+<p>Dispostos a dividir as diferenças e as taxas de concessões; dispostos a comprometer, procura um meio termo; tendência a concentrar-se na justiça de resolução para ambos os lados, não espera, parece ser egoísta ou auto interessado, acha desconfortável ser muito partidária ou unilateral.</p>
+<h3 id="fuga-evitar">Fuga (evitar)</h3>
+<p>Não gosta de disputas, sente o conflito geralmente como algo improdutivo; desconfortável com desacordo explícito, especialmente se acalorado. Quando confrontado com o conflito, tem a tendência de se retirar ou desviar. Em disputas, é improvável que tome a iniciativa, pode parecer desinteressado; relutância em tornar-se demasiado envolvido ou entusiasmado.</p>
+<h3 id="amaciar-acomodar">Amaciar (acomodar)</h3>
+<p>Sensível aos sentimentos dos outros, tende a ser solidário e útil; receptivo e acolhedor, quer ser amado, em face do conflito; o desejo de preservar e promover boas relações com o outro lado, em disputas, pode se comportar de uma “suavização” de caminho, muito preocupado que o conflito ou diferenças podem atrapalhar relacionamentos.</p>
+<hr>
+<h2 id="avaliação-das-características-do-negociador">Avaliação das características do negociador</h2>
+<p><strong>Duas dimensões</strong>: assertividade e expressividade</p>
+<table>
+<thead>
+<tr>
+<th>Assertividade BAIXA</th>
+<th>Assertividade ALTA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Demonstra menos energia</td>
+<td>Demonstra energia</td>
+</tr>
+<tr>
+<td>Move-se lentamente</td>
+<td>Move-se rapidamente</td>
+</tr>
+<tr>
+<td>Gestos menos vigorosos</td>
+<td>Gestos vigorosos</td>
+</tr>
+<tr>
+<td>Pouco contato visual</td>
+<td>Contato visual</td>
+</tr>
+<tr>
+<td>Inclina-se para trás</td>
+<td>Ereto e inclina-se para frente</td>
+</tr>
+<tr>
+<td>Fala mais pausado e de forma branda</td>
+<td>Fala rápido e alto</td>
+</tr>
+<tr>
+<td>Lento para chegar aos problemas</td>
+<td>Rápido para chegar aos problemas</td>
+</tr>
+</tbody>
+</table>
+<p>　</p>
+<table>
+<thead>
+<tr>
+<th>Expressividade BAIXA</th>
+<th>Expressividade ALTA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Não demonstra sentimentos</td>
+<td>Expressa sentimentos</td>
+</tr>
+<tr>
+<td>Aparenta ser reservado</td>
+<td>Aparenta ser amigável</td>
+</tr>
+<tr>
+<td>Poucas expressões faciais</td>
+<td>Apresenta mais expressões faciais</td>
+</tr>
+<tr>
+<td>Poucas inflexões verbais</td>
+<td>Muitas inflexões verbais</td>
+</tr>
+<tr>
+<td>Não gosta de conversas informais</td>
+<td>Gosta de conversas informais</td>
+</tr>
+<tr>
+<td>Fala de fatos</td>
+<td>Gosta de utilizar histórias</td>
+</tr>
+<tr>
+<td>Uso do tempo estruturado</td>
+<td>Pouco estruturado no uso do tempo</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="perfil-do-negociador-1">Perfil do negociador</h2>
+<p><img src="/img/fgv_gestaoti/negociacao_perfil.png" alt="perfil do negociador"></p>
+<h3 id="catalisador">Catalisador</h3>
+<table>
+<thead>
+<tr>
+<th>Pontos Fortes</th>
+<th>Pontos Fracos</th>
+<th>Interesses</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Articulado</td>
+<td>Superficial</td>
+<td>Inovação</td>
+</tr>
+<tr>
+<td>Rápido</td>
+<td>Impulsivo</td>
+<td>Exclusividade</td>
+</tr>
+<tr>
+<td>Criativo</td>
+<td>Imediatista</td>
+<td>Aspectos estratégicos</td>
+</tr>
+<tr>
+<td>Alegre</td>
+<td>Impaciente</td>
+<td>Informações gerais</td>
+</tr>
+<tr>
+<td>Otimista</td>
+<td>Não gosta de detalhes</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Persuasivo</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Estimulante</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Metas ambiciosas</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 id="analítico">Analítico</h3>
+<table>
+<thead>
+<tr>
+<th>Pontos Fortes</th>
+<th>Pontos Fracos</th>
+<th>Interesses</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Prudente</td>
+<td>Indeciso</td>
+<td>Sistematização</td>
+</tr>
+<tr>
+<td>Cuidadoso</td>
+<td>Adia decisões</td>
+<td>Segurança</td>
+</tr>
+<tr>
+<td>Orientado para a tarefa</td>
+<td>Perfeccionista</td>
+<td>Informação para a tomada de decisão</td>
+</tr>
+<tr>
+<td>Sistemático</td>
+<td>Pode ser afetado</td>
+<td>Organização</td>
+</tr>
+<tr>
+<td>Sério</td>
+<td>Trabalho mal sob tensão</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Atualizado</td>
+<td>Evita o conflito</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Cuidadoso nas análises</td>
+<td>Não opina sobre assuntos controversos</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Profundo</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 id="impulsionador">Impulsionador</h3>
+<table>
+<thead>
+<tr>
+<th>Pontos Fortes</th>
+<th>Pontos Fracos</th>
+<th>Interesses</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Independente</td>
+<td>Exigente</td>
+<td>Ganhar tempo</td>
+</tr>
+<tr>
+<td>Orientado para resultados</td>
+<td>Não trabalha bem em equipe</td>
+<td>Aumentar o poder</td>
+</tr>
+<tr>
+<td>Decidido</td>
+<td>Crítico</td>
+<td>Criar independência</td>
+</tr>
+<tr>
+<td>Pragmático</td>
+<td>Impaciente</td>
+<td>Simplificar</td>
+</tr>
+<tr>
+<td>Eficiente</td>
+<td>Intromete-se no trabalho alheio</td>
+<td>Cumprir metas</td>
+</tr>
+<tr>
+<td>Objetivo</td>
+<td>Falta humidade</td>
+<td>Vencer</td>
+</tr>
+<tr>
+<td>Rápido</td>
+<td>Não escuta</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Assume riscos</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Líder</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 id="apoiador">Apoiador</h3>
+<table>
+<thead>
+<tr>
+<th>Pontos Fortes</th>
+<th>Pontos Fracos</th>
+<th>Interesses</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Diplomático</td>
+<td>Influenciável</td>
+<td>Trabalho em equipe</td>
+</tr>
+<tr>
+<td>Trabalha bem em equipe</td>
+<td>Pode ser ineficiente</td>
+<td>Equipes harmoniosas</td>
+</tr>
+<tr>
+<td>Prestativo</td>
+<td>Perde tempo</td>
+<td>Eliminação de conflito</td>
+</tr>
+<tr>
+<td>Relacionamento</td>
+<td>Não trabalha bem em situações de tensão</td>
+<td>Harmonia</td>
+</tr>
+<tr>
+<td>Bom ouvinte</td>
+<td>Pode sabotar o trabalho</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Críticas construtivas</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="resposta-em-situações-de-estresse">Resposta em situações de estresse</h2>
+<table>
+<thead>
+<tr>
+<th>Perfil</th>
+<th>Estresse</th>
+<th>Estresse EXTREMO</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Analítico</strong></td>
+<td>Evita</td>
+<td>Impõe</td>
+</tr>
+<tr>
+<td><strong>Impulsionador</strong></td>
+<td>Impõe</td>
+<td>Evita</td>
+</tr>
+<tr>
+<td><strong>Apoiador</strong></td>
+<td>Aceita</td>
+<td>Ataca</td>
+</tr>
+<tr>
+<td><strong>Catalisador</strong></td>
+<td>Ataca</td>
+<td>Aceita</td>
+</tr>
+</tbody>
+</table>
+
+        
+    </div>
+
+    <div class="prev-next">
+        
+    </div>
+
+    
+    
+    
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>&copy; 2024 Kauan Manzato</span>
+    
+    <span>
+        Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
+    </span>
+</footer>
+</body>
+</html>
