@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gerenciamento de Projetos em TI on kauan.m</title>
+    <link>https://kauanmn.github.io/notas/fgv_gestaoti/projetos/</link>
+    <description>Recent content in Gerenciamento de Projetos em TI on kauan.m</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 26 Aug 2024 19:00:00 -0300</lastBuildDate>
+    <atom:link href="https://kauanmn.github.io/notas/fgv_gestaoti/projetos/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Aula 3</title>
+      <link>https://kauanmn.github.io/notas/fgv_gestaoti/projetos/aula3/</link>
+      <pubDate>Mon, 26 Aug 2024 19:00:00 -0300</pubDate>
+      <guid>https://kauanmn.github.io/notas/fgv_gestaoti/projetos/aula3/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

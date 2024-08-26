@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Aula 5</title>
+    <meta name="description" content="Software Development | AppSec | Bug Bounty">
+    <meta name="keywords" content=''>
+
+    <meta property="og:url" content="https://kauanmn.github.io/notas/fgv_gestaoti/lideranca/aula5/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Aula 5">
+    <meta property="og:description" content="Software Development | AppSec | Bug Bounty">
+    <meta property="og:image" content="https://kauanmn.github.io/img/me.jpg">
+    <meta property="og:image:secure_url" content="https://kauanmn.github.io/img/me.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Aula 5">
+    <meta name="twitter:description" content="Software Development | AppSec | Bug Bounty">
+    <meta property="twitter:domain" content="https://kauanmn.github.io/notas/fgv_gestaoti/lideranca/aula5/">
+    <meta property="twitter:url" content="https://kauanmn.github.io/notas/fgv_gestaoti/lideranca/aula5/">
+    <meta name="twitter:image" content="https://kauanmn.github.io/img/me.jpg">
+
+    
+    <link rel="canonical" href="https://kauanmn.github.io/notas/fgv_gestaoti/lideranca/aula5/">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.893af8dd3b65bd0ffe90e7af33847bd6dc9180b8fa6d6659a212a6f4b62d3e01.js"></script>
+    
+
+
+    
+    
+        <!-- KaTeX -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js" integrity="sha384-X/XCfMm41VSsqRNQgDerQczD69XqmjOOOwYQvr/uuC+j4OPoNhVgjdGFwhvN02Ja" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          // customised options
+          // • auto-render specific keys, e.g.:
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false},
+          ],
+          // • rendering keys, e.g.:
+          throwOnError : false
+        });
+      });
+    </script>
+  
+    
+</head>
+<body>
+        <script>
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+        <div class="avatar">
+            <a href="https://kauanmn.github.io/">
+                <img src='/img/me.jpg' alt="avatar">
+            </a>
+        </div>
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="https://kauanmn.github.io/">kauan.m</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="https://kauanmn.github.io/notas/"> ~/notas </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://kauanmn.github.io/artigos/"> ~/artigos </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://kauanmn.github.io/writeups/"> ~/writeups </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <span class="sr-only dark-theme-toggle-screen-reader-target"></span>
+                <a>
+                    <span class="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span class="sr-only hamburger-menu-toggle-screen-reader-target">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="https://kauanmn.github.io/notas/"> ~/notas </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://kauanmn.github.io/artigos/"> ~/artigos </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://kauanmn.github.io/writeups/"> ~/writeups </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <span class="sr-only dark-theme-toggle-screen-reader-target">theme</span>
+                    <a>
+                        <span class="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Aula 5</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">August 26, 2024
+        
+        </p>
+
+        <ul class="post-tags">
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <h1 id="5-formação-e-desenvolvimento-de-equipe">5. Formação e Desenvolvimento de Equipe</h1>
+<h2 id="grupo-e-equipe">Grupo e Equipe</h2>
+<ul>
+<li>
+<p><strong>Grupo</strong>: conjunto de pessoas com objetivos comuns que se organizam e se estabelecem para atingirem determinados resultados</p>
+</li>
+<li>
+<p><strong>Equipe</strong>: conjunto de pessoas com habilidades complementares, atuando juntas numa mesma atividade, com propósitos e objetivos comuns, comprometidas umas com as outras e com a qualidade dos relacionamentos e dos resultados</p>
+<ul>
+<li>O desempenho individual afeta os outros</li>
+</ul>
+</li>
+</ul>
+<p>Um grupo transforma-se em equipe quando passa a prestar atenção à sua própria forma de operar e procura resolver os problemas que afetam o seu funcionamento.</p>
+<hr>
+<h2 id="squads---equipes-multidisciplinares">Squads - Equipes multidisciplinares</h2>
+<ul>
+<li>Equipes auto-organizadas e pequenas</li>
+<li>Responsabilidade ponta a ponta: projetam, desenham, desenvolvem, acompanham e dão manutenção</li>
+<li>Nível elevado de autonomia (não ilimitado): decidem o quê, como construir e como trabalhar juntos</li>
+<li>Autonomia + alinhamento = motivador intrínseco muito forte</li>
+</ul>
+<hr>
+<h2 id="condições---bom-funcionamento-da-equipe">Condições - bom funcionamento da equipe</h2>
+<ol>
+<li><strong>Consciência dos objetivos e dos recursos</strong>: conhecer o propósito da atividade, prazos e recursos</li>
+<li><strong>Aceitação das diferenças individuais</strong>: conviver com traços e valores de cada um</li>
+<li><strong>Capacidade de negociar e de fazer concessões</strong>: jogo do ganha-ganha</li>
+<li><strong>Propensão para aprender e compartilhar</strong>: saber dar e receber feedback</li>
+<li><strong>Comportamento ético</strong>: respeito mútuo, confiança e compromisso</li>
+<li><strong>Flexibilidade</strong>: incentivar compartilhamento de liderança</li>
+</ol>
+<hr>
+<h2 id="dificuldades-enfrentadas-pelas-equipes">Dificuldades enfrentadas pelas equipes</h2>
+<ul>
+<li>Metas confusas</li>
+<li>Indefinição de papéis</li>
+<li>Falta de confiança</li>
+<li>Liderança ruim</li>
+<li>Uso de ferramentas impróprias</li>
+<li>Inadequação do sistema de recompensas</li>
+<li>Insuficiência de feedback e informações</li>
+</ul>
+
+        
+    </div>
+
+    <div class="prev-next">
+        
+    </div>
+
+    
+    
+    
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>&copy; 2024 Kauan Manzato</span>
+    
+    <span>
+        Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
+    </span>
+</footer>
+</body>
+</html>

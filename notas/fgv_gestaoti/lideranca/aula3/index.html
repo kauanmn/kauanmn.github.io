@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Aula 3</title>
+    <meta name="description" content="Software Development | AppSec | Bug Bounty">
+    <meta name="keywords" content=''>
+
+    <meta property="og:url" content="https://kauanmn.github.io/notas/fgv_gestaoti/lideranca/aula3/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Aula 3">
+    <meta property="og:description" content="Software Development | AppSec | Bug Bounty">
+    <meta property="og:image" content="https://kauanmn.github.io/img/me.jpg">
+    <meta property="og:image:secure_url" content="https://kauanmn.github.io/img/me.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Aula 3">
+    <meta name="twitter:description" content="Software Development | AppSec | Bug Bounty">
+    <meta property="twitter:domain" content="https://kauanmn.github.io/notas/fgv_gestaoti/lideranca/aula3/">
+    <meta property="twitter:url" content="https://kauanmn.github.io/notas/fgv_gestaoti/lideranca/aula3/">
+    <meta name="twitter:image" content="https://kauanmn.github.io/img/me.jpg">
+
+    
+    <link rel="canonical" href="https://kauanmn.github.io/notas/fgv_gestaoti/lideranca/aula3/">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.893af8dd3b65bd0ffe90e7af33847bd6dc9180b8fa6d6659a212a6f4b62d3e01.js"></script>
+    
+
+
+    
+    
+        <!-- KaTeX -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js" integrity="sha384-X/XCfMm41VSsqRNQgDerQczD69XqmjOOOwYQvr/uuC+j4OPoNhVgjdGFwhvN02Ja" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          // customised options
+          // • auto-render specific keys, e.g.:
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false},
+          ],
+          // • rendering keys, e.g.:
+          throwOnError : false
+        });
+      });
+    </script>
+  
+    
+</head>
+<body>
+        <script>
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+        <div class="avatar">
+            <a href="https://kauanmn.github.io/">
+                <img src='/img/me.jpg' alt="avatar">
+            </a>
+        </div>
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="https://kauanmn.github.io/">kauan.m</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="https://kauanmn.github.io/notas/"> ~/notas </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://kauanmn.github.io/artigos/"> ~/artigos </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://kauanmn.github.io/writeups/"> ~/writeups </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <span class="sr-only dark-theme-toggle-screen-reader-target"></span>
+                <a>
+                    <span class="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span class="sr-only hamburger-menu-toggle-screen-reader-target">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="https://kauanmn.github.io/notas/"> ~/notas </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://kauanmn.github.io/artigos/"> ~/artigos </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://kauanmn.github.io/writeups/"> ~/writeups </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <span class="sr-only dark-theme-toggle-screen-reader-target">theme</span>
+                    <a>
+                        <span class="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Aula 3</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">August 26, 2024
+        
+        </p>
+
+        <ul class="post-tags">
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <h1 id="3-cultura-organizacional">3. Cultura Organizacional</h1>
+<h2 id="tipificação-do-conhecimento-organizacional">Tipificação do Conhecimento Organizacional</h2>
+<ul>
+<li><strong>Conhecimento explícito</strong>: pode ser adquirido a partir de livros, cursos, bases de dados, conhecimento científico etc.</li>
+<li><strong>Conhecimento implícito</strong>: não disponível em manual, relacionado à capacidade de resolução de problemas e de relacionar situações e interagir com outros. Saber fazer.</li>
+</ul>
+<hr>
+<h2 id="onde-está-o-conhecimento">Onde está o conhecimento?</h2>
+<ul>
+<li>Conhecimento explícito = 20%</li>
+<li>Conhecimento implícito = 80%</li>
+<li>Como transformar?</li>
+</ul>
+<hr>
+<h2 id="cultura-organizacional">Cultura Organizacional</h2>
+<ul>
+<li><strong>Cultura</strong>: valores éticos e morais, princípios, crenças, políticas internas e externas, sistemas e ambiente interno. São regras!
+<ul>
+<li>Conjunto de práticas de comportamento de um grupo de pessoas: a maneira certa de pensar, agir e sentir.</li>
+<li>O termo cultura trata do que é compartilhado pelas pessoas.</li>
+<li>Manifesta-se por meio de artefatos, valores compartilhados e pressupostos</li>
+</ul>
+</li>
+<li><strong>Artefatos</strong>: nível mais superficial, relaciona-se aos padrões de comportamento ou como as coisas são feitas;</li>
+<li><strong>Valores</strong>: justificativas dadas pelas pessoas para os artefatos. São as regras de comportamento;</li>
+<li><strong>Pressupostos</strong>: nível mais profundo e inconsciente da cultura. São crenças profundas e inquestionáveis, compartilhadas pelas pessoas da empresa. Podem ser positivos ou negativos.</li>
+</ul>
+<h3 id="exemplos-de-artefatos-valores-e-pressupostos">Exemplos de Artefatos, Valores e Pressupostos</h3>
+<p><strong>Artefatos</strong></p>
+<ul>
+<li>Local de trabalho é mantido limpo e organizado;</li>
+<li>Pontualidade das pessoas;</li>
+<li>Empatia com os clientes da empresa e respeito a prazos;</li>
+<li>Como indivíduos de determinado setor se vestem;</li>
+<li>Horário para as pausas, e qual local e se ocorrem em conjunto;</li>
+<li>Nível de formalidade do local de trabalho;</li>
+<li>Uso de EPI;</li>
+<li>Frequência em que reuniões de segurança ocorrem;</li>
+<li>Utilização consciente de recursos;</li>
+</ul>
+<p><strong>Valores</strong></p>
+<ul>
+<li>Higienização: reflete-se na limpeza do local de trabalho;</li>
+<li>Respeito: reflete-se no cuidado com a segurança, pontualidade e observação dos prazos;</li>
+<li>Parceria: reflete-se na empatia com clientes e fornecedores;</li>
+<li>Segurança: reflete-se no esforço para uso de EPIs e disponibilização de condições seguras de trabalho;</li>
+<li>Sustentabilidade: uso consciente dos recursos;</li>
+<li>Transparência: realização e divulgação dos resultados das auditorias;</li>
+</ul>
+<p><strong>Pressupostos (negativos)</strong></p>
+<ul>
+<li>Competição exagerada entre setores;</li>
+<li>Sabotagem interna;</li>
+<li>Metodologia usada pela direção para promoção de cargos (favoritismo);</li>
+<li>Pouca atenção despendida com solicitações de clientes e uso de rótulos;</li>
+<li>Desempenho apenas mediante estímulo financeiro;</li>
+<li>Indisponibilidade de indivíduos para auxílio fora do horário de trabalho;</li>
+</ul>
+<p><strong>Pressupostos (positivos)</strong></p>
+<ul>
+<li>Ações sociais promovidas por grupos dentro da empresa;</li>
+<li>Companheirismo entre membros de um determinado setor;</li>
+<li>Fazer o que falar;</li>
+</ul>
+
+        
+    </div>
+
+    <div class="prev-next">
+        
+    </div>
+
+    
+    
+    
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>&copy; 2024 Kauan Manzato</span>
+    
+    <span>
+        Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
+    </span>
+</footer>
+</body>
+</html>
