@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Aula 3</title>
+    <meta name="description" content="Software Development | AppSec | Bug Bounty">
+    <meta name="keywords" content=''>
+
+    <meta property="og:url" content="https://kauanmn.github.io/notas/fgv_gestaoti/blockchain/aula3/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Aula 3">
+    <meta property="og:description" content="Software Development | AppSec | Bug Bounty">
+    <meta property="og:image" content="https://kauanmn.github.io/img/me.jpg">
+    <meta property="og:image:secure_url" content="https://kauanmn.github.io/img/me.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Aula 3">
+    <meta name="twitter:description" content="Software Development | AppSec | Bug Bounty">
+    <meta property="twitter:domain" content="https://kauanmn.github.io/notas/fgv_gestaoti/blockchain/aula3/">
+    <meta property="twitter:url" content="https://kauanmn.github.io/notas/fgv_gestaoti/blockchain/aula3/">
+    <meta name="twitter:image" content="https://kauanmn.github.io/img/me.jpg">
+
+    
+    <link rel="canonical" href="https://kauanmn.github.io/notas/fgv_gestaoti/blockchain/aula3/">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.893af8dd3b65bd0ffe90e7af33847bd6dc9180b8fa6d6659a212a6f4b62d3e01.js"></script>
+    
+
+
+    
+    
+        <!-- KaTeX -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js" integrity="sha384-X/XCfMm41VSsqRNQgDerQczD69XqmjOOOwYQvr/uuC+j4OPoNhVgjdGFwhvN02Ja" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          // customised options
+          // • auto-render specific keys, e.g.:
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false},
+          ],
+          // • rendering keys, e.g.:
+          throwOnError : false
+        });
+      });
+    </script>
+  
+    
+</head>
+<body>
+        <script>
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+        <div class="avatar">
+            <a href="https://kauanmn.github.io/">
+                <img src='/img/me.jpg' alt="avatar">
+            </a>
+        </div>
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="https://kauanmn.github.io/">kauan.m</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="https://kauanmn.github.io/notas/"> ~/notas </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://kauanmn.github.io/artigos/"> ~/artigos </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://kauanmn.github.io/writeups/"> ~/writeups </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <span class="sr-only dark-theme-toggle-screen-reader-target"></span>
+                <a>
+                    <span class="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span class="sr-only hamburger-menu-toggle-screen-reader-target">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="https://kauanmn.github.io/notas/"> ~/notas </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://kauanmn.github.io/artigos/"> ~/artigos </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://kauanmn.github.io/writeups/"> ~/writeups </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <span class="sr-only dark-theme-toggle-screen-reader-target">theme</span>
+                    <a>
+                        <span class="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Aula 3</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">September 5, 2024
+        
+        </p>
+
+        <ul class="post-tags">
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <h1 id="iot-internet-das-coisas-continuação">IoT (Internet das Coisas) <code>continuação</code></h1>
+<h2 id="tpm--fase-2---requisitos">TpM | Fase 2 - Requisitos</h2>
+<p>O levantamento de requisitos é uma parte fundamental para o sucesso do desenvolvimento da solução IoT.</p>
+<ul>
+<li>O uso do modelo de referência <strong>segue o sentido top-down</strong>. Isto tem por objetivo partir do negócio, avaliando o que deve ser exibido para a tomada de decisões</li>
+<li>O levantamento de requisitos são de três tipos: requisitos funcionais, não funcinoais e desejáveis</li>
+</ul>
+<h3 id="tipos-de-requisitos">Tipos de Requisitos</h3>
+<p>De forma a tornar a tarefa mais simples e lógica, os requisitos podem ser classificados como <strong>funcionais</strong>, <strong>não funcionais</strong> e <strong>desejáveis</strong></p>
+<ul>
+<li>
+<p>Os <strong>requisitos funcionais e não funcionais</strong> são essenciais para o funcionamento do sistema porque definem o que o sistema deve fazer e como ele deve fazer</p>
+</li>
+<li>
+<p><strong>Requisitos funcionais</strong>: requisitos que definem o que o sistema deve fazer (comportamentos, resultados, capacidades)</p>
+</li>
+<li>
+<p><strong>Requisitos não funcionais</strong> estão relacionados ao uso da aplicação em termos de desempenho, usabilidade, segurança, tecnologias usadas etc. Ou seja, como será entregue ao usuário.</p>
+</li>
+<li>
+<p>Os <strong>requisitos desejáveis</strong> são opcionais. Eles podem ser especificados, mas não são necessários</p>
+</li>
+<li>
+<p>Para listar os requisitos, espera-se que eles atendam a algumas características como ser descritos claramente, sem ambiguidades e consistente com todos os aspectos significativos do sistema proposto</p>
+</li>
+</ul>
+<h3 id="relembrando-o-modelo-de-referência">Relembrando o modelo de referência</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span><span style="color:#66d9ef">6.</span> exibição
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">5.</span> abstração
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">4.</span> armazenamento
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">3.</span> borda
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">2.</span> conectividade
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">1.</span> atuadores / sensores
+</span></span></code></pre></div>
+        
+    </div>
+
+    <div class="prev-next">
+        
+    </div>
+
+    
+    
+    
+</div>
+
+<aside class="post-toc">
+    <nav id="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#tpm--fase-2---requisitos">TpM | Fase 2 - Requisitos</a>
+      <ul>
+        <li><a href="#tipos-de-requisitos">Tipos de Requisitos</a></li>
+        <li><a href="#relembrando-o-modelo-de-referência">Relembrando o modelo de referência</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </nav>
+</aside>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>&copy; 2024 Kauan Manzato</span>
+    
+    <span>
+        Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
+    </span>
+</footer>
+</body>
+</html>

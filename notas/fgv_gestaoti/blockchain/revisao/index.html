@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Revisão</title>
+    <meta name="description" content="Software Development | AppSec | Bug Bounty">
+    <meta name="keywords" content=''>
+
+    <meta property="og:url" content="https://kauanmn.github.io/notas/fgv_gestaoti/blockchain/revisao/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Revisão">
+    <meta property="og:description" content="Software Development | AppSec | Bug Bounty">
+    <meta property="og:image" content="https://kauanmn.github.io/img/me.jpg">
+    <meta property="og:image:secure_url" content="https://kauanmn.github.io/img/me.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Revisão">
+    <meta name="twitter:description" content="Software Development | AppSec | Bug Bounty">
+    <meta property="twitter:domain" content="https://kauanmn.github.io/notas/fgv_gestaoti/blockchain/revisao/">
+    <meta property="twitter:url" content="https://kauanmn.github.io/notas/fgv_gestaoti/blockchain/revisao/">
+    <meta name="twitter:image" content="https://kauanmn.github.io/img/me.jpg">
+
+    
+    <link rel="canonical" href="https://kauanmn.github.io/notas/fgv_gestaoti/blockchain/revisao/">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.893af8dd3b65bd0ffe90e7af33847bd6dc9180b8fa6d6659a212a6f4b62d3e01.js"></script>
+    
+
+
+    
+    
+        <!-- KaTeX -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js" integrity="sha384-X/XCfMm41VSsqRNQgDerQczD69XqmjOOOwYQvr/uuC+j4OPoNhVgjdGFwhvN02Ja" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          // customised options
+          // • auto-render specific keys, e.g.:
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false},
+          ],
+          // • rendering keys, e.g.:
+          throwOnError : false
+        });
+      });
+    </script>
+  
+    
+</head>
+<body>
+        <script>
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+        <div class="avatar">
+            <a href="https://kauanmn.github.io/">
+                <img src='/img/me.jpg' alt="avatar">
+            </a>
+        </div>
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="https://kauanmn.github.io/">kauan.m</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="https://kauanmn.github.io/notas/"> ~/notas </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://kauanmn.github.io/artigos/"> ~/artigos </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://kauanmn.github.io/writeups/"> ~/writeups </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <span class="sr-only dark-theme-toggle-screen-reader-target"></span>
+                <a>
+                    <span class="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span class="sr-only hamburger-menu-toggle-screen-reader-target">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="https://kauanmn.github.io/notas/"> ~/notas </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://kauanmn.github.io/artigos/"> ~/artigos </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://kauanmn.github.io/writeups/"> ~/writeups </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <span class="sr-only dark-theme-toggle-screen-reader-target">theme</span>
+                    <a>
+                        <span class="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Revisão</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">September 5, 2024
+        
+        </p>
+
+        <ul class="post-tags">
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <h2 id="introdução">Introdução</h2>
+<p><strong>Por que foram invertidos os temas blockchain com Internet das Coisas?</strong></p>
+<blockquote>
+<p><em>A Internet das Coisas, atualmente, é uma grande lacuna, diferentemente do blockchain, que hoje está consolidado no mercado. Um exemplo disso é o case do Walmart.</em></p>
+</blockquote>
+<p><strong>Foi possível identificar o papel do contrato inteligente?</strong></p>
+<blockquote>
+<p><em>O contrato inteligente é uma decorrência do blockchain e traz uma conveniência muito grande.</em></p>
+</blockquote>
+<p><strong>O que significa TI Bimodal e como é aderente com o curso?</strong></p>
+<blockquote>
+<p><em>A <strong>TI Bimodal</strong> é um conceito que sugere dois modos de se gerenciar as áreas de tecnologia de informação numa empresa: o modo 1 (tradicional) foca em estabilidade e na cautela, para diminuir os riscos, e o modo 2 (flexível) visa entregas mais rápidas e está mais aberta a inovação. O curso adere o modo 2.</em></p>
+</blockquote>
+<p><strong>O case do Walmart só usou Blockchain?</strong></p>
+<blockquote>
+<p><em>Não. O mais trabalhoso e a principal parte do projeto foi a Internet das Coisas (IoT)</em></p>
+</blockquote>
+<hr>
+<h2 id="iot-internet-das-coisas">IoT (Internet das Coisas)</h2>
+<p><strong>O que é IoT?</strong></p>
+<blockquote>
+<p><em>Há diversas definições diferentes, mas o principal ponto é a conectividade entre os dispositivos, principalmente a comunicação sem fio.</em></p>
+</blockquote>
+<p><strong>Como IoT pode ser usado em uma empresa?</strong></p>
+<blockquote>
+<p><em>Esta é uma boa pergunta porque é extremamente importante para o sucesso das soluções IoT. Esta pergunta deve ser feita quando se está planejando adotar uma solução IoT em uma empresa.</em></p>
+</blockquote>
+<p><strong>Existe uma forma de desenvolver IoT?</strong></p>
+<blockquote>
+<p><em>Existe uma metodologia chamada TpM (Three-Phase Methodology) que consiste em três etapas: negócio, requisitos e implementação.</em></p>
+</blockquote>
+<p><strong>Quais as partes de IoT?</strong></p>
+<blockquote>
+<p><em>De acordo com o modelo de referência de IoT &ldquo;Open Source Reference Model&rdquo;, há seis partes: exibição, abstração, armazenamento, borda, conectividade e processamento local.</em></p>
+</blockquote>
+<p><strong>Por que os projetos IoT falham?</strong></p>
+<blockquote>
+<p><em>Por diversos motivos, mas principalmente por desconhecimento; quando decisões são tomadas sem o conhecimento necessário.</em></p>
+</blockquote>
+<p><strong>Por que existem tantas propostas de rede sem fio para IoT?</strong></p>
+<blockquote>
+<p><em>Não há uma solução que funcione em todos os casos porque cada caso é um caso diferente, com suas particularidades e desafios.</em></p>
+</blockquote>
+<p><strong>O que é um modelo de referência para IoT e qual é seu objetivo?</strong></p>
+<blockquote>
+<p><em>O modelo de referência quebra o problema em etapas bem definidas, fornecendo descrições claras que possam ser aplicadas com precisão a elementos e funções de sistemas e aplicativos IoT, permitindo simplificar, esclarecer, identificar, padronizar e organizar.</em></p>
+</blockquote>
+<p><strong>As grandes empresas fornecedoras de soluções IoT usam modelos de referência?</strong></p>
+<blockquote>
+<p><em>Todas elas porque o modelo quebra as etapas de um problema complexo.</em></p>
+</blockquote>
+<hr>
+<h2 id="tpm">TpM</h2>
+<p><strong>Existe uma metodologia para desenvolvimento de soluções IoT?</strong></p>
+<blockquote>
+<p><em>Sim. Existe a TpM com três fases: negócio, requisitos e implementação.</em></p>
+</blockquote>
+<p><strong>Quais as fases do desenvolvimento?</strong></p>
+<blockquote>
+<p><em>As fases citadas acima.</em></p>
+</blockquote>
+<p><strong>O que significa TpM?</strong></p>
+<blockquote>
+<p><em>Three-phase Methodology, uma metodologia de três fases.</em></p>
+</blockquote>
+<p><strong>Qual a diferença entre IoT, Projeto IoT e Solução IoT?</strong></p>
+<blockquote>
+<p><em>IoT é, conforme diversas definições, diferentes dispositivos interconectados (geralmente, usando redes sem fio); projeto IoT é a implementação da IoT; e a solução IoT é o sinônimo da TpM: considerando a necessidade dos negócios, requisitos são levantados para que seja implementada uma rede IoT.</em></p>
+</blockquote>
+<p><strong>O que são as regras de negócio?</strong></p>
+<blockquote>
+<p><em>Premissas e restrições do negócio que permeiam o desenvolvimento da solução IoT.</em></p>
+</blockquote>
+<p><strong>Qual a função do especialista?</strong></p>
+<blockquote>
+<p><em>Profissionais ligados aos processos. Eles entendem o que precisa ser feito.</em></p>
+</blockquote>
+<p><strong>Por que tem que identificar as coisas?</strong></p>
+<blockquote>
+<p><em>É preciso identificar as &ldquo;coisas&rdquo; porque elas são as entidades que serão monitoradas ou manipuladas.</em></p>
+</blockquote>
+<p><strong>Qual o papel do gerente de projeto?</strong></p>
+<blockquote>
+<p><em>Maestro para a criação do projeto IoT.</em></p>
+</blockquote>
+<p><strong>O que são requisitos e quais os tipos?</strong></p>
+<blockquote>
+<p><em>Tudo aquilo que é necessário no projeto e eles são: funcionais, não funcionais e desejáveis.</em></p>
+</blockquote>
+<p><strong>Por que é usado o sentido top down no modelo TpM para levantamento de requisitos?</strong></p>
+<blockquote>
+<p><em>Porque há uma priorização daquilo que o cliente precisa e quer.</em></p>
+</blockquote>
+<p><strong>Qual a melhor tecnologia rádio e em qual nível do modelo de referência está?</strong></p>
+<blockquote>
+<p><em>Não existe a melhor tecnologia, existe a que melhor atende às necessidade em um dado problema ou contexto. A tecnologia de rádio está no nível 2, &ldquo;Conectividade&rdquo;</em></p>
+</blockquote>
+<p><strong>Qual a finalidade de usar o approach &ldquo;bottom up&rdquo;?</strong></p>
+<blockquote>
+<p><em>Porque quando se vai começar a implementar, é melhor começar olhando para a &ldquo;coisa&rdquo;.</em></p>
+</blockquote>
+<p><strong>Por que a tecnologia só é tratada na fase 3?</strong></p>
+<blockquote>
+<p><em>As duas primeiras fases não devem se preocupar em como deve ser realizado o projeto IoT. O foco nas duas primeiras fases deve ser apenas em levantar as necessidades do negócio e, posteriormente, os requisitos do projeto.</em></p>
+</blockquote>
+<hr>
+<h2 id="resumo">Resumo</h2>
+<p><img src="/img/fgv_gestaoti/projeto_blockchain.png" alt="Projeto - IoT + Blockchain + Contrato Inteligente"></p>
+<h3 id="1ª-fase---negócio">1ª Fase - Negócio</h3>
+<ul>
+<li>Aplicação IoT</li>
+<li>Negócio</li>
+<li>As coisas</li>
+<li>Regras de Negócio</li>
+<li>Especialista</li>
+</ul>
+<h3 id="criação-das-soluções-iot">Criação das Soluções IoT</h3>
+<ul>
+<li>2ª Fase - Requisitos
+<ul>
+<li>Exibição</li>
+<li>Abstração</li>
+<li>Armazenamento</li>
+<li>Borda</li>
+<li>Conectividade</li>
+<li>Processamento local</li>
+</ul>
+</li>
+<li>3ª Fase - Implementação
+<ul>
+<li>mesmas seis fases, só que bottom-up</li>
+</ul>
+</li>
+</ul>
+<h3 id="criação-do-blockchain">Criação do blockchain</h3>
+<ul>
+<li>2ª Fase - Requisitos
+<ul>
+<li>O que</li>
+<li>Para quem</li>
+<li>Como</li>
+<li>Quanto</li>
+</ul>
+</li>
+<li>3ª Fase - Implementação
+<ul>
+<li>Transações e Blocos</li>
+<li>Criptografia</li>
+<li>Tipo da Blockchain</li>
+<li>Acesso à Blockchain</li>
+<li>Mineração, consenso e validação</li>
+<li>Consolidação da cadeia</li>
+</ul>
+</li>
+</ul>
+<h3 id="criação-do-contrato-inteligente">Criação do contrato inteligente</h3>
+<ul>
+<li>2ª Fase - Requisitos
+<ul>
+<li>Definição das regras de decisão</li>
+<li>Linguagem natural</li>
+<li>Pseudocódigo</li>
+<li>Simulação de casos</li>
+</ul>
+</li>
+<li>3ª Fase - Implementação
+<ul>
+<li>Criação de fluxograma</li>
+<li>Código</li>
+<li>Teste</li>
+<li>Produção</li>
+</ul>
+</li>
+</ul>
+
+        
+    </div>
+
+    <div class="prev-next">
+        
+    </div>
+
+    
+    
+    
+</div>
+
+<aside class="post-toc">
+    <nav id="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introdução">Introdução</a></li>
+    <li><a href="#iot-internet-das-coisas">IoT (Internet das Coisas)</a></li>
+    <li><a href="#tpm">TpM</a></li>
+    <li><a href="#resumo">Resumo</a>
+      <ul>
+        <li><a href="#1ª-fase---negócio">1ª Fase - Negócio</a></li>
+        <li><a href="#criação-das-soluções-iot">Criação das Soluções IoT</a></li>
+        <li><a href="#criação-do-blockchain">Criação do blockchain</a></li>
+        <li><a href="#criação-do-contrato-inteligente">Criação do contrato inteligente</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </nav>
+</aside>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>&copy; 2024 Kauan Manzato</span>
+    
+    <span>
+        Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
+    </span>
+</footer>
+</body>
+</html>

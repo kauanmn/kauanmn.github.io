@@ -6,8 +6,50 @@
     <description>Recent content on kauan.m</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 26 Aug 2024 20:41:00 -0300</lastBuildDate>
+    <lastBuildDate>Thu, 05 Sep 2024 23:00:00 -0300</lastBuildDate>
     <atom:link href="https://kauanmn.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Revisão</title>
+      <link>https://kauanmn.github.io/notas/fgv_gestaoti/blockchain/revisao/</link>
+      <pubDate>Thu, 05 Sep 2024 23:00:00 -0300</pubDate>
+      <guid>https://kauanmn.github.io/notas/fgv_gestaoti/blockchain/revisao/</guid>
+      <description>Introdução Por que foram invertidos os temas blockchain com Internet das Coisas?&#xA;A Internet das Coisas, atualmente, é uma grande lacuna, diferentemente do blockchain, que hoje está consolidado no mercado. Um exemplo disso é o case do Walmart.&#xA;Foi possível identificar o papel do contrato inteligente?&#xA;O contrato inteligente é uma decorrência do blockchain e traz uma conveniência muito grande.&#xA;O que significa TI Bimodal e como é aderente com o curso?</description>
+    </item>
+    <item>
+      <title>Aula 5</title>
+      <link>https://kauanmn.github.io/notas/fgv_gestaoti/blockchain/aula5/</link>
+      <pubDate>Thu, 05 Sep 2024 20:00:00 -0300</pubDate>
+      <guid>https://kauanmn.github.io/notas/fgv_gestaoti/blockchain/aula5/</guid>
+      <description>Blockchain &amp;amp; Contratos Inteligentes Contratos Inteligentes Os contratos inteligentes são programas de computador autoexecutáveis que funcionam em uma blockchain, como Ethereum, e têm como objetivo automatizar, verificar e aplicar acordos e transações de forma transparente e descentralizada, sem a necessidade de intermediários.&#xA;Esses contratos têm regras e condições predefinidas que, uma vez atendidas, automaticamente executam as ações especificadas, como transferir fundos, liberar direitos de propriedade ou registrar transações&#xA;Características dos contratos inteligentes Autonomia: uma vez implementado, o contrato inteligente executa automaticamente as suas instruções assim que as condições definidas no contrato forem atendidas, eliminando a necessidade de confiar em terceiros e de intervenção humana</description>
+    </item>
+    <item>
+      <title>Aula 4</title>
+      <link>https://kauanmn.github.io/notas/fgv_gestaoti/blockchain/aula4/</link>
+      <pubDate>Thu, 05 Sep 2024 12:00:00 -0300</pubDate>
+      <guid>https://kauanmn.github.io/notas/fgv_gestaoti/blockchain/aula4/</guid>
+      <description>Blockchain Introdução e Aspectos Tecnológicos Quando se pensa em transações de informações entre duas partes, a primeira imagem que surge são sistemas centralizados como bancos ou cartórios A blockchain traz uma outra forma de funcionamento descentralizado Os conceitos envolvidos em blockchain não são novos, se analisados separadamente. A verificação da história do blockchain permite entender como as áreas se desenvolveram separadamente e como foram integradas criando uma aplicação real, no caso o bitcoin.</description>
+    </item>
+    <item>
+      <title>Aula 3</title>
+      <link>https://kauanmn.github.io/notas/fgv_gestaoti/blockchain/aula3/</link>
+      <pubDate>Thu, 05 Sep 2024 01:00:00 -0300</pubDate>
+      <guid>https://kauanmn.github.io/notas/fgv_gestaoti/blockchain/aula3/</guid>
+      <description>IoT (Internet das Coisas) continuação TpM | Fase 2 - Requisitos O levantamento de requisitos é uma parte fundamental para o sucesso do desenvolvimento da solução IoT.&#xA;O uso do modelo de referência segue o sentido top-down. Isto tem por objetivo partir do negócio, avaliando o que deve ser exibido para a tomada de decisões O levantamento de requisitos são de três tipos: requisitos funcionais, não funcinoais e desejáveis Tipos de Requisitos De forma a tornar a tarefa mais simples e lógica, os requisitos podem ser classificados como funcionais, não funcionais e desejáveis</description>
+    </item>
+    <item>
+      <title>Aula 2</title>
+      <link>https://kauanmn.github.io/notas/fgv_gestaoti/blockchain/aula2/</link>
+      <pubDate>Tue, 03 Sep 2024 20:00:00 -0300</pubDate>
+      <guid>https://kauanmn.github.io/notas/fgv_gestaoti/blockchain/aula2/</guid>
+      <description>IoT (Internet das Coisas) Para pensar o que significa IoT e como é definido? como IoT pode ser usado em uma empresa? existe uma forma de desenvolver IoT? quais as partes de IoT? por que os projetos IoT falham? por que existem tantas propostas de rede sem fio para IoT? O que é IoT? Descreve dispositivos com sensores, habilidade de processamento, software e outras tecnologias que conectam e trocam dados com outros dispositivos e sistems através da Internet ou outras redes de comunicação</description>
+    </item>
+    <item>
+      <title>Aula 1</title>
+      <link>https://kauanmn.github.io/notas/fgv_gestaoti/blockchain/aula1/</link>
+      <pubDate>Mon, 02 Sep 2024 13:00:00 -0300</pubDate>
+      <guid>https://kauanmn.github.io/notas/fgv_gestaoti/blockchain/aula1/</guid>
+      <description>Apresentação do Curso Blockchain e IoT são dois temas que se relacionam entre si para dar suporte aos contratos inteligentes Importante entender como está organizado o curso Será desenvolvida uma solução que engloba IoT e Blockchain por um grupo de alunos Esse desenvolvimento será tratado ao longo de todo o curso em cada tópico tratado O grande norteador do curso será o desenvolvimento em quatro partes: avaliação do negócio IoT Blockchain IoT + Blockchain Organização da Disciplina Apresentação, contextualização, projeto e avaliação Internet das Coisas (IoT) Blockchain Introdução a Contrato Inteligente IoT e Blockchain Metodologia Emprega o Problem-Based Learning como estratégia para desenvolver uma solução blockchain e IoT Necessidade que, por grupo de alunos, exista um problema real a ser usado para desenvolver uma solução IoT + Blockchain Preocupação com aplicações reais Uso da taxonomia de Bloom Para pensar Qual a ementa da disciplina e qual o objetivo da disciplina?</description>
+    </item>
     <item>
       <title>Aula 4</title>
       <link>https://kauanmn.github.io/notas/fgv_gestaoti/lideranca/aula4/</link>
@@ -51,6 +93,20 @@
       <description></description>
     </item>
     <item>
+      <title>Aula 2</title>
+      <link>https://kauanmn.github.io/notas/fgv_gestaoti/direito/aula2-copy/</link>
+      <pubDate>Sun, 25 Aug 2024 00:01:00 -0300</pubDate>
+      <guid>https://kauanmn.github.io/notas/fgv_gestaoti/direito/aula2-copy/</guid>
+      <description>Princípios da LGPD Art. 6º As atividades de tratamento de dados pessoais deverão observar a boa-fé e os seguintes princípios:&#xA;I - Finalidade: realização do tratamento para propósitos legítimos, específicos, explícitos e informados ao titular, sem possibilidade de tratamento posterior de forma incompatível com essas finalidades II - Adequação: compatibilidade do tratamento com as finalidades informadas ao titular, de acordo com o contexto do tratamento III - Necessidade: limitação do tratamento ao mínimo necessário para a realização de suas finalidades, com abrangência dos dados pertinentes, proporcionais e não excessivos em relação às finalidades do tratamento de dados IV - Livre acesso: garantia, aos titulares, de consulta facilitada e gratuita sobre a forma e a duração do tratamento, bem como sobre a integralidade de seus dados pessoais V - Qualidade dos dados: garantia, aos titulares, de exatidão, clareza, relevância e atualização dos dados, de acordo com a necessidade e para o cumprimento da finalidade de seu tratamento VI - Transparência: garantia, aos titulares, de informações claras, precisas e facilmente acessíveis sobre a realização do tratamento e os respectivos agentes de tratamento, observados os segredos comercial e industrial VII - Segurança: utilização de medidas técnicas e administrativas aptas a proteger os dados pessoais de acesso não autorizados e de situações acidentais ou ilícitas de destruição, perda, alteração, comunicação ou difusão VIII - Prevenção: adoção de medidas para prevenir a ocorrência de danos em virtude do tratamento de dados pessoais Prevenção: futuro certo Precaução: futuro incerto IX - Não discriminação: impossibilidade de realização do tratamento para fins discriminatórios ilícitos ou abusivos X - Responsabilização e prestação de contas: demonstração, pelo agente, da adoção de medidas eficazes e capazes de comprovar a observância e o cumprimento das normas de proteção de dados pessoais e, inclusive, da eficácia dessas medidas Boa-fé A boa-fé tem 3 funções no direito:</description>
+    </item>
+    <item>
+      <title>Aula 2</title>
+      <link>https://kauanmn.github.io/notas/fgv_gestaoti/direito/aula2/</link>
+      <pubDate>Sun, 25 Aug 2024 00:01:00 -0300</pubDate>
+      <guid>https://kauanmn.github.io/notas/fgv_gestaoti/direito/aula2/</guid>
+      <description>Princípios da LGPD Art. 6º As atividades de tratamento de dados pessoais deverão observar a boa-fé e os seguintes princípios:&#xA;I - Finalidade: realização do tratamento para propósitos legítimos, específicos, explícitos e informados ao titular, sem possibilidade de tratamento posterior de forma incompatível com essas finalidades II - Adequação: compatibilidade do tratamento com as finalidades informadas ao titular, de acordo com o contexto do tratamento III - Necessidade: limitação do tratamento ao mínimo necessário para a realização de suas finalidades, com abrangência dos dados pertinentes, proporcionais e não excessivos em relação às finalidades do tratamento de dados IV - Livre acesso: garantia, aos titulares, de consulta facilitada e gratuita sobre a forma e a duração do tratamento, bem como sobre a integralidade de seus dados pessoais V - Qualidade dos dados: garantia, aos titulares, de exatidão, clareza, relevância e atualização dos dados, de acordo com a necessidade e para o cumprimento da finalidade de seu tratamento VI - Transparência: garantia, aos titulares, de informações claras, precisas e facilmente acessíveis sobre a realização do tratamento e os respectivos agentes de tratamento, observados os segredos comercial e industrial VII - Segurança: utilização de medidas técnicas e administrativas aptas a proteger os dados pessoais de acesso não autorizados e de situações acidentais ou ilícitas de destruição, perda, alteração, comunicação ou difusão VIII - Prevenção: adoção de medidas para prevenir a ocorrência de danos em virtude do tratamento de dados pessoais Prevenção: futuro certo Precaução: futuro incerto IX - Não discriminação: impossibilidade de realização do tratamento para fins discriminatórios ilícitos ou abusivos X - Responsabilização e prestação de contas: demonstração, pelo agente, da adoção de medidas eficazes e capazes de comprovar a observância e o cumprimento das normas de proteção de dados pessoais e, inclusive, da eficácia dessas medidas Boa-fé A boa-fé tem 3 funções no direito:</description>
+    </item>
+    <item>
       <title>Aula 5</title>
       <link>https://kauanmn.github.io/notas/fgv_gestaoti/negociacao/aula5/</link>
       <pubDate>Sat, 24 Aug 2024 18:00:00 -0300</pubDate>
@@ -80,24 +136,24 @@
     </item>
     <item>
       <title>Aula 1</title>
+      <link>https://kauanmn.github.io/notas/fgv_gestaoti/direito/aula1/</link>
+      <pubDate>Sat, 24 Aug 2024 00:05:00 -0300</pubDate>
+      <guid>https://kauanmn.github.io/notas/fgv_gestaoti/direito/aula1/</guid>
+      <description>Prof.a Paula Cristiana Pinto Ramada&#xA;Sociedade em rede Evolução tecnológica Ondas de Inovação 1ª onda: energia hidráulica, têxteis, aço 2ª onda: vapor, aço, estradas de ferro 3ª onda: eletricidade, químicos, motor de combustão interna 4ª onda: petroquímicos, eletrônicos, aviação 5ª onda: redes digitais, softwares, novas mídias 6ª onda (?): IoT, inteligência artificial e big data Constituição e a tecnologia Liberdade de crença Direito de manifestação Anonimato Liberdade de expressão Privacidade História resumida 2010 - 1ª consulta pública 2014 - Snowden nos EUA 2015 - 2ª consulta pública 2012 até 2016 - projeto de lei 2018 - Sancionada lei 13.</description>
+    </item>
+    <item>
+      <title>Aula 1</title>
       <link>https://kauanmn.github.io/notas/fgv_gestaoti/negociacao/aula1/</link>
       <pubDate>Fri, 23 Aug 2024 09:00:00 -0300</pubDate>
       <guid>https://kauanmn.github.io/notas/fgv_gestaoti/negociacao/aula1/</guid>
       <description>Instrutor: Tagli Mallman tagli.dmm@gmail.com&#xA;Objetivo da disciplina Desenvolver competências para melhor&#xA;Articular uma visão consistente dos processos de negociação gestão de conflitos Realizar negociações efetivas e sustentáveis que gerem valor melhorem ou preservem o relacionamento entre as partes considerem: comportamentos e estilos dos negociadores fatores objetivos e subjetivos envolvidos abordagens adotadas pela(s) outra(s) parte(s) assimetrias entre as partes, incluindo tempo, informações, poder, recursos e alternativas Avaliação 70% - prova 30% - trabalho Interações família comunidade trabalho mercado (nacional e internacional) As aspirações podem gerar:</description>
     </item>
     <item>
-      <title>Aula 2</title>
-      <link>https://kauanmn.github.io/notas/fgv_gestaoti/blockchain/aula2/</link>
-      <pubDate>Tue, 30 Jul 2024 19:00:00 -0300</pubDate>
-      <guid>https://kauanmn.github.io/notas/fgv_gestaoti/blockchain/aula2/</guid>
-      <description>Módulo 2 - IoT Para pensar&#xA;O que significa IoT e como é definido? Como IoT poder ser usado em uma empresa? Existe uma forma de desenvolver IoT? Quais as partes de IoT? Por que os projetos de IoT falham? Por que existem tantas propostas de rede sem fio para IoT? Objetivo Identificar como o termo IoT é apresentado na mídia Verificar a deficiência na clara definição do que é IoT Constatar que foi criada uma imagem pela mídia que muitas vezes não corresponde à realidade Definição Definição pelo ITU: &amp;ldquo;A Internet das Coisas (IoT) foi definida como uma infraestrutura global para a sociedade da informação, permitindo serviços avançados por meio da interconexão (física e virtual) de coisas baseadas em tecnologias da informação e comunicação existentes e que estão evoluindo&amp;rdquo;</description>
-    </item>
-    <item>
-      <title>Aula 1</title>
-      <link>https://kauanmn.github.io/notas/fgv_gestaoti/blockchain/aula1/</link>
-      <pubDate>Mon, 29 Jul 2024 19:00:00 -0300</pubDate>
-      <guid>https://kauanmn.github.io/notas/fgv_gestaoti/blockchain/aula1/</guid>
-      <description></description>
+      <title>Preparação</title>
+      <link>https://kauanmn.github.io/notas/fgv_gestaoti/gestao_seguranca/preparacao/</link>
+      <pubDate>Tue, 30 Jul 2024 01:00:00 -0300</pubDate>
+      <guid>https://kauanmn.github.io/notas/fgv_gestaoti/gestao_seguranca/preparacao/</guid>
+      <description>Suponha que você seja o CISO de uma empresa de mineração e precisa montar um plano de trabalho para os próximos 100 dias.&#xA;Forneça um contexto global e brasileiro em relação à segurança da informação das empresas No mundo todo, as empresas vêm enfrentando uma série de ameaças, incluindo ataques de ransomware, espionagem, tentativas de comprometimento de sistemas críticos, vazamentos de dados etc. Além disso, como a crescente dependência de tecnologias como IoT, ICS/SCADA e computação em nuvem aumentam a superfície de ataque das empresas e devido à existência de regulamentações como a GDPR e a LGPD, a segurança da informação está ganhando notoriedade e importância no meio corporativo.</description>
     </item>
     <item>
       <title>Aula 4</title>
@@ -147,13 +203,6 @@
       <pubDate>Tue, 16 Jul 2024 19:00:00 -0300</pubDate>
       <guid>https://kauanmn.github.io/notas/fgv_gestaoti/gestao_seguranca/aula3/</guid>
       <description>Proteção de ativos Por que proteger?&#xA;relevância para o negócio valor do ativo impacto da ausência impacto de uso por terceiros Quando proteger?&#xA;ciclo de vida da informação manuseio armazenamento transporte descarte Onde proteger?&#xA;ativos custodiantes de informação físicos técnológicos humanos O que proteger?&#xA;atributos da segurança da informação confidencialidade integridade disponibilidade Do que proteger?&#xA;ameaças físicas tecnológicas humanas Segurança da Informação Adotar CONTROLES físicos, tecnológicos e humanos customizados, que viabilizem a redução e administração dos RISCOS dos ATIVOS levando o NEGÓCIO a atingir o nível de segurança adequada ao seu apetite.</description>
-    </item>
-    <item>
-      <title>Preparação</title>
-      <link>https://kauanmn.github.io/notas/fgv_gestaoti/gestao_seguranca/preparacao/</link>
-      <pubDate>Tue, 16 Jul 2024 01:00:00 -0300</pubDate>
-      <guid>https://kauanmn.github.io/notas/fgv_gestaoti/gestao_seguranca/preparacao/</guid>
-      <description>Suponha que você seja o CISO de uma empresa de mineração e precisa montar um plano de trabalho para os próximos 100 dias.&#xA;Forneça um contexto global e brasileiro em relação à segurança da informação das empresas No mundo todo, as empresas vêm enfrentando uma série de ameaças, incluindo ataques de ransomware, espionagem, tentativas de comprometimento de sistemas críticos, vazamentos de dados etc. Além disso, como a crescente dependência de tecnologias como IoT, ICS/SCADA e computação em nuvem aumentam a superfície de ataque das empresas e devido à existência de regulamentações como a GDPR e a LGPD, a segurança da informação está ganhando notoriedade e importância no meio corporativo.</description>
     </item>
     <item>
       <title>Aula 1</title>

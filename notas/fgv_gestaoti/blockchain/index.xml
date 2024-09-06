@@ -6,21 +6,49 @@
     <description>Recent content in Blockchain e IoT on kauan.m</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 30 Jul 2024 19:00:00 -0300</lastBuildDate>
+    <lastBuildDate>Thu, 05 Sep 2024 23:00:00 -0300</lastBuildDate>
     <atom:link href="https://kauanmn.github.io/notas/fgv_gestaoti/blockchain/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Revisão</title>
+      <link>https://kauanmn.github.io/notas/fgv_gestaoti/blockchain/revisao/</link>
+      <pubDate>Thu, 05 Sep 2024 23:00:00 -0300</pubDate>
+      <guid>https://kauanmn.github.io/notas/fgv_gestaoti/blockchain/revisao/</guid>
+      <description>Introdução Por que foram invertidos os temas blockchain com Internet das Coisas?&#xA;A Internet das Coisas, atualmente, é uma grande lacuna, diferentemente do blockchain, que hoje está consolidado no mercado. Um exemplo disso é o case do Walmart.&#xA;Foi possível identificar o papel do contrato inteligente?&#xA;O contrato inteligente é uma decorrência do blockchain e traz uma conveniência muito grande.&#xA;O que significa TI Bimodal e como é aderente com o curso?</description>
+    </item>
+    <item>
+      <title>Aula 5</title>
+      <link>https://kauanmn.github.io/notas/fgv_gestaoti/blockchain/aula5/</link>
+      <pubDate>Thu, 05 Sep 2024 20:00:00 -0300</pubDate>
+      <guid>https://kauanmn.github.io/notas/fgv_gestaoti/blockchain/aula5/</guid>
+      <description>Blockchain &amp;amp; Contratos Inteligentes Contratos Inteligentes Os contratos inteligentes são programas de computador autoexecutáveis que funcionam em uma blockchain, como Ethereum, e têm como objetivo automatizar, verificar e aplicar acordos e transações de forma transparente e descentralizada, sem a necessidade de intermediários.&#xA;Esses contratos têm regras e condições predefinidas que, uma vez atendidas, automaticamente executam as ações especificadas, como transferir fundos, liberar direitos de propriedade ou registrar transações&#xA;Características dos contratos inteligentes Autonomia: uma vez implementado, o contrato inteligente executa automaticamente as suas instruções assim que as condições definidas no contrato forem atendidas, eliminando a necessidade de confiar em terceiros e de intervenção humana</description>
+    </item>
+    <item>
+      <title>Aula 4</title>
+      <link>https://kauanmn.github.io/notas/fgv_gestaoti/blockchain/aula4/</link>
+      <pubDate>Thu, 05 Sep 2024 12:00:00 -0300</pubDate>
+      <guid>https://kauanmn.github.io/notas/fgv_gestaoti/blockchain/aula4/</guid>
+      <description>Blockchain Introdução e Aspectos Tecnológicos Quando se pensa em transações de informações entre duas partes, a primeira imagem que surge são sistemas centralizados como bancos ou cartórios A blockchain traz uma outra forma de funcionamento descentralizado Os conceitos envolvidos em blockchain não são novos, se analisados separadamente. A verificação da história do blockchain permite entender como as áreas se desenvolveram separadamente e como foram integradas criando uma aplicação real, no caso o bitcoin.</description>
+    </item>
+    <item>
+      <title>Aula 3</title>
+      <link>https://kauanmn.github.io/notas/fgv_gestaoti/blockchain/aula3/</link>
+      <pubDate>Thu, 05 Sep 2024 01:00:00 -0300</pubDate>
+      <guid>https://kauanmn.github.io/notas/fgv_gestaoti/blockchain/aula3/</guid>
+      <description>IoT (Internet das Coisas) continuação TpM | Fase 2 - Requisitos O levantamento de requisitos é uma parte fundamental para o sucesso do desenvolvimento da solução IoT.&#xA;O uso do modelo de referência segue o sentido top-down. Isto tem por objetivo partir do negócio, avaliando o que deve ser exibido para a tomada de decisões O levantamento de requisitos são de três tipos: requisitos funcionais, não funcinoais e desejáveis Tipos de Requisitos De forma a tornar a tarefa mais simples e lógica, os requisitos podem ser classificados como funcionais, não funcionais e desejáveis</description>
+    </item>
     <item>
       <title>Aula 2</title>
       <link>https://kauanmn.github.io/notas/fgv_gestaoti/blockchain/aula2/</link>
-      <pubDate>Tue, 30 Jul 2024 19:00:00 -0300</pubDate>
+      <pubDate>Tue, 03 Sep 2024 20:00:00 -0300</pubDate>
       <guid>https://kauanmn.github.io/notas/fgv_gestaoti/blockchain/aula2/</guid>
-      <description>Módulo 2 - IoT Para pensar&#xA;O que significa IoT e como é definido? Como IoT poder ser usado em uma empresa? Existe uma forma de desenvolver IoT? Quais as partes de IoT? Por que os projetos de IoT falham? Por que existem tantas propostas de rede sem fio para IoT? Objetivo Identificar como o termo IoT é apresentado na mídia Verificar a deficiência na clara definição do que é IoT Constatar que foi criada uma imagem pela mídia que muitas vezes não corresponde à realidade Definição Definição pelo ITU: &amp;ldquo;A Internet das Coisas (IoT) foi definida como uma infraestrutura global para a sociedade da informação, permitindo serviços avançados por meio da interconexão (física e virtual) de coisas baseadas em tecnologias da informação e comunicação existentes e que estão evoluindo&amp;rdquo;</description>
+      <description>IoT (Internet das Coisas) Para pensar o que significa IoT e como é definido? como IoT pode ser usado em uma empresa? existe uma forma de desenvolver IoT? quais as partes de IoT? por que os projetos IoT falham? por que existem tantas propostas de rede sem fio para IoT? O que é IoT? Descreve dispositivos com sensores, habilidade de processamento, software e outras tecnologias que conectam e trocam dados com outros dispositivos e sistems através da Internet ou outras redes de comunicação</description>
     </item>
     <item>
       <title>Aula 1</title>
       <link>https://kauanmn.github.io/notas/fgv_gestaoti/blockchain/aula1/</link>
-      <pubDate>Mon, 29 Jul 2024 19:00:00 -0300</pubDate>
+      <pubDate>Mon, 02 Sep 2024 13:00:00 -0300</pubDate>
       <guid>https://kauanmn.github.io/notas/fgv_gestaoti/blockchain/aula1/</guid>
-      <description></description>
+      <description>Apresentação do Curso Blockchain e IoT são dois temas que se relacionam entre si para dar suporte aos contratos inteligentes Importante entender como está organizado o curso Será desenvolvida uma solução que engloba IoT e Blockchain por um grupo de alunos Esse desenvolvimento será tratado ao longo de todo o curso em cada tópico tratado O grande norteador do curso será o desenvolvimento em quatro partes: avaliação do negócio IoT Blockchain IoT + Blockchain Organização da Disciplina Apresentação, contextualização, projeto e avaliação Internet das Coisas (IoT) Blockchain Introdução a Contrato Inteligente IoT e Blockchain Metodologia Emprega o Problem-Based Learning como estratégia para desenvolver uma solução blockchain e IoT Necessidade que, por grupo de alunos, exista um problema real a ser usado para desenvolver uma solução IoT + Blockchain Preocupação com aplicações reais Uso da taxonomia de Bloom Para pensar Qual a ementa da disciplina e qual o objetivo da disciplina?</description>
     </item>
   </channel>
 </rss>

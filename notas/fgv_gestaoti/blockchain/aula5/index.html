@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Aula 5</title>
+    <meta name="description" content="Software Development | AppSec | Bug Bounty">
+    <meta name="keywords" content=''>
+
+    <meta property="og:url" content="https://kauanmn.github.io/notas/fgv_gestaoti/blockchain/aula5/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Aula 5">
+    <meta property="og:description" content="Software Development | AppSec | Bug Bounty">
+    <meta property="og:image" content="https://kauanmn.github.io/img/me.jpg">
+    <meta property="og:image:secure_url" content="https://kauanmn.github.io/img/me.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Aula 5">
+    <meta name="twitter:description" content="Software Development | AppSec | Bug Bounty">
+    <meta property="twitter:domain" content="https://kauanmn.github.io/notas/fgv_gestaoti/blockchain/aula5/">
+    <meta property="twitter:url" content="https://kauanmn.github.io/notas/fgv_gestaoti/blockchain/aula5/">
+    <meta name="twitter:image" content="https://kauanmn.github.io/img/me.jpg">
+
+    
+    <link rel="canonical" href="https://kauanmn.github.io/notas/fgv_gestaoti/blockchain/aula5/">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.893af8dd3b65bd0ffe90e7af33847bd6dc9180b8fa6d6659a212a6f4b62d3e01.js"></script>
+    
+
+
+    
+    
+        <!-- KaTeX -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js" integrity="sha384-X/XCfMm41VSsqRNQgDerQczD69XqmjOOOwYQvr/uuC+j4OPoNhVgjdGFwhvN02Ja" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          // customised options
+          // • auto-render specific keys, e.g.:
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false},
+          ],
+          // • rendering keys, e.g.:
+          throwOnError : false
+        });
+      });
+    </script>
+  
+    
+</head>
+<body>
+        <script>
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+        <div class="avatar">
+            <a href="https://kauanmn.github.io/">
+                <img src='/img/me.jpg' alt="avatar">
+            </a>
+        </div>
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="https://kauanmn.github.io/">kauan.m</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="https://kauanmn.github.io/notas/"> ~/notas </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://kauanmn.github.io/artigos/"> ~/artigos </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://kauanmn.github.io/writeups/"> ~/writeups </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <span class="sr-only dark-theme-toggle-screen-reader-target"></span>
+                <a>
+                    <span class="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span class="sr-only hamburger-menu-toggle-screen-reader-target">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="https://kauanmn.github.io/notas/"> ~/notas </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://kauanmn.github.io/artigos/"> ~/artigos </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://kauanmn.github.io/writeups/"> ~/writeups </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <span class="sr-only dark-theme-toggle-screen-reader-target">theme</span>
+                    <a>
+                        <span class="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Aula 5</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">September 5, 2024
+        
+        </p>
+
+        <ul class="post-tags">
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <h1 id="blockchain--contratos-inteligentes">Blockchain &amp; Contratos Inteligentes</h1>
+<h2 id="contratos-inteligentes">Contratos Inteligentes</h2>
+<p>Os <strong>contratos inteligentes</strong> são programas de computador autoexecutáveis que funcionam em uma blockchain, como Ethereum, e têm como objetivo automatizar, verificar e aplicar acordos e transações de forma transparente e descentralizada, sem a necessidade de intermediários.</p>
+<p>Esses contratos têm <strong>regras e condições predefinidas</strong> que, uma vez atendidas, automaticamente executam as ações especificadas, como transferir fundos, liberar direitos de propriedade ou registrar transações</p>
+<h3 id="características-dos-contratos-inteligentes">Características dos contratos inteligentes</h3>
+<ol>
+<li>
+<p><strong>Autonomia</strong>: uma vez implementado, o contrato inteligente executa automaticamente as suas instruções assim que as condições definidas no contrato forem atendidas, eliminando a necessidade de confiar em terceiros e de intervenção humana</p>
+</li>
+<li>
+<p><strong>Descentralização</strong>: os contratos inteligentes operam em uma blockchain descentralizada, o que significa que não são controlados por uma única entidade, tornando-os resistentes à censura e à manipulação</p>
+</li>
+<li>
+<p><strong>Imutabilidade</strong>: depois de implantado na blockchain, o código de um contrato inteligente não pode ser alterado. Isso garante que as regras definidas no contrato sejam sempre respeitadas, mas também torna essencial que o código seja bem escrito e livre de bugs</p>
+</li>
+<li>
+<p><strong>Transparência</strong>: os contratos inteligentes são visíveis e verificáveis por qualquer pessoa na blockchain, o que aumenta a confiança entre as partes envolvidas</p>
+</li>
+</ol>
+<h3 id="criação-do-contrato-inteligente">Criação do contrato inteligente</h3>
+<p><strong>Linguagem natural</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span><span style="color:#66d9ef">1.</span> Obter as três notas das provas do aluno
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">2.</span> Calcular a média aritmética das três notas
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">3.</span> Se a média for maior ou igual a 5, escrever &#34;aprovado&#34;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">4.</span> Caso contrário, escrever &#34;reprovado&#34;
+</span></span></code></pre></div><p><strong>Pseudocódigo</strong>: o pseudocódigo é uma descrição textual que permite identificar as ações que um programa deve executar. Tem semelhanças com a linguagem natural, que descreve as ações a serem executadas</p>
+<pre tabindex="0"><code>variáveis
+média, nota1, nota2, nota3
+
+Início
+leia nota1, nota2, nota3
+média = (nota1 + nota2 + nota3) / 3
+se (média &gt;= 5) então
+    escreva &#34;aluno aprovado&#34;
+senão
+    escreva &#34;aluno reprovado&#34;
+fim-se
+Fim
+</code></pre><p><strong>Fluxograma</strong>:</p>
+<p>O fluxograma será passado para o programador implementar o contrato. Discriminar, de forma precisa, quais são as ações é um desafio para o sucesso do contrato inteligente.</p>
+<p><img src="/img/fgv_gestaoti/fluxograma_smart_contract.png" alt="fluxograma do contrato inteligente"></p>
+<h3 id="partes-do-contrato">Partes do contrato</h3>
+<ul>
+<li>As <strong>cláusulas</strong> de um contrato tradicional podem ter expressões vagas como <em>&ldquo;as partes se comprometer a fazer o maior esforço para cumprir este contrato&rdquo;</em>.</li>
+<li>Este tipo de possibilidade inexiste no contrato inteligente, uma vez que é impossível espelhar este tipo de condição dentro de um programa</li>
+<li>A união entre as cláusulas precisas de um contrato e o blockchain, usado para firmar contratos, promete fazer uma revolução na relação entre empresas e pessoas</li>
+</ul>
+<h3 id="ciclo-de-vida-do-contrato-inteligente">Ciclo de vida do contrato inteligente</h3>
+<ol>
+<li><strong>Criação</strong>: negociação de múltiplas partes e design, implementação e validação do contrato inteligente</li>
+<li><strong>Implantação</strong>: o contrato é armazenado na blockchain e há o congelamento de ativos digitais das partes envolvidas</li>
+<li><strong>Execução</strong>: avaliação das condições do contrato e autoexecução do contrato caso seja ativado</li>
+<li><strong>Conclusão</strong>: atualização do estado e alocação de ativos; descongelamento de ativos digitais</li>
+</ol>
+<hr>
+<h2 id="proposta-de-desenvolvimento">Proposta de desenvolvimento</h2>
+<p>Este tópico apresenta uma <strong>proposta</strong> para a criação de contratos inteligentes aderentes com a proposta de criação de uma solução IoT com blockchain.</p>
+<p>O objetivo é orientar quais os passos para a criação do contrato inteligente, partindo da Fase 1 (negócios):</p>
+<p><img src="/img/fgv_gestaoti/desenvolvimento_smart_contract.png" alt="Processo de desenvolvimento de um contrato inteligente"></p>
+<ul>
+<li>A fase de requisitos com a definição das regras, criação das instruções em linguagem natural, criação de pseudocódigo e simulação de casos</li>
+<li>A fase de implementação passa pela criação do fluxograma, desenvolvimento do código, teste e colocado em produção</li>
+</ul>
+<hr>
+<h2 id="projeto---iot--blockchain--contrato-inteligente">Projeto - IoT + Blockchain + Contrato Inteligente</h2>
+<p><img src="/img/fgv_gestaoti/projeto_blockchain.png" alt="Projeto - IoT + Blockchain + Contrato Inteligente"></p>
+<!-- raw HTML omitted -->
+<hr>
+<h2 id="gêmeos-digitais">Gêmeos Digitais</h2>
+<p>O <strong>gêmeo digital</strong> é um modelo virtual de um objeto físico. Ele abrange o ciclo de vida do objeto e usa dados em tempo real enviados de sensores no objeto para simular o comportamento e monitorar as operações.</p>
+
+        
+    </div>
+
+    <div class="prev-next">
+        
+    </div>
+
+    
+    
+    
+</div>
+
+<aside class="post-toc">
+    <nav id="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#contratos-inteligentes">Contratos Inteligentes</a>
+      <ul>
+        <li><a href="#características-dos-contratos-inteligentes">Características dos contratos inteligentes</a></li>
+        <li><a href="#criação-do-contrato-inteligente">Criação do contrato inteligente</a></li>
+        <li><a href="#partes-do-contrato">Partes do contrato</a></li>
+        <li><a href="#ciclo-de-vida-do-contrato-inteligente">Ciclo de vida do contrato inteligente</a></li>
+      </ul>
+    </li>
+    <li><a href="#proposta-de-desenvolvimento">Proposta de desenvolvimento</a></li>
+    <li><a href="#projeto---iot--blockchain--contrato-inteligente">Projeto - IoT + Blockchain + Contrato Inteligente</a></li>
+    <li><a href="#gêmeos-digitais">Gêmeos Digitais</a></li>
+  </ul>
+</nav>
+    </nav>
+</aside>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>&copy; 2024 Kauan Manzato</span>
+    
+    <span>
+        Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
+    </span>
+</footer>
+</body>
+</html>

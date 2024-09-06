@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Inovação e Empreendedorismo</title>
+    <meta name="description" content="Software Development | AppSec | Bug Bounty">
+    <meta name="keywords" content=''>
+
+    <meta property="og:url" content="https://kauanmn.github.io/notas/fgv_gestaoti/viabilidade/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Inovação e Empreendedorismo">
+    <meta property="og:description" content="Software Development | AppSec | Bug Bounty">
+    <meta property="og:image" content="https://kauanmn.github.io/img/me.jpg">
+    <meta property="og:image:secure_url" content="https://kauanmn.github.io/img/me.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Inovação e Empreendedorismo">
+    <meta name="twitter:description" content="Software Development | AppSec | Bug Bounty">
+    <meta property="twitter:domain" content="https://kauanmn.github.io/notas/fgv_gestaoti/viabilidade/">
+    <meta property="twitter:url" content="https://kauanmn.github.io/notas/fgv_gestaoti/viabilidade/">
+    <meta name="twitter:image" content="https://kauanmn.github.io/img/me.jpg">
+
+    
+    <link rel="canonical" href="https://kauanmn.github.io/notas/fgv_gestaoti/viabilidade/">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.893af8dd3b65bd0ffe90e7af33847bd6dc9180b8fa6d6659a212a6f4b62d3e01.js"></script>
+    
+
+
+    
+    
+        <!-- KaTeX -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js" integrity="sha384-X/XCfMm41VSsqRNQgDerQczD69XqmjOOOwYQvr/uuC+j4OPoNhVgjdGFwhvN02Ja" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          // customised options
+          // • auto-render specific keys, e.g.:
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false},
+          ],
+          // • rendering keys, e.g.:
+          throwOnError : false
+        });
+      });
+    </script>
+  
+    
+</head>
+<body>
+        <script>
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+        <div class="avatar">
+            <a href="https://kauanmn.github.io/">
+                <img src='/img/me.jpg' alt="avatar">
+            </a>
+        </div>
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="https://kauanmn.github.io/">kauan.m</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="https://kauanmn.github.io/notas/"> ~/notas </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://kauanmn.github.io/artigos/"> ~/artigos </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://kauanmn.github.io/writeups/"> ~/writeups </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <span class="sr-only dark-theme-toggle-screen-reader-target"></span>
+                <a>
+                    <span class="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span class="sr-only hamburger-menu-toggle-screen-reader-target">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="https://kauanmn.github.io/notas/"> ~/notas </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://kauanmn.github.io/artigos/"> ~/artigos </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://kauanmn.github.io/writeups/"> ~/writeups </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <span class="sr-only dark-theme-toggle-screen-reader-target">theme</span>
+                    <a>
+                        <span class="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+
+    <div class="post-header-section">
+        <h1>Inovação e Empreendedorismo</h1>
+    </div>
+
+    <div class="post-content">
+        <blockquote>
+<p>Ilda Spritzer, DSc</p>
+</blockquote>
+<blockquote>
+<p><a href="mailto:ilda.spritzer@fgv.br">ilda.spritzer@fgv.br</a></p>
+</blockquote>
+<hr>
+<h2 id="análise-de-viabilidade-de-projetos">Análise de Viabilidade de Projetos</h2>
+<p>A <strong>análise de projetos de investimentos</strong> visa <strong>orientar as decisões para maximizar o valor da empresa e, consequentemente, para o acionista considerando a exposição ao risco.</strong></p>
+<ul>
+<li>Matemática financeira</li>
+<li>Contextualização do conceito de um projeto de investimento</li>
+<li>Aplicação das metodologias na avaliação de projetos de investimento</li>
+<li>Análise de cenários e tipos de risco</li>
+<li>Identificação das metodologias destinadas à aplicabilidade em projetos com montante e vida útil iguais e diferentes</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Aula</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Aula 1</td>
+<td>Matemática financeira</td>
+</tr>
+<tr>
+<td>Aula 2</td>
+<td>Contextualização do conceito de um projeto de investimentos</td>
+</tr>
+<tr>
+<td>Aula 3</td>
+<td>Metodologias disponíveis na avaliação de projetos de investimento</td>
+</tr>
+<tr>
+<td>Aula 4</td>
+<td>Metodologias disponíveis na avaliação de projetos de investimento</td>
+</tr>
+<tr>
+<td>Aula 5</td>
+<td>Metodologias destinadas à aplicabilidade em projetos com montantes de investimentos e vida útil iguais e diferentes</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="maximizar-o-valor-da-empresa">Maximizar o valor da empresa</h2>
+<p>Pilares ambientalmente corretos, socialmente justos e economicamente viáveis: uso de recurso sem sobrecarregar o meio ambiente e sem comprometer as gerações futuras.</p>
+<hr>
+<h2 id="cálculo-financeiro"><strong>Cálculo Financeiro</strong></h2>
+<ul>
+<li><strong>Representa o valor do dinheiro no tempo</strong>: R$100,00 hoje não são iguais a R$100,00 em qualquer data futura</li>
+<li><strong>Acompanha processos de reembolso de empréstimos</strong> <strong>(amortização)</strong>: o dinheiro cresce no tempo devido à taxa de juros</li>
+<li><strong>Indica alternativas de decisão em investimento financeiro</strong>: montantes em datas diferentes são comparáveis somente após transformados em valores de uma mesma data, mediante aplicação correta de uma taxa de juros (<strong>taxa interna de juros</strong>)</li>
+</ul>
+<hr>
+<h2 id="-inflação"><strong>⭐ Inflação</strong></h2>
+<p>A <strong>desvalorização</strong> causada pela inflação provoca a perda do valor do dinheiro ao longo do tempo.</p>
+<hr>
+<h2 id="custo-de-oportunidade">Custo de Oportunidade</h2>
+<p>O <strong>custo de oportunidade</strong> do dinheiro está associado às alternativas de investimentos disponíveis. Assim, ao emprestar ou investir seu dinheiro, você deve ficar atento a outras alternativas e comparar remunerações.</p>
+<hr>
+<h2 id="taxa-selic">Taxa Selic</h2>
+<p><strong>Taxa de juros</strong> média que incide sobre os financiamentos diários com prazo de um dia útil (overnight) lastreados por títulos públicos registrados no Sistema Especial de Liquidação e Custódia (Selic)</p>
+<ul>
+<li>Copom estabelece a meta para a taxa Selic, o instrumento primário de política monetária, e cabe à mesa de operações do mercado aberto do Banco Central manter a taxa Selic diária próxima à meta</li>
+<li>Criada em 1979 para tornar mais transparente e segura a negociação de títulos públicos</li>
+</ul>
+<hr>
+<h2 id="spread-bancário">Spread Bancário</h2>
+<p>Diferença entre os juros que os bancos <strong>pagam</strong> quando você investe e os juros que eles <strong>cobram</strong> quando você faz um empréstimo.</p>
+<hr>
+<h2 id="aplicações-e-juros">Aplicações e Juros</h2>
+<ol>
+<li><strong>Prazo das aplicações (n)</strong>: relacionado ao período de aplicação dos juros, sendo representada por dias, meses, bimestres, anos etc.</li>
+<li><strong>Período de Capitalização</strong>: período de tempo que o capital sofre a incidência de juros: diária (a.d.), mensal (a.m.), anual (a.a.) etc.</li>
+<li><strong>Regime de Capitalização</strong>: indica a forma de incorporação dos juros ao capital (simples ou composto)</li>
+</ol>
+<hr>
+<h2 id="-juros-simples">⭐ Juros Simples</h2>
+<p>No regime de juros simples, apenas o capital inicial rende juros. O juro é diretamente proporcional ao tempo e à taxa</p>
+<p>J = P * i * n</p>
+<p>J = Juros</p>
+<p>P = Montante</p>
+<p>i = Taxa de juros (%)</p>
+<p>n = Prazo (dias, meses etc.)</p>
+<p>Taxa de juros:</p>
+<p>i = juros / capital</p>
+<p>Capital = capital inicial ou valor presente</p>
+<hr>
+<h2 id="-juros-compostos">⭐ Juros Compostos</h2>
+<p>No regime de juros compostos, o juro gerado pela aplicação, em um período, será incorporado no período seguinte e o capital + juro passa a gerar novos juros.</p>
+<p>Este regime de juros é mais importante porque retrata melhor a realidade</p>
+<hr>
+<h2 id="funções-da-hp-12c">Funções da HP 12C</h2>
+<ul>
+<li>[n]: calcula o número de períodos</li>
+<li>[ i ]: calcula a taxa de juros</li>
+<li>[PV]: calcula o valor presente</li>
+<li>[PMT]: calcula a prestação</li>
+<li>[FV]: calcula o valor futuro</li>
+<li>[CHS]: troca o sinal</li>
+<li>[g]: funções azuis</li>
+<li>[ f ]: funções amarelas</li>
+</ul>
+<hr>
+<h2 id="processo-de-investimento-de-capital">Processo de Investimento de Capital</h2>
+<h3 id="identificação">Identificação</h3>
+<ul>
+<li>Oportunidades para investimentos</li>
+<li>Tipos de investimentos:
+<ul>
+<li>Expansão</li>
+<li>Diversificação</li>
+<li>Reposição</li>
+<li>Compulsório</li>
+</ul>
+</li>
+</ul>
+<h3 id="avaliação">Avaliação</h3>
+<ul>
+<li>Fluxos de caixa relevantes do projeto e taxa de desconto</li>
+<li>Dados necessários:
+<ul>
+<li>Séries de fluxos de caixa esperados</li>
+<li>Taxa de desconto</li>
+</ul>
+</li>
+</ul>
+<h3 id="seleção">Seleção</h3>
+<ul>
+<li>Critérios de aceitação/rejeição</li>
+<li>Regras:
+<ul>
+<li>Payback</li>
+<li>VPL</li>
+<li>Índice de Rentabilidade</li>
+<li>TIR</li>
+</ul>
+</li>
+</ul>
+<h3 id="implantação-e-acompanhamento">Implantação e Acompanhamento</h3>
+<ul>
+<li>Procedimento de auditoria e monitoramento</li>
+<li>Avaliação de desempenho:
+<ul>
+<li>Valor e distribuição dos fluxos de caixa</li>
+<li>Validar a manutenção do critério de seleção</li>
+<li>Decisão de continuar/abandonar</li>
+<li>Rever as etapas anteriores no insucesso</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="tendências-tecnológicas-p-empresas">Tendências tecnológicas p/ empresas</h2>
+<ul>
+<li><strong>Otimização</strong> de resiliência, operações ou confiança</li>
+<li><strong>Escalonamento</strong> de soluções verticais, entrega de produtos ou em todos os lugares</li>
+<li><strong>Pioneirismo</strong> no engajamento do cliente, respostas aceleradas ou oportunidades</li>
+<li><strong>Soluções tecnológicas sustentáveis</strong></li>
+</ul>
+<hr>
+<h2 id="decisões-estratégicas">Decisões Estratégicas</h2>
+<ul>
+<li><strong>Ativo</strong>: decisões de investimento / aplicação de recursos</li>
+<li><strong>Passivo</strong>: decisões de financiamento / captação de recursos</li>
+<li><strong>Patrimônio</strong>: decisões de dividendos / financiamento das atividades</li>
+</ul>
+<hr>
+<h2 id="termos-importantes">Termos importantes</h2>
+<ul>
+<li><strong>Ativo Total</strong>: soma de todos os ativos (aquilo que pode ser convertido em valores monetários) da empresa
+<ul>
+<li>Caixa, aplicações financeiras, estoques, contas a receber, marcas, patentes, imóveis, terrenos etc.</li>
+</ul>
+</li>
+<li><strong>Passivo Total</strong>: soma de todas as obrigações de uma empresa
+<ul>
+<li>Despesas, dívidas, salários, contas de consumo, empréstimos, contas a pagar</li>
+</ul>
+</li>
+<li><strong>Patrimônio Líquido:</strong> valor da empresa depois de descontar suas obrigações, ou seja, a diferença entre ativo e passivo
+<ul>
+<li>Em resumo, é o quanto a empresa vale</li>
+<li>Um grande patrimônio líquido indica solidez financeira (mais ativos do que dívidas), capacidade de pagar dívidas e margem de segurança da empresa</li>
+</ul>
+</li>
+<li><strong>ROI (Return of Investment)</strong>: métrica em % que avalia a rentabilidade de um investimento
+<ul>
+<li>ROI positivo indica lucro</li>
+<li>Não leva em consideração o tempo de investimento</li>
+<li>Exemplo: se você investiu R$ 10.000,00 em ações e seu valor aumentou para R$ 12.000,00, o ROI é 20%</li>
+</ul>
+</li>
+<li><strong>EBITDA</strong>: lucro da empresa cujo cálculo não deduz juros, impostos, depreciação e amortização</li>
+<li><strong>Receita Líquida</strong>: valor que a empresa recebe pela sua atividade após deduzir custos relacionado à venda do produto/serviço
+<ul>
+<li>Exemplos de custos: impostos sobre vendas, gastos com devolução, descontos, abatimentos etc.</li>
+</ul>
+</li>
+<li><strong>Lucro Líquido:</strong> valor que a empresa ganha depois de deduzir custos, despesas e impostos
+<ul>
+<li>Lucro = Receitas - Custos - Despesas - Impostos</li>
+<li>Receita: entradas de dinheiro</li>
+<li>Custos: gastos operacionais (para a produção de bens/serviços)</li>
+<li>Despesas: gastos não-operacionais (ex.: marketing)</li>
+</ul>
+</li>
+<li><strong>Produtividade do Ativo</strong>: métrica da receita gerada pelos ativos
+<ul>
+<li>Produtividade = receita líquida / ativo total</li>
+<li>Quanto maior, melhor</li>
+</ul>
+</li>
+<li><strong>ROE (Return on Equity)</strong>: lucro da empresa a partir do seu patrimônio líquido, que inclui dinheiro de acionistas e investidores
+<ul>
+<li>ROE = Lucro líquido / Patrimônio líquido</li>
+</ul>
+</li>
+<li><strong>Depreciação</strong>: desvalorização de um bem com o passar do tempo</li>
+<li><strong>Endividamento</strong>: proporção entre passivo e ativo
+<ul>
+<li>Endividamento = Passivo / Ativo</li>
+</ul>
+</li>
+<li><strong>ROA (Return on Asset)</strong>: indica a rentabilidade de um investimento
+<ul>
+<li>ROA = Lucro Líquido / Ativo Total</li>
+<li>ROA = Margem Líquida x Giro Total do Ativo</li>
+</ul>
+</li>
+<li><strong>Risco da empresa / beta</strong></li>
+<li><strong>Payback</strong>: cálculo que permite saber em quanto tempo os lucros trazidos por um investimento cobrirão o valor aplicado inicialmente</li>
+</ul>
+<hr>
+<h2 id="demonstração-dos-resultados">Demonstração dos resultados</h2>
+<ul>
+<li>Receita Operacional Bruta</li>
+</ul>
+<ul>
+<li>Impostos sobre vendas e devoluções</li>
+</ul>
+<p><strong>= Receita Operacional Líquida</strong></p>
+<ul>
+<li>Custo dos bens e/ou serviços vendidos</li>
+<li>Depreciação</li>
+</ul>
+<p><strong>= Resultado Bruto</strong></p>
+<ul>
+<li>Despesas operacionais (vendas e administrativas)</li>
+</ul>
+<p><strong>= EBIT (resultado antes das despesas financeiras e dos tributos)</strong></p>
+<ul>
+<li>Despesas financeiras</li>
+</ul>
+<ul>
+<li>Receitas financeiras</li>
+</ul>
+<p><strong>= Resultado antes dos tributos sobre o lucro</strong></p>
+<ul>
+<li>Imposto de Renda</li>
+<li>Contribuição social sobre o lucro</li>
+</ul>
+<p><strong>= Lucro/Prejuízo consolidado do período</strong></p>
+<hr>
+<h2 id="demonstração-dos-resultados-simplificado">Demonstração dos resultados (simplificado)</h2>
+<ul>
+<li>Receita Operacional Bruta</li>
+</ul>
+<ul>
+<li>Custos variáveis</li>
+</ul>
+<p><strong>= Receita Líquida</strong></p>
+<ul>
+<li>Custos fixos</li>
+</ul>
+<p><strong>= EBITDA</strong></p>
+<ul>
+<li>Depreciação</li>
+</ul>
+<p><strong>= EBIT</strong></p>
+<ul>
+<li>IR (35%) (sobre lucro - depreciação)</li>
+</ul>
+<p><strong>= Lucro após IR</strong></p>
+<ul>
+<li>Depreciação</li>
+</ul>
+<p><strong>= Fluxo de caixa operacional</strong></p>
+<hr>
+<h2 id="quadro-de-fluxo-de-caixa">Quadro de Fluxo de Caixa</h2>
+<table>
+<thead>
+<tr>
+<th><strong>[ empresa aqui ]</strong></th>
+<th><strong>Fórmula</strong></th>
+<th><strong>Ano 1</strong></th>
+<th><strong>Ano 2</strong></th>
+<th><strong>Ano 3</strong></th>
+<th><strong>Tendência</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ativo</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Patrimônio</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Receita</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Produtividade do ativo</strong></td>
+<td>Receita / Ativo</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Margem EBIT</strong></td>
+<td>EBIT / Receita (%)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Retorno Ativo</strong></td>
+<td>Lucro / Ativo (%)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Retorno PL</strong></td>
+<td>Lucro / Patrimônio (%)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="orçamento-de-capital">Orçamento de capital</h2>
+<p>O <strong>orçamento de capital</strong>, para avaliação dos projetos de investimentos, pode ser dividido em 4 componentes:</p>
+<ol>
+<li><strong>Investimento inicial</strong>: saída de caixa relevante no instante zero:
+<ul>
+<li>Investimento no ativo</li>
+<li>Despesas de instalação do ativo</li>
+<li>Variação do capital circulante líquido (capital de giro)</li>
+</ul>
+</li>
+<li><strong>Fluxo de caixa operacionais</strong>: entradas de caixa incrementais após os impostos. O resultado operacional é a função direta das receitas e dos custos correspondentes ao projeto</li>
+<li><strong>Demonstrações financeiras</strong>: as demonstrações financeiras de anos anteriores são o ponto de partida para a projeção das entradas de caixa</li>
+<li><strong>Dados financeiros históricos</strong>: permitem determinar estimativas das variáveis, tais como número de unidades vendidas, preço de venda por unidade, custo variável unitário e custos fixos totais.</li>
+</ol>
+<p>Observações:</p>
+<ul>
+<li><strong>Decisões de investimento no longo prazo</strong> são decisões estratégicas para a empresa que implicam em alocação de recursos financeiros por prazo superior a um ano.</li>
+<li><strong>Fluxos de caixa incrementais</strong> são fluxos de caixa adicionais (entradas ou saídas) que se espera obter como resultado de um proposta de dispêndio de capital</li>
+<li>Antes de empreender qualquer projeto de investimento de capital, deve-se analisar sua <strong>viabilidade financeira</strong></li>
+<li>A decisão de comprar um imóvel ou abrir um negócio deve ser permeada por uma avaliação do <strong>retorno do investimento</strong></li>
+</ul>
+<hr>
+<h2 id="custo-de-novo-ativo--investimento-inicial">Custo de novo ativo / investimento inicial</h2>
+<ul>
+<li>
+<p>custo do novo ativo</p>
+</li>
+<li>
+<p>custo de instalação</p>
+</li>
+</ul>
+<p>+/- resultado líquido da venda do ativo velho</p>
+<p>+/- variação de capital circulante líquido</p>
+<p><strong>= investimento inicial</strong></p>
+<hr>
+<h2 id="depreciação">Depreciação</h2>
+<ul>
+<li>Os ativos imobilizados têm um período limitado de vida útil, a exceção de terrenos</li>
+<li>Depreciação é a diminuição do valor dos bens que integram o ativo imobilizado em decorrência de desgaste ou perda de utilidade pelo uso, ação da natureza ou obsolescência</li>
+<li>Custo sem desembolso, o qual, sendo abatido dos lucros, em cada exercício fiscal, acarreta menor lucro tributável</li>
+<li>Pode ser encarada como uma provisão para reposição de equipamentos ou um custo operacional</li>
+<li>Há diversos sistemas de depreciação. No Brasil, adota-se a depreciação linear ou método da linha reta (depreciações constantes)</li>
+</ul>
+<h3 id="cálculo">Cálculo</h3>
+<ul>
+<li>Métodos para calcular a depreciação: método das quotas constantes, soma dos dígitos dos anos e por produção</li>
+<li>A legislação fiscal indica os valores da vida útil, para o cálculo da despesa de depreciação anual linear:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Taxa Anual</th>
+<th>Anos de vida útil</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Edifícios</td>
+<td>4%</td>
+<td>25</td>
+</tr>
+<tr>
+<td>Máquinas / Equipamentos</td>
+<td>10%</td>
+<td>10</td>
+</tr>
+<tr>
+<td>Instalações</td>
+<td>10%</td>
+<td>10</td>
+</tr>
+<tr>
+<td>Móveis e Utensílios</td>
+<td>10%</td>
+<td>10</td>
+</tr>
+<tr>
+<td>Veículos</td>
+<td>20%</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Computadores / periféricos</td>
+<td>20%</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="produtividade-do-ativo">Produtividade do Ativo</h2>
+<ul>
+<li>Mede a eficiência na gestão dos ativos</li>
+<li>Quanto a empresa vendeu para cada R$ 1,00 de investimento total</li>
+<li>Gito do Ativo Total = Receita Operacional Líquida / Ativo Total</li>
+</ul>
+<hr>
+<h2 id="ebitda">EBITDA</h2>
+<ul>
+<li>Lucro antes de descontar os juros, os impostos sobre o lucro, a depreciação e a amortização</li>
+<li>Caixa gerado por meio das operações da empresa</li>
+<li>EBITDA = EBIT + Depreciação + Amortização</li>
+</ul>
+<hr>
+<h2 id="margens">Margens</h2>
+<p>Medem a porcentagem de cada unidade monetária de venda após o pagamento das despesas.</p>
+<ul>
+<li>Margem Bruta = Lucro Bruto / Receita Líquida</li>
+<li>Margem EBITDA = EBITDA / Receita Líquida</li>
+<li>Margem Líquida = Lucro Líquido / Receita Líquida</li>
+</ul>
+<hr>
+<h2 id="indicadores-econômico-financeiros">Indicadores Econômico-Financeiros</h2>
+<ol>
+<li><strong>Lucro vs. Receita Operacional</strong>: margem líquida (%) = lucro / receita</li>
+<li><strong>Retorno do ativo (%)</strong>: lucro / ativo</li>
+<li><strong>Retorno do acionista (%)</strong>: lucro / patrimônio</li>
+<li><strong>Risco da empresa</strong>: beta</li>
+</ol>
+<hr>
+<h2 id="análise-de-viabilidade-de-projetos-1">Análise de Viabilidade de Projetos</h2>
+<ul>
+<li>Payback simples</li>
+<li>Payback descontado</li>
+<li>VPL (Valor Presente Líquido)</li>
+<li>TIR (Taxa Interna de Retorno)</li>
+<li>MTIR (Taxa Interna de Retorno Modificada)</li>
+<li>IL (Índice de Lucratividade)</li>
+<li>CAE (Custo Atual Líquido)</li>
+</ul>
+<hr>
+<h2 id="payback-simples">Payback Simples</h2>
+<p>Calcula-se o tempo necessário para recuperar o capital investido. Compara-se o tempo necessário para recuperar o investimento (PBS) com o máximo tempo tolerado pelo investidor</p>
+<ul>
+<li>O 1º fluxo de caixa deve ser um investimento. Os demais FC&rsquo;s devem apresentar uma única mudança de sinal em relação ao FC inicial</li>
+<li>O valor aplicado é adicionado, período a período, aos fluxos de caixa líquidos gerados para que se obtenha o tempo de recuperação do investimento inicial</li>
+<li><strong>TMT (Tempo Máximo Tolerado)</strong> é o prazo máximo para a recuperação do investimento. É determinado pelo investidor e é o parâmetro para aceitação ou não</li>
+</ul>
+<hr>
+<h2 id="tma-taxa-mínima-de-atratividade">TMA (Taxa Mínima de Atratividade)</h2>
+<p>A <strong>TMA (Taxa Mínima de Atratividade)</strong> pode ser entendida como a menor taxa, considerando o grau de risco do projeto, exigido pelo empreendedor para a aplicação do seu capital neste investimento, ou o custo de oportunidade do investidor, ou o custo médio ponderado das fontes de financiamento do projeto de investimento.</p>
+<p>No caso de empresas, a TMA de novos projetos tem que ser &gt;= custo médio das fontes de recursos financeiros (ex.: empréstimo)</p>
+<hr>
+<h2 id="payback-descontado">Payback Descontado</h2>
+<p>No método <strong>payback descontado</strong>, introduz-se a <strong>TMA (Taxa Mínima de Atratividade)</strong> e a ideia do <strong>valor do dinheiro no tempo</strong>.</p>
+<p>Ele é medido pelo tempo decorrido entre a data inicial do fluxo de caixa (ponto zero) e a data futura mais próxima até a qual o valor do investimento inicial é coberto pela soma dos valores presentes das parcelas positivas do fluxo de caixa.</p>
+<table>
+<thead>
+<tr>
+<th>Anos</th>
+<th>FC (Fluxo de Caixa)</th>
+<th>TMA</th>
+<th>FC Descontado</th>
+<th>Saldo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>- $ 12.000.000</td>
+<td>10%</td>
+<td>- $ 12.000.000</td>
+<td>- $ 12.000.000</td>
+</tr>
+<tr>
+<td>1</td>
+<td>$ 4.090.000</td>
+<td>10%</td>
+<td>$ 3.718.182</td>
+<td>- $ 8.281.818</td>
+</tr>
+<tr>
+<td>2</td>
+<td>$ 4.415.000</td>
+<td>10%</td>
+<td>$ 3.648.760</td>
+<td>- $ 4.633.058</td>
+</tr>
+<tr>
+<td>3</td>
+<td>$ 4.740.000</td>
+<td>10%</td>
+<td>$ 3.561.232</td>
+<td>- $ 1.071.826</td>
+</tr>
+<tr>
+<td>4</td>
+<td>$ 5.162.500</td>
+<td>10%</td>
+<td>$ 3.526.057</td>
+<td>$ 2.454.231</td>
+</tr>
+<tr>
+<td>5</td>
+<td>$ 5.715.000</td>
+<td>10%</td>
+<td>$ 3.548.565</td>
+<td>$ 6.002.797</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Payback</strong> = 3 + (1.071.826 / 3.526.057) <strong>= 3,30 anos</strong></p>
+<hr>
+<h2 id="vpl-valor-presente-líquido">VPL (Valor Presente Líquido)</h2>
+<p>O valor de qualquer projeto de investimento é resultante de 4 variáveis:</p>
+<ul>
+<li>Investimento inicial</li>
+<li>Fluxos de caixa operacionais</li>
+<li>Ocorrência de cada fluxo de caixa</li>
+<li>Risco associado a cada fluxo de caixa</li>
+</ul>
+<p>O VPL é mais do que um simples cálculo. É um método que realmente mostra a contribuição de um dado projeto de investimento para o aumento do valor da empresa.</p>
+<p>O VPL para análise de projetos é calculado pela <strong>diferença entre o valor presente dos fluxos de caixa previstos e o valor presente do investimento</strong>.</p>
+<p>Em outras palavras, é o valor presente (PV) de caixa menos o valor presente (VP) das saídas de caixa descontando o custo de capital da empresa (k)</p>
+<p>Na calculadora:</p>
+<ul>
+<li>Investimento inicial -&gt; [ CHS ] -&gt; [ g ] + [ CFo ]</li>
+<li>Fluxos de Caixa -&gt; [ g ] + [ CFj ]</li>
+<li>Juros do capital (ex.: empréstimo) -&gt; [ i ]</li>
+<li>Para obter o VPL, basta apertar [ f ] + [ NPV ]</li>
+</ul>
+<hr>
+<h2 id="tir-taxa-interna-de-retorno---irr">TIR (Taxa Interna de Retorno - IRR)</h2>
+<p>Taxa de retorno do projeto que iguala o fluxo de caixa de entrada e saída</p>
+<ul>
+<li>Custo de Capital (k) &lt; TIR, projeto deve ser aceito e VPL &gt; 0</li>
+<li>Custo de Capital (k) = TIR, indiferente e VPL = 0</li>
+<li>Custo de Capital (k) &gt; TIR, projeto deve ser rejeitado e VPL &lt; 0</li>
+</ul>
+<p>Quanto maior o TIR, melhor.</p>
+<p>Na calculadora:</p>
+<ul>
+<li>Investimento inicial -&gt; [ CHS ] -&gt; [ g ] + [ CFo ]</li>
+<li>Fluxos de Caixa -&gt; [ g ] + [ CFj ]</li>
+<li>Para obter o TIR, basta apertar [ f ] + [ IRR ]</li>
+</ul>
+
+    </div>
+</div>
+
+
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>&copy; 2024 Kauan Manzato</span>
+    
+    <span>
+        Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
+    </span>
+</footer>
+</body>
+</html>

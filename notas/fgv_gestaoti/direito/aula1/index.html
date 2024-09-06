@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Aula 1</title>
+    <meta name="description" content="Software Development | AppSec | Bug Bounty">
+    <meta name="keywords" content=''>
+
+    <meta property="og:url" content="https://kauanmn.github.io/notas/fgv_gestaoti/direito/aula1/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Aula 1">
+    <meta property="og:description" content="Software Development | AppSec | Bug Bounty">
+    <meta property="og:image" content="https://kauanmn.github.io/img/me.jpg">
+    <meta property="og:image:secure_url" content="https://kauanmn.github.io/img/me.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Aula 1">
+    <meta name="twitter:description" content="Software Development | AppSec | Bug Bounty">
+    <meta property="twitter:domain" content="https://kauanmn.github.io/notas/fgv_gestaoti/direito/aula1/">
+    <meta property="twitter:url" content="https://kauanmn.github.io/notas/fgv_gestaoti/direito/aula1/">
+    <meta name="twitter:image" content="https://kauanmn.github.io/img/me.jpg">
+
+    
+    <link rel="canonical" href="https://kauanmn.github.io/notas/fgv_gestaoti/direito/aula1/">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.893af8dd3b65bd0ffe90e7af33847bd6dc9180b8fa6d6659a212a6f4b62d3e01.js"></script>
+    
+
+
+    
+    
+        <!-- KaTeX -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js" integrity="sha384-X/XCfMm41VSsqRNQgDerQczD69XqmjOOOwYQvr/uuC+j4OPoNhVgjdGFwhvN02Ja" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          // customised options
+          // • auto-render specific keys, e.g.:
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false},
+          ],
+          // • rendering keys, e.g.:
+          throwOnError : false
+        });
+      });
+    </script>
+  
+    
+</head>
+<body>
+        <script>
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+        <div class="avatar">
+            <a href="https://kauanmn.github.io/">
+                <img src='/img/me.jpg' alt="avatar">
+            </a>
+        </div>
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="https://kauanmn.github.io/">kauan.m</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="https://kauanmn.github.io/notas/"> ~/notas </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://kauanmn.github.io/artigos/"> ~/artigos </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://kauanmn.github.io/writeups/"> ~/writeups </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <span class="sr-only dark-theme-toggle-screen-reader-target"></span>
+                <a>
+                    <span class="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span class="sr-only hamburger-menu-toggle-screen-reader-target">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="https://kauanmn.github.io/notas/"> ~/notas </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://kauanmn.github.io/artigos/"> ~/artigos </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://kauanmn.github.io/writeups/"> ~/writeups </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <span class="sr-only dark-theme-toggle-screen-reader-target">theme</span>
+                    <a>
+                        <span class="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Aula 1</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">August 24, 2024
+        
+        </p>
+
+        <ul class="post-tags">
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>Prof.a Paula Cristiana Pinto Ramada</p>
+<ul>
+<li>Sociedade em rede</li>
+<li>Evolução tecnológica</li>
+</ul>
+<h3 id="ondas-de-inovação">Ondas de Inovação</h3>
+<ul>
+<li>1ª onda: energia hidráulica, têxteis, aço</li>
+<li>2ª onda: vapor, aço, estradas de ferro</li>
+<li>3ª onda: eletricidade, químicos, motor de combustão interna</li>
+<li>4ª onda: petroquímicos, eletrônicos, aviação</li>
+<li>5ª onda: redes digitais, softwares, novas mídias</li>
+<li>6ª onda (?): IoT, inteligência artificial e big data</li>
+</ul>
+<h3 id="constituição-e-a-tecnologia">Constituição e a tecnologia</h3>
+<ul>
+<li>Liberdade de crença</li>
+<li>Direito de manifestação</li>
+<li>Anonimato</li>
+<li>Liberdade de expressão</li>
+<li>Privacidade</li>
+</ul>
+<h3 id="história-resumida">História resumida</h3>
+<ul>
+<li>2010 - 1ª consulta pública</li>
+<li>2014 - Snowden nos EUA</li>
+<li>2015 - 2ª consulta pública</li>
+<li>2012 até 2016 - projeto de lei</li>
+<li>2018 - Sancionada lei 13.709/2018</li>
+</ul>
+<h3 id="ordenamento-jurídico-antes-da-lgpd">Ordenamento Jurídico antes da LGPD</h3>
+<ul>
+<li>Declaração universal dos direitos humanos</li>
+<li>Constituição Federal de 1988</li>
+<li>Código de Defesa do Consumidor</li>
+<li>Código Civil</li>
+<li>Lei de Acesso à Informação</li>
+<li>Marco Civil da Internet</li>
+<li>Lei do Habeas Data</li>
+<li>Lei de Interceptação Telefônica e Telemática (Lei 9.296/1996)</li>
+<li>Lei Geral de Telecomunicações (Lei 9.472/1997)</li>
+<li>Crime de inserção de dados falsos em sistemas de informação da administração pública (Lei 9.983/2000)</li>
+<li>Crime de invasão de dispositivos informáticos (Lei 12.737/2012)</li>
+</ul>
+<h2 id="dados-pessoais">Dados Pessoais</h2>
+<p><strong>Informação relacionada a uma pessoa natural identificada ou identificável</strong></p>
+<p>Exemplo: nome, número de RG ou CPF e endereço residencial. Também são considerados dados pesosais outros dados que estejam relacionados com uma pessoa natural, como seus hábitos de consumo, aparência e traços de personalidade.</p>
+<p>Artigo 12, par. 2º da LGPD: poderão ser igualmente considerados como dados pessoais aqueles usados para formação do perfil comportamental de determinada pessoal natural, se identificada</p>
+<h3 id="dado-pessoal-sensível">Dado pessoal sensível</h3>
+<p><strong>Dado pessoal sobre origem racial ou étnica, convicção religiosa, opinião política, entre outros, vinculado a uma pessoa natural</strong> (art. 5º, II).</p>
+<h2 id="dado-anonimizado">Dado Anonimizado</h2>
+<p><strong>Dado relacionado a titular que não possa ser identificado, considerando a utilização de meios técnicos razoáveis e disponíveis na ocasião de seu tratamento</strong> (art. 5º, III). <strong>Não são dados pessoais, salvo reversão</strong> (=/= pseudonimização)</p>
+<p>O dado anonimizado pode ser obtido por meio do emprego de técnicas como:</p>
+<ul>
+<li><strong>Randomização</strong>: busca alterar a veracidade dos dados para remover a forte ligação entre eles e o titular por meio da aplicação de ruído ou permutação, por exemplo</li>
+<li><strong>Generalização</strong>: busca a anonimização generalizando um dado por meio da modificação, por exemplo, da ordem de magnitude. Assim, ao invés de atrelar ao dado tratado a cidade dele proveniente, correlaciona-o à região, dando, portanto, uma localização menos detalhada a fim de quebrar o vínculo de identificação.</li>
+</ul>
+<h3 id="pseudoanonimização">Pseudoanonimização</h3>
+<p>Na pseudoanonimização, são usadas técnicas como:</p>
+<ul>
+<li>Criptografia com chave secreta: as informações são cifradas para que apenas o detentor da chave possa acessar seu conteúdo. Porém, como a operação é reversível, ainda é possível identificar o titular dos dados</li>
+<li>Tokenização: o token é um recurso de segurança gerador de um código identificador digital exclusivo, aleatorio e temporário para proteger dados sensíveis.</li>
+<li>etc.</li>
+</ul>
+<h2 id="lgpd-lei-geral-de-proteção-de-dados">LGPD (Lei Geral de Proteção de Dados)</h2>
+<p>Art. 1º esta lei dispões sobre o tratamento de dados pessoais, inclusive nos meios digitais, por pessoa natural ou por pessoa jurídica de direito público ou privado, com o <strong>objetivo de proteger os direitos fundamentais de liberdade e de privacidade e o livre desenvolvimento da personalidade da pessoa natural</strong>.</p>
+<h3 id="não-aplicação-da-lgpd">Não aplicação da LGPD</h3>
+<p>Art. 4º Esta lei <strong>NÃO SE APLICA</strong> ao tratamento de dados pessoais</p>
+<ol>
+<li>realizado por pessoa natural para fins exclusivamente particulares e não econômicos</li>
+<li>realizado para fins exclusivamente
+<ol>
+<li>jornalístico e artísticos</li>
+<li>acadêmicos, aplicando-se a esta hipótese os artigos 7º e 11º desta lei</li>
+</ol>
+</li>
+<li>realizado para fins exclusivos de:
+<ol>
+<li>segurança pública</li>
+<li>defesa nacional</li>
+<li>segurança do Estado</li>
+<li>atividades de investigação e repressão de infrações penais</li>
+</ol>
+</li>
+<li>provenientes de fora do território nacional e que não sejam objeto de comunicação, uso compartilhado de dados com agentes de trataamento brasileiros ou objeto de transferência internacional de dados com outro país que não o de proveniência, desde que o país de proveniência proporcione grau de proteção de dados pessoais adequado ao previsto nesta lei</li>
+</ol>
+<h3 id="fundamentos-da-lgpd">Fundamentos da LGPD</h3>
+<p>Art. 2º A disciplina da proteção de dados pessoais tem como <strong>FUNDAMENTOS</strong>:</p>
+<ol>
+<li>o respeito à privacidade</li>
+<li>a autodeterminação informativa</li>
+<li>a liberdade de expressão, de informação, de comunicação e de opinião</li>
+<li>a inviolabilidade da intimidade, da honra e da imagem</li>
+<li>o desenvolvimento econômico e tecnológico e a inovação</li>
+<li>a livre iniciativa, a livre concorrência e a defesa do consumidor</li>
+<li>os direitos humanos, o livre desenvolvimento da personalidade, a dignidade e o exercício da cidadania pelas pessoas naturais</li>
+</ol>
+<h3 id="aplicabilidade">Aplicabilidade</h3>
+<p>Art. 3º <strong>Esta lei aplica-se a qualquer operação de tratamento realizada por pessoa natural ou por pessoa jurídica de direito público ou privado, independentemente do meio, do país de sua sede ou do país onde estejam localizados os dados, desde que:</strong></p>
+<ol>
+<li>a operação de tratamento seja realizada no território nacional</li>
+<li>a atividade de tratamento tenha por objetivo a oferta ou o fornecimento de bens ou serviços ou o tratamento de dados de indivíduos localizados no território nacional</li>
+<li>os dados pessoais objeto do tratamento tenham sido coletados no território nacional
+<ul>
+<li>Consideram-se coletados no território nacional os dados pessoais cujo titular nele se encontre no momento da coleta</li>
+<li>Excetua-se do disposto no inciso I deste artigo o tratamento de dados previsto no inciso IV do caput do art. 4º desta lei.</li>
+</ul>
+</li>
+</ol>
+
+        
+    </div>
+
+    <div class="prev-next">
+        
+    </div>
+
+    
+    
+    
+</div>
+
+<aside class="post-toc">
+    <nav id="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#ondas-de-inovação">Ondas de Inovação</a></li>
+        <li><a href="#constituição-e-a-tecnologia">Constituição e a tecnologia</a></li>
+        <li><a href="#história-resumida">História resumida</a></li>
+        <li><a href="#ordenamento-jurídico-antes-da-lgpd">Ordenamento Jurídico antes da LGPD</a></li>
+      </ul>
+    </li>
+    <li><a href="#dados-pessoais">Dados Pessoais</a>
+      <ul>
+        <li><a href="#dado-pessoal-sensível">Dado pessoal sensível</a></li>
+      </ul>
+    </li>
+    <li><a href="#dado-anonimizado">Dado Anonimizado</a>
+      <ul>
+        <li><a href="#pseudoanonimização">Pseudoanonimização</a></li>
+      </ul>
+    </li>
+    <li><a href="#lgpd-lei-geral-de-proteção-de-dados">LGPD (Lei Geral de Proteção de Dados)</a>
+      <ul>
+        <li><a href="#não-aplicação-da-lgpd">Não aplicação da LGPD</a></li>
+        <li><a href="#fundamentos-da-lgpd">Fundamentos da LGPD</a></li>
+        <li><a href="#aplicabilidade">Aplicabilidade</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </nav>
+</aside>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>&copy; 2024 Kauan Manzato</span>
+    
+    <span>
+        Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
+    </span>
+</footer>
+</body>
+</html>

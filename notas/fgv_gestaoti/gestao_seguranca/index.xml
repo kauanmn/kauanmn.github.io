@@ -6,8 +6,15 @@
     <description>Recent content in Gestão da Segurança da Informação on kauan.m</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 22 Jul 2024 19:00:00 -0300</lastBuildDate>
+    <lastBuildDate>Tue, 30 Jul 2024 01:00:00 -0300</lastBuildDate>
     <atom:link href="https://kauanmn.github.io/notas/fgv_gestaoti/gestao_seguranca/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Preparação</title>
+      <link>https://kauanmn.github.io/notas/fgv_gestaoti/gestao_seguranca/preparacao/</link>
+      <pubDate>Tue, 30 Jul 2024 01:00:00 -0300</pubDate>
+      <guid>https://kauanmn.github.io/notas/fgv_gestaoti/gestao_seguranca/preparacao/</guid>
+      <description>Suponha que você seja o CISO de uma empresa de mineração e precisa montar um plano de trabalho para os próximos 100 dias.&#xA;Forneça um contexto global e brasileiro em relação à segurança da informação das empresas No mundo todo, as empresas vêm enfrentando uma série de ameaças, incluindo ataques de ransomware, espionagem, tentativas de comprometimento de sistemas críticos, vazamentos de dados etc. Além disso, como a crescente dependência de tecnologias como IoT, ICS/SCADA e computação em nuvem aumentam a superfície de ataque das empresas e devido à existência de regulamentações como a GDPR e a LGPD, a segurança da informação está ganhando notoriedade e importância no meio corporativo.</description>
+    </item>
     <item>
       <title>Aula 4</title>
       <link>https://kauanmn.github.io/notas/fgv_gestaoti/gestao_seguranca/aula4/</link>
@@ -21,13 +28,6 @@
       <pubDate>Tue, 16 Jul 2024 19:00:00 -0300</pubDate>
       <guid>https://kauanmn.github.io/notas/fgv_gestaoti/gestao_seguranca/aula3/</guid>
       <description>Proteção de ativos Por que proteger?&#xA;relevância para o negócio valor do ativo impacto da ausência impacto de uso por terceiros Quando proteger?&#xA;ciclo de vida da informação manuseio armazenamento transporte descarte Onde proteger?&#xA;ativos custodiantes de informação físicos técnológicos humanos O que proteger?&#xA;atributos da segurança da informação confidencialidade integridade disponibilidade Do que proteger?&#xA;ameaças físicas tecnológicas humanas Segurança da Informação Adotar CONTROLES físicos, tecnológicos e humanos customizados, que viabilizem a redução e administração dos RISCOS dos ATIVOS levando o NEGÓCIO a atingir o nível de segurança adequada ao seu apetite.</description>
-    </item>
-    <item>
-      <title>Preparação</title>
-      <link>https://kauanmn.github.io/notas/fgv_gestaoti/gestao_seguranca/preparacao/</link>
-      <pubDate>Tue, 16 Jul 2024 01:00:00 -0300</pubDate>
-      <guid>https://kauanmn.github.io/notas/fgv_gestaoti/gestao_seguranca/preparacao/</guid>
-      <description>Suponha que você seja o CISO de uma empresa de mineração e precisa montar um plano de trabalho para os próximos 100 dias.&#xA;Forneça um contexto global e brasileiro em relação à segurança da informação das empresas No mundo todo, as empresas vêm enfrentando uma série de ameaças, incluindo ataques de ransomware, espionagem, tentativas de comprometimento de sistemas críticos, vazamentos de dados etc. Além disso, como a crescente dependência de tecnologias como IoT, ICS/SCADA e computação em nuvem aumentam a superfície de ataque das empresas e devido à existência de regulamentações como a GDPR e a LGPD, a segurança da informação está ganhando notoriedade e importância no meio corporativo.</description>
     </item>
     <item>
       <title>Aula 2</title>

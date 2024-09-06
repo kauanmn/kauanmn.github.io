@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Aula 4</title>
+    <meta name="description" content="Software Development | AppSec | Bug Bounty">
+    <meta name="keywords" content=''>
+
+    <meta property="og:url" content="https://kauanmn.github.io/notas/fgv_gestaoti/blockchain/aula4/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Aula 4">
+    <meta property="og:description" content="Software Development | AppSec | Bug Bounty">
+    <meta property="og:image" content="https://kauanmn.github.io/img/me.jpg">
+    <meta property="og:image:secure_url" content="https://kauanmn.github.io/img/me.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Aula 4">
+    <meta name="twitter:description" content="Software Development | AppSec | Bug Bounty">
+    <meta property="twitter:domain" content="https://kauanmn.github.io/notas/fgv_gestaoti/blockchain/aula4/">
+    <meta property="twitter:url" content="https://kauanmn.github.io/notas/fgv_gestaoti/blockchain/aula4/">
+    <meta name="twitter:image" content="https://kauanmn.github.io/img/me.jpg">
+
+    
+    <link rel="canonical" href="https://kauanmn.github.io/notas/fgv_gestaoti/blockchain/aula4/">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.893af8dd3b65bd0ffe90e7af33847bd6dc9180b8fa6d6659a212a6f4b62d3e01.js"></script>
+    
+
+
+    
+    
+        <!-- KaTeX -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js" integrity="sha384-X/XCfMm41VSsqRNQgDerQczD69XqmjOOOwYQvr/uuC+j4OPoNhVgjdGFwhvN02Ja" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          // customised options
+          // • auto-render specific keys, e.g.:
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false},
+          ],
+          // • rendering keys, e.g.:
+          throwOnError : false
+        });
+      });
+    </script>
+  
+    
+</head>
+<body>
+        <script>
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+        <div class="avatar">
+            <a href="https://kauanmn.github.io/">
+                <img src='/img/me.jpg' alt="avatar">
+            </a>
+        </div>
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="https://kauanmn.github.io/">kauan.m</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="https://kauanmn.github.io/notas/"> ~/notas </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://kauanmn.github.io/artigos/"> ~/artigos </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://kauanmn.github.io/writeups/"> ~/writeups </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <span class="sr-only dark-theme-toggle-screen-reader-target"></span>
+                <a>
+                    <span class="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span class="sr-only hamburger-menu-toggle-screen-reader-target">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="https://kauanmn.github.io/notas/"> ~/notas </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://kauanmn.github.io/artigos/"> ~/artigos </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://kauanmn.github.io/writeups/"> ~/writeups </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <span class="sr-only dark-theme-toggle-screen-reader-target">theme</span>
+                    <a>
+                        <span class="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Aula 4</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">September 5, 2024
+        
+        </p>
+
+        <ul class="post-tags">
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <h1 id="blockchain">Blockchain</h1>
+<h2 id="introdução-e-aspectos-tecnológicos">Introdução e Aspectos Tecnológicos</h2>
+<ul>
+<li>Quando se pensa em transações de informações entre duas partes, a primeira imagem que surge são sistemas centralizados como bancos ou cartórios</li>
+<li>A blockchain traz uma outra forma de funcionamento descentralizado</li>
+<li>Os conceitos envolvidos em blockchain não são novos, se analisados separadamente. A verificação da história do blockchain permite entender como as áreas se desenvolveram separadamente e como foram integradas criando uma aplicação real, no caso o bitcoin. Essa foi a primeira aplicação que integrou os conhecimentos já existentes</li>
+</ul>
+<hr>
+<h2 id="bitcoin">Bitcoin</h2>
+<ul>
+<li>As características importantes do blockchain é mostrada na prática com a criação do Bitcoin</li>
+<li>Analisar rapidamente o surgimento desta moeda digital, uma vez que sempre é referenciada como o início efetivo do uso prático da blockchain</li>
+<li>A base do Bitcoin foi proposta em 2008 por Nakamoto, que empregou o blockchain para implementar operações com uma moeda digital</li>
+</ul>
+<p><img src="/img/fgv_gestaoti/satoshi_blockchain.png" alt="Nakamoto&rsquo;s Blockchain Proposal"></p>
+<blockquote>
+<p><em>Proposta de Nakamoto para a blockchain</em></p>
+</blockquote>
+<hr>
+<h2 id="blockchain-além-do-bitcoin">Blockchain além do Bitcoin</h2>
+<ul>
+<li>A partir de 2014, o interesse no blockchain começa a se desassociar do Bitcoin</li>
+<li>Desde então, novas aplicações empresariais passam a ser desenhadas para explorar diferentes características desta tecnologia, tais como a <strong>descentralização</strong>, <strong>transparência</strong> e <strong>sincronização</strong>.</li>
+<li>Estas características podem ser combinadas e adaptadas conforme a aplicação ou o serviço idealizado, não sendo mandatória, por exemplo, a descentralização ou a transparência</li>
+</ul>
+<hr>
+<h2 id="corrente-de-blocos">Corrente de blocos</h2>
+<ul>
+<li>Como pode ser visto pela figura, um bloco depende do outro, formando uma sequência de blocos numerados que acontecem ao longo do tempo</li>
+<li>Os blocos possuem as informações que são guardadas ao longo dos tempos</li>
+<li>Esta visão traz confiança em função dos elos estarem unidos de forma sólida</li>
+</ul>
+<hr>
+<h2 id="livro-razão-ledger">Livro razão (ledger)</h2>
+<ul>
+<li>O <strong>livro razão</strong> é um <strong>registro contábil obrigatório</strong> para empresas que optam pelo <em>regime de Lucro Real</em> no Brasil e funciona como um <strong>complemento ao Livro Diário</strong>, fornecendo uma visão mais detalhada das movimentações financeiras da empresa</li>
+</ul>
+<p><strong>Funções do livro razão</strong>:</p>
+<ul>
+<li>Organizar as transações por conta</li>
+<li>Apresentar o histórico das contas</li>
+<li>Subsidiar a elaboração de demonstrativos financeiros</li>
+</ul>
+<p><strong>Fornece informações essenciais para</strong>:</p>
+<ul>
+<li>Acompanhar a saúde financeira da empresa</li>
+<li>Tomar decisões estratégicas</li>
+<li>Atender às obrigações fiscais</li>
+</ul>
+<hr>
+<h2 id="ledger-centralizado-vs-distribuído">Ledger centralizado vs. distribuído</h2>
+<ul>
+<li>Os modelos de transação tradicionais contam com a autoridade central para atuar na função de câmara de compensação</li>
+<li>Essa questão remete para uma terceira parte que deve ser idonea</li>
+<li>A confiança é concedida a essa terceira parte como autoridade central cria a expectativa de que ela <strong>permaneça honesta</strong> durante a verificação e compensação das transações</li>
+</ul>
+<hr>
+<h2 id="partes-de-uma-transação">Partes de uma transação</h2>
+<p>Para iniciar a análise de blockchain é interessante ter uma visão macro de quais são as etapas envolvidas em uma transação financeira, que tem por objetivo identificar quais as ações necessárias, que também serão as mesmas para outras aplicações</p>
+<p>Partes da transação:</p>
+<ol>
+<li>Proposta de transação</li>
+<li>Adicionar assinatura criptográfica</li>
+<li>Broadcast para a rede de computadores</li>
+<li>Autenticação da transação proposta</li>
+<li>Anexar à blockchain</li>
+<li>Completar a transação</li>
+</ol>
+<h3 id="proposta-de-transação">Proposta de transação</h3>
+<p>Proposta de transação em que os interessados manifestam suas necessidades que são convertidas em números com os códigos ASCII</p>
+<p>As informações que vão dentro do bloco possuem os dados que devem ser considerados</p>
+<h3 id="criptografia-assimétrica">Criptografia Assimétrica</h3>
+<p>As informações que vão no bloco são criptografadas assimetricamente. No caso de transações financeiras, é muito importante que os dados estejam criptografados.</p>
+<p>Não existe uma preocupação exagerada com as informações que estão nos blocos. A preocupação deve ser a garantia de que as informações que estão no bloco foram criadas por um responsável.</p>
+<ul>
+<li>A criptografia assimétrica é usada em soluções IoT para identificar o responsável por um processo</li>
+<li>Esse responsável tem uma chave privada que garante a sua identidade como gerador de uma ação</li>
+<li>Com a chave pública, as partes envolvidas garantem que foi assinada por um responsável</li>
+<li>A criptografia assimétrica faz com que desapareça o anonimato</li>
+</ul>
+<h3 id="protobloco">Protobloco</h3>
+<p>O termo <strong>protobloco</strong> define um bloco que ainda não foi minerado e, portanto, ainda não pode ser considerado como parte da cadeia de blocos, ou seja, ainda é um bloco em potencial</p>
+<p>Suas características incluem:</p>
+<ul>
+<li>Informações da transação</li>
+<li>Hash do bloco anterior</li>
+</ul>
+<p>Depois de criado, o protobloco vai ser distribuído para os mineradores por meio de um protocolo.</p>
+<p>A mineração usa as informações contidas no protobloco para realizar cálculos que permitem encontrar o hash do bloco atual.</p>
+<h3 id="completa-a-transação">Completa a transação</h3>
+<p>Esta etapa dá publicidade ao bloco minerado. Isso significa que as partes envolvidas no processo terão acesso ao bloco minerado.</p>
+<hr>
+<h2 id="mineração-e-hash">Mineração e Hash</h2>
+<p>Podemos dizer que o elo que liga os blocos é o bloco atual possuir o hash do bloco anterior. Ou seja, um novo bloco só pode ser inserido na cadeia de blocos quando há o hash do bloco anterior (último bloco da rede)</p>
+<p>A <strong>mineração</strong> é importante porque permite, de forma distribuída, a consolidação da corrente dos blocos. Essa consolidação deve atender a algum critério previamente definido usando o hash.</p>
+<p>Por exemplo, a mineração no Bitcoin envolve descobrir um número aleatório (nonce) de forma que o hash do bloco comece com uma determinada quantidade de 0&rsquo;s (a dificuldade define a quantidade de zeros).</p>
+<hr>
+<h2 id="consenso">Consenso</h2>
+<p>A estratégia do blockchain depende de <strong>modelos de consenso</strong> que demandam esforço computacional para serem executados ao substituir o elemento central por computadores distribuídos.</p>
+<p>O termo <strong>consenso</strong> no blockchain significa <strong>uma estratégia em que todos os participantes decidem que o bloco pode ser consolidado</strong>. Em outras palavras, o consenso é a concordância dos demais mineradores usando critérios definidos a priori.</p>
+<ul>
+<li>É considerado confiável por consenso, mas todas as partes devem ter cópias idênticas do blockchain. Cada participante é responsável pela verificação</li>
+<li>A força está no conjunto de réplicas distribuídas</li>
+<li>O esquema de descentralização do blockchain é um ponto forte porque uma cópiad do arquivo estará na corrente de blocos armazenados nos computadores que participam da rede</li>
+<li>O algoritmo de consenso garante para a comunidade que cada bloco adicionado seja legítimo</li>
+<li>O principal para segurança é que essa estratégia impede que invasores comprometam e criem ramificações adulteradas da cadeia</li>
+</ul>
+<hr>
+<h2 id="proof-of-work-pow">Proof-of-Work (PoW)</h2>
+<p>O <strong>PoW (Proof-of-Work)</strong> é um mecanismo de consenso que exige que os mineradores realizem um trabalho computacionalmente intensivo para resolver um problema matemático antes de poderem adicionar um novo bloco à blockchain.</p>
+<hr>
+<h2 id="proof-of-stake-pos">Proof-of-Stake (PoS)</h2>
+<p>O <strong>PoS (Proof-of-Stake)</strong> é uma alternativa ao PoW. Em vez de depender de mineradores, no PoS os validadores são escolhidos com base na quantidade de criptomoedas que possuem e &ldquo;travam&rdquo; na rede.</p>
+<ul>
+<li>Para se tornar um validador, o usuário precisa fazer um <strong>stake</strong> de suas moedas, ou seja, &ldquo;bloquear&rdquo; uma quantidade específica de criptomoedas da rede como garantia</li>
+<li>Quanto maior o valor em stake, maior a probabilidade de ser escolhido para validar o próximo bloco</li>
+<li>O validador é responsável por criar e propor o próximo bloco</li>
+<li>Os outros validadores na rede verificam a validade do bloco. Se o bloco for aceito, o validador recebe uma recompensa</li>
+<li>Se o validador agir de maneira desonesta, ele pode perder parte ou todo o seu stake como penalidade</li>
+</ul>
+
+        
+    </div>
+
+    <div class="prev-next">
+        
+    </div>
+
+    
+    
+    
+</div>
+
+<aside class="post-toc">
+    <nav id="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introdução-e-aspectos-tecnológicos">Introdução e Aspectos Tecnológicos</a></li>
+    <li><a href="#bitcoin">Bitcoin</a></li>
+    <li><a href="#blockchain-além-do-bitcoin">Blockchain além do Bitcoin</a></li>
+    <li><a href="#corrente-de-blocos">Corrente de blocos</a></li>
+    <li><a href="#livro-razão-ledger">Livro razão (ledger)</a></li>
+    <li><a href="#ledger-centralizado-vs-distribuído">Ledger centralizado vs. distribuído</a></li>
+    <li><a href="#partes-de-uma-transação">Partes de uma transação</a>
+      <ul>
+        <li><a href="#proposta-de-transação">Proposta de transação</a></li>
+        <li><a href="#criptografia-assimétrica">Criptografia Assimétrica</a></li>
+        <li><a href="#protobloco">Protobloco</a></li>
+        <li><a href="#completa-a-transação">Completa a transação</a></li>
+      </ul>
+    </li>
+    <li><a href="#mineração-e-hash">Mineração e Hash</a></li>
+    <li><a href="#consenso">Consenso</a></li>
+    <li><a href="#proof-of-work-pow">Proof-of-Work (PoW)</a></li>
+    <li><a href="#proof-of-stake-pos">Proof-of-Stake (PoS)</a></li>
+  </ul>
+</nav>
+    </nav>
+</aside>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>&copy; 2024 Kauan Manzato</span>
+    
+    <span>
+        Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
+    </span>
+</footer>
+</body>
+</html>
